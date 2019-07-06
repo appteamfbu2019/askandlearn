@@ -3,7 +3,9 @@
 Group Project - README Template
 ===
 Esther Brown
+
 Claire Cheng
+
 Alexs Gonzalez
 
 # APP_NAME_HERE ???
