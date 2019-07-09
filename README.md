@@ -1,4 +1,4 @@
-# askandlearn
+## AskandLearn
 
 Group Project - README Template
 ===
@@ -8,7 +8,6 @@ Claire Cheng
 
 Alexs Gonzalez
 
-AskAndLearn
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -90,7 +89,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://imgur.com/a/ks95S4l" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
