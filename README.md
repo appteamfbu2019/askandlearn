@@ -89,7 +89,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://ibb.co/rQWVtv4" width=600>
+<img src="https://github.com/appteamfbu2019/askandlearn/blob/master/wireframes.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
