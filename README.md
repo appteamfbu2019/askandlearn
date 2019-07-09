@@ -26,9 +26,9 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 [Evaluation of your app across the following attributes]
 - **Category:** Education
 - **Mobile:** Real-time, Convenient thumb-swipe interface
-- **Story:** Allows users to give advice on areas of expertise, and simultaneously learn from experts in their field.
-- **Market:** Anyone that wants to learn or wants to share.
-- **Habit:** As with many easy-to-use, low-commitment apps that implement a swiping interface, swiping becomes easily addictive. Mentors and learners who have good reviews will receive 'points' that can make them feel validated. High point receivers can be invited to private events as a sort of 'elite club.' These incentives promote frequent and honest usage.
+- **Story:** Users can get advice on areas of interest. At the same time, users can learn from others/experts in their field.
+- **Market:** Anyone who wants to learn a new skill or wants to share his or her skill.
+- **Habit:** Like the case of many easy-to-use, low-commitment apps which implement a swiping interface, swiping becomes easily addictive. Mentors and learners who have good reviews will receive 'points' that can make them feel validated and influence others to respect their pages. High point receivers can be invited to private events as a sort of 'elite club.' These incentives promote frequent and honest usage.
 - **Scope:** The backend does not seem too complicated to implement, although we would need to implement a lot of tabs and features such as instant messaging that may be more difficult to tackle. 
 
 ## Product Spec
