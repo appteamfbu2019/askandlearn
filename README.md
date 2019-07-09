@@ -89,8 +89,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/ks95S4l"><a href="//imgur.com/ks95S4l"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-<img src="https://imgur.com/a/ks95S4l" width=600>
+<img src="https://ibb.co/rQWVtv4" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
