@@ -35,15 +35,14 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* User can sign up to create a new account (using username, password)
-* During sign up,user are required to connect through LinkedIn, extract basic information through there
-* Profiles of people with basic information (age, areas of expertise, educational levels) that user can swipe through
+* User can sign up to create a new account (using username, password) User can Login/Logout
+* During sign up,user are required to connect through LinkedIn, extract basic information through there 
+* Profiles of people with basic information (age, areas of expertise, educational levels) that user can swipe through 
 * Tab to access the user's 'matches'
 * Tab to access the user's 'messages'
 * Implement Basic messaging function using Parse Chat
 * Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
   (profession, company, age, field of study, area of interests)
-* Logout
 
 **Optional Nice-to-have Stories**
 
