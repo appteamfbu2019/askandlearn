@@ -24,7 +24,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Education
-- **Mobile:** Real-time, Convenient thumb-swipe interface
+- **Mobile:** Real-time, Convenient tap interface
 - **Story:** Users can get advice on areas of interest. At the same time, users can learn from others/experts in their field.
 - **Market:** Anyone who wants to learn a new skill or wants to share his or her skill.
 - **Habit:** Like the case of many easy-to-use, low-commitment apps which implement a swiping interface, swiping becomes easily addictive. Mentors and learners who have good reviews will receive 'points' that can make them feel validated and influence others to respect their pages. The app will have a 'points system' where members will be classified into groups based on the classified ranges they fall into. High point receivers can be invited to private events as a sort of 'elite club.' These incentives promote frequent and honest usage.
@@ -37,7 +37,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 **Required Must-have Stories**
 * User can sign up to create a new account (using username, password) User can Login/Logout
 * During sign up,user are required to connect through LinkedIn, extract basic information through there 
-* Profiles of people with basic information (age, areas of expertise, educational levels) that user can swipe through 
+* Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
 * Tab to access the user's 'matches'
 * Tab to access the user's 'messages'
 * Implement Basic messaging function using Parse Chat
@@ -46,6 +46,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
   
   **Optional Nice-to-have Stories**
 
+* Swiping animation instead of just button taps
 * The option to unmatch, report, block users
 * "Verified" status for users with good ratings
 * Rating system and points system
