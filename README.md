@@ -1,4 +1,4 @@
-## AskandLearn
+AppName: ## AskandLearn
 
 Group Project - README Template
 ===
@@ -44,7 +44,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 * Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
   (profession, company, age, field of study, area of interests)
   
-**Optional Nice-to-have Stories**
+  **Optional Nice-to-have Stories**
 
 * Swiping animation instead of just button taps
 * The option to unmatch, report, block users
@@ -95,8 +95,27 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 
 ### [BONUS] Interactive Prototype
 
-## Schema 
-[This section will be completed in Unit 9]
+## Schema Objects
+**User**
+* email
+* Username
+* Password
+* Name
+* ProfileImage
+* Age
+* JobTitle
+* Bio
+* LinkedIn
+
+**Message**
+* sender user
+* receiving user
+* message text
+* message timestamp
+
+**Matches**
+* user
+
 ### Models
 [Add table of models]
 ### Networking
