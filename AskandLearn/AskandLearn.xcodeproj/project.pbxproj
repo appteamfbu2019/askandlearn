@@ -128,11 +128,11 @@
 		AB50E24722DD0617006097DB /* AskandLearn */ = {
 			isa = PBXGroup;
 			children = (
+				AB50E24E22DD0617006097DB /* Main.storyboard */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
 				AB50E24B22DD0617006097DB /* ViewController.h */,
 				AB50E24C22DD0617006097DB /* ViewController.m */,
-				AB50E24E22DD0617006097DB /* Main.storyboard */,
 				AB50E25122DD0617006097DB /* Assets.xcassets */,
 				AB50E25322DD0617006097DB /* LaunchScreen.storyboard */,
 				AB50E25622DD0617006097DB /* Info.plist */,
@@ -169,7 +169,6 @@
 				8E925FD03D932825EE162B1F /* Pods-AskandLearnUITests.debug.xcconfig */,
 				072EB7E18D6E7B948393A3FA /* Pods-AskandLearnUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
