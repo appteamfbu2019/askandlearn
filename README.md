@@ -59,7 +59,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
    * Connect LinkedIn account
 * Swipe Stream
    * Profiles of people
-   * Tab to access matches + Messaging
+   * Tab to access matches + Messaging( tab bar will be at top of page)
    * Filters that user can instantiate
 * Detail
     * User can click on a profile to view more info
@@ -69,6 +69,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
     * User can view their matches, ratings, points, status
 * Settings
     * User can logout
+    * User can adjust/filter for the people they want to "discover"
 
 ### 3. Navigation
 
