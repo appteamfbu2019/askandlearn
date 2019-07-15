@@ -1,4 +1,4 @@
-AppName: ## AskandLearn
+## AskandLearn
 
 Group Project - README Template
 ===
