@@ -6,6 +6,10 @@ target 'AskandLearn' do
   use_frameworks!
 
   # Pods for AskandLearn
+  pod 'Parse'
+  pod 'DateTools'
+  pod 'MBProgressHUD'
+  pod 'AFNetworking'
 
   target 'AskandLearnTests' do
     inherit! :search_paths
