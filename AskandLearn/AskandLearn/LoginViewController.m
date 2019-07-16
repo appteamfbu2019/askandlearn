@@ -8,8 +8,9 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -25,10 +26,10 @@
 }
 
 - (void)loginUser {
-    NSString *username = self.usernameField.text;
-    NSString *password = self.passwordField.text;
+    NSString *username = self.usernameTextField.text;
+    NSString *password = self.passwordTextField.text;
     
-    if ([self.usernameField.text isEqual:@""]) {
+    if ([self.usernameTextField.text isEqual:@""]) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No username inserted"
@@ -45,7 +46,7 @@
         }];
         
     }
-    else if ([self.passwordField.text isEqual:@""]) {
+    else if ([self.passwordTextField.text isEqual:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No password inserted"
                                                                 preferredStyle:(UIAlertControllerStyleAlert)];
