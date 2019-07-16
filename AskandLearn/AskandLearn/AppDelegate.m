@@ -19,8 +19,8 @@
     
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
-        configuration.applicationId = @"fbu-instagram-est";
-        configuration.server = @"https:fbu-instagram-est.herokuapp.com/parse";
+        configuration.applicationId = @"askandlearn";
+        configuration.server = @"http://askandlearn.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
