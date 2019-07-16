@@ -6,8 +6,12 @@
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
+<<<<<<< Updated upstream:AskandLearn/AskandLearn/SignUpViewController.m
 #import "SignUpViewController.h"
+=======
+#import "HomeViewController.h"
 #import "Parse/Parse.h"
+>>>>>>> Stashed changes:AskandLearn/AskandLearn/HomeViewController.m
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
