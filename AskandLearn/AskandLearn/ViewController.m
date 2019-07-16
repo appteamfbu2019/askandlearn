@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "Parse/Parse.h"
+//have FeedViewController
 
 @interface ViewController ()
 
@@ -16,8 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.userNameTextField.text = @"myUsername";
+    self.passwordTextField.text = @"myPassword";
+    self.emailTextField.text = @"myEmail@email.com";
 }
-
 
 @end
