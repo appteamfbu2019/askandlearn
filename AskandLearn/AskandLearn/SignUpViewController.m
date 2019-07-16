@@ -6,7 +6,12 @@
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
+<<<<<<< Updated upstream:AskandLearn/AskandLearn/SignUpViewController.m
 #import "SignUpViewController.h"
+=======
+#import "HomeViewController.h"
+#import "Parse/Parse.h"
+>>>>>>> Stashed changes:AskandLearn/AskandLearn/HomeViewController.m
 
 @interface SignUpViewController ()
 
@@ -17,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //use parse query to get a list of all the users on the server
+    //need to keep track of an index for tapping through the potential matches
+    //for matching button tap -> add to list of User's matches
 }
 
 /*
