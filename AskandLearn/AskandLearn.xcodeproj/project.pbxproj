@@ -10,6 +10,7 @@
 		3D949A469D5A4C49AB68DBDE /* Pods_AskandLearnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3332AB177A7AC0FAB2F1D50A /* Pods_AskandLearnTests.framework */; };
 		747D5DDBAAC627A0D0465B71 /* Pods_AskandLearnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F8184367B6FEA24496BDE6 /* Pods_AskandLearnUITests.framework */; };
 		A2545505480BE21708B99AB0 /* Pods_AskandLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1978237C79CD8E1D4A353F5E /* Pods_AskandLearn.framework */; };
+		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
 		AB50E25022DD0617006097DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB50E24E22DD0617006097DB /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		46DF12C1CD151E90393E5CFF /* Pods-AskandLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		8E925FD03D932825EE162B1F /* Pods-AskandLearnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9735A82F8BF12CC74B10AF94 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AB50E24522DD0617006097DB /* AskandLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskandLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E24822DD0617006097DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB50E24922DD0617006097DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
+				AB0449D222DE6662001F9606 /* SignUpViewController.h */,
+				AB0449D322DE6662001F9606 /* SignUpViewController.m */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
 				AB50E24B22DD0617006097DB /* ViewController.h */,
@@ -376,6 +381,7 @@
 			files = (
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
+				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
