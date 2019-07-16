@@ -6,6 +6,7 @@
 //  Copyright © 2019 estherb. All rights reserved.
 
 #import "LoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
