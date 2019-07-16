@@ -198,6 +198,7 @@
 				AB50E24122DD0617006097DB /* Sources */,
 				AB50E24222DD0617006097DB /* Frameworks */,
 				AB50E24322DD0617006097DB /* Resources */,
+				0BA575AAACD8FB43C406D606 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,6 +317,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BA575AAACD8FB43C406D606 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F539B5A062614DBA524CD5E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
