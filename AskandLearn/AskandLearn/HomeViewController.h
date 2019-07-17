@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *matches;
-@property (nonatomic, strong) NSInteger index;
+@property NSInteger index;
 
 @end
 
