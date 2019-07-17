@@ -323,7 +323,7 @@
         <!--Profile-->
         <scene sceneID="5Um-pX-oz3">
             <objects>
-                <viewController title="Profile" id="6qI-aE-WOr" sceneMemberID="viewController">
+                <viewController title="Profile" id="6qI-aE-WOr" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hvl-4d-gXR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,6 +348,11 @@
                         <viewLayoutGuide key="safeArea" id="aNp-4g-shq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="elC-Ad-CAu"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="Lf9-LD-1Zh" id="Pjk-ug-5S2"/>
+                        <outlet property="nameBox" destination="bWv-2v-1k2" id="PaB-gg-Yw9"/>
+                        <outlet property="profileImage" destination="YFh-tH-8fH" id="dF8-17-elj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hna-3J-f5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,7 +361,7 @@
         <!--Messages-->
         <scene sceneID="Muf-dt-F5Y">
             <objects>
-                <viewController id="ZkV-7Y-IcL" sceneMemberID="viewController">
+                <viewController id="ZkV-7Y-IcL" customClass="MessageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3An-SA-6AX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,16 +379,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBj-OJ-32Z">
-                                                    <rect key="frame" x="0.0" y="-3" width="50" height="50"/>
+                                                    <rect key="frame" x="20" y="1" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-LC-rMK">
-                                                    <rect key="frame" x="58" y="11" width="336" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -394,6 +392,9 @@
                         <viewLayoutGuide key="safeArea" id="rDX-y4-6sp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" id="UJJ-V7-Lyr"/>
+                    <connections>
+                        <outlet property="imageBox" destination="UBj-OJ-32Z" id="VjD-eY-1ig"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lk8-X5-mUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

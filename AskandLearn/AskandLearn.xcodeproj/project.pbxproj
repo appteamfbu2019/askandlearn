@@ -21,6 +21,8 @@
 		AB50E25822DD0617006097DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E25722DD0617006097DB /* main.m */; };
 		AB50E26222DD0617006097DB /* AskandLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26122DD0617006097DB /* AskandLearnTests.m */; };
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
+		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
+		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
@@ -74,6 +76,10 @@
 		AB50E26822DD0617006097DB /* AskandLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskandLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E26C22DD0617006097DB /* AskandLearnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AskandLearnUITests.m; sourceTree = "<group>"; };
 		AB50E26E22DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		D0F8184367B6FEA24496BDE6 /* Pods_AskandLearnUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskandLearnUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4AC275E3C13335D77E7C52 /* Pods-AskandLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.release.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.release.xcconfig"; sourceTree = "<group>"; };
 		FEB50A6922DE77E100FEF8DB /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
@@ -169,6 +175,10 @@
 				FEB50A6D22DE782700FEF8DB /* User.m */,
 				FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */,
 				FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */,
+				B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */,
+				B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */,
+				B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */,
+				B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */,
 			);
 			path = AskandLearn;
 			sourceTree = "<group>";
@@ -425,9 +435,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0449DC22DF4CFF001F9606 /* LoginViewController.m in Sources */,
+				B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
+				B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
 				AB0449E022DF99BB001F9606 /* LoginViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
