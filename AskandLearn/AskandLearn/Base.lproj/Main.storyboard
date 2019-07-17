@@ -292,7 +292,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nn5-WB-fwH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="FNv-ty-HQp"/>
+                    
                     <connections>
                         <outlet property="nameField" destination="yoA-km-ASG" id="kWt-Mu-mjj"/>
                         <outlet property="percentMatch" destination="ukf-qL-NWW" id="IY1-zr-oGs"/>
