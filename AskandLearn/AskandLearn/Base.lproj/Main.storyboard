@@ -392,9 +392,6 @@
                         <viewLayoutGuide key="safeArea" id="rDX-y4-6sp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" id="UJJ-V7-Lyr"/>
-                    <connections>
-                        <outlet property="imageBox" destination="UBj-OJ-32Z" id="VjD-eY-1ig"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lk8-X5-mUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
