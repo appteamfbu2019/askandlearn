@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="tabBarController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tabBarController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,6 +36,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="fSz-Y1-pG9" kind="presentation" id="J0w-ZQ-bU3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AskandLearn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpL-ij-dje">
                                 <rect key="frame" x="73" y="90" width="269" height="58"/>
@@ -57,9 +60,10 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="gB7-pi-9DD" id="I7C-5X-smK"/>
-                        <outlet property="passwordTextField" destination="90u-Xf-8YG" id="si8-fQ-sTI"/>
+                        <outlet property="passwordTextField" destination="90u-Xf-8YG" id="RP9-gz-G8v"/>
                         <outlet property="signButton" destination="Uye-bP-DcX" id="I7a-dN-qVc"/>
-                        <outlet property="userNameTextField" destination="vGy-Hl-wvi" id="Ycx-s0-5Bl"/>
+                        <outlet property="signUpButton" destination="Uye-bP-DcX" id="un5-Ao-p1l"/>
+                        <outlet property="usernameTextField" destination="vGy-Hl-wvi" id="vpQ-8a-B04"/>
                         <segue destination="4eH-4S-s7d" kind="presentation" identifier="loginSegue" id="Qm0-1o-5zo"/>
                     </connections>
                 </viewController>
@@ -81,7 +85,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ms-bd-QHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="823"/>
+            <point key="canvasLocation" x="54" y="946"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fHt-hI-0iS">
@@ -170,11 +174,12 @@
                     <connections>
                         <outlet property="emailField" destination="Zhn-b2-lSU" id="vHR-EE-YpA"/>
                         <outlet property="usernameField" destination="O27-5Z-VNx" id="dXr-Mt-W8q"/>
+                        <segue destination="4eH-4S-s7d" kind="show" identifier="signUpSegue" id="QHW-mZ-qR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy1-66-rWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="1556"/>
+            <point key="canvasLocation" x="54" y="1715"/>
         </scene>
         <!--Matches-->
         <scene sceneID="CZc-fJ-s5u">
@@ -393,4 +398,7 @@
             <point key="canvasLocation" x="1785.5072463768117" y="1920.5357142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qm0-1o-5zo"/>
+    </inferredMetricsTieBreakers>
 </document>
