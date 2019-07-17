@@ -292,7 +292,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nn5-WB-fwH"/>
                     </view>
-                    
+                    <navigationItem key="navigationItem" id="47W-CO-Q6o">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ezf-Q7-CgY"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="yoA-km-ASG" id="kWt-Mu-mjj"/>
                         <outlet property="percentMatch" destination="ukf-qL-NWW" id="IY1-zr-oGs"/>
@@ -300,9 +302,6 @@
                         <outlet property="professionsField" destination="pRg-dK-0iW" id="qw0-Ca-8Y8"/>
                         <outlet property="skillsFIeld" destination="Fe8-z6-8AQ" id="dmE-Pm-Ii4"/>
                     </connections>
-                    <navigationItem key="navigationItem" id="47W-CO-Q6o">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ezf-Q7-CgY"/>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bva-IN-RYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -429,6 +428,6 @@
         <image name="Sign-in-Large---Default" width="215" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QHW-mZ-qR7"/>
+        <segue reference="Qm0-1o-5zo"/>
     </inferredMetricsTieBreakers>
 </document>
