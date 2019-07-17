@@ -6,11 +6,12 @@
 //  Copyright © 2019 estherb. All rights reserved.
 //
 #import "SignUpViewController.h"
+#import "Parse/Parse.h"
 
 @interface SignUpViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 - (IBAction)didTapSignUp:(id)sender;
 
@@ -32,11 +33,11 @@
     PFUser *newUser = [PFUser user];
     
     // set user properties
-    newUser.username = self.usernameField.text;
-    newUser.email = self.emailField.text;
-    newUser.password = self.passwordField.text;
+    newUser.username = self.usernameTextField.text;
+    newUser.email = self.emailTextField.text;
+    newUser.password = self.passwordTextField.text;
     
-    if ([self.usernameField.text isEqual:@""]) {
+    if ([self.usernameTextField.text isEqual:@""]) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No username inserted"
@@ -56,7 +57,7 @@
         }];
         
     }
-    else if ([self.emailField.text isEqual:@""]) {
+    else if ([self.emailTextField.text isEqual:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No email inserted"
                                                                 preferredStyle:(UIAlertControllerStyleAlert)];
@@ -74,7 +75,7 @@
             // optional code for what happens after the alert controller has finished presenting
         }];
     }
-    else if ([self.passwordField.text isEqual:@""]) {
+    else if ([self.passwordTextField.text isEqual:@""]) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No password inserted"

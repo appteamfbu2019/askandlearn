@@ -30,6 +30,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rug-ZC-xjy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uye-bP-DcX">
                                 <rect key="frame" x="274" y="251" width="68" height="35"/>
@@ -37,6 +40,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
+                                    <action selector="didTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8R8-vr-RVJ"/>
                                     <segue destination="fSz-Y1-pG9" kind="presentation" id="J0w-ZQ-bU3"/>
                                 </connections>
                             </button>
@@ -69,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="134"/>
+            <point key="canvasLocation" x="53.623188405797109" y="133.92857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="85T-eA-t4A">
@@ -144,13 +148,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fg-qA-7jI">
-                                <rect key="frame" x="177" y="208" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swi-qs-tzF">
                                 <rect key="frame" x="88" y="140" width="79" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,6 +170,8 @@
                     <navigationItem key="navigationItem" id="uPi-cS-rDc"/>
                     <connections>
                         <outlet property="emailField" destination="Zhn-b2-lSU" id="vHR-EE-YpA"/>
+                        <outlet property="emailTextField" destination="ajd-ny-i9v" id="2Nf-Tf-efJ"/>
+                        <outlet property="passwordTextField" destination="Zhn-b2-lSU" id="Udb-sn-mMd"/>
                         <outlet property="usernameField" destination="O27-5Z-VNx" id="dXr-Mt-W8q"/>
                         <segue destination="4eH-4S-s7d" kind="show" identifier="signUpSegue" id="QHW-mZ-qR7"/>
                     </connections>
@@ -399,6 +398,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qm0-1o-5zo"/>
+        <segue reference="QHW-mZ-qR7"/>
     </inferredMetricsTieBreakers>
 </document>
