@@ -37,7 +37,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 **Required Must-have Stories**
 * User can sign up to create a new account (using username, password)
 * User can Login/Logout
-* During sign up,user are required to connect through LinkedIn, extract basic information through there 
+* During sign up,user can connect through LinkedIn, and we will extract basic information through there 
 * Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
 * Tab to access the user's 'matches'
 * Tab to access the user's 'messages'
