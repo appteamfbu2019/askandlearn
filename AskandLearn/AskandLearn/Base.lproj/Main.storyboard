@@ -55,7 +55,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="didTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8R8-vr-RVJ"/>
-                                    <segue destination="fSz-Y1-pG9" kind="presentation" id="J0w-ZQ-bU3"/>
+                                    <segue destination="fSz-Y1-pG9" kind="presentation" identifier="signUpSegue" id="J0w-ZQ-bU3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,12 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="gB7-pi-9DD" id="I7C-5X-smK"/>
                         <outlet property="passwordTextField" destination="90u-Xf-8YG" id="RP9-gz-G8v"/>
-                        <outlet property="signButton" destination="Uye-bP-DcX" id="I7a-dN-qVc"/>
-                        <outlet property="signUpButton" destination="Uye-bP-DcX" id="un5-Ao-p1l"/>
                         <outlet property="usernameTextField" destination="vGy-Hl-wvi" id="vpQ-8a-B04"/>
-                        <segue destination="4eH-4S-s7d" kind="presentation" identifier="loginSegue" id="Qm0-1o-5zo"/>
+                        <segue destination="4eH-4S-s7d" kind="presentation" identifier="loggedInSegue" id="Qm0-1o-5zo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -174,10 +171,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="uPi-cS-rDc"/>
                     <connections>
-                        <outlet property="emailField" destination="Zhn-b2-lSU" id="vHR-EE-YpA"/>
                         <outlet property="emailTextField" destination="ajd-ny-i9v" id="2Nf-Tf-efJ"/>
                         <outlet property="passwordTextField" destination="Zhn-b2-lSU" id="Udb-sn-mMd"/>
-                        <outlet property="usernameField" destination="O27-5Z-VNx" id="dXr-Mt-W8q"/>
+                        <outlet property="usernameTextField" destination="O27-5Z-VNx" id="ufo-tx-G1j"/>
                         <segue destination="4eH-4S-s7d" kind="show" identifier="signUpSegue" id="QHW-mZ-qR7"/>
                     </connections>
                 </viewController>
