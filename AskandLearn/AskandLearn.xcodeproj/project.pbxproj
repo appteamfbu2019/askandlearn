@@ -12,6 +12,7 @@
 		A2545505480BE21708B99AB0 /* Pods_AskandLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1978237C79CD8E1D4A353F5E /* Pods_AskandLearn.framework */; };
 		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		AB0449DC22DF4CFF001F9606 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449DB22DF4CFE001F9606 /* LoginViewController.m */; };
+		AB0449E022DF99BB001F9606 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449DF22DF99BB001F9606 /* LoginViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
 		AB50E25022DD0617006097DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB50E24E22DD0617006097DB /* Main.storyboard */; };
@@ -54,6 +55,9 @@
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AB0449DA22DF4CFE001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		AB0449DB22DF4CFE001F9606 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/LoginViewController.m; sourceTree = "<absolute>"; };
+		AB0449DD22DF99A4001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		AB0449DE22DF99A8001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		AB0449DF22DF99BB001F9606 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/LoginViewController.m; sourceTree = "<absolute>"; };
 		AB50E24522DD0617006097DB /* AskandLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskandLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E24822DD0617006097DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB50E24922DD0617006097DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,9 +147,12 @@
 		AB50E24722DD0617006097DB /* AskandLearn */ = {
 			isa = PBXGroup;
 			children = (
+				AB0449DF22DF99BB001F9606 /* LoginViewController.m */,
+				AB0449DE22DF99A8001F9606 /* LoginViewController.h */,
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
 				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
 				AB0449DB22DF4CFE001F9606 /* LoginViewController.m */,
+				AB0449DD22DF99A4001F9606 /* LoginViewController.h */,
 				AB0449D222DE6662001F9606 /* SignUpViewController.h */,
 				AB0449D322DE6662001F9606 /* SignUpViewController.m */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
@@ -422,6 +429,7 @@
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
+				AB0449E022DF99BB001F9606 /* LoginViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
