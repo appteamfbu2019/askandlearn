@@ -293,6 +293,13 @@
                         <viewLayoutGuide key="safeArea" id="Nn5-WB-fwH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="FNv-ty-HQp"/>
+                    <connections>
+                        <outlet property="nameField" destination="yoA-km-ASG" id="kWt-Mu-mjj"/>
+                        <outlet property="percentMatch" destination="ukf-qL-NWW" id="IY1-zr-oGs"/>
+                        <outlet property="profPicView" destination="p5n-Pv-NeI" id="Imx-qI-OR0"/>
+                        <outlet property="professionsField" destination="pRg-dK-0iW" id="qw0-Ca-8Y8"/>
+                        <outlet property="skillsFIeld" destination="Fe8-z6-8AQ" id="dmE-Pm-Ii4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bva-IN-RYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

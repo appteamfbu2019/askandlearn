@@ -27,18 +27,21 @@
 
 -(void)fetchUsers{
     // construct query
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     query.limit = 20;
-    [query whereKey:@"author" notEqualTo:PFUser.currentUser];
+    //[query whereKey:@"username" notEqualTo:PFUser.currentUser];
     // fetch data asynchronously
+    NSLog(@"fetching");
     [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
-            self.matches = users;
+            self.cards = users;
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
+
+
 
 - (IBAction)tapLike:(id)sender {
     self.index += 1;
