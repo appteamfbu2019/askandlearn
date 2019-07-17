@@ -55,7 +55,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="didTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8R8-vr-RVJ"/>
-                                    <segue destination="fSz-Y1-pG9" kind="presentation" id="J0w-ZQ-bU3"/>
+                                    <segue destination="fSz-Y1-pG9" kind="presentation" identifier="signUpSegue" id="J0w-ZQ-bU3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,12 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="gB7-pi-9DD" id="I7C-5X-smK"/>
                         <outlet property="passwordTextField" destination="90u-Xf-8YG" id="RP9-gz-G8v"/>
-                        <outlet property="signButton" destination="Uye-bP-DcX" id="I7a-dN-qVc"/>
-                        <outlet property="signUpButton" destination="Uye-bP-DcX" id="un5-Ao-p1l"/>
                         <outlet property="usernameTextField" destination="vGy-Hl-wvi" id="vpQ-8a-B04"/>
-                        <segue destination="4eH-4S-s7d" kind="presentation" identifier="loginSegue" id="Qm0-1o-5zo"/>
+                        <segue destination="4eH-4S-s7d" kind="presentation" identifier="loggedInSegue" id="Qm0-1o-5zo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -149,7 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fj-ex-v73">
-                                <rect key="frame" x="108" y="353" width="155" height="34"/>
+                                <rect key="frame" x="130" y="353" width="155" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="Sign Up"/>
@@ -157,27 +154,26 @@
                                     <action selector="didTapSignUp:" destination="e0r-nY-GbK" eventType="touchUpInside" id="UjW-3Z-phf"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sign-in-Large---Default" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-lQ-T0N">
+                                <rect key="frame" x="117" y="424" width="181" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmb-Td-jt7">
-                                <rect key="frame" x="177" y="395" width="39" height="21"/>
+                                <rect key="frame" x="188" y="395" width="39" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-lQ-T0N">
-                                <rect key="frame" x="82" y="435" width="181" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="r2r-ue-H74"/>
                     </view>
                     <navigationItem key="navigationItem" id="uPi-cS-rDc"/>
                     <connections>
-                        <outlet property="emailField" destination="Zhn-b2-lSU" id="vHR-EE-YpA"/>
                         <outlet property="emailTextField" destination="ajd-ny-i9v" id="2Nf-Tf-efJ"/>
                         <outlet property="passwordTextField" destination="Zhn-b2-lSU" id="Udb-sn-mMd"/>
-                        <outlet property="usernameField" destination="O27-5Z-VNx" id="dXr-Mt-W8q"/>
+                        <outlet property="usernameTextField" destination="O27-5Z-VNx" id="ufo-tx-G1j"/>
                         <segue destination="4eH-4S-s7d" kind="show" identifier="signUpSegue" id="QHW-mZ-qR7"/>
                     </connections>
                 </viewController>
@@ -403,6 +399,9 @@
             <point key="canvasLocation" x="1785.5072463768117" y="1920.5357142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Sign-in-Large---Default" width="215" height="41"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QHW-mZ-qR7"/>
     </inferredMetricsTieBreakers>
