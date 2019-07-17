@@ -292,11 +292,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nn5-WB-fwH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="FNv-ty-HQp"/>
+                    <navigationItem key="navigationItem" id="47W-CO-Q6o">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="ezf-Q7-CgY"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bva-IN-RYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769.5652173913045" y="-190.17857142857142"/>
+            <point key="canvasLocation" x="2679.7101449275365" y="-190.17857142857142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2cE-lX-gY8">
@@ -308,7 +310,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="oCj-lY-C78" kind="relationship" relationship="viewControllers" id="5n4-5g-zqN"/>
+                        <segue destination="1da-ld-FqW" kind="relationship" relationship="viewControllers" id="5n4-5g-zqN"/>
                         <segue destination="T3p-Ds-mPF" kind="relationship" relationship="viewControllers" id="iIr-DM-fUH"/>
                         <segue destination="6qI-aE-WOr" kind="relationship" relationship="viewControllers" id="ifs-KT-ci0"/>
                         <segue destination="ZkV-7Y-IcL" kind="relationship" relationship="viewControllers" id="HUB-rQ-LXQ"/>
@@ -396,6 +398,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lk8-X5-mUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1785.5072463768117" y="1920.5357142857142"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="PoR-MS-LdJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1da-ld-FqW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="FNv-ty-HQp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qz4-rt-fBX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oCj-lY-C78" kind="relationship" relationship="rootViewController" id="DQY-W6-Nur"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6HG-lQ-B9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769.5652173913045" y="-190.17857142857142"/>
         </scene>
     </scenes>
     <resources>
