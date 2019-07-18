@@ -1,9 +1,6 @@
 //
 //  LoginViewController.m
-//  
-//
 //  Created by estherb on 7/17/19.
-//
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
@@ -18,7 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,6 +77,4 @@
     [self performSegueWithIdentifier:@"signUpSegue" sender:nil];
 }
 
-
 @end
-    

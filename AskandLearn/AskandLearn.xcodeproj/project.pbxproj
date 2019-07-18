@@ -54,7 +54,7 @@
 		9735A82F8BF12CC74B10AF94 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		AB0449DA22DF4CFE001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		AB0449DA22DF4CFE001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AB50E24522DD0617006097DB /* AskandLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskandLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E24822DD0617006097DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB50E24922DD0617006097DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -127,6 +127,10 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
+				FEB50A6C22DE782700FEF8DB /* User.h */,
+				FEB50A6922DE77E100FEF8DB /* Match.h */,
+				FEB50A6A22DE77E100FEF8DB /* Match.m */,
+				FEB50A6D22DE782700FEF8DB /* User.m */,
 				AB50E24722DD0617006097DB /* AskandLearn */,
 				AB50E26022DD0617006097DB /* AskandLearnTests */,
 				AB50E26B22DD0617006097DB /* AskandLearnUITests */,
@@ -149,29 +153,10 @@
 		AB50E24722DD0617006097DB /* AskandLearn */ = {
 			isa = PBXGroup;
 			children = (
-				AB50E24E22DD0617006097DB /* Main.storyboard */,
-				FE564A1222DFECC500192A43 /* LoginViewController.m */,
-				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
-				AB0449D222DE6662001F9606 /* SignUpViewController.h */,
-				AB0449D322DE6662001F9606 /* SignUpViewController.m */,
-				AB50E24822DD0617006097DB /* AppDelegate.h */,
-				AB50E24922DD0617006097DB /* AppDelegate.m */,
-				AB50E24B22DD0617006097DB /* ViewController.h */,
-				AB50E24C22DD0617006097DB /* ViewController.m */,
-				AB50E25122DD0617006097DB /* Assets.xcassets */,
-				AB50E25322DD0617006097DB /* LaunchScreen.storyboard */,
-				AB50E25622DD0617006097DB /* Info.plist */,
-				AB50E25722DD0617006097DB /* main.m */,
-				FEB50A6922DE77E100FEF8DB /* Match.h */,
-				FEB50A6A22DE77E100FEF8DB /* Match.m */,
-				FEB50A6C22DE782700FEF8DB /* User.h */,
-				FEB50A6D22DE782700FEF8DB /* User.m */,
-				FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */,
-				FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */,
-				B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */,
-				B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */,
-				B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */,
-				B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */,
+				AB63D39222E1051A00AB8D3D /* Models */,
+				AB63D39122E104FF00AB8D3D /* API */,
+				AB63D39022E104ED00AB8D3D /* Views */,
+				AB63D38F22E104CE00AB8D3D /* View Controller */,
 			);
 			path = AskandLearn;
 			sourceTree = "<group>";
@@ -192,6 +177,53 @@
 				AB50E26E22DD0617006097DB /* Info.plist */,
 			);
 			path = AskandLearnUITests;
+			sourceTree = "<group>";
+		};
+		AB63D38F22E104CE00AB8D3D /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE564A1222DFECC500192A43 /* LoginViewController.m */,
+				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
+				AB50E24B22DD0617006097DB /* ViewController.h */,
+				AB50E24C22DD0617006097DB /* ViewController.m */,
+				AB0449D222DE6662001F9606 /* SignUpViewController.h */,
+				AB0449D322DE6662001F9606 /* SignUpViewController.m */,
+				FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */,
+				FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */,
+				B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */,
+				B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */,
+				B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */,
+				B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		AB63D39022E104ED00AB8D3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB63D39122E104FF00AB8D3D /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AB63D39222E1051A00AB8D3D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB50E24822DD0617006097DB /* AppDelegate.h */,
+				AB50E24922DD0617006097DB /* AppDelegate.m */,
+				AB50E24E22DD0617006097DB /* Main.storyboard */,
+				AB50E25322DD0617006097DB /* LaunchScreen.storyboard */,
+				AB50E25622DD0617006097DB /* Info.plist */,
+				AB50E25122DD0617006097DB /* Assets.xcassets */,
+				AB50E25722DD0617006097DB /* main.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B342A7FE821A6FD024600E6F /* Pods */ = {
