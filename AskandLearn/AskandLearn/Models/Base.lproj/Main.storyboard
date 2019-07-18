@@ -58,6 +58,10 @@
                                     <segue destination="fSz-Y1-pG9" kind="presentation" identifier="signUpSegue" id="J0w-ZQ-bU3"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sign-in-Large---Hover" highlightedImage="Sign-in-Large---Hover" translatesAutoresizingMaskIntoConstraints="NO" id="SQ4-Hc-eGb">
+                                <rect key="frame" x="117" y="314" width="167" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -181,6 +185,22 @@
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="1714.9553571428571"/>
         </scene>
+        <!--Linked In Web View Controller-->
+        <scene sceneID="sy7-3A-q3I">
+            <objects>
+                <viewController id="jv2-Fj-fJp" customClass="LinkedInWebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fNL-Oj-GMu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7BK-hL-YwJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9gd-TK-alB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f48-Eh-DV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="2627"/>
+        </scene>
         <!--Matches-->
         <scene sceneID="CZc-fJ-s5u">
             <objects>
@@ -292,14 +312,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Nn5-WB-fwH"/>
                     </view>
-                    
-                    <connections>
-                        <outlet property="nameField" destination="yoA-km-ASG" id="kWt-Mu-mjj"/>
-                        <outlet property="percentMatch" destination="ukf-qL-NWW" id="IY1-zr-oGs"/>
-                        <outlet property="profPicView" destination="p5n-Pv-NeI" id="Imx-qI-OR0"/>
-                        <outlet property="professionsField" destination="pRg-dK-0iW" id="qw0-Ca-8Y8"/>
-                        <outlet property="skillsFIeld" destination="Fe8-z6-8AQ" id="dmE-Pm-Ii4"/>
-                    </connections>
                     <navigationItem key="navigationItem" id="47W-CO-Q6o">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="ezf-Q7-CgY">
                             <connections>
@@ -307,6 +319,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="yoA-km-ASG" id="kWt-Mu-mjj"/>
+                        <outlet property="percentMatch" destination="ukf-qL-NWW" id="IY1-zr-oGs"/>
+                        <outlet property="profPicView" destination="p5n-Pv-NeI" id="Imx-qI-OR0"/>
+                        <outlet property="professionsField" destination="pRg-dK-0iW" id="qw0-Ca-8Y8"/>
+                        <outlet property="skillsFIeld" destination="Fe8-z6-8AQ" id="dmE-Pm-Ii4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bva-IN-RYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -428,11 +447,30 @@
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="-190.17857142857142"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gJD-jA-HON">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oV7-kw-FfI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KKn-8q-Qx4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jv2-Fj-fJp" kind="relationship" relationship="rootViewController" id="LAc-3a-Kor"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AjW-Vz-KuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78.260869565217391" y="2627.6785714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Sign-in-Large---Default" width="215" height="41"/>
+        <image name="Sign-in-Large---Hover" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QHW-mZ-qR7"/>
+        <segue reference="Qm0-1o-5zo"/>
     </inferredMetricsTieBreakers>
 </document>

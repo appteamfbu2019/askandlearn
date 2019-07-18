@@ -19,6 +19,7 @@
 		AB50E25822DD0617006097DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E25722DD0617006097DB /* main.m */; };
 		AB50E26222DD0617006097DB /* AskandLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26122DD0617006097DB /* AskandLearnTests.m */; };
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
+		AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
@@ -71,6 +72,8 @@
 		AB50E26822DD0617006097DB /* AskandLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskandLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E26C22DD0617006097DB /* AskandLearnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AskandLearnUITests.m; sourceTree = "<group>"; };
 		AB50E26E22DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB63D39322E10A4D00AB8D3D /* LinkedInWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedInWebViewController.h; sourceTree = "<group>"; };
+		AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedInWebViewController.m; sourceTree = "<group>"; };
 		B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 		AB63D38F22E104CE00AB8D3D /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB63D39322E10A4D00AB8D3D /* LinkedInWebViewController.h */,
+				AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */,
 				FE564A1222DFECC500192A43 /* LoginViewController.m */,
 				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
 				AB50E24B22DD0617006097DB /* ViewController.h */,
@@ -219,9 +224,9 @@
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
 				AB50E25322DD0617006097DB /* LaunchScreen.storyboard */,
-				AB50E25622DD0617006097DB /* Info.plist */,
 				AB50E25122DD0617006097DB /* Assets.xcassets */,
 				AB50E25722DD0617006097DB /* main.m */,
+				AB50E25622DD0617006097DB /* Info.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
+				AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
 			);
@@ -642,7 +648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = AskandLearn/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AskandLearn/Models/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,7 +666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = AskandLearn/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AskandLearn/Models/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -715,8 +721,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E925FD03D932825EE162B1F /* Pods-AskandLearnUITests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KNWNLRB6C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AskandLearnUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -725,6 +732,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esther3815.AskandLearnUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = AskandLearn;
 			};
@@ -734,8 +742,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 072EB7E18D6E7B948393A3FA /* Pods-AskandLearnUITests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8KNWNLRB6C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AskandLearnUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -744,6 +753,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esther3815.AskandLearnUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = AskandLearn;
 			};

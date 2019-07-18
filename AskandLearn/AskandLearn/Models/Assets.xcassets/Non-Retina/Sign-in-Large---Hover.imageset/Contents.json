@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Sign-in-Large---Hover.png",
+      "filename" : "logo-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "logo.png",
       "scale" : "2x"
     },
     {
