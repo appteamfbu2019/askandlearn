@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "Parse/Parse.h"
+#import "LoginViewController.h"
+#import "AppDelegate.h"
 
 @interface HomeViewController ()
 
@@ -27,18 +29,21 @@
 
 -(void)fetchUsers{
     // construct query
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     query.limit = 20;
-    [query whereKey:@"author" notEqualTo:PFUser.currentUser];
+    //[query whereKey:@"username" notEqualTo:PFUser.currentUser];
     // fetch data asynchronously
+    NSLog(@"fetching");
     [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
-            self.matches = users;
+            self.cards = users;
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
+
+
 
 - (IBAction)tapLike:(id)sender {
     self.index += 1;
@@ -52,14 +57,18 @@
     self.index += 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)logout:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        } else {
+            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            UIStoryboard *storyboard =  [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+            appDelegate.window.rootViewController = loginVC;
+        }
+    }];
 }
-*/
 
 @end
