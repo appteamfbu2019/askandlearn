@@ -20,7 +20,6 @@
 		AB50E26222DD0617006097DB /* AskandLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26122DD0617006097DB /* AskandLearnTests.m */; };
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
 		AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */; };
-		ABDFBE3B22E13152009461C3 /* BDBOAuth1SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDFBE3A22E13152009461C3 /* BDBOAuth1SessionManager.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
@@ -75,8 +74,6 @@
 		AB50E26E22DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB63D39322E10A4D00AB8D3D /* LinkedInWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedInWebViewController.h; sourceTree = "<group>"; };
 		AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedInWebViewController.m; sourceTree = "<group>"; };
-		ABDFBE3922E13152009461C3 /* BDBOAuth1SessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBOAuth1SessionManager.h; sourceTree = "<group>"; };
-		ABDFBE3A22E13152009461C3 /* BDBOAuth1SessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBOAuth1SessionManager.m; sourceTree = "<group>"; };
 		B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -216,8 +213,6 @@
 		AB63D39122E104FF00AB8D3D /* API */ = {
 			isa = PBXGroup;
 			children = (
-				ABDFBE3922E13152009461C3 /* BDBOAuth1SessionManager.h */,
-				ABDFBE3A22E13152009461C3 /* BDBOAuth1SessionManager.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -475,7 +470,6 @@
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
 				B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */,
-				ABDFBE3B22E13152009461C3 /* BDBOAuth1SessionManager.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 				AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */,
