@@ -12,8 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *matches;
+@property (nonatomic, strong) NSArray *cards;
 @property NSInteger index;
+
+@property (weak, nonatomic) IBOutlet UIImageView *profPicView;
+@property (weak, nonatomic) IBOutlet UILabel *nameField;
+@property (weak, nonatomic) IBOutlet UILabel *percentMatch;
+@property (weak, nonatomic) IBOutlet UILabel *professionsField;
+@property (weak, nonatomic) IBOutlet UILabel *skillsFIeld;
 
 @end
 

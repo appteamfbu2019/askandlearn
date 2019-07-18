@@ -11,8 +11,6 @@
 		747D5DDBAAC627A0D0465B71 /* Pods_AskandLearnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F8184367B6FEA24496BDE6 /* Pods_AskandLearnUITests.framework */; };
 		A2545505480BE21708B99AB0 /* Pods_AskandLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1978237C79CD8E1D4A353F5E /* Pods_AskandLearn.framework */; };
 		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
-		AB0449DC22DF4CFF001F9606 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449DB22DF4CFE001F9606 /* LoginViewController.m */; };
-		AB0449E022DF99BB001F9606 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449DF22DF99BB001F9606 /* LoginViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
 		AB50E25022DD0617006097DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB50E24E22DD0617006097DB /* Main.storyboard */; };
@@ -22,6 +20,11 @@
 		AB50E26222DD0617006097DB /* AskandLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26122DD0617006097DB /* AskandLearnTests.m */; };
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
+<<<<<<< HEAD
+=======
+		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
+		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
+>>>>>>> b7a49e89f49c91b43688da0418dae24c17504c7a
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
@@ -55,10 +58,6 @@
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AB0449DA22DF4CFE001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		AB0449DB22DF4CFE001F9606 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/LoginViewController.m; sourceTree = "<absolute>"; };
-		AB0449DD22DF99A4001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		AB0449DE22DF99A8001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		AB0449DF22DF99BB001F9606 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/LoginViewController.m; sourceTree = "<absolute>"; };
 		AB50E24522DD0617006097DB /* AskandLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskandLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E24822DD0617006097DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB50E24922DD0617006097DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D0F8184367B6FEA24496BDE6 /* Pods_AskandLearnUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskandLearnUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4AC275E3C13335D77E7C52 /* Pods-AskandLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.release.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.release.xcconfig"; sourceTree = "<group>"; };
+		FE564A1222DFECC500192A43 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FEB50A6922DE77E100FEF8DB /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		FEB50A6A22DE77E100FEF8DB /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -150,12 +150,9 @@
 		AB50E24722DD0617006097DB /* AskandLearn */ = {
 			isa = PBXGroup;
 			children = (
-				AB0449DF22DF99BB001F9606 /* LoginViewController.m */,
-				AB0449DE22DF99A8001F9606 /* LoginViewController.h */,
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
+				FE564A1222DFECC500192A43 /* LoginViewController.m */,
 				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
-				AB0449DB22DF4CFE001F9606 /* LoginViewController.m */,
-				AB0449DD22DF99A4001F9606 /* LoginViewController.h */,
 				AB0449D222DE6662001F9606 /* SignUpViewController.h */,
 				AB0449D322DE6662001F9606 /* SignUpViewController.m */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
@@ -429,13 +426,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				AB0449DC22DF4CFF001F9606 /* LoginViewController.m in Sources */,
+=======
+				B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */,
+>>>>>>> b7a49e89f49c91b43688da0418dae24c17504c7a
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
+				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
 				B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
-				AB0449E022DF99BB001F9606 /* LoginViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
