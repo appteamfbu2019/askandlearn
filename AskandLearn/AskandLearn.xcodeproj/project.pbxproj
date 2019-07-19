@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D949A469D5A4C49AB68DBDE /* Pods_AskandLearnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3332AB177A7AC0FAB2F1D50A /* Pods_AskandLearnTests.framework */; };
-		747D5DDBAAC627A0D0465B71 /* Pods_AskandLearnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F8184367B6FEA24496BDE6 /* Pods_AskandLearnUITests.framework */; };
-		A2545505480BE21708B99AB0 /* Pods_AskandLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1978237C79CD8E1D4A353F5E /* Pods_AskandLearn.framework */; };
+		4FF10A4F273924DE5DA2420D /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE495F8B9CE2A40FD3F6BC95 /* libPods-AskandLearnTests.a */; };
+		61543CC480F0443218428D59 /* libPods-AskandLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E6472AA69AA52EEC8BDDC8 /* libPods-AskandLearn.a */; };
 		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
@@ -22,6 +21,7 @@
 		AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
+		EF701975982ACB29B8099760 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
@@ -47,9 +47,8 @@
 
 /* Begin PBXFileReference section */
 		072EB7E18D6E7B948393A3FA /* Pods-AskandLearnUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1978237C79CD8E1D4A353F5E /* Pods_AskandLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskandLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearnUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2025EFB864FF889D016AC088 /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3332AB177A7AC0FAB2F1D50A /* Pods_AskandLearnTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskandLearnTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DF12C1CD151E90393E5CFF /* Pods-AskandLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		8E925FD03D932825EE162B1F /* Pods-AskandLearnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9735A82F8BF12CC74B10AF94 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,8 +77,9 @@
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		D0F8184367B6FEA24496BDE6 /* Pods_AskandLearnUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskandLearnUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4E6472AA69AA52EEC8BDDC8 /* libPods-AskandLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4AC275E3C13335D77E7C52 /* Pods-AskandLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.release.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.release.xcconfig"; sourceTree = "<group>"; };
+		FE495F8B9CE2A40FD3F6BC95 /* libPods-AskandLearnTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearnTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE564A1222DFECC500192A43 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FEB50A6922DE77E100FEF8DB /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		FEB50A6A22DE77E100FEF8DB /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2545505480BE21708B99AB0 /* Pods_AskandLearn.framework in Frameworks */,
+				61543CC480F0443218428D59 /* libPods-AskandLearn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D949A469D5A4C49AB68DBDE /* Pods_AskandLearnTests.framework in Frameworks */,
+				4FF10A4F273924DE5DA2420D /* libPods-AskandLearnTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				747D5DDBAAC627A0D0465B71 /* Pods_AskandLearnUITests.framework in Frameworks */,
+				EF701975982ACB29B8099760 /* libPods-AskandLearnUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,9 +120,9 @@
 		54F484539967EB69876764EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1978237C79CD8E1D4A353F5E /* Pods_AskandLearn.framework */,
-				3332AB177A7AC0FAB2F1D50A /* Pods_AskandLearnTests.framework */,
-				D0F8184367B6FEA24496BDE6 /* Pods_AskandLearnUITests.framework */,
+				D4E6472AA69AA52EEC8BDDC8 /* libPods-AskandLearn.a */,
+				FE495F8B9CE2A40FD3F6BC95 /* libPods-AskandLearnTests.a */,
+				092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				AB50E24122DD0617006097DB /* Sources */,
 				AB50E24222DD0617006097DB /* Frameworks */,
 				AB50E24322DD0617006097DB /* Resources */,
-				0BA575AAACD8FB43C406D606 /* [CP] Embed Pods Frameworks */,
+				06AD68DFF21E3F4BF666815A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -374,21 +374,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0BA575AAACD8FB43C406D606 /* [CP] Embed Pods Frameworks */ = {
+		06AD68DFF21E3F4BF666815A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F539B5A062614DBA524CD5E /* [CP] Check Pods Manifest.lock */ = {

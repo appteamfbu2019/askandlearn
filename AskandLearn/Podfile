@@ -10,7 +10,8 @@ target 'AskandLearn' do
   pod 'Parse'
   pod 'DateTools'
   pod 'MBProgressHUD'
-  pod 'AFNetworking'
+  pod 'AFNetworking','2.0'
+  pod 'BDBOAuth1Manager’
   
   target 'AskandLearnTests' do
     inherit! :search_paths
