@@ -10,4 +10,14 @@
 
 @implementation Match
 
+@dynamic user1;
+@dynamic user2;
+@dynamic percentMatch;
+
++ (nonnull NSString *)parseClassName {
+    return @"Match";
+}
+
+
+
 @end

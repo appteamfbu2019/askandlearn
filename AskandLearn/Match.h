@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "PFObject.h"
 
-@interface Match : NSObject
+@interface Match : PFObject <PFSubclassing>
 
-@property (nonatomic, strong) User *user1; //the user connected with the match card
-@property (nonatomic, strong) User *user2;
-@property (nonatomic) NSInteger percentMatch; //how close the match is to account user's specified prefs
+@property (nonatomic, strong) PFUser *user1;
+@property (nonatomic, strong) PFUser *user2;
+@property (nonatomic, strong) NSNumber *percentMatch;
+
 
 @end
 

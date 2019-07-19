@@ -10,6 +10,8 @@
 #import "Parse/Parse.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "User.h"
+#import "PFObject.h"
 
 @interface HomeViewController ()
 
@@ -19,34 +21,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //use parse query to get a list of all the users on the server
+    // get all users
     [self fetchUsers];
-    //need to keep track of an index for tapping through the potential matches
-    self.index = 0;
-    //for matching button tap -> add to list of User's matches
+    self.index = [@0 unsignedIntegerValue];
+
+    [self reloadData];
+    
+    
 }
 
--(void)fetchUsers{
-    // construct query
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    query.limit = 20;
-    //[query whereKey:@"username" notEqualTo:PFUser.currentUser];
-    // fetch data asynchronously
-    NSLog(@"fetching");
-    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
-        if (users != nil) {
-            self.cards = users;
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
+- (void)fetchUsers {
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" notEqualTo:PFUser.currentUser.username];
+    self.cards = [query findObjects];
 }
 
+-(void)reloadData {
+    PFUser *temp = self.cards[self.index];
+    self.nameField.text = temp.username;
+}
 
 
 - (IBAction)tapLike:(id)sender {
     self.index += 1;
+    [self reloadData];
     //add to a mutable array of currentuser likes
     //in server, store likes of other users
     //run through the arrays and form 'matches'
@@ -55,6 +53,7 @@
 
 - (IBAction)tapDislike:(id)sender {
     self.index += 1;
+    [self reloadData];
 }
 
 - (IBAction)logout:(id)sender {

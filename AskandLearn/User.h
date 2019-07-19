@@ -14,10 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User : NSObject
 
-@property (nonatomic, strong) NSMutableArray *matches;
-@property (nonatomic, strong) NSMutableArray *likes;
-@property (nonatomic, strong) NSMutableArray *tags;
-
 @end
 
 NS_ASSUME_NONNULL_END
