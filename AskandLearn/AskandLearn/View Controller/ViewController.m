@@ -8,10 +8,8 @@
 
 #import "ViewController.h"
 #import "Parse/Parse.h"
-//have FeedViewController
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
@@ -23,5 +21,4 @@
     self.userNameTextField.text = @"myUsername";
     self.passwordTextField.text = @"myPassword";
 }
-
 @end
