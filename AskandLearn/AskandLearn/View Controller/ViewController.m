@@ -22,7 +22,6 @@
     
     self.userNameTextField.text = @"myUsername";
     self.passwordTextField.text = @"myPassword";
-    //self.emailTextField.text = @"myEmail@email.com";
 }
 
 @end
