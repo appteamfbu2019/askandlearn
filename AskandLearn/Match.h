@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface Match : NSObject
 
 @property (nonatomic, strong) User *user1; //the user connected with the match card
@@ -19,5 +17,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
 
