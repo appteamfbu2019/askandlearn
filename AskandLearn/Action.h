@@ -7,10 +7,21 @@
 //
 
 #import <Parse/Parse.h>
+#import "PFObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Action : PFObject
+@interface Action : PFObject <PFSubclassing>
+
+@property (nonatomic, strong) PFUser *receivedLike;
+@property (nonatomic, strong) PFUser *sentLike;
+@property (nonatomic, strong) PFUser *receivedDislike;
+@property (nonatomic, strong) PFUser *sentDislike;
+@property (nonatomic, strong) PFUser *sender;
+@property (nonatomic, strong) PFUser *receiver;
+
++ (void) likeAction: (PFUser *)user1 withUser: (PFUser *)user2;
++ (void) dislikeAction: (PFUser *)user1 withUser: (PFUser *)user2;
 
 @end
 

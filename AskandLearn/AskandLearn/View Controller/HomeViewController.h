@@ -21,8 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *professionsField;
 @property (weak, nonatomic) IBOutlet UILabel *skillsFIeld;
 
-@property (strong, nonatomic) NSArray *cards;
-@property (nonatomic, assign) NSUInteger index;
+@property (strong, nonatomic) NSMutableArray *cards;
+@property (strong, nonatomic) NSArray *actions;
+@property (assign, nonatomic) BOOL exhausted;
 
 @end
 
