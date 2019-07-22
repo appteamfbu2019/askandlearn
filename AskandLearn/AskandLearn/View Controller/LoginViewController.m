@@ -36,7 +36,6 @@
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * _Nonnull action) {
                                                               }];
-        
         [alert addAction:usernameAlert];
         [self presentViewController:alert animated:YES completion:^{
         }];
@@ -65,7 +64,8 @@
     }
 }
 
-- (IBAction)didTapLogin:(id)sender {
+- (IBAction)didTapLogin:(id)sender
+{
     [self loginUser];
 }
 
