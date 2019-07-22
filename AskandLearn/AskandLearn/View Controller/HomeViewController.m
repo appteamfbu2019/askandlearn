@@ -19,46 +19,42 @@
 
 @implementation HomeViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // get all users
     [self fetchUsers];
     self.index = [@0 unsignedIntegerValue];
-
     [self reloadData];
-    
-    
 }
 
-- (void)fetchUsers {
+- (void)fetchUsers
+{
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" notEqualTo:PFUser.currentUser.username];
     self.cards = [query findObjects];
 }
 
--(void)reloadData {
+-(void)reloadData
+{
     PFUser *temp = self.cards[self.index];
     self.nameField.text = temp.username;
 }
 
 
-- (IBAction)tapLike:(id)sender {
+- (IBAction)tapLike:(id)sender
+{
     self.index += 1;
     [self reloadData];
-    //add to a mutable array of currentuser likes
-    //in server, store likes of other users
-    //run through the arrays and form 'matches'
-    //delete nonmatches
 }
 
-- (IBAction)tapDislike:(id)sender {
+- (IBAction)tapDislike:(id)sender
+{
     self.index += 1;
     [self reloadData];
 }
 
 - (IBAction)logout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
