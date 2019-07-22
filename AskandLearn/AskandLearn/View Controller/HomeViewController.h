@@ -17,7 +17,6 @@
 
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (strong, nonatomic) NSArray *actions;
-@property (assign, nonatomic) BOOL exhausted;
 
 @end
 

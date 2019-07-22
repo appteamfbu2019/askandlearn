@@ -33,7 +33,6 @@
 }
 
 -(void)reloadData {
-    self.exhausted = NO;
     PFQuery *query = [PFQuery queryWithClassName:@"Action"];
     [query includeKey:@"receiver"];
     [query includeKey:@"sender"];
@@ -61,7 +60,6 @@
             }
             if (self.cards.count == (NSUInteger) 0){
                 NSLog(@"exhausted all options");
-                self.exhausted = YES;
             }
             else{
                 PFUser *temp = self.cards[0];
