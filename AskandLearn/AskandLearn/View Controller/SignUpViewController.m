@@ -19,7 +19,8 @@
 
 @implementation SignUpViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 }
 
@@ -28,7 +29,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)registerUser {
+-(void)registerUser
+{
     // initialize a user object
     PFUser *newUser = [PFUser user];
     
@@ -107,8 +109,10 @@
     }
 }
 
-- (IBAction)didTapSignUp:(id)sender {
+- (IBAction)didTapSignUp:(id)sender
+{
     [self registerUser];
 }
+
 @end
 
