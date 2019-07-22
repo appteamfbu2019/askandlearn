@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B19C3C280831D75FD03958BB28FE9477"
-               BuildableName = "Pods_AskandLearnUITests.framework"
+               BuildableName = "libPods-AskandLearnUITests.a"
                BlueprintName = "Pods-AskandLearnUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B19C3C280831D75FD03958BB28FE9477"
-            BuildableName = "Pods_AskandLearnUITests.framework"
+            BuildableName = "libPods-AskandLearnUITests.a"
             BlueprintName = "Pods-AskandLearnUITests"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
