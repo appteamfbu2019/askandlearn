@@ -7,8 +7,14 @@
 //
 
 #import "MessageViewController.h"
+#import "MessageCell.h"
 
-@interface MessageViewController ()
+@interface MessageViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property(strong,nonatomic) NSMutableArray *dummy;
+@property(weak,nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -17,8 +23,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    [self featchArray];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(featchArray)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    
 }
 
+-(void)featchArray {
+    NSMutableArray *theDummy = [NSMutableArray new];
+    for (int i =0; i < 10; i++) {
+        [theDummy addObject:@"Hello"];
+    }
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dummy.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageViewController"];
+    
+    NSDictionary *dummy = self.dummy[indexPath.row];
+    cell.messageView.text = dummy[@"Hello"];
+    
+    return cell;
+    
+}
 /*
 #pragma mark - Navigation
 

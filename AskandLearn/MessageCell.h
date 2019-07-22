@@ -1,8 +1,8 @@
 //
-//  MessageViewController.h
+//  MessageCell.h
 //  AskandLearn
 //
-//  Created by unauthorize on 7/17/19.
+//  Created by estherb on 7/22/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MessageViewController : UIViewController
-
+@interface MessageCell : UITableViewCell
 
 @end
 
