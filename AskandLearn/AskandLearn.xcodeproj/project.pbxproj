@@ -19,6 +19,7 @@
 		AB50E26222DD0617006097DB /* AskandLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26122DD0617006097DB /* AskandLearnTests.m */; };
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
 		AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */; };
+		ABB1BBE822E65E2E0029162A /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BBE722E65E2E0029162A /* MessageCell.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
 		EF701975982ACB29B8099760 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */; };
@@ -74,6 +75,8 @@
 		AB50E26E22DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB63D39322E10A4D00AB8D3D /* LinkedInWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedInWebViewController.h; sourceTree = "<group>"; };
 		AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedInWebViewController.m; sourceTree = "<group>"; };
+		ABB1BBE622E65E2E0029162A /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = SOURCE_ROOT; };
+		ABB1BBE722E65E2E0029162A /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = SOURCE_ROOT; };
 		B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 		AB63D39022E104ED00AB8D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABB1BBE622E65E2E0029162A /* MessageCell.h */,
+				ABB1BBE722E65E2E0029162A /* MessageCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 			files = (
 				B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
+				ABB1BBE822E65E2E0029162A /* MessageCell.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
