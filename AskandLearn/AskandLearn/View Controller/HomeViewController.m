@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "User.h"
 #import "PFObject.h"
+#import "Action.h"
 
 @interface HomeViewController ()
 
@@ -19,42 +20,79 @@
 
 @implementation HomeViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchUsers];
-    self.index = [@0 unsignedIntegerValue];
-    [self reloadData];
-}
-
-- (void)fetchUsers
-{
+    // get all users
+    self.cards = [[NSMutableArray alloc] init];
+    NSLog(@"fetching users");
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" notEqualTo:PFUser.currentUser.username];
-    self.cards = [query findObjects];
-}
-
--(void)reloadData
-{
-    PFUser *temp = self.cards[self.index];
-    self.nameField.text = temp.username;
-}
-
-
-- (IBAction)tapLike:(id)sender
-{
-    self.index += 1;
+    self.cards = (NSMutableArray *)[query findObjects];
+    NSLog(@"cards!! %@", self.cards);
     [self reloadData];
 }
 
-- (IBAction)tapDislike:(id)sender
-{
-    self.index += 1;
+-(void)reloadData {
+    self.exhausted = NO;
+    PFQuery *query = [PFQuery queryWithClassName:@"Action"];
+    [query includeKey:@"receiver"];
+    [query includeKey:@"sender"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *actions, NSError *error) {
+        if (actions != nil) {
+            self.actions = actions;
+            NSLog(@"actions count %lu", self.actions.count);
+            NSMutableArray *discard = [[NSMutableArray alloc]init];
+            for (Action *act in self.actions){
+                if ([act.receivedDislike.objectId isEqualToString:PFUser.currentUser.objectId]){
+                    [discard addObject:act.sender];
+                }
+                else if ([act.sender.objectId isEqualToString:PFUser.currentUser.objectId]){
+                    [discard addObject:act.receiver];
+                }
+            }
+            for (PFUser *user in discard){
+                for (PFUser *card in self.cards){
+                    if ([card.objectId isEqualToString:user.objectId]){
+                        [self.cards removeObject:card];
+                        break;
+                    }
+                }
+            }
+            if (self.cards.count == (NSUInteger) 0){
+                NSLog(@"exhausted all options");
+                self.exhausted = YES;
+            }
+            else{
+                PFUser *temp = self.cards[0];
+                self.nameField.text = temp.username;
+            }
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
+
+- (IBAction)tapLike:(id)sender {
+    [Action likeAction:PFUser.currentUser withUser:self.cards[0]];
+    [self.cards removeObject:self.cards[0]];
+    //self.index += 1;
+    [self reloadData];
+    //run through the arrays and form 'matches'
+    //delete nonmatches
+}
+
+- (IBAction)tapDislike:(id)sender {
+    [Action dislikeAction:PFUser.currentUser withUser:self.cards[0]];
+    [self.cards removeObject:self.cards[0]];
+    //self.index += 1;
     [self reloadData];
 }
 
 - (IBAction)logout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
