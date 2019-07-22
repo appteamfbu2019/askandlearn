@@ -12,10 +12,11 @@
 
 @interface Match : PFObject <PFSubclassing>
 
-@property (nonatomic, strong) PFUser *user1;
-@property (nonatomic, strong) PFUser *user2;
+@property (nonatomic, strong) PFUser *person1;
+@property (nonatomic, strong) PFUser *person2;
 @property (nonatomic, strong) NSNumber *percentMatch;
 
++ (void) matchFormed: (PFUser *)user1 withUser: (PFUser *)user2;
 
 @end
 

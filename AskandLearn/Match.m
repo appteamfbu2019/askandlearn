@@ -10,12 +10,21 @@
 
 @implementation Match
 
-@dynamic user1;
-@dynamic user2;
+@dynamic person1;
+@dynamic person2;
 @dynamic percentMatch;
 
 + (nonnull NSString *)parseClassName {
     return @"Match";
+}
+
++ (void) matchFormed: (PFUser *)user1 withUser: (PFUser *)user2 {
+    
+    Match *newMatch = [Match new];
+    newMatch.person1 = user1;
+    newMatch.person2 = user2;
+    
+    [newMatch saveInBackgroundWithBlock: nil];
 }
 
 
