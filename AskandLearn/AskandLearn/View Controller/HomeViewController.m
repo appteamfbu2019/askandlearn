@@ -15,7 +15,7 @@
 #import "Action.h"
 #import "Match.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UIAlertViewDelegate>
 
 @end
 
@@ -62,6 +62,7 @@
             if (self.cards.count == (NSUInteger) 0){
                 NSLog(@"exhausted all options");
                 self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
+                [self outOfCards];
             }
             else{
                 PFUser *temp = self.cards[0];
@@ -88,6 +89,7 @@
             NSLog(@"like looks like %@", like);
             [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
             NSLog(@"MATCH formed!!!");
+            [self alertPopUp:like[0][@"sender"]];
         }
         else{
             NSLog(@"no Match formed");
@@ -102,6 +104,29 @@
     [Action dislikeAction:PFUser.currentUser withUser:self.cards[0]];
     [self.cards removeObject:self.cards[0]];
     [self reloadData];
+}
+
+- (void) outOfCards {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Out of cards!"
+                                                                   message:@"Come back later:)" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void) alertPopUp: (PFUser *)matchedUser {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You received a match!"
+                                                                    message:[NSString stringWithFormat:@"Matched with %@", matchedUser.username] preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
 - (IBAction)logout:(id)sender {
