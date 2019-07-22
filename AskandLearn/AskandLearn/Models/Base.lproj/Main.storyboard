@@ -178,7 +178,7 @@
                         <outlet property="emailTextField" destination="ajd-ny-i9v" id="2Nf-Tf-efJ"/>
                         <outlet property="passwordTextField" destination="Zhn-b2-lSU" id="Udb-sn-mMd"/>
                         <outlet property="usernameTextField" destination="O27-5Z-VNx" id="ufo-tx-G1j"/>
-                        <segue destination="4eH-4S-s7d" kind="show" identifier="signUpSegue" id="QHW-mZ-qR7"/>
+                        <segue destination="4eH-4S-s7d" kind="presentation" identifier="signUpSegue" id="QHW-mZ-qR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy1-66-rWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -188,7 +188,6 @@
         <!--Linked In Web View Controller-->
         <scene sceneID="sy7-3A-q3I">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f48-Eh-DV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jv2-Fj-fJp" customClass="LinkedInWebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fNL-Oj-GMu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -205,6 +204,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9gd-TK-alB"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f48-Eh-DV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1098.5507246376812" y="2626.3392857142858"/>
         </scene>
@@ -268,13 +268,6 @@
                                         <rect key="frame" x="112" y="30" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoA-km-ASG">
-                                        <rect key="frame" x="150" y="166" width="45" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--% Match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-qL-NWW">
                                         <rect key="frame" x="33" y="240" width="82" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -291,6 +284,13 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-z6-8AQ">
                                         <rect key="frame" x="33" y="330" width="40" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoA-km-ASG">
+                                        <rect key="frame" x="36" y="167" width="272" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -457,7 +457,6 @@
         <!--Navigation Controller-->
         <scene sceneID="gJD-jA-HON">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AjW-Vz-KuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oV7-kw-FfI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KKn-8q-Qx4">
@@ -469,6 +468,7 @@
                         <segue destination="jv2-Fj-fJp" kind="relationship" relationship="rootViewController" id="LAc-3a-Kor"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AjW-Vz-KuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78.260869565217391" y="2627.6785714285711"/>
         </scene>
@@ -478,6 +478,6 @@
         <image name="Sign-in-Large---Hover" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qm0-1o-5zo"/>
+        <segue reference="QHW-mZ-qR7"/>
     </inferredMetricsTieBreakers>
 </document>

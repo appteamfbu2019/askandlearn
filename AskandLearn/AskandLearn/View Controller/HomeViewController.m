@@ -13,6 +13,7 @@
 #import "User.h"
 #import "PFObject.h"
 #import "Action.h"
+#import "Match.h"
 
 @interface HomeViewController ()
 
@@ -60,6 +61,7 @@
             }
             if (self.cards.count == (NSUInteger) 0){
                 NSLog(@"exhausted all options");
+                self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
             }
             else{
                 PFUser *temp = self.cards[0];
@@ -74,17 +76,31 @@
 
 - (IBAction)tapLike:(id)sender {
     [Action likeAction:PFUser.currentUser withUser:self.cards[0]];
-    [self.cards removeObject:self.cards[0]];
-    //self.index += 1;
-    [self reloadData];
+    
     //run through the arrays and form 'matches'
-    //delete nonmatches
+    PFQuery *query = [PFQuery queryWithClassName:@"Action"];
+    [query includeKey:@"receiver"];
+    [query includeKey:@"sender"];
+    [query whereKey:@"sender" equalTo:self.cards[0]];
+    [query whereKey:@"receiver" equalTo:PFUser.currentUser];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *like, NSError *error) {
+        if (like.count != (NSUInteger) 0 && like != nil){
+            NSLog(@"like looks like %@", like);
+            [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
+            NSLog(@"MATCH formed!!!");
+        }
+        else{
+            NSLog(@"no Match formed");
+        }
+    }];
+    
+    [self.cards removeObject:self.cards[0]];
+    [self reloadData];
 }
 
 - (IBAction)tapDislike:(id)sender {
     [Action dislikeAction:PFUser.currentUser withUser:self.cards[0]];
     [self.cards removeObject:self.cards[0]];
-    //self.index += 1;
     [self reloadData];
 }
 
