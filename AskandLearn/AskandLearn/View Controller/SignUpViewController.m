@@ -56,8 +56,7 @@
             // optional code for what happens after the alert controller has finished presenting
         }];
         
-    }
-    else if ([self.emailTextField.text isEqual:@""]) {
+    } else if ([self.emailTextField.text isEqual:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No email inserted"
                                                                 preferredStyle:(UIAlertControllerStyleAlert)];
@@ -74,8 +73,7 @@
         [self presentViewController:alert animated:YES completion:^{
             // optional code for what happens after the alert controller has finished presenting
         }];
-    }
-    else if ([self.passwordTextField.text isEqual:@""]) {
+    } else if ([self.passwordTextField.text isEqual:@""]) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No password inserted"
@@ -94,8 +92,7 @@
             // optional code for what happens after the alert controller has finished presenting
         }];
         
-    }
-    else {
+    } else {
         // call sign up function on the object
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
             if (error != nil) {
