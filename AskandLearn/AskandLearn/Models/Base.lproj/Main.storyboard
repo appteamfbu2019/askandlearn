@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZkV-7Y-IcL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -303,17 +303,11 @@
                                 <rect key="frame" x="116" y="728" width="71" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dislike" image="cross_outline_24-3x"/>
-                                <connections>
-                                    <action selector="tapDislike:" destination="oCj-lY-C78" eventType="touchUpInside" id="dFS-py-WpY"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCn-zx-P4M">
                                 <rect key="frame" x="232" y="734" width="68" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Like" image="heart_outline_24-4x"/>
-                                <connections>
-                                    <action selector="tapLike:" destination="oCj-lY-C78" eventType="touchUpInside" id="AZa-xK-CYm"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -500,6 +494,6 @@
         <image name="heart_outline_24-4x" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qm0-1o-5zo"/>
+        <segue reference="QHW-mZ-qR7"/>
     </inferredMetricsTieBreakers>
 </document>

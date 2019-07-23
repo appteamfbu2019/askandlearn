@@ -52,7 +52,7 @@
     MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageViewController"];
     
     NSDictionary *dummy = self.dummy[indexPath.row];
-    cell.messageView.text = dummy[@"Hello"];
+    //cell.messageView.text = dummy[@"Hello"];
     
     return cell;
     
