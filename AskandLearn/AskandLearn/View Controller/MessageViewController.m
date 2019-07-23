@@ -67,17 +67,17 @@
     return self.dummy.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
-    
-    NSDictionary *dummy = self.dummy[indexPath.row];
-    cell.messageView.text = dummy[@"Hello"];
-    return cell;
-    
-}
-
-
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageViewController"];
+//    
+//    NSDictionary *dummy = self.dummy[indexPath.row];
+//    cell.messageView.text = dummy[@"Hello"];
+//    
+//    return cell;
+//    
+//}
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

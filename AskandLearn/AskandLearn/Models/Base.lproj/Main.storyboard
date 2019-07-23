@@ -169,6 +169,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-Ij-VMe">
+                                <rect key="frame" x="117" y="435" width="181" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapLinkedInSignUp:" destination="e0r-nY-GbK" eventType="touchUpInside" id="w6h-eq-ead"/>
+                                    <action selector="didTapLinkedinSignUp:" destination="e0r-nY-GbK" eventType="touchUpInside" id="Zce-pJ-V4B"/>
+                                    <action selector="didTapLoginWithLinkedIn:" destination="e0r-nY-GbK" eventType="touchUpInside" id="lYE-1x-OdW"/>
+                                    <segue destination="oV7-kw-FfI" kind="presentation" id="anu-QF-gfr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="r2r-ue-H74"/>
@@ -189,19 +199,15 @@
         <scene sceneID="sy7-3A-q3I">
             <objects>
                 <viewController id="jv2-Fj-fJp" customClass="LinkedInWebViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fNL-Oj-GMu">
+                    <wkWebView key="view" contentMode="scaleToFill" id="gfR-Qe-GAW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGl-kz-gr1">
-                                <rect key="frame" x="29" y="77" width="348" height="773"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="7BK-hL-YwJ"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <wkWebViewConfiguration key="configuration">
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
                     <navigationItem key="navigationItem" id="9gd-TK-alB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f48-Eh-DV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,12 +564,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jv2-Fj-fJp" kind="relationship" relationship="rootViewController" id="LAc-3a-Kor"/>
+                        <segue destination="jv2-Fj-fJp" kind="presentation" id="xHG-HU-c57"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AjW-Vz-KuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78.260869565217391" y="2627.6785714285711"/>
+            <point key="canvasLocation" x="54" y="2626"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Mq-7f-8mW">
