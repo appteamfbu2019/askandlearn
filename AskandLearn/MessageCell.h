@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Parse/Parse.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MessageCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet MessageCell *messageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 

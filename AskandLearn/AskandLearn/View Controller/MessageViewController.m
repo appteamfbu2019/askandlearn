@@ -8,12 +8,16 @@
 
 #import "MessageViewController.h"
 #import "MessageCell.h"
+#import "UIImageView+AFNetworking.h"
+
+
 
 @interface MessageViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong,nonatomic) NSMutableArray *dummy;
 @property(weak,nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 
 
 @end
@@ -47,16 +51,16 @@
     return self.dummy.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+/*-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageViewController"];
+    MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
     
     NSDictionary *dummy = self.dummy[indexPath.row];
     cell.messageView.text = dummy[@"Hello"];
-    
     return cell;
     
-}
+} */
+
 /*
 #pragma mark - Navigation
 
