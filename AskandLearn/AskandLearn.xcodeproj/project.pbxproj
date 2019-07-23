@@ -20,6 +20,7 @@
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
 		AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */; };
 		ABB1BBE822E65E2E0029162A /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BBE722E65E2E0029162A /* MessageCell.m */; };
+		ABB1BBEF22E678020029162A /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB1BBEE22E678020029162A /* linkedin-sdk.framework */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
 		EF701975982ACB29B8099760 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */; };
@@ -77,6 +78,7 @@
 		AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedInWebViewController.m; sourceTree = "<group>"; };
 		ABB1BBE622E65E2E0029162A /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = SOURCE_ROOT; };
 		ABB1BBE722E65E2E0029162A /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = SOURCE_ROOT; };
+		ABB1BBEE22E678020029162A /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
 		B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61543CC480F0443218428D59 /* libPods-AskandLearn.a in Frameworks */,
+				ABB1BBEF22E678020029162A /* linkedin-sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +139,7 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
+				ABB1BBEE22E678020029162A /* linkedin-sdk.framework */,
 				FE6B267622E2423E004F4D57 /* Action.h */,
 				FE6B267722E2423E004F4D57 /* Action.m */,
 				FEB50A6C22DE782700FEF8DB /* User.h */,
@@ -660,6 +664,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/AskandLearn/Models/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,6 +686,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/AskandLearn/Models/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
