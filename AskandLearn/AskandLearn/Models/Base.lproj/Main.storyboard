@@ -174,8 +174,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didTapLinkedInSignUp:" destination="e0r-nY-GbK" eventType="touchUpInside" id="w6h-eq-ead"/>
-                                    <action selector="didTapLinkedinSignUp:" destination="e0r-nY-GbK" eventType="touchUpInside" id="Zce-pJ-V4B"/>
-                                    <action selector="didTapLoginWithLinkedIn:" destination="e0r-nY-GbK" eventType="touchUpInside" id="lYE-1x-OdW"/>
                                     <segue destination="oV7-kw-FfI" kind="presentation" id="anu-QF-gfr"/>
                                 </connections>
                             </button>

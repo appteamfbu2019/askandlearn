@@ -31,9 +31,9 @@
     _client = [self clientSettings];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)registerUser
@@ -47,69 +47,50 @@
     newUser.password = self.passwordTextField.text;
     
     if ([self.usernameTextField.text isEqual:@""]) {
-        
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No username inserted"
                                                                 preferredStyle:(UIAlertControllerStyleAlert)];
         
-        // create an OK action
         UIAlertAction *usernameAlert = [UIAlertAction actionWithTitle:@"Ok"
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * _Nonnull action) {
-                                                                  // handle response here.
                                                               }];
-        // add the OK action to the alert controller
         [alert addAction:usernameAlert];
-        
         [self presentViewController:alert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
         }];
         
     } else if ([self.emailTextField.text isEqual:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No email inserted"
-                                                                preferredStyle:(UIAlertControllerStyleAlert)];
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
         
-        // create an OK action
         UIAlertAction *emailAlert = [UIAlertAction actionWithTitle:@"Ok"
                                                              style:UIAlertActionStyleDefault
                                                            handler:^(UIAlertAction * _Nonnull action) {
-                                                               // handle response here.
                                                            }];
-        // add the OK action to the alert controller
         [alert addAction:emailAlert];
         
         [self presentViewController:alert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
         }];
     } else if ([self.passwordTextField.text isEqual:@""]) {
-        
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No password inserted"
-                                                                preferredStyle:(UIAlertControllerStyleAlert)];
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
         
-        // create an OK action
         UIAlertAction *passwordAlert = [UIAlertAction actionWithTitle:@"Ok"
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * _Nonnull action) {
-                                                                  // handle response here.
                                                               }];
-        // add the OK action to the alert controller
+        
         [alert addAction:passwordAlert];
-        
         [self presentViewController:alert animated:YES completion:^{
-            // optional code for what happens after the alert controller has finished presenting
         }];
-        
     } else {
-        // call sign up function on the object
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
             if (error != nil) {
                 NSLog(@"Error: %@", error.localizedDescription);
             } else {
                 NSLog(@"User registered successfully");
-                
-                // manually segue to logged in view
                 [self performSegueWithIdentifier:@"signUpSegue" sender:nil];
             }
         }];
@@ -137,8 +118,8 @@
     return [LIALinkedInHttpClient clientForApplication:application presentingViewController:nil];
 }
 
-- (void)didTapConnectWithLinkedIn {
-    
+- (void)didTapConnectWithLinkedIn
+{
     [self.client getAuthorizationCode:^(NSString *code) {
         
         [self.client getAccessToken:code success:^(NSDictionary *accessTokenData) {
@@ -165,5 +146,7 @@
         NSLog(@"failed to fetch current user %@", error);
     }];
 }
+
+
 @end
 
