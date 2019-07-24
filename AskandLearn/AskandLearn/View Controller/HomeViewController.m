@@ -29,56 +29,7 @@
     NSLog(@"loading home view controller");
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:draggableBackground];
-    
-//    self.cards = [[NSMutableArray alloc] init];
-//    NSLog(@"fetching users");
-//    PFQuery *query = [PFUser query];
-//    [query whereKey:@"username" notEqualTo:PFUser.currentUser.username];
-//    self.cards = (NSMutableArray *)[query findObjects];
-//    NSLog(@"cards!! %@", self.cards);
-//    [self reloadData];
 }
-
-//-(void)reloadData {
-//    PFQuery *query = [PFQuery queryWithClassName:@"Action"];
-//    [query includeKey:@"receiver"];
-//    [query includeKey:@"sender"];
-//
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *actions, NSError *error) {
-//        if (actions != nil) {
-//            self.actions = actions;
-//            NSLog(@"actions count %lu", self.actions.count);
-//            NSMutableArray *discard = [[NSMutableArray alloc]init];
-//            for (Action *act in self.actions){
-//                if ([act.receivedDislike.objectId isEqualToString:PFUser.currentUser.objectId]){
-//                    [discard addObject:act.sender];
-//                }
-//                else if ([act.sender.objectId isEqualToString:PFUser.currentUser.objectId]){
-//                    [discard addObject:act.receiver];
-//                }
-//            }
-//            for (PFUser *user in discard){
-//                for (PFUser *card in self.cards){
-//                    if ([card.objectId isEqualToString:user.objectId]){
-//                        [self.cards removeObject:card];
-//                        break;
-//                    }
-//                }
-//            }
-//            if (self.cards.count == (NSUInteger) 0){
-//                NSLog(@"exhausted all options");
-//                self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
-//                [self outOfCards];
-//            }
-//            else{
-//                PFUser *temp = self.cards[0];
-//                self.nameField.text = temp.username;
-//            }
-//        } else {
-//            NSLog(@"%@", error.localizedDescription);
-//        }
-//    }];
-//}
 
 
 //- (IBAction)tapLike:(id)sender {
@@ -123,17 +74,17 @@
 //    [self presentViewController:alert animated:YES completion:nil];
 //}
 
-//- (void) alertPopUp: (PFUser *)matchedUser {
-//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You received a match!"
-//                                                                    message:[NSString stringWithFormat:@"Matched with %@", matchedUser.username] preferredStyle:UIAlertControllerStyleAlert];
-//    
-//    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-//                                                          handler:^(UIAlertAction * action) {}];
-//    
-//    [alert addAction:defaultAction];
-//    [self presentViewController:alert animated:YES completion:nil];
-//
-//}
+- (void) alertPopUp: (PFUser *)matchedUser {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You received a match!"
+                                                                    message:[NSString stringWithFormat:@"Matched with %@", matchedUser.username] preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion: nil];
+
+}
 
 - (IBAction)logout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {

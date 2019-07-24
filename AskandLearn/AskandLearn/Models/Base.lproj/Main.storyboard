@@ -325,7 +325,7 @@
                         <outlet property="percentMatch" destination="ukf-qL-NWW" id="IY1-zr-oGs"/>
                         <outlet property="profPicView" destination="p5n-Pv-NeI" id="Imx-qI-OR0"/>
                         <outlet property="professionsField" destination="pRg-dK-0iW" id="qw0-Ca-8Y8"/>
-                        <outlet property="skillsFIeld" destination="Fe8-z6-8AQ" id="dmE-Pm-Ii4"/>
+                        <outlet property="skillsField" destination="Fe8-z6-8AQ" id="OLi-rF-WtY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bva-IN-RYv" userLabel="First Responder" sceneMemberID="firstResponder"/>

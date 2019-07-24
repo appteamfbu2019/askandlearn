@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (retain,nonatomic)NSArray* exampleCardLabels; //%%% the labels the cards
 @property (retain,nonatomic)NSMutableArray* allCards; //%%% the labels the cards
 
-@property (strong, nonatomic) NSMutableArray *cards;
+@property (strong, atomic) NSMutableArray *cards;
 @property (strong, nonatomic) NSArray *actions;
 
 @end

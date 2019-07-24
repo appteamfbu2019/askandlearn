@@ -14,6 +14,7 @@
 #import "PFObject.h"
 #import "Action.h"
 #import "Match.h"
+#import "HomeViewController.h"
 
 @implementation CardBackgroundView{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
@@ -42,17 +43,16 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         [super layoutSubviews];
         [self setupView];
         exampleCardLabels = [[NSMutableArray alloc] init];//[[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
+        
+        PFQuery *query1 = [PFUser query];
+        [query1 whereKey:@"username" notEqualTo:PFUser.currentUser.username];
+        self.cards = (NSMutableArray *)[query1 findObjects];
+        [self reloadData];
+        
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         NSLog(@"fetching users");
-        PFQuery *query = [PFUser query];
-        [query whereKey:@"username" notEqualTo:PFUser.currentUser.username];
-        allCards = (NSMutableArray *)[query findObjects];
-        NSLog(@"cards!! %@", allCards);
-        [self reloadData];
         
-        cardsLoadedIndex = 0;
-        [self loadCards];
     }
     return self;
 }
@@ -86,7 +86,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 {
     CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     
-    PFUser *temp = allCards[0];
+    PFUser *temp = self.cards[index];
     draggableView.information.text = temp.username;
     draggableView.delegate = self;
     return draggableView;
@@ -95,12 +95,13 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% loads all the cards and puts the first x in the "loaded cards" array
 -(void)loadCards
 {
-    if([exampleCardLabels count] > 0) {
-        NSInteger numLoadedCardsCap =(([exampleCardLabels count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[exampleCardLabels count]);
+    if([self.cards count] > 0) {
+        NSInteger numLoadedCardsCap =(([self.cards count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[self.cards count]);
         //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
         
         //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
-        for (int i = 0; i<[allCards count]; i++) {
+        for (int i = 0; i<[self.cards count]; i++) {
+            NSLog(@"self.cards count %lu", [self.cards count]);
             CardView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
             
@@ -125,11 +126,12 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 
 
 -(void)reloadData {
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Action"];
     [query includeKey:@"receiver"];
     [query includeKey:@"sender"];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *actions, NSError *error) {
+    [query findObjectsInBackgroundWithBlock:^(NSArray *actions, NSError *error){
         if (actions != nil) {
             self.actions = actions;
             NSLog(@"actions count %lu", self.actions.count);
@@ -142,27 +144,31 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                     [discard addObject:act.receiver];
                 }
             }
+            NSLog(@"discard %@", discard);
             for (PFUser *user in discard){
                 for (PFUser *card in self.cards){
                     if ([card.objectId isEqualToString:user.objectId]){
+                        NSLog(@"Removing");
                         [self.cards removeObject:card];
                         break;
                     }
                 }
             }
-            if (self.cards.count == (NSUInteger) 0){
+            if ([self.cards count] == (NSUInteger)0){
                 NSLog(@"exhausted all options");
                 //self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
                 [self outOfCards];
             }
-            else{
-                PFUser *temp = self.cards[0];
-                //self.nameField.text = temp.username;
-            }
+            
+            NSLog(@"cards!! %lu", [self.cards count]);
+            cardsLoadedIndex = 0;
+            [self loadCards];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    
+    
 }
 
 - (void) outOfCards {
@@ -173,7 +179,9 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                                                           handler:^(UIAlertAction * action) {}];
     
     [alert addAction:defaultAction];
-    //[self presentViewController:alert animated:YES completion:nil];
+    
+    HomeViewController *pop = [[HomeViewController alloc] init];
+    [pop presentViewController:alert animated:YES completion:nil];
 }
 
 #warning include own action here!
@@ -184,6 +192,9 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     //do whatever you want with the card that was swiped
     //    DraggableView *c = (DraggableView *)card;
     
+    PFUser *currentCard = self.cards[0];
+    [Action dislikeAction:PFUser.currentUser withUser:currentCard];
+    
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
@@ -191,6 +202,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }
+    [self.cards removeObject:currentCard];
+    //[self reloadData];
 }
 
 #warning include own action here!
@@ -201,6 +214,36 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     //do whatever you want with the card that was swiped
     //    DraggableView *c = (DraggableView *)card;
     
+    NSLog(@"self.cards %@", self.cards);
+    NSLog(@"allCards %@", allCards);
+    NSLog(@"loadedCards %@", loadedCards);
+    
+    PFUser *currentCard = self.cards[0];
+    [Action likeAction:PFUser.currentUser withUser:currentCard];
+    
+    //run through the arrays and form 'matches'
+    PFQuery *query = [PFQuery queryWithClassName:@"Action"];
+    [query includeKey:@"receiver"];
+    [query includeKey:@"sender"];
+    [query whereKey:@"sender" equalTo:currentCard];
+    [query whereKey:@"receiver" equalTo:PFUser.currentUser];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *like, NSError *error) {
+        if (like.count != (NSUInteger) 0 && like != nil){
+            NSLog(@"like looks like %@", like);
+            [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
+            NSLog(@"MATCH formed!!!");
+            HomeViewController *pop = [[HomeViewController alloc] init];
+            [pop alertPopUp:like[0][@"sender"]];
+        }
+        else{
+            NSLog(@"no Match formed");
+        }
+    }];
+    
+    [self.cards removeObject:currentCard];
+    NSLog(@"%lu", [self.cards count]);
+    //[self reloadData];
+    
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
@@ -208,7 +251,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }
-    
 }
 
 //%%% when you hit the right button, this is called and substitutes the swipe
