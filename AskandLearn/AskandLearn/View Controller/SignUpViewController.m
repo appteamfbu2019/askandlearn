@@ -7,19 +7,15 @@
 //
 #import "SignUpViewController.h"
 #import "Parse/Parse.h"
-#import <linkedin-sdk/LISDK.h>
-#import <LIALinkedInHttpClient.h>
-#import <LIALinkedInApplication.h>
-#import <AFHTTPRequestOperation.h>
+
 
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (nonatomic, strong) LIALinkedInHttpClient *client;
+
 
 - (IBAction)didTapSignUp:(id)sender;
-- (IBAction)didTapLinkedInSignUp:(id)sender;
 
 @end
 
@@ -28,7 +24,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _client = [self clientSettings];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,51 +95,6 @@
     [self registerUser];
 }
 
-- (IBAction)didTapLinkedInSignUp:(id)sender
-{
-    [self didTapConnectWithLinkedIn];
-}
-
-- (LIALinkedInHttpClient *)clientSettings
-{
-    LIALinkedInApplication *application = [LIALinkedInApplication
-        applicationWithRedirectURL:@"https://api.linkedin.com"
-                          clientId:@"78nu9x8lyew6e7"
-                      clientSecret:@"tjXaGh42RUdA8o8z"
-                             state:@"DCEEFWF45453sdffef424342"
-                     grantedAccess:@[@"r_liteprofile",@"r_emailaddress"]];
-    
-    return [LIALinkedInHttpClient clientForApplication:application presentingViewController:nil];
-}
-
-- (void)didTapConnectWithLinkedIn
-{
-    [self.client getAuthorizationCode:^(NSString *code) {
-        
-        [self.client getAccessToken:code success:^(NSDictionary *accessTokenData) {
-            NSString *accessToken = [accessTokenData objectForKey:@"access_token"];
-            [self requestMeWithToken:accessToken];
-        }                   failure:^(NSError *error) {
-            NSLog(@"Querying accessToken failed %@", error);
-        }];
-    }                      cancel:^{
-        NSLog(@"Authorization was cancelled by user");
-    }                     failure:^(NSError *error) {
-        
-        NSLog(@"Authorization failed %@", error);
-    }];
-}
-
-- (void)requestMeWithToken:(NSString *)accessToken
-{
-    [self.client GET:[NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(id,first-name,last-name,maiden-name,email-address,formatted-name,phonetic-last-name,location:(country:(code)),industry,distance,current-status,current-share,network,skills,phone-numbers,date-of-birth,main-address,positions:(title),educations:(school-name,field-of-study,start-date,end-date,degree,activities))?oauth2_access_token=%@&format=json", accessToken] parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
-        
-        NSLog(@"current user %@", result);
-        
-    }        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"failed to fetch current user %@", error);
-    }];
-}
 
 @end
 
