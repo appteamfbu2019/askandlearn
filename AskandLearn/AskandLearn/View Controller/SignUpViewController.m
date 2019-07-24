@@ -65,6 +65,11 @@ didCompleteWithResult:(nullable FBSDKLoginManagerLoginResult *)result
     }
 }
 
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
+{
+    NSLog(@"User logged Out.");
+}
+
 -(void)registerUser
 {
     PFUser *newUser = [PFUser user];

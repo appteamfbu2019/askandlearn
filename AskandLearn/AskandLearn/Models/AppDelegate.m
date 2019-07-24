@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "SignUpViewController.h"
+#import "AccountViewController.h"
+
+//Frameworks
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
@@ -31,6 +35,17 @@
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
+   
+    if ([FBSDKAccessToken currentAccessToken]){
+        AccountViewController *accountViewController = [[AccountViewController alloc] initWithNibName:@"AccountViewController" bundle:nil];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accountViewController];
+        self.window.rootViewController= navController;
+    } else {
+    SignUpViewController *signUpViewController = [[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil];
+    self.window.rootViewController= signUpViewController;
+    }
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
