@@ -38,10 +38,8 @@
 
 -(void)registerUser
 {
-    // initialize a user object
     PFUser *newUser = [PFUser user];
     
-    // set user properties
     newUser.username = self.usernameTextField.text;
     newUser.email = self.emailTextField.text;
     newUser.password = self.passwordTextField.text;
@@ -109,11 +107,12 @@
 
 - (LIALinkedInHttpClient *)clientSettings
 {
-    LIALinkedInApplication *application = [LIALinkedInApplication                   applicationWithRedirectURL:@"https://api.linkedin.com"
+    LIALinkedInApplication *application = [LIALinkedInApplication
+        applicationWithRedirectURL:@"https://api.linkedin.com"
                           clientId:@"78nu9x8lyew6e7"
                       clientSecret:@"tjXaGh42RUdA8o8z"
                              state:@"DCEEFWF45453sdffef424342"
-                     grantedAccess:@[@"r_basicprofile",@"r_emailaddress"]];
+                     grantedAccess:@[@"r_liteprofile",@"r_emailaddress"]];
     
     return [LIALinkedInHttpClient clientForApplication:application presentingViewController:nil];
 }

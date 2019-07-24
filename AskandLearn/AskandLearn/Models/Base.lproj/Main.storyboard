@@ -193,25 +193,6 @@
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="1714.9553571428571"/>
         </scene>
-        <!--Linked In Web View Controller-->
-        <scene sceneID="sy7-3A-q3I">
-            <objects>
-                <viewController id="jv2-Fj-fJp" customClass="LinkedInWebViewController" sceneMemberID="viewController">
-                    <wkWebView key="view" contentMode="scaleToFill" id="gfR-Qe-GAW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <wkWebViewConfiguration key="configuration">
-                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                            <wkPreferences key="preferences"/>
-                        </wkWebViewConfiguration>
-                    </wkWebView>
-                    <navigationItem key="navigationItem" id="9gd-TK-alB"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f48-Eh-DV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1098.5507246376812" y="2626.3392857142858"/>
-        </scene>
         <!--Matches-->
         <scene sceneID="CZc-fJ-s5u">
             <objects>
@@ -561,9 +542,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jv2-Fj-fJp" kind="presentation" id="xHG-HU-c57"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AjW-Vz-KuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
