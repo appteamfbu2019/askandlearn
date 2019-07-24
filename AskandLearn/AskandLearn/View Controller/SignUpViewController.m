@@ -5,8 +5,13 @@
 //  Created by estherb on 7/16/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
+#import "AccountViewController.h"
 #import "SignUpViewController.h"
 #import "Parse/Parse.h"
+
+//Frameworks
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
 @interface SignUpViewController ()
@@ -20,15 +25,44 @@
 @end
 
 @implementation SignUpViewController
+@synthesize fbLoginButtonView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    FBSDKLoginButton *loginButton= [[FBSDKLoginButton alloc] init];
+    loginButton.delegate= self;
+    loginButton.center = fbLoginButtonView.center;
+    loginButton.permissions = @[@"public_profile", @"email"];
+    [self.view addSubview:loginButton];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - FBSDKLoginButton Delegate Methods
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(nullable FBSDKLoginManagerLoginResult *)result
+              error:(nullable NSError *)error{
+    
+    if(error) {
+        NSLog(@"Error: %@", error.localizedDescription);
+    }
+    if (result.isCancelled) {
+        NSLog(@"User cancelled the login.");
+    } else if (result.declinedPermissions.count > 0){
+        NSLog(@"User has declined the permissions");
+    } else {
+        //User logged in successfully.
+        //Take user to next view
+        AccountViewController *accountViewController = [[AccountViewController alloc] initWithNibName:@"AccountViewController" bundle:nil];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accountViewController];
+        [self presentViewController:navController animated:YES completion:nil];
+    }
 }
 
 -(void)registerUser

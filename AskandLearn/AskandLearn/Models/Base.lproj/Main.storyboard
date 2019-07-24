@@ -158,10 +158,6 @@
                                     <action selector="didTapSignUp:" destination="e0r-nY-GbK" eventType="touchUpInside" id="UjW-3Z-phf"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sign-in-Large---Default" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-lQ-T0N">
-                                <rect key="frame" x="117" y="424" width="181" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmb-Td-jt7">
                                 <rect key="frame" x="188" y="395" width="39" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -169,14 +165,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-Ij-VMe">
-                                <rect key="frame" x="117" y="435" width="181" height="36"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHa-Uk-XOb">
+                                <rect key="frame" x="82" y="459" width="251" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="didTapLinkedInSignUp:" destination="e0r-nY-GbK" eventType="touchUpInside" id="w6h-eq-ead"/>
-                                    <segue destination="oV7-kw-FfI" kind="presentation" id="anu-QF-gfr"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="r2r-ue-H74"/>
@@ -184,6 +177,7 @@
                     <navigationItem key="navigationItem" id="uPi-cS-rDc"/>
                     <connections>
                         <outlet property="emailTextField" destination="ajd-ny-i9v" id="2Nf-Tf-efJ"/>
+                        <outlet property="fbLoginButtonView" destination="wHa-Uk-XOb" id="8RQ-4Q-afk"/>
                         <outlet property="passwordTextField" destination="Zhn-b2-lSU" id="Udb-sn-mMd"/>
                         <outlet property="usernameTextField" destination="O27-5Z-VNx" id="ufo-tx-G1j"/>
                         <segue destination="4eH-4S-s7d" kind="presentation" identifier="signUpSegue" id="QHW-mZ-qR7"/>
@@ -567,7 +561,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sign-in-Large---Default" width="215" height="41"/>
         <image name="Sign-in-Large---Hover" width="600" height="600"/>
         <image name="cross_outline_24-3x" width="72" height="72"/>
         <image name="heart_outline_24-4x" width="96" height="96"/>
