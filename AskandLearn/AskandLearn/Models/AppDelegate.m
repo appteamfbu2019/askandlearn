@@ -31,21 +31,22 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+       // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     }
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-   
-    if ([FBSDKAccessToken currentAccessToken]){
-        AccountViewController *accountViewController = [[AccountViewController alloc] initWithNibName:@"AccountViewController" bundle:nil];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accountViewController];
-        self.window.rootViewController= navController;
-    } else {
-    SignUpViewController *signUpViewController = [[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil];
-    self.window.rootViewController= signUpViewController;
-    }
-    
-    [self.window makeKeyAndVisible];
+//   
+//    if ([FBSDKAccessToken currentAccessToken]){
+//        AccountViewController *accountViewController = [[AccountViewController alloc] initWithNibName:@"AccountViewController" bundle:nil];
+//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accountViewController];
+//        self.window.rootViewController= navController;
+//    } else {
+//    SignUpViewController *signUpViewController = [[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil];
+//    self.window.rootViewController= signUpViewController;
+//    }
+//    
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 
