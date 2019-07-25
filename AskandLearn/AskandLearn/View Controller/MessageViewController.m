@@ -9,6 +9,11 @@
 #import "MessageViewController.h"
 #import "MessageCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "LoginViewController.h"
+#import "HomeViewController.h"
+#import "AppDelegate.h"
+#import "Parse/Parse.h"
+
 
 
 
@@ -40,10 +45,21 @@
 }
 
 -(void)featchArray {
-    NSMutableArray *theDummy = [NSMutableArray new];
-    for (int i =0; i < 10; i++) {
-        [theDummy addObject:@"Hello"];
-    }
+    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * dummies, NSError *error) {
+        if (dummies != nil) {
+            NSLog(@"Messages could appear if you had some");
+            self.dummy = (NSMutableArray *) dummies;
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+            
+        }else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
     
 }
 
@@ -51,7 +67,7 @@
     return self.dummy.count;
 }
 
-/*-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
     
@@ -59,16 +75,21 @@
     cell.messageView.text = dummy[@"Hello"];
     return cell;
     
-} */
+}
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationVnfhfdnkfjvflijduuglhvrnfrurgntrviewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
 
+
+- (IBAction)didTapCompose:(id)sender {
+    [self performSegueWithIdentifier:@"ComposeSegue" sender:nil];
+    NSLog(@"Should be a Succesful Segue");
+}
 @end

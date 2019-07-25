@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MessageViewController : UIViewController
+- (IBAction)didTapCompose:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *messageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
 @end
