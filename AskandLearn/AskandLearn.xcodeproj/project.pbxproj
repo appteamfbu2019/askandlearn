@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42FA90645126DA3C6683029F /* libPods-AskandLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D92A7581163F184743E042 /* libPods-AskandLearn.a */; };
+		0CC133775B1B4A4159577582 /* libPods-AskandLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7F304513E61DC938B844F4 /* libPods-AskandLearn.a */; };
+		42FA90645126DA3C6683029F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		55E6995028913B08BB41F7C7 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */; };
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
 		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
@@ -24,6 +25,8 @@
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
+		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
+		FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AE22E7BC3600A2A0D6 /* CardView.m */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
 		FE6B267822E2423E004F4D57 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267722E2423E004F4D57 /* Action.m */; };
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
@@ -51,8 +54,11 @@
 /* Begin PBXFileReference section */
 		0EBB94C549EE7631F31379FD /* Pods-AskandLearnUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.release.xcconfig"; sourceTree = "<group>"; };
 		474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearnTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D21CFF9DEA402E9D2565D05 /* Pods-AskandLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		4D7A467BC9979E00EAF9BCE5 /* Pods-AskandLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.release.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.release.xcconfig"; sourceTree = "<group>"; };
 		50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearnUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D741DBF4305BA509EDBBC1 /* Pods-AskandLearnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C7F304513E61DC938B844F4 /* libPods-AskandLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAAB1CB3C7D986C91A96B37 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
@@ -83,10 +89,11 @@
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		C80855402A61E34C2FE0102E /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D2D92A7581163F184743E042 /* libPods-AskandLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E27748899794AABF92A83D4E /* Pods-AskandLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.debug.xcconfig"; sourceTree = "<group>"; };
-		EFCBC1B431CEF5ED41AE7222 /* Pods-AskandLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.release.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.release.xcconfig"; sourceTree = "<group>"; };
+		D650055D94AAC9D8BB54A659 /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardBackgroundView.h; path = "AskandLearn/View Controller/CardBackgroundView.h"; sourceTree = SOURCE_ROOT; };
+		FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardBackgroundView.m; path = "AskandLearn/View Controller/CardBackgroundView.m"; sourceTree = SOURCE_ROOT; };
+		FE1950AD22E7BC3600A2A0D6 /* CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = "AskandLearn/View Controller/CardView.h"; sourceTree = SOURCE_ROOT; };
+		FE1950AE22E7BC3600A2A0D6 /* CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = "AskandLearn/View Controller/CardView.m"; sourceTree = SOURCE_ROOT; };
 		FE564A1222DFECC500192A43 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FE6B267622E2423E004F4D57 /* Action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
 		FE6B267722E2423E004F4D57 /* Action.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
@@ -103,7 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FA90645126DA3C6683029F /* libPods-AskandLearn.a in Frameworks */,
+				42FA90645126DA3C6683029F /* BuildFile in Frameworks */,
+				0CC133775B1B4A4159577582 /* libPods-AskandLearn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +219,10 @@
 			children = (
 				ABB1BBE622E65E2E0029162A /* MessageCell.h */,
 				ABB1BBE722E65E2E0029162A /* MessageCell.m */,
+				FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */,
+				FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */,
+				FE1950AD22E7BC3600A2A0D6 /* CardView.h */,
+				FE1950AE22E7BC3600A2A0D6 /* CardView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,12 +251,12 @@
 		B342A7FE821A6FD024600E6F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E27748899794AABF92A83D4E /* Pods-AskandLearn.debug.xcconfig */,
-				EFCBC1B431CEF5ED41AE7222 /* Pods-AskandLearn.release.xcconfig */,
-				C80855402A61E34C2FE0102E /* Pods-AskandLearnTests.debug.xcconfig */,
 				9AAAB1CB3C7D986C91A96B37 /* Pods-AskandLearnTests.release.xcconfig */,
 				70D741DBF4305BA509EDBBC1 /* Pods-AskandLearnUITests.debug.xcconfig */,
 				0EBB94C549EE7631F31379FD /* Pods-AskandLearnUITests.release.xcconfig */,
+				4D21CFF9DEA402E9D2565D05 /* Pods-AskandLearn.debug.xcconfig */,
+				4D7A467BC9979E00EAF9BCE5 /* Pods-AskandLearn.release.xcconfig */,
+				D650055D94AAC9D8BB54A659 /* Pods-AskandLearnTests.debug.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -252,9 +264,9 @@
 		CB3DBCCB824AC15BD99D07CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D2D92A7581163F184743E042 /* libPods-AskandLearn.a */,
 				474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */,
 				50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */,
+				8C7F304513E61DC938B844F4 /* libPods-AskandLearn.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -481,6 +493,7 @@
 			files = (
 				B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
+				FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */,
 				ABB1BBE822E65E2E0029162A /* MessageCell.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
@@ -490,6 +503,7 @@
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 				AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */,
 				FE6B267822E2423E004F4D57 /* Action.m in Sources */,
+				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
@@ -661,11 +675,15 @@
 		};
 		AB50E27222DD0617006097DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E27748899794AABF92A83D4E /* Pods-AskandLearn.debug.xcconfig */;
+			baseConfigurationReference = 4D21CFF9DEA402E9D2565D05 /* Pods-AskandLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/AskandLearn/Models/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -679,11 +697,15 @@
 		};
 		AB50E27322DD0617006097DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFCBC1B431CEF5ED41AE7222 /* Pods-AskandLearn.release.xcconfig */;
+			baseConfigurationReference = 4D7A467BC9979E00EAF9BCE5 /* Pods-AskandLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/AskandLearn/Models/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -697,7 +719,7 @@
 		};
 		AB50E27522DD0617006097DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C80855402A61E34C2FE0102E /* Pods-AskandLearnTests.debug.xcconfig */;
+			baseConfigurationReference = D650055D94AAC9D8BB54A659 /* Pods-AskandLearnTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

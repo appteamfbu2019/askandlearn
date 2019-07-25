@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Need library access to upload images</string>
 	<key>NSAppTransportSecurity</key>
@@ -11,6 +15,15 @@
 	</dict>
 	<key>Exception Domains</key>
 	<dict>
+		<key>linkedin.com</key>
+		<dict>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+			<key>NSExceptionRequiresForwardSecrecy</key>
+			<false/>
+		</dict>
 		<key>askandlearn.herokuapp.com</key>
 		<dict/>
 		<key>NSIncludesSubdomains</key>
@@ -58,6 +71,17 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>LIAppID</key>
+	<string>78nu9x8lyew6e7</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>li78nu9x8lyew6e7</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
