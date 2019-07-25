@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4FF10A4F273924DE5DA2420D /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE495F8B9CE2A40FD3F6BC95 /* libPods-AskandLearnTests.a */; };
-		61543CC480F0443218428D59 /* libPods-AskandLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E6472AA69AA52EEC8BDDC8 /* libPods-AskandLearn.a */; };
+		42FA90645126DA3C6683029F /* libPods-AskandLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D92A7581163F184743E042 /* libPods-AskandLearn.a */; };
+		55E6995028913B08BB41F7C7 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */; };
+		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
 		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
@@ -20,7 +21,7 @@
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
 		AB63D39522E10A4D00AB8D3D /* LinkedInWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */; };
 		ABB1BBE822E65E2E0029162A /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BBE722E65E2E0029162A /* MessageCell.m */; };
-		ABB1BBEF22E678020029162A /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB1BBEE22E678020029162A /* linkedin-sdk.framework */; };
+		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
 		EF701975982ACB29B8099760 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */; };
@@ -51,12 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		072EB7E18D6E7B948393A3FA /* Pods-AskandLearnUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.release.xcconfig"; sourceTree = "<group>"; };
-		092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearnUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2025EFB864FF889D016AC088 /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
-		46DF12C1CD151E90393E5CFF /* Pods-AskandLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearn.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearn/Pods-AskandLearn.debug.xcconfig"; sourceTree = "<group>"; };
-		8E925FD03D932825EE162B1F /* Pods-AskandLearnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		9735A82F8BF12CC74B10AF94 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
+		0EBB94C549EE7631F31379FD /* Pods-AskandLearnUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.release.xcconfig"; sourceTree = "<group>"; };
+		474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearnTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearnUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70D741DBF4305BA509EDBBC1 /* Pods-AskandLearnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AAAB1CB3C7D986C91A96B37 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AB0449DA22DF4CFE001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -80,7 +80,8 @@
 		AB63D39422E10A4D00AB8D3D /* LinkedInWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedInWebViewController.m; sourceTree = "<group>"; };
 		ABB1BBE622E65E2E0029162A /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = SOURCE_ROOT; };
 		ABB1BBE722E65E2E0029162A /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = SOURCE_ROOT; };
-		ABB1BBEE22E678020029162A /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
+		B01979C922E79A580038511A /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		B01979CA22E79A580038511A /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -108,8 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61543CC480F0443218428D59 /* libPods-AskandLearn.a in Frameworks */,
-				ABB1BBEF22E678020029162A /* linkedin-sdk.framework in Frameworks */,
+				42FA90645126DA3C6683029F /* libPods-AskandLearn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FF10A4F273924DE5DA2420D /* libPods-AskandLearnTests.a in Frameworks */,
+				7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,23 +125,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF701975982ACB29B8099760 /* libPods-AskandLearnUITests.a in Frameworks */,
+				55E6995028913B08BB41F7C7 /* libPods-AskandLearnUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		54F484539967EB69876764EF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D4E6472AA69AA52EEC8BDDC8 /* libPods-AskandLearn.a */,
-				FE495F8B9CE2A40FD3F6BC95 /* libPods-AskandLearnTests.a */,
-				092EA0C2EE8C03EC3C9D6558 /* libPods-AskandLearnUITests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +147,7 @@
 				AB50E26B22DD0617006097DB /* AskandLearnUITests */,
 				AB50E24622DD0617006097DB /* Products */,
 				B342A7FE821A6FD024600E6F /* Pods */,
-				54F484539967EB69876764EF /* Frameworks */,
+				CB3DBCCB824AC15BD99D07CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +207,8 @@
 				B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */,
 				B03D97DD22DFB01500A8D9E5 /* MessageViewController.h */,
 				B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */,
+				B01979C922E79A580038511A /* ChatViewController.h */,
+				B01979CA22E79A580038511A /* ChatViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -258,14 +250,24 @@
 		B342A7FE821A6FD024600E6F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				46DF12C1CD151E90393E5CFF /* Pods-AskandLearn.debug.xcconfig */,
-				EB4AC275E3C13335D77E7C52 /* Pods-AskandLearn.release.xcconfig */,
-				2025EFB864FF889D016AC088 /* Pods-AskandLearnTests.debug.xcconfig */,
-				9735A82F8BF12CC74B10AF94 /* Pods-AskandLearnTests.release.xcconfig */,
-				8E925FD03D932825EE162B1F /* Pods-AskandLearnUITests.debug.xcconfig */,
-				072EB7E18D6E7B948393A3FA /* Pods-AskandLearnUITests.release.xcconfig */,
+				E27748899794AABF92A83D4E /* Pods-AskandLearn.debug.xcconfig */,
+				EFCBC1B431CEF5ED41AE7222 /* Pods-AskandLearn.release.xcconfig */,
+				C80855402A61E34C2FE0102E /* Pods-AskandLearnTests.debug.xcconfig */,
+				9AAAB1CB3C7D986C91A96B37 /* Pods-AskandLearnTests.release.xcconfig */,
+				70D741DBF4305BA509EDBBC1 /* Pods-AskandLearnUITests.debug.xcconfig */,
+				0EBB94C549EE7631F31379FD /* Pods-AskandLearnUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB3DBCCB824AC15BD99D07CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2D92A7581163F184743E042 /* libPods-AskandLearn.a */,
+				474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */,
+				50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,11 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB50E27122DD0617006097DB /* Build configuration list for PBXNativeTarget "AskandLearn" */;
 			buildPhases = (
-				FE97A1631A65898A57895A69 /* [CP] Check Pods Manifest.lock */,
+				ECF54CB208B1B0B886DE90D8 /* [CP] Check Pods Manifest.lock */,
 				AB50E24122DD0617006097DB /* Sources */,
 				AB50E24222DD0617006097DB /* Frameworks */,
 				AB50E24322DD0617006097DB /* Resources */,
-				06AD68DFF21E3F4BF666815A /* [CP] Copy Pods Resources */,
+				2515E697F02B6C10FBB2F9EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,7 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB50E27422DD0617006097DB /* Build configuration list for PBXNativeTarget "AskandLearnTests" */;
 			buildPhases = (
-				7F539B5A062614DBA524CD5E /* [CP] Check Pods Manifest.lock */,
+				87F309F12CDF365900305163 /* [CP] Check Pods Manifest.lock */,
 				AB50E25922DD0617006097DB /* Sources */,
 				AB50E25A22DD0617006097DB /* Frameworks */,
 				AB50E25B22DD0617006097DB /* Resources */,
@@ -313,7 +315,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB50E27722DD0617006097DB /* Build configuration list for PBXNativeTarget "AskandLearnUITests" */;
 			buildPhases = (
-				990C52DB6053556CFE78D286 /* [CP] Check Pods Manifest.lock */,
+				16E9FF951CEC1C21BB0D7FFF /* [CP] Check Pods Manifest.lock */,
 				AB50E26422DD0617006097DB /* Sources */,
 				AB50E26522DD0617006097DB /* Frameworks */,
 				AB50E26622DD0617006097DB /* Resources */,
@@ -398,46 +400,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06AD68DFF21E3F4BF666815A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7F539B5A062614DBA524CD5E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AskandLearnTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		990C52DB6053556CFE78D286 /* [CP] Check Pods Manifest.lock */ = {
+		16E9FF951CEC1C21BB0D7FFF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,7 +422,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE97A1631A65898A57895A69 /* [CP] Check Pods Manifest.lock */ = {
+		2515E697F02B6C10FBB2F9EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskandLearn/Pods-AskandLearn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87F309F12CDF365900305163 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AskandLearnTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECF54CB208B1B0B886DE90D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -502,6 +504,7 @@
 				FE6B267822E2423E004F4D57 /* Action.m in Sources */,
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
+				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,7 +674,7 @@
 		};
 		AB50E27222DD0617006097DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46DF12C1CD151E90393E5CFF /* Pods-AskandLearn.debug.xcconfig */;
+			baseConfigurationReference = E27748899794AABF92A83D4E /* Pods-AskandLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -693,7 +696,7 @@
 		};
 		AB50E27322DD0617006097DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB4AC275E3C13335D77E7C52 /* Pods-AskandLearn.release.xcconfig */;
+			baseConfigurationReference = EFCBC1B431CEF5ED41AE7222 /* Pods-AskandLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -715,7 +718,7 @@
 		};
 		AB50E27522DD0617006097DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2025EFB864FF889D016AC088 /* Pods-AskandLearnTests.debug.xcconfig */;
+			baseConfigurationReference = C80855402A61E34C2FE0102E /* Pods-AskandLearnTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -735,7 +738,7 @@
 		};
 		AB50E27622DD0617006097DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9735A82F8BF12CC74B10AF94 /* Pods-AskandLearnTests.release.xcconfig */;
+			baseConfigurationReference = 9AAAB1CB3C7D986C91A96B37 /* Pods-AskandLearnTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -755,7 +758,7 @@
 		};
 		AB50E27822DD0617006097DB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E925FD03D932825EE162B1F /* Pods-AskandLearnUITests.debug.xcconfig */;
+			baseConfigurationReference = 70D741DBF4305BA509EDBBC1 /* Pods-AskandLearnUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -776,7 +779,7 @@
 		};
 		AB50E27922DD0617006097DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 072EB7E18D6E7B948393A3FA /* Pods-AskandLearnUITests.release.xcconfig */;
+			baseConfigurationReference = 0EBB94C549EE7631F31379FD /* Pods-AskandLearnUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
