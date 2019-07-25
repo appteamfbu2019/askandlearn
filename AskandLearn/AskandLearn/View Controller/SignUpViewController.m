@@ -59,7 +59,7 @@ didCompleteWithResult:(nullable FBSDKLoginManagerLoginResult *)result
     } else {
         //User logged in successfully.
         //Take user to next view
-        AccountViewController *accountViewController = [[AccountViewController alloc] initWithNibName:@"AccountViewController" bundle:nil];
+        AccountViewController *accountViewController = [[AccountViewController alloc] init];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accountViewController];
         [self presentViewController:navController animated:YES completion:nil];
     }

@@ -13,6 +13,8 @@
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
 		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB35051622E8F4C600BC308D /* AccountViewController.m */; };
+		AB35051822E931CC00BC308D /* HomeViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
+		AB35051922E931CC00BC308D /* HomeViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
 		AB50E25022DD0617006097DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB50E24E22DD0617006097DB /* Main.storyboard */; };
@@ -378,6 +380,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB35051822E931CC00BC308D /* HomeViewController.h in Resources */,
+				AB35051922E931CC00BC308D /* HomeViewController.m in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,

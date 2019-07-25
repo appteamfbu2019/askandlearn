@@ -11,7 +11,6 @@
 #import "SignUpViewController.h"
 #import "AccountViewController.h"
 
-//Frameworks
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
@@ -31,29 +30,17 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
-       // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     }
     
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-//   
-//    if ([FBSDKAccessToken currentAccessToken]){
-//        AccountViewController *accountViewController = [[AccountViewController alloc] initWithNibName:@"AccountViewController" bundle:nil];
-//        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:accountViewController];
-//        self.window.rootViewController= navController;
-//    } else {
-//    SignUpViewController *signUpViewController = [[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil];
-//    self.window.rootViewController= signUpViewController;
-//    }
-//    
-//    [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
-            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
     BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
                                                                   openURL:url
                                                         sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
@@ -61,8 +48,6 @@
                     ];
     return handled;
 }
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

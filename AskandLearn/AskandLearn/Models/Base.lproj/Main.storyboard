@@ -55,7 +55,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="didTapSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8R8-vr-RVJ"/>
-                                    <segue destination="fSz-Y1-pG9" kind="presentation" identifier="signUpSegue" id="J0w-ZQ-bU3"/>
+                                    <segue destination="fSz-Y1-pG9" kind="presentation" id="cGZ-W8-7Rc"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sign-in-Large---Hover" highlightedImage="Sign-in-Large---Hover" translatesAutoresizingMaskIntoConstraints="NO" id="SQ4-Hc-eGb">
@@ -460,6 +460,6 @@
         <image name="heart_outline_24-4x" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QHW-mZ-qR7"/>
+        <segue reference="Qm0-1o-5zo"/>
     </inferredMetricsTieBreakers>
 </document>

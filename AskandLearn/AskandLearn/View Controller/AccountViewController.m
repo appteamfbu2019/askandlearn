@@ -19,7 +19,6 @@
 @end
 
 @implementation AccountViewController
-//@synthesize profileImageView;
 
 - (void)viewDidLoad
 {
