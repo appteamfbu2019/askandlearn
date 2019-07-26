@@ -204,9 +204,9 @@
                      }completion:^(BOOL complete){
                          [self removeFromSuperview];
                      }];
-    
+
     [delegate cardSwipedRight:self];
-    
+
     NSLog(@"YES");
 }
 
@@ -220,9 +220,9 @@
                      }completion:^(BOOL complete){
                          [self removeFromSuperview];
                      }];
-    
+
     [delegate cardSwipedLeft:self];
-    
+
     NSLog(@"NO");
 }
 
