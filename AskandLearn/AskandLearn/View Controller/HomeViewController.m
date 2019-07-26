@@ -33,30 +33,6 @@
     
 }
 
-//-(void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//
-//
-//}
-
-
-//- (IBAction)tapDislike:(id)sender {
-//    [Action dislikeAction:PFUser.currentUser withUser:self.cards[0]];
-//    [self.cards removeObject:self.cards[0]];
-//    [self reloadData];
-//}
-
-//- (void) outOfCards {
-//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Out of cards!"
-//                                                                   message:@"Come back later:)" preferredStyle:UIAlertControllerStyleAlert];
-//
-//    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-//                                                          handler:^(UIAlertAction * action) {}];
-//
-//    [alert addAction:defaultAction];
-//    [self presentViewController:alert animated:YES completion:nil];
-//}
-
 - (void) alertPopUp: (PFUser *)user{
     
     UIAlertController *alert = [UIAlertController
@@ -67,7 +43,17 @@
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion: nil];
+}
 
+- (void) outOfCards {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Out of cards!"
+                                                                   message:@"Come back later:)" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)logout:(id)sender {
@@ -78,7 +64,7 @@
         } else {
             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             UIStoryboard *storyboard =  [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
             appDelegate.window.rootViewController = loginVC;
         }
     }];

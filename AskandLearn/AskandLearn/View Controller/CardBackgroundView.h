@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AlertDelegate <NSObject>
 
 -(void)alertPopUp:(PFUser *)user;
+-(void)outOfCards;
 
 @end
 

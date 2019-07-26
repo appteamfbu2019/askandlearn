@@ -14,6 +14,7 @@
 @interface HomeViewController : UIViewController <UIAlertViewDelegate>
 
 - (void) alertPopUp: (PFUser *)user;
+- (void) outOfCards;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profPicView;
 @property (weak, nonatomic) IBOutlet UILabel *nameField;
