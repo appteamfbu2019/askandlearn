@@ -154,7 +154,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
             if ([self.cards count] == (NSUInteger)0){
                 NSLog(@"exhausted all options");
                 //self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
-                [self outOfCards];
+                [delegate outOfCards];
             }
             
             cardsLoadedIndex = 0;
@@ -167,18 +167,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     
 }
 
-- (void) outOfCards {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Out of cards!"
-                                                                   message:@"Come back later:)" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    
-    HomeViewController *pop = [[HomeViewController alloc] init];
-    [pop presentViewController:alert animated:YES completion:nil];
-}
 
 #warning include own action here!
 //%%% action called when the card goes to the left.
@@ -199,6 +187,11 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }
     [self.cards removeObject:currentCard];
+    if ([self.cards count] == (NSUInteger)0){
+        NSLog(@"exhausted all options");
+        //self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
+        [delegate outOfCards];
+    }
     //[self reloadData];
 }
 
@@ -238,6 +231,12 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
+    }
+    
+    if ([self.cards count] == (NSUInteger)0){
+        NSLog(@"exhausted all options");
+        //self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
+        [delegate outOfCards];
     }
 }
 
