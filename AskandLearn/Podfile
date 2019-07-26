@@ -12,7 +12,6 @@ target 'AskandLearn' do
   pod 'MBProgressHUD'
   pod 'AFNetworking','2.0'
   pod 'BDBOAuth1Manager’
-  pod 'IOSLinkedInAPI', '2.0'
   pod 'FBSDKLoginKit'
   
   target 'AskandLearnTests' do
