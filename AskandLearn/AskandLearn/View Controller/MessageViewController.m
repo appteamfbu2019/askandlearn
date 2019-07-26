@@ -14,16 +14,11 @@
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
 
-
-
-
 @interface MessageViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong,nonatomic) NSMutableArray *dummy;
 @property(weak,nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-
-
 
 @end
 
@@ -34,6 +29,7 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"MessageCell"];
     
     [self featchArray];
     
@@ -60,11 +56,10 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dummy.count;
+    return 2;
 }
 
 //-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -77,7 +72,7 @@
 //    return cell;
 //    
 //}
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -89,8 +84,13 @@
 
 
 - (IBAction)didTapCompose:(id)sender {
-    [self performSegueWithIdentifier:@"ComposeSegue" sender:nil];
+    [self performSegueWithIdentifier:@"MessageSegue" sender:nil];
     NSLog(@"Should be a Succesful Segue");
 }
+<<<<<<< HEAD
+ @end
+ 
+=======
 */
 @end
+>>>>>>> master
