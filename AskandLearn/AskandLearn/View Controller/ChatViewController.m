@@ -8,9 +8,12 @@
 
 #import "ChatViewController.h"
 #import "Parse/Parse.h"
+#import "MessageViewController.h"
 
 @interface ChatViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSMutableArray *displayMessages;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -18,11 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"Successful Segue");
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     // Do any additional setup after loading the view.
-    [self onTimer];
+    //[self onTimer];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"likesCount > 100"];
     PFQuery *query = [PFQuery queryWithClassName:@"AskAndLearn" predicate:predicate];
     [query orderByDescending:@"CreatedAt"];
@@ -38,9 +42,13 @@
 }
 
 
--(void)onTimer{
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
+/*-(void)onTimer{
+    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
     
+}*/
+
+-(NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.displayMessages.count;
 }
 
 /*
@@ -54,7 +62,7 @@
 */
 
 - (IBAction)didTapSenf:(id)sender {
-    PFObject *chatMessage = [PFObject objectWithClassName:@"Message_fbu2019"];
+    PFObject *chatMessage = [PFObject objectWithClassName:@"Message"];
     
     chatMessage[@"text"] = self.messageTextField.text;
     
@@ -67,5 +75,9 @@
         }
     }];
     [self.displayMessages insertObject:(chatMessage) atIndex:0];
+}
+
+- (IBAction)didTapBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
