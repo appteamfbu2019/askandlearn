@@ -7,14 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
 #import "CardView.h"
+#import "HomeViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol AlertDelegate <NSObject>
+
+-(void)alertPopUp:(PFUser *)user;
+
+@end
+
 @interface CardBackgroundView : UIView <DraggableViewDelegate>
+
+@property (weak) id <AlertDelegate> delegate;
 
 -(void)cardSwipedLeft:(UIView *)card;
 -(void)cardSwipedRight:(UIView *)card;
+
 
 @property (retain,nonatomic)NSArray* exampleCardLabels; //%%% the labels the cards
 @property (retain,nonatomic)NSMutableArray* allCards; //%%% the labels the cards
