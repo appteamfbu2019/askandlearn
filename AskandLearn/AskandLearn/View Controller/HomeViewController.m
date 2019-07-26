@@ -64,7 +64,7 @@
         } else {
             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             UIStoryboard *storyboard =  [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
             appDelegate.window.rootViewController = loginVC;
         }
     }];

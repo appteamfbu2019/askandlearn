@@ -6,6 +6,14 @@
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
+//  Most of the base code for draggable view was created as stated below:
+//  RKSwipeCards
+//
+//  Created by Richard Kim on 5/21/14.
+//  Copyright (c) 2014 Richard Kim. All rights reserved.
+//
+//  @cwRichardKim for updates and requests
+
 #import "CardBackgroundView.h"
 #import "CardView.h"
 #import "Parse/Parse.h"
@@ -26,8 +34,8 @@
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
-static const float CARD_HEIGHT = 386; //%%% height of the draggable card
-static const float CARD_WIDTH = 290; //%%% width of the draggable card
+static const float CARD_HEIGHT = 700; //%%% height of the draggable card
+static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 @synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
