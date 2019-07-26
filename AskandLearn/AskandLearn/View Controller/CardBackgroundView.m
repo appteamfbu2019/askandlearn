@@ -9,7 +9,6 @@
 #import "CardBackgroundView.h"
 #import "CardView.h"
 #import "Parse/Parse.h"
-#import "User.h"
 #import "PFObject.h"
 #import "Action.h"
 #import "Match.h"
@@ -33,9 +32,12 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 @synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
 
+@synthesize delegate;
+
 - (id)initWithFrame:(CGRect)frame
 
 {
+    
     NSLog(@"loading card background view");
     self = [super initWithFrame:frame];
     if (self) {
@@ -100,7 +102,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         
         //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
         for (int i = 0; i<[self.cards count]; i++) {
-            NSLog(@"self.cards count %lu", [self.cards count]);
             CardView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
             
@@ -133,7 +134,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [query findObjectsInBackgroundWithBlock:^(NSArray *actions, NSError *error){
         if (actions != nil) {
             self.actions = actions;
-            NSLog(@"actions count %lu", self.actions.count);
             NSMutableArray *discard = [[NSMutableArray alloc]init];
             for (Action *act in self.actions){
                 if ([act.receivedDislike.objectId isEqualToString:PFUser.currentUser.objectId]){
@@ -143,11 +143,9 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                     [discard addObject:act.receiver];
                 }
             }
-            NSLog(@"discard %@", discard);
             for (PFUser *user in discard){
                 for (PFUser *card in self.cards){
                     if ([card.objectId isEqualToString:user.objectId]){
-                        NSLog(@"Removing");
                         [self.cards removeObject:card];
                         break;
                     }
@@ -159,7 +157,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                 [self outOfCards];
             }
             
-            NSLog(@"cards!! %lu", [self.cards count]);
             cardsLoadedIndex = 0;
             [self loadCards];
         } else {
@@ -213,10 +210,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     //do whatever you want with the card that was swiped
     //    DraggableView *c = (DraggableView *)card;
     
-    NSLog(@"self.cards %@", self.cards);
-    NSLog(@"allCards %@", allCards);
-    NSLog(@"loadedCards %@", loadedCards);
-    
     PFUser *currentCard = self.cards[0];
     [Action likeAction:PFUser.currentUser withUser:currentCard];
     
@@ -227,12 +220,10 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [query whereKey:@"sender" equalTo:currentCard];
     [query whereKey:@"receiver" equalTo:PFUser.currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *like, NSError *error) {
-        if (like.count != (NSUInteger) 0 && like != nil){
-            NSLog(@"like looks like %@", like);
+        if (like.count != 0 && like != nil){
             [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
             NSLog(@"MATCH formed!!!");
-            HomeViewController *pop = [[HomeViewController alloc] init];
-            [pop alertPopUp:like[0][@"sender"]];
+            [delegate alertPopUp:like[0][@"sender"]];
         }
         else{
             NSLog(@"no Match formed");
@@ -240,8 +231,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }];
     
     [self.cards removeObject:currentCard];
-    NSLog(@"%lu", [self.cards count]);
-    //[self reloadData];
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     

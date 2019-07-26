@@ -39,8 +39,6 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    
-    NSLog(@"loading card view");
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];

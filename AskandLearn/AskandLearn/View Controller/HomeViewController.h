@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
+#import "CardBackgroundView.h"
+#import "CardView.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UIAlertViewDelegate>
+
+- (void) alertPopUp: (PFUser *)user;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profPicView;
 @property (weak, nonatomic) IBOutlet UILabel *nameField;
@@ -17,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *professionsField;
 @property (weak, nonatomic) IBOutlet UILabel *skillsField;
 
-- (void) alertPopUp: (PFUser *)matchedUser;
+
 
 @end
 
