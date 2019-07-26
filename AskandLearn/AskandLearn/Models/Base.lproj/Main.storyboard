@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="tabBarController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,7 +90,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ms-bd-QHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="946"/>
+            <point key="canvasLocation" x="54" y="879"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fHt-hI-0iS">
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy1-66-rWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.623188405797109" y="1714.9553571428571"/>
+            <point key="canvasLocation" x="54" y="1613"/>
         </scene>
         <!--Linked In Web View Controller-->
         <scene sceneID="sy7-3A-q3I">
@@ -255,7 +255,7 @@
         <!--Home-->
         <scene sceneID="wiz-mc-zQ5">
             <objects>
-                <viewController title="Home" id="oCj-lY-C78" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oCj-lY-C78" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oBG-oJ-sM7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,7 +335,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2cE-lX-gY8">
             <objects>
-                <tabBarController id="4eH-4S-s7d" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4eH-4S-s7d" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dej-cW-eNe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -603,6 +603,6 @@
         <image name="heart_outline_24-4x" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QHW-mZ-qR7"/>
+        <segue reference="Qm0-1o-5zo"/>
     </inferredMetricsTieBreakers>
 </document>

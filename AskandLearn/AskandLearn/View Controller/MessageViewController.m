@@ -62,16 +62,17 @@
     return 2;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
-    
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    MessageViewController *cell = (MessageViewController *) [tableView dequeueReusableCellWithIdentifier:@"MessageViewController"];
+//    
 //    NSDictionary *dummy = self.dummy[indexPath.row];
 //    cell.messageView.text = dummy[@"Hello"];
-    cell.textLabel.text = @"hello msg";
-    return cell;
-}
-
+//    
+//    return cell;
+//    
+//}
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -86,4 +87,5 @@
     [self performSegueWithIdentifier:@"MessageSegue" sender:nil];
     NSLog(@"Should be a Succesful Segue");
 }
+*/
 @end

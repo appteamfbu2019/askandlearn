@@ -12,6 +12,7 @@ target 'AskandLearn' do
   pod 'MBProgressHUD'
   pod 'AFNetworking','2.0'
   pod 'BDBOAuth1Manager’
+  pod 'FBSDKLoginKit'
   
   target 'AskandLearnTests' do
     inherit! :search_paths

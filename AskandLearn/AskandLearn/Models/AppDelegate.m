@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "SignUpViewController.h"
+#import "AccountViewController.h"
+
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
 
@@ -17,33 +21,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        
-        configuration.applicationId = @"askandlearn";
-        configuration.server = @"http://askandlearn.herokuapp.com/parse";
+    ParseClientConfiguration *config = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+         configuration.applicationId = @"askandlearn";
+                configuration.server = @"http://askandlearn.herokuapp.com/parse";
     }];
-    
     [Parse initializeWithConfiguration:config];
-    
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
     }
     
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
 
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-////This method will handle all the callbacks from the LinkedIn API call to your iOS application.
-//{
-//    if ([LISDKCallbackHandler shouldHandleUrl:url])
-//    {
-//        return [LISDKCallbackHandler application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-//    }
-//    return YES;
-//}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    return handled;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

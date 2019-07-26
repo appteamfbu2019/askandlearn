@@ -7,7 +7,7 @@
 //
 
 //
-//  DraggableView.m
+//  Most of the base code for draggable view was created as stated below
 //  RKSwipeCards
 //
 //  Created by Richard Kim on 5/21/14.
@@ -39,8 +39,6 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    
-    NSLog(@"loading card view");
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
@@ -49,9 +47,9 @@
         information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
-        information.textColor = [UIColor blackColor];
+        information.textColor = [UIColor whiteColor];
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor blueColor];
 #warning placeholder stuff, replace with card-specific information }
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];

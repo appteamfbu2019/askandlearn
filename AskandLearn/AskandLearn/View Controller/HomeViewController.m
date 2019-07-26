@@ -17,7 +17,7 @@
 #import "CardView.h"
 #import "CardBackgroundView.h"
 
-@interface HomeViewController () <UIAlertViewDelegate>
+@interface HomeViewController () <UIAlertViewDelegate, AlertDelegate>
 
 @end
 
@@ -25,65 +25,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // get all users
     NSLog(@"loading home view controller");
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
+    draggableBackground.delegate = self;
     [self.view addSubview:draggableBackground];
+
+    
 }
 
-
-//- (IBAction)tapLike:(id)sender {
-//    [Action likeAction:PFUser.currentUser withUser:self.cards[0]];
-//
-//    //run through the arrays and form 'matches'
-//    PFQuery *query = [PFQuery queryWithClassName:@"Action"];
-//    [query includeKey:@"receiver"];
-//    [query includeKey:@"sender"];
-//    [query whereKey:@"sender" equalTo:self.cards[0]];
-//    [query whereKey:@"receiver" equalTo:PFUser.currentUser];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *like, NSError *error) {
-//        if (like.count != (NSUInteger) 0 && like != nil){
-//            NSLog(@"like looks like %@", like);
-//            [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
-//            NSLog(@"MATCH formed!!!");
-//            [self alertPopUp:like[0][@"sender"]];
-//        }
-//        else{
-//            NSLog(@"no Match formed");
-//        }
-//    }];
-//
-//    [self.cards removeObject:self.cards[0]];
-//    [self reloadData];
-//}
-
-//- (IBAction)tapDislike:(id)sender {
-//    [Action dislikeAction:PFUser.currentUser withUser:self.cards[0]];
-//    [self.cards removeObject:self.cards[0]];
-//    [self reloadData];
-//}
-
-//- (void) outOfCards {
-//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Out of cards!"
-//                                                                   message:@"Come back later:)" preferredStyle:UIAlertControllerStyleAlert];
-//
-//    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-//                                                          handler:^(UIAlertAction * action) {}];
-//
-//    [alert addAction:defaultAction];
-//    [self presentViewController:alert animated:YES completion:nil];
-//}
-
-- (void) alertPopUp: (PFUser *)matchedUser {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You received a match!"
-                                                                    message:[NSString stringWithFormat:@"Matched with %@", matchedUser.username] preferredStyle:UIAlertControllerStyleAlert];
+- (void) alertPopUp: (PFUser *)user{
     
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"You received a match!" message: [NSString stringWithFormat:@"Matched with %@", user.username] preferredStyle:UIAlertControllerStyleAlert];
+
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {}];
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion: nil];
+}
 
+- (void) outOfCards {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Out of cards!"
+                                                                   message:@"Come back later:)" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)logout:(id)sender {
@@ -94,7 +64,7 @@
         } else {
             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             UIStoryboard *storyboard =  [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
             appDelegate.window.rootViewController = loginVC;
         }
     }];
