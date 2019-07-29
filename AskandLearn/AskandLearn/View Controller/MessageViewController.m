@@ -87,10 +87,6 @@
     [self performSegueWithIdentifier:@"MessageSegue" sender:nil];
     NSLog(@"Should be a Succesful Segue");
 }
-<<<<<<< HEAD
+
  @end
- 
-=======
-*/
-@end
->>>>>>> master
+

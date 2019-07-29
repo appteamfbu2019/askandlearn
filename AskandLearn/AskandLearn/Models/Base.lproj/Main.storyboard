@@ -166,8 +166,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzm-jN-Arb">
-                                <rect key="frame" x="181" y="464" width="104" height="30"/>
+                                <rect key="frame" x="155" y="463" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,29 +189,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy1-66-rWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="1612.5"/>
-        </scene>
-        <!--Linked In Web View Controller-->
-        <scene sceneID="sy7-3A-q3I">
-            <objects>
-                <viewController id="jv2-Fj-fJp" customClass="LinkedInWebViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fNL-Oj-GMu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGl-kz-gr1">
-                                <rect key="frame" x="29" y="77" width="348" height="773"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="7BK-hL-YwJ"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9gd-TK-alB"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f48-Eh-DV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1098.5507246376812" y="2626.3392857142858"/>
         </scene>
         <!--Matches-->
         <scene sceneID="CZc-fJ-s5u">
@@ -466,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lk8-X5-mUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785.5072463768117" y="1920.5357142857142"/>
+            <point key="canvasLocation" x="1317" y="1973"/>
         </scene>
         <!--Chat-->
         <scene sceneID="Hao-zM-Q7O">
@@ -539,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOF-8U-kQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3156.521739130435" y="1920.5357142857142"/>
+            <point key="canvasLocation" x="3364" y="1985"/>
         </scene>
         <!--Home-->
         <scene sceneID="PoR-MS-LdJ">
@@ -561,24 +542,6 @@
             <point key="canvasLocation" x="1769.5652173913045" y="-190.17857142857142"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="gJD-jA-HON">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oV7-kw-FfI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KKn-8q-Qx4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jv2-Fj-fJp" kind="relationship" relationship="rootViewController" id="LAc-3a-Kor"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AjW-Vz-KuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="78.260869565217391" y="2627.6785714285711"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="1Mq-7f-8mW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IXe-Iy-jZy" sceneMemberID="viewController">
@@ -594,7 +557,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ba-cJ-4Iw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2470" y="1921"/>
+            <point key="canvasLocation" x="2410" y="1973"/>
         </scene>
     </scenes>
     <resources>
