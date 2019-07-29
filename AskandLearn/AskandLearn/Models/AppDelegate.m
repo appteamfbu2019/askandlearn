@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import "SignUpViewController.h"
 #import "AccountViewController.h"
+#import <Parse/PFUser.h>
+#import "LoginViewController.h"
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 

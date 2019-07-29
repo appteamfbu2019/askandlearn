@@ -61,7 +61,7 @@
 }
 */
 
-- (IBAction)didTapSenf:(id)sender {
+- (IBAction)didTapSend:(id)sender {
     PFObject *chatMessage = [PFObject objectWithClassName:@"Message"];
     
     chatMessage[@"text"] = self.messageTextField.text;
