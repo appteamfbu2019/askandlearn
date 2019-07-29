@@ -35,24 +35,24 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
-* User can sign up to create a new account (using username, password)
-* User can Login/Logout
-* During sign up,user can connect through LinkedIn, and we will extract basic information through there 
-* Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
-* Tab to access the user's 'matches'
-* Tab to access the user's 'messages'
-* Implement Basic messaging function using Parse Chat
-* Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
+[x] User can sign up to create a new account (using username, password)
+[x] User can Login/Logout
+[x] During sign up,user can connect through Facebook, and we will extract basic information through there 
+[] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
+[x] Tab to access the user's 'matches'
+[x] Tab to access the user's 'messages'
+[] Implement Basic messaging function using Parse Chat
+[] Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
   (profession, company, age, field of study, area of interests)
   
 **Optional Nice-to-have Stories**
 
-* Swiping animation instead of just button taps
-* The option to unmatch, report, block users
-* "Verified" status for users with good ratings
-* Rating system and points system
-* Pop-up notification when a match has been formed
-* User can click on a profile to view more info in Detail View
+[x] Swiping animation instead of just button taps
+[] The option to unmatch, report, block users
+[] "Verified" status for users with good ratings
+[] Rating system and points system
+[x] Pop-up notification when a match has been formed
+[] User can click on a profile to view more info in Detail View
 
 ### 2. Screen Archetypes
 
@@ -106,7 +106,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 * Age
 * JobTitle
 * Bio
-* LinkedIn
+* Facebook
 
 **Message**
 * sender user
