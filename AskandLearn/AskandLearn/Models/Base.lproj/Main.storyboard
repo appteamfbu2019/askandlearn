@@ -90,7 +90,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ms-bd-QHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="879"/>
+            <point key="canvasLocation" x="54" y="911"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fHt-hI-0iS">
@@ -533,6 +533,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
+                                    <action selector="didTapSend:" destination="uJ5-sM-wgf" eventType="touchUpInside" id="ow6-xg-J3L"/>
                                     <action selector="sendTapped:" destination="uJ5-sM-wgf" eventType="touchUpInside" id="Gxc-OA-ILe"/>
                                 </connections>
                             </button>
@@ -566,7 +567,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="s1n-lW-Suv" id="8cy-Da-mzG"/>
-                                            <outlet property="usernameLabel" destination="G4r-wY-3Kd" id="zqQ-SN-Glg"/>
+                                            <outlet property="usernameLabel" destination="G4r-wY-3Kd" id="3We-Q5-mbA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -577,6 +578,7 @@
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backTapped:" destination="uJ5-sM-wgf" eventType="touchUpInside" id="Hvu-vV-eG6"/>
+                                    <action selector="didTapBack:" destination="uJ5-sM-wgf" eventType="touchUpInside" id="MAv-H7-JDW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a Message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2yH-7c-ea4">
@@ -594,13 +596,15 @@
                     <connections>
                         <outlet property="bacKButton" destination="uXD-Bp-O3P" id="Pfy-Nq-6kT"/>
                         <outlet property="messageField" destination="2yH-7c-ea4" id="JdL-4O-1Bs"/>
+                        <outlet property="messageTextField" destination="2yH-7c-ea4" id="u1e-If-F12"/>
                         <outlet property="mytableView" destination="yYJ-pd-hP5" id="MLd-EV-nhk"/>
                         <outlet property="sendButton" destination="Igv-YM-Bn9" id="DkN-lO-qDf"/>
+                        <outlet property="tableView" destination="yYJ-pd-hP5" id="yoI-4l-WUU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOF-8U-kQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2816" y="2052"/>
+            <point key="canvasLocation" x="3090" y="2358"/>
         </scene>
         <!--Home-->
         <scene sceneID="PoR-MS-LdJ">
@@ -633,7 +637,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uJ5-sM-wgf" kind="relationship" relationship="rootViewController" id="zXA-Ab-jbS"/>
+                        <segue destination="uJ5-sM-wgf" kind="show" id="shn-GI-uib"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ba-cJ-4Iw" userLabel="First Responder" sceneMemberID="firstResponder"/>
