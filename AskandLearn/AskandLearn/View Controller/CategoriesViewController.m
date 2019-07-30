@@ -33,6 +33,8 @@ static const NSString *idKey = @"Identifier";
     [self showNoResultsView:NO];
     self.dummyCategories = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"CategoryList" ofType:@"plist"]];
     // Do any additional setup after loading the view from its nib.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,7 +94,7 @@ static const NSString *idKey = @"Identifier";
     CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCellId"];
     if (!cell)
     {
-        cell = [CategoryTableViewCell categoryTableCell];
+        cell = [CategoryTableViewCell categoryTableViewCell];
     }
     
     NSDictionary *category = self.categoryList[indexPath.row];

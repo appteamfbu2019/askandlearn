@@ -26,6 +26,10 @@
                     <rect key="frame" x="0.0" y="138" width="414" height="758"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="CO6-zE-muW"/>
+                        <outlet property="delegate" destination="-1" id="Fda-5T-NPp"/>
+                    </connections>
                 </tableView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0S-Ly-frW">
                     <rect key="frame" x="0.0" y="178" width="421" height="718"/>
