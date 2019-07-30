@@ -28,10 +28,12 @@
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
+		B04ED53D22F0CF2E00CBEF93 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53C22F0CF2E00CBEF93 /* ProfileEditViewController.m */; };
 		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
 		FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AE22E7BC3600A2A0D6 /* CardView.m */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
 		FE6B267822E2423E004F4D57 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267722E2423E004F4D57 /* Action.m */; };
+		FE7E722E22EBAFDC00519A67 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E722D22EBAFDC00519A67 /* SettingsViewController.m */; };
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
@@ -94,6 +96,8 @@
 		B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		B04ED53522EA5B5B00CBEF93 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = "AskandLearn/View Controller/ChatCell.h"; sourceTree = SOURCE_ROOT; };
 		B04ED53622EA5B5B00CBEF93 /* ChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChatCell.m; path = "AskandLearn/View Controller/ChatCell.m"; sourceTree = SOURCE_ROOT; };
+		B04ED53B22F0CF2E00CBEF93 /* ProfileEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		B04ED53C22F0CF2E00CBEF93 /* ProfileEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		D650055D94AAC9D8BB54A659 /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardBackgroundView.h; path = "AskandLearn/View Controller/CardBackgroundView.h"; sourceTree = SOURCE_ROOT; };
 		FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardBackgroundView.m; path = "AskandLearn/View Controller/CardBackgroundView.m"; sourceTree = SOURCE_ROOT; };
@@ -102,6 +106,8 @@
 		FE564A1222DFECC500192A43 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FE6B267622E2423E004F4D57 /* Action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
 		FE6B267722E2423E004F4D57 /* Action.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
+		FE7E722C22EBAFDC00519A67 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FE7E722D22EBAFDC00519A67 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FEB50A6922DE77E100FEF8DB /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		FEB50A6A22DE77E100FEF8DB /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -215,6 +221,10 @@
 				B03D97DE22DFB01500A8D9E5 /* MessageViewController.m */,
 				B01979C922E79A580038511A /* ChatViewController.h */,
 				B01979CA22E79A580038511A /* ChatViewController.m */,
+				FE7E722C22EBAFDC00519A67 /* SettingsViewController.h */,
+				FE7E722D22EBAFDC00519A67 /* SettingsViewController.m */,
+				B04ED53B22F0CF2E00CBEF93 /* ProfileEditViewController.h */,
+				B04ED53C22F0CF2E00CBEF93 /* ProfileEditViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -503,6 +513,7 @@
 				B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
+				B04ED53D22F0CF2E00CBEF93 /* ProfileEditViewController.m in Sources */,
 				FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */,
 				ABB1BBE822E65E2E0029162A /* MessageCell.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
@@ -510,6 +521,7 @@
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
 				B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
+				FE7E722E22EBAFDC00519A67 /* SettingsViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 				FE6B267822E2423E004F4D57 /* Action.m in Sources */,
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
