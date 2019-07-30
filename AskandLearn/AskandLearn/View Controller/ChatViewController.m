@@ -7,13 +7,15 @@
 //
 
 #import "ChatViewController.h"
-#import "Parse/Parse.h"
-#import "MessageViewController.h"
+#import "Parse.h"
+#import "ChatCell.h"
 
-@interface ChatViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) NSMutableArray *displayMessages;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-
+@interface ChatViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *mytableView;
+@property (weak, nonatomic) IBOutlet UITextField *messageField;
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (strong, nonatomic) IBOutlet UIButton *bacKButton;
+@property (strong,nonnull) NSArray *messageArrary;
 
 @end
 
@@ -21,63 +23,70 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Successful Segue");
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-    // Do any additional setup after loading the view.
-    //[self onTimer];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"likesCount > 100"];
-    PFQuery *query = [PFQuery queryWithClassName:@"AskAndLearn" predicate:predicate];
-    [query orderByDescending:@"CreatedAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *dummies, NSError *error) {
-        if (dummies != nil){
-            self.displayMessages = (NSMutableArray *)dummies;
-        } else{
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-    [self.tableView reloadData];
+    self.mytableView.dataSource = self;
+    self.mytableView.rowHeight = UITableViewAutomaticDimension;
+    [self Refresh];
 }
 
-
-/*-(void)onTimer{
-    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
-    
-}*/
-
--(NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.displayMessages.count;
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)didTapSenf:(id)sender {
-    PFObject *chatMessage = [PFObject objectWithClassName:@"Message"];
-    
-    chatMessage[@"text"] = self.messageTextField.text;
-    
-    [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+- (IBAction)sendTapped:(id)sender {
+    PFObject *chatMessage = [PFObject objectWithClassName:@"Message_fbu2018"];
+    chatMessage[@"text"] = self.messageField.text;
+    chatMessage[@"user"] = PFUser.currentUser;
+    [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (succeeded) {
             NSLog(@"The message was saved!");
-            self.messageTextField.text = nil;
         } else {
             NSLog(@"Problem saving message: %@", error.localizedDescription);
         }
     }];
-    [self.displayMessages insertObject:(chatMessage) atIndex:0];
+    self.messageField.text = @"";
 }
 
-- (IBAction)didTapBack:(id)sender {
+-(IBAction)backTapped:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void)Refresh{
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
+    PFQuery *query = [PFQuery queryWithClassName:@"Message_fbu2018"];
+    query.limit = 20;
+    [query includeKey:@"user"];
+    [query orderByDescending:@"createdAt"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.messageArrary = posts;
+            [self.mytableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
+    PFObject *chatmessage = self.messageArrary[indexPath.row];
+    PFUser *user = chatmessage[@"user"];
+    self.messageField.text = chatmessage[@"text"];
+    
+    if(user != nil){
+        cell.usernameLabel.text = user.username;
+        cell.messageLabel.text = chatmessage[@"text"];
+    } else{
+        cell.usernameLabel.text = @"🤖";
+        cell.messageLabel.text = @"Error getting message";
+    }
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.messageArrary.count;
+}
+
 @end
+
