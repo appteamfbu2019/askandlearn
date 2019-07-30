@@ -49,7 +49,7 @@ static NSString *idKey = @"Identifier";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self configureUserListViewController];
+    [self configureTagListViewController];
     [self checkAndUpdateDoneButton];
 }
 
@@ -105,7 +105,7 @@ static NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Private
 
-- (void)configureUserListViewController
+- (void)configureTagListViewController
 {
     if (!self.categoriesListController)
     {
@@ -206,6 +206,7 @@ static NSString *idKey = @"Identifier";
 
 - (void)textDidChange:(NSString *)text
 {
+    NSLog(@"text changing %@", text);
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     if ([text length])
     {

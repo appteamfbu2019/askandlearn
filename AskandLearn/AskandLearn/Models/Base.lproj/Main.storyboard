@@ -474,18 +474,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             </containerView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XpX-8o-ww6">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="979"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="819"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87793464467005078" green="0.87793464467005078" blue="0.87793464467005078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" text="hi" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-Pj-xfK" customClass="TokenInputView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-Pj-xfK" customClass="TokenInputView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="pVB-w9-fGA"/>
                                 </constraints>
                                 <color key="textColor" red="0.32769117619999999" green="0.64167508679999996" blue="0.96620899439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                         </subviews>
