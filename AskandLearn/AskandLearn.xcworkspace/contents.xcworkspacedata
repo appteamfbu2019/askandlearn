@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/View Controller/ProfileEditViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/View Controller/ProfileEditViewController.m">
+   </FileRef>
+   <FileRef
       location = "group:AskandLearn.xcodeproj">
    </FileRef>
    <FileRef
