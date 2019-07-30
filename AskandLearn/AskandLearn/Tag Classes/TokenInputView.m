@@ -35,6 +35,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 }
 
 -(void)awakeFromNib{
+    [super awakeFromNib];
     [self initialSetUp];
     [self addObserver:self forKeyPath:contentSizeKeyPath options:NSKeyValueObservingOptionOld context:nil];
 }
@@ -180,6 +181,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 
 - (void)highlightToken:(Token *)token
 {
+    NSLog(@"Highlight");
     if (token && (![token.idString isEqualToString:self.selectedToken.idString]))
     {
         self.selectedToken = token;

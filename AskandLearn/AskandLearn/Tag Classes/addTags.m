@@ -63,7 +63,7 @@ static NSString *idKey = @"Identifier";
     [self.tokenInputView setSelectedToken:token highlight:YES];
 }
 
-- (NSMutableArray *)addedMembers
+- (NSMutableArray *)addedTags
 {
     if (!_addedTags)
     {
