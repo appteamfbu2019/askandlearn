@@ -193,7 +193,6 @@
 		AB50E24722DD0617006097DB /* AskandLearn */ = {
 			isa = PBXGroup;
 			children = (
-				FEA740FC22F0D436009519B0 /* CategoryList.plist */,
 				FE445C2D22F0B79F00F8C824 /* Tag Classes */,
 				AB63D39222E1051A00AB8D3D /* Models */,
 				AB63D39122E104FF00AB8D3D /* API */,
@@ -271,6 +270,7 @@
 		AB63D39222E1051A00AB8D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FEA740FC22F0D436009519B0 /* CategoryList.plist */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
