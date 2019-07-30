@@ -26,6 +26,7 @@
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
+		B04ED53D22F0CF2E00CBEF93 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53C22F0CF2E00CBEF93 /* ProfileEditViewController.m */; };
 		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
 		FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AE22E7BC3600A2A0D6 /* CardView.m */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
@@ -96,6 +97,8 @@
 		B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B04ED53522EA5B5B00CBEF93 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = "AskandLearn/View Controller/ChatCell.h"; sourceTree = SOURCE_ROOT; };
 		B04ED53622EA5B5B00CBEF93 /* ChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChatCell.m; path = "AskandLearn/View Controller/ChatCell.m"; sourceTree = SOURCE_ROOT; };
+		B04ED53B22F0CF2E00CBEF93 /* ProfileEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		B04ED53C22F0CF2E00CBEF93 /* ProfileEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		D650055D94AAC9D8BB54A659 /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardBackgroundView.h; path = "AskandLearn/View Controller/CardBackgroundView.h"; sourceTree = SOURCE_ROOT; };
 		FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardBackgroundView.m; path = "AskandLearn/View Controller/CardBackgroundView.m"; sourceTree = SOURCE_ROOT; };
@@ -531,6 +534,7 @@
 				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
+				B04ED53D22F0CF2E00CBEF93 /* ProfileEditViewController.m in Sources */,
 				FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
