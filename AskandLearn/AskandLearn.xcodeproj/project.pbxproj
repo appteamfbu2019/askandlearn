@@ -15,7 +15,7 @@
 		AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB35051622E8F4C600BC308D /* AccountViewController.m */; };
 		AB35051822E931CC00BC308D /* HomeViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
 		AB35051922E931CC00BC308D /* HomeViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
-		AB4E841922F0DF8D00070FD7 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4E841722F0DF8C00070FD7 /* ProfileEditViewController.m */; };
+		AB4E841F22F0E01700070FD7 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4E841E22F0E01700070FD7 /* ProfileEditViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
 		AB50E25022DD0617006097DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB50E24E22DD0617006097DB /* Main.storyboard */; };
@@ -76,8 +76,8 @@
 		AB0449DA22DF4CFE001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AB35051522E8F4C600BC308D /* AccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		AB35051622E8F4C600BC308D /* AccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
-		AB4E841722F0DF8C00070FD7 /* ProfileEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProfileEditViewController.m; path = "/Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/View Controller/ProfileEditViewController.m"; sourceTree = "<absolute>"; };
-		AB4E841822F0DF8C00070FD7 /* ProfileEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProfileEditViewController.h; path = "/Users/estherb/Desktop/askandlearn/AskandLearn/AskandLearn/View Controller/ProfileEditViewController.h"; sourceTree = "<absolute>"; };
+		AB4E841D22F0E01700070FD7 /* ProfileEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		AB4E841E22F0E01700070FD7 /* ProfileEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		AB50E24522DD0617006097DB /* AskandLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskandLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E24822DD0617006097DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB50E24922DD0617006097DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -221,8 +221,6 @@
 		AB63D38F22E104CE00AB8D3D /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AB4E841822F0DF8C00070FD7 /* ProfileEditViewController.h */,
-				AB4E841722F0DF8C00070FD7 /* ProfileEditViewController.m */,
 				FE564A1222DFECC500192A43 /* LoginViewController.m */,
 				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
 				AB50E24B22DD0617006097DB /* ViewController.h */,
@@ -244,6 +242,8 @@
 				FE7E723322EFA2FF00519A67 /* CategoriesViewController.xib */,
 				FE7E724122EFC00E00519A67 /* addTags.h */,
 				FE7E724222EFC00E00519A67 /* addTags.m */,
+				AB4E841D22F0E01700070FD7 /* ProfileEditViewController.h */,
+				AB4E841E22F0E01700070FD7 /* ProfileEditViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -553,7 +553,7 @@
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
 				B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */,
-				AB4E841922F0DF8D00070FD7 /* ProfileEditViewController.m in Sources */,
+				AB4E841F22F0E01700070FD7 /* ProfileEditViewController.m in Sources */,
 				FE7E723422EFA2FF00519A67 /* CategoriesViewController.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
 				FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */,
