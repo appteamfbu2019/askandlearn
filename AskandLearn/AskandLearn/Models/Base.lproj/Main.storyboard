@@ -448,7 +448,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Tags"/>
                                 <connections>
-                                    <segue destination="01B-DF-QBj" kind="presentation" id="Of2-TG-TLE"/>
+                                    <segue destination="01B-DF-QBj" kind="presentation" modalTransitionStyle="flipHorizontal" id="Of2-TG-TLE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -469,17 +469,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsc-8h-E9u">
-                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qsc-8h-E9u">
+                                <rect key="frame" x="0.0" y="178" width="414" height="684"/>
                             </containerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XpX-8o-ww6">
-                                <rect key="frame" x="0.0" y="160" width="414" height="819"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-Pj-xfK" customClass="TokenInputView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="72"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-Pj-xfK" customClass="TokenInputView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="90"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="pVB-w9-fGA"/>
@@ -490,9 +484,24 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qsc-8h-E9u" firstAttribute="trailing" secondItem="aoY-XU-Ldi" secondAttribute="trailing" id="0Rt-Zn-dUa"/>
+                            <constraint firstItem="Qsc-8h-E9u" firstAttribute="bottom" secondItem="aoY-XU-Ldi" secondAttribute="bottom" id="eP0-zc-9lt"/>
+                            <constraint firstItem="Qsc-8h-E9u" firstAttribute="leading" secondItem="aoY-XU-Ldi" secondAttribute="leading" id="kOF-SH-wTp"/>
+                            <constraint firstItem="4HI-Pj-xfK" firstAttribute="trailing" secondItem="aoY-XU-Ldi" secondAttribute="trailing" id="lCj-2B-MDC"/>
+                            <constraint firstItem="4HI-Pj-xfK" firstAttribute="top" secondItem="aoY-XU-Ldi" secondAttribute="top" id="sb6-TO-deC"/>
+                            <constraint firstItem="Qsc-8h-E9u" firstAttribute="top" secondItem="4HI-Pj-xfK" secondAttribute="bottom" id="x4C-rM-INE"/>
+                            <constraint firstItem="4HI-Pj-xfK" firstAttribute="leading" secondItem="aoY-XU-Ldi" secondAttribute="leading" id="xeC-Qs-Pmd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aoY-XU-Ldi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ac9-st-PLZ"/>
+                    <navigationItem key="navigationItem" id="ac9-st-PLZ">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Myn-KX-cQK">
+                            <connections>
+                                <segue destination="s2O-8j-BFH" kind="presentation" modalTransitionStyle="flipHorizontal" id="wea-Qz-PvB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addedTagViewHeight" destination="pVB-w9-fGA" id="R8N-zA-P7D"/>
                         <outlet property="categoriesListContainerView" destination="Qsc-8h-E9u" id="J9N-8R-ZLO"/>
@@ -716,6 +725,7 @@
         <image name="heart_outline_24-4x" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wea-Qz-PvB"/>
         <segue reference="QHW-mZ-qR7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -32,6 +32,7 @@
 }
 
 - (void)prepareForReuse { //cleanup for custom cells
+    [super prepareForReuse];
     self.categoryText.text = @"";
 }
 

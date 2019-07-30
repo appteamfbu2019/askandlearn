@@ -44,6 +44,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 #pragma mark Interface
 
 -(void)addToken:(Token *)token needsLayout:(BOOL)needsLayout{
+    NSLog(@"adding token");
     if (![self.tokens containsObject:token]){
         [self.tokens addObject:token];
         self.activeText = nil;
@@ -368,6 +369,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     BOOL shouldBegin = YES;
+    NSLog(@"tap");
     if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
         shouldBegin = NO;
     return shouldBegin;

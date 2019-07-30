@@ -33,8 +33,6 @@ static const NSString *idKey = @"Identifier";
     [self showNoResultsView:NO];
     self.dummyCategories = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"CategoryList" ofType:@"plist"]];
     // Do any additional setup after loading the view from its nib.
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -86,6 +84,7 @@ static const NSString *idKey = @"Identifier";
 {
     NSInteger noOfRows = 0;
     noOfRows = [self.categoryList count];
+    NSLog(@"%lu", noOfRows);
     return noOfRows;
 }
 
@@ -108,6 +107,7 @@ static const NSString *idKey = @"Identifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"selected");
     NSDictionary *category = self.categoryList[indexPath.row];
     if (self.selectedBlock)
     {

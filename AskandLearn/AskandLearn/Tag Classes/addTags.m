@@ -22,7 +22,7 @@ static NSString *idKey = @"Identifier";
 
 @interface addTags () <InputViewDelegate>
 
-@property (weak, nonatomic) IBOutlet TokenInputView *tokenInputView;
+@property (nonatomic) IBOutlet TokenInputView *tokenInputView;
 @property (weak, nonatomic) IBOutlet UIView *categoriesListContainerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *addedTagViewHeight;
 

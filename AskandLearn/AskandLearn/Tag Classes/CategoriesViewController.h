@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^SelectedCategoryCompletionBlock)(BOOL success, NSDictionary *category, NSError *error);
 typedef void (^DeselectedCategoryCompletionBlock)(BOOL success, NSDictionary *category, NSError *error);
-typedef void (^DidScrollBlock)();
+typedef void (^DidScrollBlock)(void);
 
 @interface CategoriesViewController : UIViewController
 
