@@ -402,7 +402,7 @@
         <!--Settings-->
         <scene sceneID="wTi-Nm-e5X">
             <objects>
-                <viewController title="Settings" id="s2O-8j-BFH" sceneMemberID="viewController">
+                <viewController title="Settings" id="s2O-8j-BFH" customClass="Se" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iFz-mO-tcC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
