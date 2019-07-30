@@ -40,6 +40,7 @@
 		FE7E723D22EFB80000519A67 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723C22EFB80000519A67 /* Token.m */; };
 		FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723F22EFB94200519A67 /* TokenInputView.m */; };
 		FE7E724322EFC00E00519A67 /* addTags.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E724222EFC00E00519A67 /* addTags.m */; };
+		FEA740FE22F0D6A1009519B0 /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEA740FD22F0D6A1009519B0 /* CategoryList.plist */; };
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
@@ -124,7 +125,7 @@
 		FE7E723F22EFB94200519A67 /* TokenInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TokenInputView.m; path = "AskandLearn/Tag Classes/TokenInputView.m"; sourceTree = SOURCE_ROOT; };
 		FE7E724122EFC00E00519A67 /* addTags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addTags.h; sourceTree = "<group>"; };
 		FE7E724222EFC00E00519A67 /* addTags.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addTags.m; sourceTree = "<group>"; };
-		FEA740FC22F0D436009519B0 /* CategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
+		FEA740FD22F0D6A1009519B0 /* CategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
 		FEB50A6922DE77E100FEF8DB /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		FEB50A6A22DE77E100FEF8DB /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -270,7 +271,6 @@
 		AB63D39222E1051A00AB8D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FEA740FC22F0D436009519B0 /* CategoryList.plist */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
@@ -320,6 +320,7 @@
 				FE7E723322EFA2FF00519A67 /* CategoriesViewController.xib */,
 				FE7E724122EFC00E00519A67 /* addTags.h */,
 				FE7E724222EFC00E00519A67 /* addTags.m */,
+				FEA740FD22F0D6A1009519B0 /* CategoryList.plist */,
 			);
 			path = "Tag Classes";
 			sourceTree = "<group>";
@@ -437,6 +438,7 @@
 				FE7E723A22EFA49300519A67 /* CategoryTableViewCell.xib in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
+				FEA740FE22F0D6A1009519B0 /* CategoryList.plist in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

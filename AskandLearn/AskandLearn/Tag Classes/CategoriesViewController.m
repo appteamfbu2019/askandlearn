@@ -13,7 +13,7 @@ static CGFloat const animationTime = 0.2f;
 static const NSString *nameKey = @"Name";
 static const NSString *idKey = @"Identifier";
 
-@interface CategoriesViewController ()
+@interface CategoriesViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *noResultView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *noResultsTopConstraint;
@@ -34,6 +34,8 @@ static const NSString *idKey = @"Identifier";
     self.dummyCategories = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"CategoryList" ofType:@"plist"]];
     NSLog(@"%@", self.dummyCategories);
     // Do any additional setup after loading the view from its nib.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,6 +54,7 @@ static const NSString *idKey = @"Identifier";
 
 + (id)categoriesListController {
     CategoriesViewController *cvc = [[CategoriesViewController alloc] initWithNibName:NSStringFromClass([CategoriesViewController class]) bundle:nil];
+    
     return cvc;
 }
 

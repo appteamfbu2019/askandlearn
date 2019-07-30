@@ -69,7 +69,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 -(void)addTokens:(NSArray *)tokens needsLayout:(BOOL)needsLayout{
     if (tokens)
     {
-        NSSortDescriptor *sortDisc = [NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:YES];
+        NSSortDescriptor *sortDisc = [NSSortDescriptor sortDescriptorWithKey:@"nameString" ascending:YES];
         self.tokens = [[tokens sortedArrayUsingDescriptors:@[sortDisc]] mutableCopy];
         
         if (needsLayout)
@@ -118,11 +118,11 @@ static NSString *contentSizeKeyPath = @"contentSize";
     self.tokens = [NSMutableArray array];
     self.delegate = self;
     [UIMenuController sharedMenuController].menuVisible = NO;
-    self.dataDetectorTypes = UIDataDetectorTypeNone;
-    self.delaysContentTouches = NO;
-    self.canCancelContentTouches = NO;
-    self.scrollEnabled = YES;
-    self.exclusiveTouch = NO;
+//    self.dataDetectorTypes = UIDataDetectorTypeNone;
+//    self.delaysContentTouches = NO;
+//    self.canCancelContentTouches = NO;
+//    self.scrollEnabled = YES;
+//    self.exclusiveTouch = NO;
 }
 
 - (NSString *)stringFromLocation:(NSInteger)location
@@ -371,6 +371,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
     BOOL shouldBegin = YES;
     NSLog(@"tap");
     if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
+        NSLog(@"hello?");
         shouldBegin = NO;
     return shouldBegin;
 }

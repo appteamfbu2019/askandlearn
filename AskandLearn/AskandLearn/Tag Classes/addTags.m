@@ -156,7 +156,6 @@ static NSString *idKey = @"Identifier";
         token.idString= tag[idKey];
         [self.tokensCache setValue:token forKey:token.idString];
     }
-    token.timeStamp = [NSDate date];
     
     [self.addedTags addObject:tag];
     [self.tokenInputView addToken:token needsLayout:update];
