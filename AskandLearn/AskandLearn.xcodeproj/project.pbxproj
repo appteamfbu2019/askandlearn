@@ -33,6 +33,14 @@
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
 		FE6B267822E2423E004F4D57 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267722E2423E004F4D57 /* Action.m */; };
 		FE7E722E22EBAFDC00519A67 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E722D22EBAFDC00519A67 /* SettingsViewController.m */; };
+		FE7E723022EF87CF00519A67 /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7E722F22EF87CF00519A67 /* CategoryList.plist */; };
+		FE7E723422EFA2FF00519A67 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723222EFA2FF00519A67 /* CategoriesViewController.m */; };
+		FE7E723522EFA2FF00519A67 /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7E723322EFA2FF00519A67 /* CategoriesViewController.xib */; };
+		FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723722EFA49300519A67 /* CategoryTableViewCell.m */; };
+		FE7E723A22EFA49300519A67 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7E723822EFA49300519A67 /* CategoryTableViewCell.xib */; };
+		FE7E723D22EFB80000519A67 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723C22EFB80000519A67 /* Token.m */; };
+		FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723F22EFB94200519A67 /* TokenInputView.m */; };
+		FE7E724322EFC00E00519A67 /* addTags.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E724222EFC00E00519A67 /* addTags.m */; };
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
@@ -105,6 +113,19 @@
 		FE6B267722E2423E004F4D57 /* Action.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
 		FE7E722C22EBAFDC00519A67 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FE7E722D22EBAFDC00519A67 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		FE7E722F22EF87CF00519A67 /* CategoryList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CategoryList.plist; path = ../../../../TokenInputView/TokenInputView/CategoryList.plist; sourceTree = "<group>"; };
+		FE7E723122EFA2FF00519A67 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		FE7E723222EFA2FF00519A67 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		FE7E723322EFA2FF00519A67 /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		FE7E723622EFA49300519A67 /* CategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CategoryTableViewCell.h; path = "AskandLearn/View Controller/CategoryTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		FE7E723722EFA49300519A67 /* CategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategoryTableViewCell.m; path = "AskandLearn/View Controller/CategoryTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		FE7E723822EFA49300519A67 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoryTableViewCell.xib; path = "AskandLearn/View Controller/CategoryTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		FE7E723B22EFB80000519A67 /* Token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Token.h; path = "AskandLearn/View Controller/Token.h"; sourceTree = SOURCE_ROOT; };
+		FE7E723C22EFB80000519A67 /* Token.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Token.m; path = "AskandLearn/View Controller/Token.m"; sourceTree = SOURCE_ROOT; };
+		FE7E723E22EFB94200519A67 /* TokenInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TokenInputView.h; path = "AskandLearn/View Controller/TokenInputView.h"; sourceTree = SOURCE_ROOT; };
+		FE7E723F22EFB94200519A67 /* TokenInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TokenInputView.m; path = "AskandLearn/View Controller/TokenInputView.m"; sourceTree = SOURCE_ROOT; };
+		FE7E724122EFC00E00519A67 /* addTags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addTags.h; sourceTree = "<group>"; };
+		FE7E724222EFC00E00519A67 /* addTags.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addTags.m; sourceTree = "<group>"; };
 		FEB50A6922DE77E100FEF8DB /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		FEB50A6A22DE77E100FEF8DB /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -220,6 +241,11 @@
 				B01979CA22E79A580038511A /* ChatViewController.m */,
 				FE7E722C22EBAFDC00519A67 /* SettingsViewController.h */,
 				FE7E722D22EBAFDC00519A67 /* SettingsViewController.m */,
+				FE7E723122EFA2FF00519A67 /* CategoriesViewController.h */,
+				FE7E723222EFA2FF00519A67 /* CategoriesViewController.m */,
+				FE7E723322EFA2FF00519A67 /* CategoriesViewController.xib */,
+				FE7E724122EFC00E00519A67 /* addTags.h */,
+				FE7E724222EFC00E00519A67 /* addTags.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -235,6 +261,13 @@
 				FE1950AE22E7BC3600A2A0D6 /* CardView.m */,
 				B04ED53522EA5B5B00CBEF93 /* ChatCell.h */,
 				B04ED53622EA5B5B00CBEF93 /* ChatCell.m */,
+				FE7E723622EFA49300519A67 /* CategoryTableViewCell.h */,
+				FE7E723722EFA49300519A67 /* CategoryTableViewCell.m */,
+				FE7E723822EFA49300519A67 /* CategoryTableViewCell.xib */,
+				FE7E723B22EFB80000519A67 /* Token.h */,
+				FE7E723C22EFB80000519A67 /* Token.m */,
+				FE7E723E22EFB94200519A67 /* TokenInputView.h */,
+				FE7E723F22EFB94200519A67 /* TokenInputView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +282,7 @@
 		AB63D39222E1051A00AB8D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE7E722F22EF87CF00519A67 /* CategoryList.plist */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
@@ -392,9 +426,12 @@
 			files = (
 				AB35051822E931CC00BC308D /* HomeViewController.h in Resources */,
 				AB35051922E931CC00BC308D /* HomeViewController.m in Resources */,
+				FE7E723522EFA2FF00519A67 /* CategoriesViewController.xib in Resources */,
+				FE7E723A22EFA49300519A67 /* CategoryTableViewCell.xib in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,
+				FE7E723022EF87CF00519A67 /* CategoryList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
 				B03D97DF22DFB01500A8D9E5 /* MessageViewController.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
@@ -514,15 +552,19 @@
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
 				B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */,
+				FE7E723422EFA2FF00519A67 /* CategoriesViewController.m in Sources */,
 				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
+				FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */,
 				FE7E722E22EBAFDC00519A67 /* SettingsViewController.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
+				FE7E724322EFC00E00519A67 /* addTags.m in Sources */,
 				FE6B267822E2423E004F4D57 /* Action.m in Sources */,
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
 				AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */,
+				FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
