@@ -165,7 +165,6 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
-				FEA740FC22F0D436009519B0 /* CategoryList.plist */,
 				FE6B267622E2423E004F4D57 /* Action.h */,
 				FE6B267722E2423E004F4D57 /* Action.m */,
 				FEB50A6C22DE782700FEF8DB /* User.h */,
@@ -194,6 +193,7 @@
 		AB50E24722DD0617006097DB /* AskandLearn */ = {
 			isa = PBXGroup;
 			children = (
+				FEA740FC22F0D436009519B0 /* CategoryList.plist */,
 				FE445C2D22F0B79F00F8C824 /* Tag Classes */,
 				AB63D39222E1051A00AB8D3D /* Models */,
 				AB63D39122E104FF00AB8D3D /* API */,

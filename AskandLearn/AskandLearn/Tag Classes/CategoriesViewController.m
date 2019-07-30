@@ -32,6 +32,7 @@ static const NSString *idKey = @"Identifier";
     [super viewDidLoad];
     [self showNoResultsView:NO];
     self.dummyCategories = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"CategoryList" ofType:@"plist"]];
+    NSLog(@"%@", self.dummyCategories);
     // Do any additional setup after loading the view from its nib.
 }
 
