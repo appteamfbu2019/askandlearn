@@ -25,7 +25,8 @@
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
 		ABC441C922F101950080EF78 /* MatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC441C822F101950080EF78 /* MatchCell.m */; };
 		ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CE22F103100080EF78 /* MatchViewController.m */; };
-		ABC441D022F1169E0080EF78 /* MatchCell.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441C722F101950080EF78 /* MatchCell.h */; };
+		ABC441D122F1205B0080EF78 /* MatchCell.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441C722F101950080EF78 /* MatchCell.h */; };
+		ABC441D222F120AE0080EF78 /* Match.h in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6922DE77E100FEF8DB /* Match.h */; };
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
 		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
@@ -539,7 +540,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC441D022F1169E0080EF78 /* MatchCell.h in Sources */,
+				ABC441D222F120AE0080EF78 /* Match.h in Sources */,
+				ABC441D122F1205B0080EF78 /* MatchCell.h in Sources */,
+				ABC441C922F101950080EF78 /* MatchCell.m in Sources */,
 				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
@@ -555,7 +558,6 @@
 				FE6B267822E2423E004F4D57 /* Action.m in Sources */,
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
-				ABC441C922F101950080EF78 /* MatchCell.m in Sources */,
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,

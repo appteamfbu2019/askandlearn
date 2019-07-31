@@ -34,7 +34,7 @@
 -(void)Refresh{
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
     PFQuery *query = [PFQuery queryWithClassName:@"Matches"];
-    [query whereKey:@"person1" equalTo:person1];
+    [query whereKey:@"person1" equalTo:@"XItl4K5EUQ"];
     [query orderByDescending:@"createdAt"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
