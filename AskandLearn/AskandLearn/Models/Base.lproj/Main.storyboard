@@ -316,23 +316,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3m2-6E-5WZ">
-                                                    <rect key="frame" x="132" y="11" width="79" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HG-UK-Foz">
+                                                    <rect key="frame" x="8" y="8" width="398" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffr-pQ-BWE">
-                                                    <rect key="frame" x="35" y="-1" width="59" height="39"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4HG-UK-Foz" firstAttribute="leading" secondItem="O4F-IR-fLF" secondAttribute="leading" constant="8" id="A2V-RS-hrr"/>
+                                                <constraint firstAttribute="trailing" secondItem="4HG-UK-Foz" secondAttribute="trailing" constant="8" id="bu9-pF-3wH"/>
+                                                <constraint firstAttribute="bottom" secondItem="4HG-UK-Foz" secondAttribute="bottom" constant="8" id="fiW-rJ-qNa"/>
+                                                <constraint firstItem="4HG-UK-Foz" firstAttribute="top" secondItem="O4F-IR-fLF" secondAttribute="top" constant="8" id="wOH-Fy-aoc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="profileImage" destination="ffr-pQ-BWE" id="xQ9-td-n4i"/>
-                                            <outlet property="usernameLabel" destination="3m2-6E-5WZ" id="5VC-DP-QAd"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -679,6 +676,6 @@
         <image name="heart_outline_24-4x" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QHW-mZ-qR7"/>
+        <segue reference="Qm0-1o-5zo"/>
     </inferredMetricsTieBreakers>
 </document>

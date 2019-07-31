@@ -13,11 +13,13 @@
 
 @interface MatchViewController ()<UITableViewDataSource, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *mytableView;
-@property (strong,nonnull) NSArray *matchArrary;
-
+@property (strong,nonnull) NSArray *matchArray;
+@property (strong,nonnull) PFUser* person1;
+@property (strong, nonnull) Match *match;
 @end
 
 @implementation MatchViewController
+@synthesize person1 = currentUser;
 
 - (void)viewDidLoad
 {
@@ -27,29 +29,32 @@
     [self Refresh];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
--(void)Refresh{
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
-    PFQuery *query = [PFQuery queryWithClassName:@"Matches"];
-    [query whereKey:@"person1" equalTo:@"XItl4K5EUQ"];
-    [query orderByDescending:@"createdAt"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-        if (posts != nil) {
-            self.matchArrary = posts;
+-(void)Refresh
+{
+    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Match"];
+    [query whereKey:(@"person1") equalTo:@"XItl4K5EUQ"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *matches, NSError *error){
+        if (matches != nil) {
+            self.matchArray = matches;
             [self.mytableView reloadData];
+            NSLog(@"%@", matches);
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
     MatchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell" forIndexPath:indexPath];
-    PFObject *match = self.matchArrary[indexPath.row];
+    PFObject *match = self.matchArray[indexPath.row];
     PFUser *user = match[@"user"];
     
     if(user != nil){
@@ -60,8 +65,9 @@
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.matchArrary.count;
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.matchArray.count;
 }
 
 @end

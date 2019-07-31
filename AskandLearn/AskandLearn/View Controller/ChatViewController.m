@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *messageField;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (strong, nonatomic) IBOutlet UIButton *bacKButton;
-@property (strong,nonnull) NSArray *messageArrary;
+@property (strong,nonnull) NSArray *messageArray;
 
 @end
 
@@ -58,7 +58,7 @@
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
-            self.messageArrary = posts;
+            self.messageArray = posts;
             [self.mytableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -68,7 +68,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
-    PFObject *chatmessage = self.messageArrary[indexPath.row];
+    PFObject *chatmessage = self.messageArray[indexPath.row];
     PFUser *user = chatmessage[@"user"];
     self.messageField.text = chatmessage[@"text"];
     
@@ -84,7 +84,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.messageArrary.count;
+    return self.messageArray.count;
 }
 
 @end
