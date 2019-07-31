@@ -37,9 +37,6 @@ PODS:
     - Parse/Core (= 1.17.2)
   - Parse/Core (1.17.2):
     - Bolts/Tasks (~> 1.9)
-  - PubNub (4.8.11):
-    - PubNub/Core (= 4.8.11)
-  - PubNub/Core (4.8.11)
 
 DEPENDENCIES:
   - AFNetworking (= 2.0)
@@ -48,7 +45,6 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - MBProgressHUD
   - Parse
-  - PubNub (~> 4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -60,7 +56,6 @@ SPEC REPOS:
     - FBSDKLoginKit
     - MBProgressHUD
     - Parse
-    - PubNub
 
 SPEC CHECKSUMS:
   AFNetworking: e25f18c97427ae47e620026ecbaea03570e82251
@@ -71,8 +66,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: dc98b6bf12334f1a42f28d0457fffc9aa3d1eca5
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Parse: 3b31a3dd1777b07ee7f0caee32fafbff544483a5
-  PubNub: 0e00678cf094c4e5e3849f14dd3139bc569cc1e9
 
-PODFILE CHECKSUM: 40f9168934a10c16d8f63aca8d9e0968eb8f8009
+PODFILE CHECKSUM: f7d604eac8d9b7940dad938b8cb67db8a1b90872
 
 COCOAPODS: 1.7.2

@@ -10,9 +10,5 @@
 
 @interface ChatViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-
 @end
 

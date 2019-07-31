@@ -33,7 +33,7 @@
 }
 
 - (IBAction)sendTapped:(id)sender {
-    PFObject *chatMessage = [PFObject objectWithClassName:@"Message_fbu2018"];
+    PFObject *chatMessage = [PFObject objectWithClassName:@"Message_AskandLearn"];
     chatMessage[@"text"] = self.messageField.text;
     chatMessage[@"user"] = PFUser.currentUser;
     [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
@@ -51,9 +51,8 @@
 }
 
 -(void)Refresh{
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
-    PFQuery *query = [PFQuery queryWithClassName:@"Message_fbu2018"];
-    query.limit = 20;
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
+    PFQuery *query = [PFQuery queryWithClassName:@"Message_AskandLearn"];
     [query includeKey:@"user"];
     [query orderByDescending:@"createdAt"];
     
