@@ -7,8 +7,12 @@
 //
 
 #import "ProfileEditViewController.h"
+#import "Parse/Parse.h"
 
-@interface ProfileEditViewController ()
+
+@interface ProfileEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) UIImage *originalImage;
+@property (weak, nonatomic) UIImage *editedImage;
 
 @end
 
@@ -17,6 +21,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)uploadPic{
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    self.profileImageView.image = editedImage;
+    self.profileImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
@@ -29,4 +71,11 @@
 }
 */
 
+- (IBAction)didTapSaveProfile:(id)sender {
+}
+- (IBAction)didTapProfileUpload:(id)sender {
+    [self uploadPic];
+}
+- (IBAction)didTapImageUpload:(id)sender {
+}
 @end
