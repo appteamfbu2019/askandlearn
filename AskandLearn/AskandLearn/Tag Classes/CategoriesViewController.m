@@ -11,11 +11,10 @@
 
 static CGFloat const animationTime = 0.2f;
 static const NSString *nameKey = @"Name";
-static const NSString *idKey = @"Identifier";
 
 @interface CategoriesViewController () <UITableViewDelegate, UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UIView *noResultView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *noResultsTopConstraint;
 
 @property (nonatomic, copy) SelectedCategoryCompletionBlock selectedBlock;
@@ -26,16 +25,16 @@ static const NSString *idKey = @"Identifier";
 @property (nonatomic) NSArray *dummyCategories;
 @end
 
-@implementation CategoriesViewController
+@implementation CategoriesViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self showNoResultsView:NO];
     self.dummyCategories = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"CategoryList" ofType:@"plist"]];
-    NSLog(@"%@", self.dummyCategories);
     // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,26 +51,28 @@ static const NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Interface
 
-+ (id)categoriesListController {
++ (id)categoriesController {
     CategoriesViewController *cvc = [[CategoriesViewController alloc] initWithNibName:NSStringFromClass([CategoriesViewController class]) bundle:nil];
-    
     return cvc;
 }
 
 - (void)searchCategory:(NSString *)categoryName completion:(SelectedCategoryCompletionBlock)block {
+    
     self.selectedBlock = block;
     self.currentSearch = [categoryName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
     
-    [self searchCategoriesForText:self.currentSearch];
+    [self searchTagsForText:self.currentSearch];
 }
 
 - (void)searchCategory:(NSString *)categoryName addedCategories:(NSArray *)addedCategories withSelected:(SelectedCategoryCompletionBlock)selectedCategoryBlock deselectedBlock:(DeselectedCategoryCompletionBlock)deselectedBlock{
-    
+    NSLog(@"searchCategory");
     self.selectedBlock = selectedCategoryBlock;
+    NSLog(@"%@", self.selectedBlock);
     self.deselectedBlock = deselectedBlock;
     self.addedCategories = addedCategories;
+    NSLog(@"%@", self.addedCategories);
     self.currentSearch = [categoryName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
-    [self searchCategoriesForText:self.currentSearch];
+    [self searchTagsForText:self.currentSearch];
 }
 
 - (void)resetCategoryList {
@@ -132,7 +133,7 @@ static const NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Private
 
-- (void)searchCategoriesForText:(NSString *)searchText
+- (void)searchTagsForText:(NSString *)searchText
 {
     NSString *predicateString = [NSString stringWithFormat:@"Name contains[c] '%@'", searchText];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString];

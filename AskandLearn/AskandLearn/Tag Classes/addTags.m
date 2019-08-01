@@ -109,7 +109,7 @@ static NSString *idKey = @"Identifier";
 {
     if (!self.categoriesListController)
     {
-        self.categoriesListController = [CategoriesViewController categoriesListController];
+        self.categoriesListController = [CategoriesViewController categoriesController];
         [self addChildViewController:self.categoriesListController];
         self.categoriesListController.view.frame = self.categoriesListContainerView.bounds;
         [self.categoriesListContainerView addSubview:self.categoriesListController.view];
@@ -120,6 +120,8 @@ static NSString *idKey = @"Identifier";
     self.categoriesListController.didScrollBlock = ^{
         [weakSelf.view endEditing:YES];
     };
+    
+    NSLog(@"hello %@", self.categoriesListController.tableView.delegate);
 }
 
 - (void)layoutViewsBasedOnComposerHeight
@@ -131,16 +133,18 @@ static NSString *idKey = @"Identifier";
 - (void)searchTagsForText:(NSString *)searchText
 {
     __weak addTags *weakSelf = self;
-    
+    NSLog(@"hellloooo");
     [self.categoriesListController searchCategory:searchText addedCategories:self.addedTags withSelected:^(BOOL success, NSDictionary *category, NSError *error) {
         if (success)
         {
+            NSLog(@"success");
             
             [weakSelf addTag:category updateTokenView:YES];
         }
     } deselectedBlock:^(BOOL success, NSDictionary *category, NSError *error) {
         if (success)
         {
+            NSLog(@"remove");
             [weakSelf removeTag:category];
         }
     }];

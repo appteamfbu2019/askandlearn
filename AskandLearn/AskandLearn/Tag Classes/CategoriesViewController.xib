@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesViewController">
             <connections>
-                <outlet property="tableView" destination="mvl-k1-lgJ" id="khd-uh-iCi"/>
+                <outlet property="tableView" destination="mvl-k1-lgJ" id="ew2-mg-g1B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,8 +25,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="CO6-zE-muW"/>
-                        <outlet property="delegate" destination="-1" id="Fda-5T-NPp"/>
+                        <outlet property="dataSource" destination="-1" id="Hrn-9n-MIe"/>
+                        <outlet property="delegate" destination="-1" id="4he-OR-I7T"/>
                     </connections>
                 </tableView>
             </subviews>

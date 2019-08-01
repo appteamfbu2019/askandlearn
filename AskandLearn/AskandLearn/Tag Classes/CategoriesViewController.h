@@ -16,11 +16,12 @@ typedef void (^SelectedCategoryCompletionBlock)(BOOL success, NSDictionary *cate
 typedef void (^DeselectedCategoryCompletionBlock)(BOOL success, NSDictionary *category, NSError *error);
 typedef void (^DidScrollBlock)(void);
 
-@interface CategoriesViewController : UIViewController
+@interface CategoriesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, copy) DidScrollBlock didScrollBlock;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-+ (id)categoriesListController;
++ (id)categoriesController;
 - (void)searchCategory: (NSString *) categoryName completion:(SelectedCategoryCompletionBlock)block;
 - (void)searchCategory: (NSString *) categoryName addedCategories: (NSArray *)addedCategories withSelected:(SelectedCategoryCompletionBlock)selectedCategoryBlock deselectedBlock:(DeselectedCategoryCompletionBlock)deselectedBlock;
 -(void)resetCategoryList;
