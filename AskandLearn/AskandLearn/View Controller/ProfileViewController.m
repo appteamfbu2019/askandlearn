@@ -19,4 +19,8 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)didTapEditProfile:(id)sender {
+    [self performSegueWithIdentifier:@"EditSegue" sender:nil];
+}
+
 @end
