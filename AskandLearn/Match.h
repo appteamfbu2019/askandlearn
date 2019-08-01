@@ -2,10 +2,11 @@
 //  Match.h
 //  AskandLearn
 //
-//  Created by clairec on 7/16/19.
+//  Created by estherb on 7/31/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "PFObject.h"
@@ -19,5 +20,4 @@
 + (void) matchFormed: (PFUser *)user1 withUser: (PFUser *)user2;
 
 @end
-
 

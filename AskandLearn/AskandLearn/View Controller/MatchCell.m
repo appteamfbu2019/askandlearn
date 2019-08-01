@@ -2,14 +2,11 @@
 //  MatchCell.m
 //  AskandLearn
 //
-//  Created by estherb on 7/30/19.
+//  Created by estherb on 7/31/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
 #import "MatchCell.h"
-
-@interface MatchCell () <UITableViewDelegate>
-@end
 
 @implementation MatchCell
 

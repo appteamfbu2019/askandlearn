@@ -11,7 +11,6 @@
 		42FA90645126DA3C6683029F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		55E6995028913B08BB41F7C7 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */; };
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
-		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB35051622E8F4C600BC308D /* AccountViewController.m */; };
 		AB35051822E931CC00BC308D /* HomeViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
 		AB35051922E931CC00BC308D /* HomeViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
@@ -23,10 +22,24 @@
 		AB50E25822DD0617006097DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E25722DD0617006097DB /* main.m */; };
 		AB50E26222DD0617006097DB /* AskandLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26122DD0617006097DB /* AskandLearnTests.m */; };
 		AB50E26D22DD0617006097DB /* AskandLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E26C22DD0617006097DB /* AskandLearnUITests.m */; };
-		ABC441C922F101950080EF78 /* MatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC441C822F101950080EF78 /* MatchCell.m */; };
+		AB5BE8A422F261B9006B0D3D /* MatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8A322F261B9006B0D3D /* MatchCell.m */; };
+		AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8A222F261B9006B0D3D /* MatchCell.h */; };
+		AB5BE8AD22F263DE006B0D3D /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AC22F263DE006B0D3D /* Match.m */; };
+		AB5BE8AF22F2648D006B0D3D /* PFObjectPrivate.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AE22F2648C006B0D3D /* PFObjectPrivate.h */; };
+		AB5BE8B122F264DE006B0D3D /* PFMulticastDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8B022F264DE006B0D3D /* PFMulticastDelegate.h */; };
+		AB5BE8B322F2653B006B0D3D /* PFObjectControlling.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8B222F2653B006B0D3D /* PFObjectControlling.h */; };
 		ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CE22F103100080EF78 /* MatchViewController.m */; };
-		ABC441D122F1205B0080EF78 /* MatchCell.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441C722F101950080EF78 /* MatchCell.h */; };
-		ABC441D222F120AE0080EF78 /* Match.h in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6922DE77E100FEF8DB /* Match.h */; };
+		ABC441D622F25BE90080EF78 /* PFAssert.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441D522F25BE90080EF78 /* PFAssert.h */; };
+		ABC441D822F25C650080EF78 /* PFMacros.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441D722F25C640080EF78 /* PFMacros.h */; };
+		ABC441DB22F25D150080EF78 /* PFObject+Subclass.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441DA22F25D150080EF78 /* PFObject+Subclass.h */; };
+		ABD1543022F26747001D956B /* PFMutableQueryState.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1542F22F26747001D956B /* PFMutableQueryState.h */; };
+		ABD1543222F26801001D956B /* PFQueryState.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543122F26801001D956B /* PFQueryState.h */; };
+		ABD1543422F2684E001D956B /* PFBaseState.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543322F2684E001D956B /* PFBaseState.h */; };
+		ABD1543622F269CC001D956B /* PFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543522F269CB001D956B /* PFImageView.m */; };
+		ABD1543822F26A45001D956B /* Parse.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543722F26A45001D956B /* Parse.h */; };
+		ABD1543922F372C2001D956B /* Match.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AB22F263DE006B0D3D /* Match.h */; };
+		ABD1543A22F372CF001D956B /* Action.h in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267622E2423E004F4D57 /* Action.h */; };
+		ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
 		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
@@ -40,7 +53,6 @@
 		FE7E723D22EFB80000519A67 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723C22EFB80000519A67 /* Token.m */; };
 		FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723F22EFB94200519A67 /* TokenInputView.m */; };
 		FE7E724322EFC00E00519A67 /* addTags.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E724222EFC00E00519A67 /* addTags.m */; };
-		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
 /* End PBXBuildFile section */
@@ -92,15 +104,27 @@
 		AB50E26822DD0617006097DB /* AskandLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskandLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E26C22DD0617006097DB /* AskandLearnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AskandLearnUITests.m; sourceTree = "<group>"; };
 		AB50E26E22DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABC441C722F101950080EF78 /* MatchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchCell.h; sourceTree = SOURCE_ROOT; };
-		ABC441C822F101950080EF78 /* MatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchCell.m; sourceTree = SOURCE_ROOT; };
+		AB5BE8A222F261B9006B0D3D /* MatchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MatchCell.h; path = "AskandLearn/View Controller/MatchCell.h"; sourceTree = SOURCE_ROOT; };
+		AB5BE8A322F261B9006B0D3D /* MatchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MatchCell.m; path = "AskandLearn/View Controller/MatchCell.m"; sourceTree = SOURCE_ROOT; };
+		AB5BE8AB22F263DE006B0D3D /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
+		AB5BE8AC22F263DE006B0D3D /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
+		AB5BE8AE22F2648C006B0D3D /* PFObjectPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFObjectPrivate.h; sourceTree = "<group>"; };
+		AB5BE8B022F264DE006B0D3D /* PFMulticastDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFMulticastDelegate.h; sourceTree = "<group>"; };
+		AB5BE8B222F2653B006B0D3D /* PFObjectControlling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFObjectControlling.h; sourceTree = "<group>"; };
 		ABC441CD22F103100080EF78 /* MatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
 		ABC441CE22F103100080EF78 /* MatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
+		ABC441D522F25BE90080EF78 /* PFAssert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAssert.h; sourceTree = "<group>"; };
+		ABC441D722F25C640080EF78 /* PFMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFMacros.h; sourceTree = "<group>"; };
+		ABC441DA22F25D150080EF78 /* PFObject+Subclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PFObject+Subclass.h"; sourceTree = "<group>"; };
+		ABD1542F22F26747001D956B /* PFMutableQueryState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFMutableQueryState.h; path = Pods/Parse/Parse/Parse/Internal/Query/State/PFMutableQueryState.h; sourceTree = "<group>"; };
+		ABD1543122F26801001D956B /* PFQueryState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFQueryState.h; path = Pods/Parse/Parse/Parse/Internal/Query/State/PFQueryState.h; sourceTree = "<group>"; };
+		ABD1543322F2684E001D956B /* PFBaseState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFBaseState.h; sourceTree = "<group>"; };
+		ABD1543522F269CB001D956B /* PFImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PFImageView.m; path = Pods/ParseUI/ParseUI/Classes/Views/PFImageView.m; sourceTree = "<group>"; };
+		ABD1543722F26A45001D956B /* Parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parse.h; sourceTree = "<group>"; };
 		B01979C922E79A580038511A /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B01979CA22E79A580038511A /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B04ED53522EA5B5B00CBEF93 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = "AskandLearn/View Controller/ChatCell.h"; sourceTree = SOURCE_ROOT; };
 		B04ED53622EA5B5B00CBEF93 /* ChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChatCell.m; path = "AskandLearn/View Controller/ChatCell.m"; sourceTree = SOURCE_ROOT; };
-		B04ED53C22F0CF2E00CBEF93 /* ProfileEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		D650055D94AAC9D8BB54A659 /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardBackgroundView.h; path = "AskandLearn/View Controller/CardBackgroundView.h"; sourceTree = SOURCE_ROOT; };
 		FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardBackgroundView.m; path = "AskandLearn/View Controller/CardBackgroundView.m"; sourceTree = SOURCE_ROOT; };
@@ -121,8 +145,6 @@
 		FE7E723F22EFB94200519A67 /* TokenInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TokenInputView.m; path = "AskandLearn/View Controller/TokenInputView.m"; sourceTree = SOURCE_ROOT; };
 		FE7E724122EFC00E00519A67 /* addTags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = addTags.h; sourceTree = "<group>"; };
 		FE7E724222EFC00E00519A67 /* addTags.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = addTags.m; sourceTree = "<group>"; };
-		FEB50A6922DE77E100FEF8DB /* Match.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
-		FEB50A6A22DE77E100FEF8DB /* Match.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FEB50A6D22DE782700FEF8DB /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -161,11 +183,22 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
+				ABD1543722F26A45001D956B /* Parse.h */,
+				ABD1543522F269CB001D956B /* PFImageView.m */,
+				ABD1543322F2684E001D956B /* PFBaseState.h */,
+				ABD1543122F26801001D956B /* PFQueryState.h */,
+				ABD1542F22F26747001D956B /* PFMutableQueryState.h */,
+				AB5BE8B222F2653B006B0D3D /* PFObjectControlling.h */,
+				AB5BE8B022F264DE006B0D3D /* PFMulticastDelegate.h */,
+				AB5BE8AE22F2648C006B0D3D /* PFObjectPrivate.h */,
+				AB5BE8AB22F263DE006B0D3D /* Match.h */,
+				AB5BE8AC22F263DE006B0D3D /* Match.m */,
+				ABC441DA22F25D150080EF78 /* PFObject+Subclass.h */,
+				ABC441D722F25C640080EF78 /* PFMacros.h */,
+				ABC441D522F25BE90080EF78 /* PFAssert.h */,
 				FE6B267622E2423E004F4D57 /* Action.h */,
 				FE6B267722E2423E004F4D57 /* Action.m */,
 				FEB50A6C22DE782700FEF8DB /* User.h */,
-				FEB50A6922DE77E100FEF8DB /* Match.h */,
-				FEB50A6A22DE77E100FEF8DB /* Match.m */,
 				FEB50A6D22DE782700FEF8DB /* User.m */,
 				AB50E24722DD0617006097DB /* AskandLearn */,
 				AB50E26022DD0617006097DB /* AskandLearnTests */,
@@ -258,8 +291,8 @@
 				FE7E723C22EFB80000519A67 /* Token.m */,
 				FE7E723E22EFB94200519A67 /* TokenInputView.h */,
 				FE7E723F22EFB94200519A67 /* TokenInputView.m */,
-				ABC441C722F101950080EF78 /* MatchCell.h */,
-				ABC441C822F101950080EF78 /* MatchCell.m */,
+				AB5BE8A222F261B9006B0D3D /* MatchCell.h */,
+				AB5BE8A322F261B9006B0D3D /* MatchCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,7 +321,6 @@
 		B04ED53F22F0DDC900CBEF93 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				B04ED53C22F0CF2E00CBEF93 /* ProfileEditViewController.m */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -540,24 +572,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC441D222F120AE0080EF78 /* Match.h in Sources */,
-				ABC441D122F1205B0080EF78 /* MatchCell.h in Sources */,
-				ABC441C922F101950080EF78 /* MatchCell.m in Sources */,
+				ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */,
+				ABD1543A22F372CF001D956B /* Action.h in Sources */,
+				ABD1543922F372C2001D956B /* Match.h in Sources */,
+				ABD1543822F26A45001D956B /* Parse.h in Sources */,
+				ABD1543622F269CC001D956B /* PFImageView.m in Sources */,
+				ABD1543422F2684E001D956B /* PFBaseState.h in Sources */,
+				ABD1543222F26801001D956B /* PFQueryState.h in Sources */,
+				ABD1543022F26747001D956B /* PFMutableQueryState.h in Sources */,
+				AB5BE8B322F2653B006B0D3D /* PFObjectControlling.h in Sources */,
+				AB5BE8B122F264DE006B0D3D /* PFMulticastDelegate.h in Sources */,
+				AB5BE8AF22F2648D006B0D3D /* PFObjectPrivate.h in Sources */,
+				AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */,
+				ABC441DB22F25D150080EF78 /* PFObject+Subclass.h in Sources */,
+				ABC441D822F25C650080EF78 /* PFMacros.h in Sources */,
+				AB5BE8AD22F263DE006B0D3D /* Match.m in Sources */,
+				ABC441D622F25BE90080EF78 /* PFAssert.h in Sources */,
 				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
 				FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
+				AB5BE8A422F261B9006B0D3D /* MatchCell.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
 				FE7E723422EFA2FF00519A67 /* CategoriesViewController.m in Sources */,
-				AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */,
 				FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 				FE7E724322EFC00E00519A67 /* addTags.m in Sources */,
 				FE6B267822E2423E004F4D57 /* Action.m in Sources */,
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
-				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,

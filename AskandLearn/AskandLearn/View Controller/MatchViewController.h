@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFObject+Subclass.h"
+#import "PFObjectPrivate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

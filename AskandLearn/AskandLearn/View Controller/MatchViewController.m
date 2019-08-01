@@ -1,19 +1,12 @@
 //
-//  MatchViewController.m
-//  AskandLearn
-//
-//  Created by estherb on 7/30/19.
-//  Copyright © 2019 estherb. All rights reserved.
-//
-
 #import "MatchViewController.h"
 #import "Parse.h"
 #import "MatchCell.h"
 #import "Match.h"
 
-@interface MatchViewController ()<UITableViewDataSource, UITableViewDataSource>
+@interface MatchViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mytableView;
-@property (strong,nonnull) NSArray *matchArray;
+@property (strong,nonnull) NSMutableArray *matchArray;
 @property (strong,nonnull) PFUser* person1;
 @property (strong, nonnull) Match *match;
 @end
@@ -37,12 +30,30 @@
 -(void)Refresh
 {
     [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
-
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Match"];
-    [query whereKey:(@"person1") equalTo:@"XItl4K5EUQ"];
+    PFUser *user = PFUser.currentUser;
+    [query whereKey:@"person1" equalTo:user];
+    
+    
+    
+//    PFQuery *personQuery = [PFQuery queryWithClassName:@"User"];
+//    PFObject *user = [personQuery getObjectWithId:@"0k6psKGIbB"]; //User 1
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *matches, NSError *error){
-        if (matches != nil) {
-            self.matchArray = matches;
+        if ([matches count] > 0) {
+            [self.matchArray addObjectsFromArray:matches];
+            [self.mytableView reloadData];
+            NSLog(@"%@", matches);
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    
+    [query whereKey:@"person2" equalTo:user];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *matches, NSError *error){
+        if ([matches count] > 0) {
+            [self.matchArray addObjectsFromArray:matches];
             [self.mytableView reloadData];
             NSLog(@"%@", matches);
         } else {
