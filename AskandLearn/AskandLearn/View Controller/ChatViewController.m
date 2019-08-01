@@ -34,7 +34,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)sendTapped:(id)sender {
+- (IBAction)sendTapped:(id)sender
+{
     PFObject *chatMessage = [PFObject objectWithClassName:@"Message_AskandLearn"];
     chatMessage[@"text"] = self.messageField.text;
     chatMessage[@"user"] = PFUser.currentUser;
@@ -48,11 +49,13 @@
     self.messageField.text = @"";
 }
 
--(IBAction)backTapped:(id)sender{
+-(IBAction)backTapped:(id)sender
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)Refresh{
+-(void)Refresh
+{
     [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
                                    userInfo:nil repeats:true];
     PFQuery *query = [PFQuery queryWithClassName:@"Message_AskandLearn"];
@@ -70,8 +73,10 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
-                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
+                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell"
+                                                     forIndexPath:indexPath];
     PFObject *chatmessage = self.messageArray[indexPath.row];
     PFUser *user = chatmessage[@"user"];
     self.messageField.text = chatmessage[@"text"];
@@ -83,11 +88,11 @@
         cell.usernameLabel.text = @"🤖";
         cell.messageLabel.text = @"Error getting message";
     }
-    
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.messageArray.count;
 }
 
