@@ -79,7 +79,6 @@
                                                      forIndexPath:indexPath];
     PFObject *chatmessage = self.messageArray[indexPath.row];
     PFUser *user = chatmessage[@"user"];
-    self.messageField.text = chatmessage[@"text"];
     
     if(user != nil){
         cell.usernameLabel.text = user.username;
