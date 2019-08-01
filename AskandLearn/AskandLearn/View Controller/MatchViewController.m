@@ -1,4 +1,6 @@
-//
+//  Created by estherb on 7/30/19.
+//  Copyright © 2019 estherb. All rights reserved.
+
 #import "MatchViewController.h"
 #import "Parse.h"
 #import "MatchCell.h"
@@ -6,7 +8,7 @@
 
 @interface MatchViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mytableView;
-@property (strong,nonnull) NSMutableArray *matchArray;
+@property (strong,nonnull) NSArray *matchArray;
 @property (strong,nonnull) PFUser* person1;
 @property (strong, nonnull) Match *match;
 @end
@@ -29,44 +31,51 @@
 
 -(void)Refresh
 {
-    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
+    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
+                                                            userInfo:nil repeats:true];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Match"];
     PFUser *user = PFUser.currentUser;
-    [query whereKey:@"person1" equalTo:user];
-//    PFQuery *personQuery = [PFQuery queryWithClassName:@"User"];
-//    PFObject *user = [personQuery getObjectWithId:@"0k6psKGIbB"]; //User 1
-
-    [query findObjectsInBackgroundWithBlock:^(NSArray *matches, NSError *error){
-        if ([matches count] > 0) {
-            [self.matchArray addObjectsFromArray:matches];
-            [self.mytableView reloadData];
-            NSLog(@"%@", matches);
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
     
-    [query whereKey:@"person2" equalTo:user];
+    PFQuery *query1 = [PFQuery queryWithClassName:@"Match"];
+    [query1 whereKey:@"person1" equalTo:user];
+    
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Match"];
+    [query2 whereKey:@"person2" equalTo:user];
+    
+    PFQuery *query = [PFQuery orQueryWithSubqueries:@[query1,query2]];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *matches, NSError *error){
         if ([matches count] > 0) {
-            [self.matchArray addObjectsFromArray:matches];
+            self.matchArray = matches;
             [self.mytableView reloadData];
             NSLog(@"%@", matches);
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+
 }
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
+                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     MatchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell" forIndexPath:indexPath];
     PFObject *match = self.matchArray[indexPath.row];
-    PFUser *user = match[@"user"];
+    PFUser *user = nil;
     
-    if(user != nil){
-        cell.usernameLabel.text = user.username;
+    if (match[@"person1"] == PFUser.currentUser){
+        user = match[@"person2"];
+    }
+    else{
+        user = match[@"person1"];
+    }
+    
+    PFQuery *queryUser = [PFUser query];
+    [queryUser whereKey:@"objectId" equalTo:user.objectId];
+    NSArray *userArray = [queryUser findObjects];
+    
+    if(userArray != nil){
+        cell.usernameLabel.text = userArray[0][@"username"];
     } else{
         cell.usernameLabel.text = @"🤖";
     }

@@ -21,14 +21,16 @@
 
 @implementation ChatViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.mytableView.dataSource = self;
     self.mytableView.rowHeight = UITableViewAutomaticDimension;
     [self Refresh];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
@@ -51,7 +53,8 @@
 }
 
 -(void)Refresh{
-    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
+    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
+                                   userInfo:nil repeats:true];
     PFQuery *query = [PFQuery queryWithClassName:@"Message_AskandLearn"];
     [query includeKey:@"user"];
     [query orderByDescending:@"createdAt"];
@@ -66,7 +69,8 @@
     }];
 }
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
+                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
     PFObject *chatmessage = self.messageArray[indexPath.row];
     PFUser *user = chatmessage[@"user"];
