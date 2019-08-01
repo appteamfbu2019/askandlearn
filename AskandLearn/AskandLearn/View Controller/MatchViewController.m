@@ -33,7 +33,6 @@
 {
     [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
                                                             userInfo:nil repeats:true];
-    
     PFUser *user = PFUser.currentUser;
     
     PFQuery *query1 = [PFQuery queryWithClassName:@"Match"];
@@ -53,7 +52,6 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
