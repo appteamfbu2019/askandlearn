@@ -6,8 +6,7 @@
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
-#import "SettingsViewController.h"
-
+#import "SettingsViewController.h~HEAD"
 @interface SettingsViewController ()
 
 @end

@@ -129,11 +129,8 @@ didCompleteWithResult:(nullable FBSDKLoginManagerLoginResult *)result
     }
 }
 
-- (IBAction)didTapSignUp:(id)sender
-{
+- (IBAction)didTapSignUp:(id)sender{
     [self registerUser];
 }
-
-
 @end
 

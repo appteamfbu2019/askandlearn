@@ -7,8 +7,10 @@
 //
 
 #import "ProfileViewController.h"
+#import "ProfileEditViewController.h"
 
 @interface ProfileViewController ()
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -22,5 +24,4 @@
 - (IBAction)didTapEditProfile:(id)sender {
     [self performSegueWithIdentifier:@"EditSegue" sender:nil];
 }
-
 @end

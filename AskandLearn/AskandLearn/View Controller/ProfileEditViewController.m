@@ -16,48 +16,65 @@
 
 @end
 
-@implementation ProfileEditViewController
+@implementation ProfileEditViewController {
+    BOOL _isUploadingProfilePic;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
--(void)uploadPic{
+- (void)uploadProfilePic
+{
+    _isUploadingProfilePic = YES;
+    [self uploadImage];
+}
+
+- (void)uploadBackgroundPic
+{
+    _isUploadingProfilePic = NO;
+    [self uploadImage];
+}
+
+-(void)uploadImage{
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
     [self presentViewController:imagePickerVC animated:YES completion:nil];
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
     else {
-        NSLog(@"Camera 🚫 available so we will use photo library instead");
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
 }
 
+
+
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    
     resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
     resizeImageView.image = image;
-    
     UIGraphicsBeginImageContext(size);
     [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return newImage;
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    self.profileImageView.image = editedImage;
-    self.profileImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
+    if (_isUploadingProfilePic) {
+        self.profileImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
+    } else {
+//        self.backgroundImageView.image = editedImage;
+        self.backgroundImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
+    }
+   
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -72,10 +89,14 @@
 */
 
 - (IBAction)didTapSaveProfile:(id)sender {
+    [self dismissViewControllerAnimated:TRUE completion:nil];
 }
+
 - (IBAction)didTapProfileUpload:(id)sender {
-    [self uploadPic];
+    [self uploadProfilePic];
 }
+
 - (IBAction)didTapImageUpload:(id)sender {
+    [self uploadBackgroundPic];
 }
 @end

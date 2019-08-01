@@ -80,7 +80,6 @@
         cell.usernameLabel.text = @"🤖";
         cell.messageLabel.text = @"Error getting message";
     }
-    
     return cell;
 }
 
