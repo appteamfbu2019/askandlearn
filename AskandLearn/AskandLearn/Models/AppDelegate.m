@@ -15,7 +15,7 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-@interface AppDelhbukduitucfethcnluhjtntcdjedrccjegate ()
+@interface AppDelegate ()
 
 @end
 

@@ -51,7 +51,7 @@
 }
 
 -(void)Refresh{
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
+    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh) userInfo:nil repeats:true];
     PFQuery *query = [PFQuery queryWithClassName:@"Message_AskandLearn"];
     [query includeKey:@"user"];
     [query orderByDescending:@"createdAt"];

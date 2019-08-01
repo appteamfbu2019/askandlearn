@@ -25,21 +25,11 @@
 		AB5BE8A422F261B9006B0D3D /* MatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8A322F261B9006B0D3D /* MatchCell.m */; };
 		AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8A222F261B9006B0D3D /* MatchCell.h */; };
 		AB5BE8AD22F263DE006B0D3D /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AC22F263DE006B0D3D /* Match.m */; };
-		AB5BE8AF22F2648D006B0D3D /* PFObjectPrivate.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AE22F2648C006B0D3D /* PFObjectPrivate.h */; };
-		AB5BE8B122F264DE006B0D3D /* PFMulticastDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8B022F264DE006B0D3D /* PFMulticastDelegate.h */; };
-		AB5BE8B322F2653B006B0D3D /* PFObjectControlling.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8B222F2653B006B0D3D /* PFObjectControlling.h */; };
 		ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CE22F103100080EF78 /* MatchViewController.m */; };
-		ABC441D622F25BE90080EF78 /* PFAssert.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441D522F25BE90080EF78 /* PFAssert.h */; };
-		ABC441D822F25C650080EF78 /* PFMacros.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441D722F25C640080EF78 /* PFMacros.h */; };
-		ABC441DB22F25D150080EF78 /* PFObject+Subclass.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441DA22F25D150080EF78 /* PFObject+Subclass.h */; };
-		ABD1543022F26747001D956B /* PFMutableQueryState.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1542F22F26747001D956B /* PFMutableQueryState.h */; };
-		ABD1543222F26801001D956B /* PFQueryState.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543122F26801001D956B /* PFQueryState.h */; };
-		ABD1543422F2684E001D956B /* PFBaseState.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543322F2684E001D956B /* PFBaseState.h */; };
-		ABD1543622F269CC001D956B /* PFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543522F269CB001D956B /* PFImageView.m */; };
-		ABD1543822F26A45001D956B /* Parse.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD1543722F26A45001D956B /* Parse.h */; };
 		ABD1543922F372C2001D956B /* Match.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AB22F263DE006B0D3D /* Match.h */; };
 		ABD1543A22F372CF001D956B /* Action.h in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267622E2423E004F4D57 /* Action.h */; };
 		ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
+		ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
 		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
@@ -120,7 +110,6 @@
 		ABD1543122F26801001D956B /* PFQueryState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFQueryState.h; path = Pods/Parse/Parse/Parse/Internal/Query/State/PFQueryState.h; sourceTree = "<group>"; };
 		ABD1543322F2684E001D956B /* PFBaseState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFBaseState.h; sourceTree = "<group>"; };
 		ABD1543522F269CB001D956B /* PFImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PFImageView.m; path = Pods/ParseUI/ParseUI/Classes/Views/PFImageView.m; sourceTree = "<group>"; };
-		ABD1543722F26A45001D956B /* Parse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parse.h; sourceTree = "<group>"; };
 		B01979C922E79A580038511A /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B01979CA22E79A580038511A /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B04ED53522EA5B5B00CBEF93 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = "AskandLearn/View Controller/ChatCell.h"; sourceTree = SOURCE_ROOT; };
@@ -183,7 +172,6 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
-				ABD1543722F26A45001D956B /* Parse.h */,
 				ABD1543522F269CB001D956B /* PFImageView.m */,
 				ABD1543322F2684E001D956B /* PFBaseState.h */,
 				ABD1543122F26801001D956B /* PFQueryState.h */,
@@ -572,22 +560,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */,
 				ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */,
 				ABD1543A22F372CF001D956B /* Action.h in Sources */,
 				ABD1543922F372C2001D956B /* Match.h in Sources */,
-				ABD1543822F26A45001D956B /* Parse.h in Sources */,
-				ABD1543622F269CC001D956B /* PFImageView.m in Sources */,
-				ABD1543422F2684E001D956B /* PFBaseState.h in Sources */,
-				ABD1543222F26801001D956B /* PFQueryState.h in Sources */,
-				ABD1543022F26747001D956B /* PFMutableQueryState.h in Sources */,
-				AB5BE8B322F2653B006B0D3D /* PFObjectControlling.h in Sources */,
-				AB5BE8B122F264DE006B0D3D /* PFMulticastDelegate.h in Sources */,
-				AB5BE8AF22F2648D006B0D3D /* PFObjectPrivate.h in Sources */,
 				AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */,
-				ABC441DB22F25D150080EF78 /* PFObject+Subclass.h in Sources */,
-				ABC441D822F25C650080EF78 /* PFMacros.h in Sources */,
 				AB5BE8AD22F263DE006B0D3D /* Match.m in Sources */,
-				ABC441D622F25BE90080EF78 /* PFAssert.h in Sources */,
 				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,

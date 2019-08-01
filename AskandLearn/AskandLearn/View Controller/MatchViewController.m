@@ -34,9 +34,6 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Match"];
     PFUser *user = PFUser.currentUser;
     [query whereKey:@"person1" equalTo:user];
-    
-    
-    
 //    PFQuery *personQuery = [PFQuery queryWithClassName:@"User"];
 //    PFObject *user = [personQuery getObjectWithId:@"0k6psKGIbB"]; //User 1
 
