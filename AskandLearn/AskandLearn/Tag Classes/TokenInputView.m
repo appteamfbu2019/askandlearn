@@ -366,15 +366,15 @@ static NSString *contentSizeKeyPath = @"contentSize";
 #pragma mark -
 #pragma mark Handle Tap
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    BOOL shouldBegin = YES;
-    NSLog(@"tap");
-    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
-        NSLog(@"hello?");
-        shouldBegin = NO;
-    return shouldBegin;
-}
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+//{
+//    BOOL shouldBegin = YES;
+//    NSLog(@"tap");
+//    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
+//        NSLog(@"hello?");
+//        shouldBegin = NO;
+//    return shouldBegin;
+//}
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {

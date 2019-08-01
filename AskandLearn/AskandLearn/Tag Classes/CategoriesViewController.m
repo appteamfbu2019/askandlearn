@@ -12,7 +12,7 @@
 static CGFloat const animationTime = 0.2f;
 static const NSString *nameKey = @"Name";
 
-@interface CategoriesViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface CategoriesViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *noResultView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *noResultsTopConstraint;
@@ -23,6 +23,8 @@ static const NSString *nameKey = @"Name";
 @property (nonatomic) NSString *currentSearch;
 @property (nonatomic) NSArray *addedCategories;
 @property (nonatomic) NSArray *dummyCategories;
+
+
 @end
 
 @implementation CategoriesViewController 
@@ -34,6 +36,9 @@ static const NSString *nameKey = @"Name";
     // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.userInteractionEnabled = YES;
+    self.tableView.scrollEnabled = YES;
+    //[self.view bringSubviewToFront:self.tableView];
     
 }
 
@@ -51,10 +56,10 @@ static const NSString *nameKey = @"Name";
 #pragma mark -
 #pragma mark Interface
 
-+ (id)categoriesController {
-    CategoriesViewController *cvc = [[CategoriesViewController alloc] initWithNibName:NSStringFromClass([CategoriesViewController class]) bundle:nil];
-    return cvc;
-}
+//+ (id)categoriesController {
+//    CategoriesViewController *cvc = [[CategoriesViewController alloc] initWithNibName:NSStringFromClass([CategoriesViewController class]) bundle:nil];
+//    return cvc;
+//}
 
 - (void)searchCategory:(NSString *)categoryName completion:(SelectedCategoryCompletionBlock)block {
     
@@ -96,10 +101,10 @@ static const NSString *nameKey = @"Name";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCellId"];
-    if (!cell)
-    {
-        cell = [CategoryTableViewCell categoryTableViewCell];
-    }
+//    if (!cell)
+//    {
+//        cell = [CategoryTableViewCell categoryTableViewCell];
+//    }
     
     NSDictionary *category = self.categoryList[indexPath.row];
     [self configureCell:cell forCategory:category];

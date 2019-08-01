@@ -14,22 +14,23 @@
 
 @implementation CategoryTableViewCell
 
-//- (void)awakeFromNib {
-//    [super awakeFromNib];
-//    // Initialization code
-//}
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
 //
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//    [super setSelected:selected animated:animated];
-//
-//    // Configure the view for the selected state
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+//+ (id)categoryTableViewCell {
+//    CategoryTableViewCell *categoryCell = [[[NSBundle mainBundle] loadNibNamed:@"CategoryTableViewCell" owner:nil options:nil] lastObject];
+//    
+//    return categoryCell;
 //}
 
-+ (id)categoryTableViewCell {
-    CategoryTableViewCell *categoryCell = [[[NSBundle mainBundle] loadNibNamed:@"CategoryTableViewCell" owner:nil options:nil] lastObject];
-    
-    return categoryCell;
-}
 
 - (void)prepareForReuse { //cleanup for custom cells
     [super prepareForReuse];

@@ -109,7 +109,6 @@ static NSString *idKey = @"Identifier";
 {
     if (!self.categoriesListController)
     {
-        self.categoriesListController = [CategoriesViewController categoriesController];
         [self addChildViewController:self.categoriesListController];
         self.categoriesListController.view.frame = self.categoriesListContainerView.bounds;
         [self.categoriesListContainerView addSubview:self.categoriesListController.view];
@@ -252,6 +251,16 @@ static NSString *idKey = @"Identifier";
         correctedHeight = height;
     
     return correctedHeight;
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"toChildController"]) {
+        CategoriesViewController * childViewController = (CategoriesViewController *) [segue destinationViewController];
+        self.categoriesListController = childViewController;
+    }
 }
 
 

@@ -20,6 +20,9 @@ typedef void (^AddTagsCompletionBlock)(BOOL success, NSArray *members, NSError *
 
 - (void) configureAddTagsView: (NSArray *) tags;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
