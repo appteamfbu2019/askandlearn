@@ -12,6 +12,7 @@
 @implementation Tags
 
 @dynamic tag;
+@dynamic status;
 @dynamic user;
 
 + (nonnull NSString *)parseClassName {
@@ -22,26 +23,18 @@
     Tags *newTag = [Tags new];
     newTag.user = user;
     newTag.tag = tagObject;
+    newTag.status = @"adding";
     [newTag saveInBackgroundWithBlock:nil];
     return newTag;
 }
 
-//+(void)addTag:(NSObject *)object{
-//    Tags *newTag = [Tags new];
-//    [newTag setByAddingObject:object];
-//    [newTag saveInBackgroundWithBlock:nil];
-//}
-
-//-(void)removeTags:(NSArray *)objects{
-////    for (NSObject *tg in objects){
-////        [self.tags :tg];
-////    }
-////    [self saveInBackgroundWithBlock:nil];
-//}
-//
-//-(void)setUser:(PFUser *)user{
-//    self.user = user;
-//    [self saveInBackgroundWithBlock:nil];
-//}
++(Tags *)removeTag:(PFUser *)user remove:(NSDictionary *)tagObject{
+    Tags *newTag = [Tags new];
+    newTag.user = user;
+    newTag.tag = tagObject;
+    newTag.status = @"removing";
+    [newTag saveInBackgroundWithBlock:nil];
+    return newTag;
+}
 
 @end

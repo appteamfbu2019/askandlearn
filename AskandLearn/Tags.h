@@ -15,10 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) PFUser *user;
 @property (nonatomic, strong) NSDictionary *tag;
+@property (nonatomic, strong) NSString *status;
 
-//+(void) addTag:(NSObject *)object;
-//-(void) removeTags:(NSArray *)objects;
-//-(void) setUser:(PFUser *)user;
++(Tags *)removeTag:(PFUser *)user remove:(NSDictionary *)tagObject;
 +(Tags *)newTag: (PFUser *)user setTag:(NSDictionary *)tagObject;
 
 
