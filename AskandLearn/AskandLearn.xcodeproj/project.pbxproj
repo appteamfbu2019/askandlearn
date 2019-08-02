@@ -31,8 +31,6 @@
 		ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
 		ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CD22F103100080EF78 /* MatchViewController.h */; };
-		ABD6CEFC22F3B6B4007D8E26 /* ProfileViewConttroller.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD6CEFB22F3B6B4007D8E26 /* ProfileViewConttroller.h */; };
-		ABD6CEFE22F3B6CD007D8E26 /* ProfileViewConttroller.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */; };
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B044FAA322F4AFE700AE5C2F /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B044FAA222F4AFE700AE5C2F /* ProfileEditViewController.m */; };
 		B044FAA622F4B1FF00AE5C2F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B044FAA522F4B1FF00AE5C2F /* ProfileViewController.m */; };
@@ -183,8 +181,6 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
-				ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */,
-				ABD6CEFB22F3B6B4007D8E26 /* ProfileViewConttroller.h */,
 				ABD1543522F269CB001D956B /* PFImageView.m */,
 				ABD1543322F2684E001D956B /* PFBaseState.h */,
 				ABD1543122F26801001D956B /* PFQueryState.h */,
@@ -192,8 +188,6 @@
 				AB5BE8B222F2653B006B0D3D /* PFObjectControlling.h */,
 				AB5BE8B022F264DE006B0D3D /* PFMulticastDelegate.h */,
 				AB5BE8AE22F2648C006B0D3D /* PFObjectPrivate.h */,
-				AB5BE8AB22F263DE006B0D3D /* Match.h */,
-				AB5BE8AC22F263DE006B0D3D /* Match.m */,
 				ABC441DA22F25D150080EF78 /* PFObject+Subclass.h */,
 				ABC441D722F25C640080EF78 /* PFMacros.h */,
 				ABC441D522F25BE90080EF78 /* PFAssert.h */,
@@ -256,6 +250,8 @@
 				B044FAA422F4B1FF00AE5C2F /* ProfileViewController.h */,
 				B044FAA522F4B1FF00AE5C2F /* ProfileViewController.m */,
 				FE564A1222DFECC500192A43 /* LoginViewController.m */,
+				ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */,
+				ABD6CEFB22F3B6B4007D8E26 /* ProfileViewConttroller.h */,
 				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
 				AB50E24B22DD0617006097DB /* ViewController.h */,
 				AB50E24C22DD0617006097DB /* ViewController.m */,
@@ -273,9 +269,12 @@
 				FE7E724122EFC00E00519A67 /* addTags.h */,
 				FE7E724222EFC00E00519A67 /* addTags.m */,
 				ABC441CD22F103100080EF78 /* MatchViewController.h */,
+<<<<<<< HEAD
 				ABC441CE22F103100080EF78 /* MatchViewController.m */,
 				B044FAA122F4AFE700AE5C2F /* ProfileEditViewController.h */,
 				B044FAA222F4AFE700AE5C2F /* ProfileEditViewController.m */,
+=======
+>>>>>>> 89542a963a73e593a6687505676552e1a5399010
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -283,6 +282,9 @@
 		AB63D39022E104ED00AB8D3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB5BE8AB22F263DE006B0D3D /* Match.h */,
+				AB5BE8AC22F263DE006B0D3D /* Match.m */,
+				ABC441CE22F103100080EF78 /* MatchViewController.m */,
 				FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */,
 				FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */,
 				FE1950AD22E7BC3600A2A0D6 /* CardView.h */,
@@ -577,8 +579,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD6CEFE22F3B6CD007D8E26 /* ProfileViewConttroller.m in Sources */,
-				ABD6CEFC22F3B6B4007D8E26 /* ProfileViewConttroller.h in Sources */,
 				ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */,
 				ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */,
 				B044FAA622F4B1FF00AE5C2F /* ProfileViewController.m in Sources */,
