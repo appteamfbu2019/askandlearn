@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Token : NSObject
 @property (nonatomic, copy) NSString *idString;
 @property (nonatomic, copy) NSString *nameString;
-@property (nonatomic, copy) NSString *emailString;
-@property (nonatomic, copy) NSDate *timeStamp;
 @property (nonatomic) NSRange tokenRange;
 @end
 

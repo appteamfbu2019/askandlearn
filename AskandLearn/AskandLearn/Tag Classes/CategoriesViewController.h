@@ -14,13 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^SelectedCategoryCompletionBlock)(BOOL success, NSDictionary *category, NSError *error);
 typedef void (^DeselectedCategoryCompletionBlock)(BOOL success, NSDictionary *category, NSError *error);
-typedef void (^DidScrollBlock)();
+typedef void (^DidScrollBlock)(void);
 
-@interface CategoriesViewController : UIViewController
+@interface CategoriesViewController : UIViewController 
 
 @property (nonatomic, copy) DidScrollBlock didScrollBlock;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-+ (id)categoriesListController;
+
+//+ (id)categoriesController;
 - (void)searchCategory: (NSString *) categoryName completion:(SelectedCategoryCompletionBlock)block;
 - (void)searchCategory: (NSString *) categoryName addedCategories: (NSArray *)addedCategories withSelected:(SelectedCategoryCompletionBlock)selectedCategoryBlock deselectedBlock:(DeselectedCategoryCompletionBlock)deselectedBlock;
 -(void)resetCategoryList;

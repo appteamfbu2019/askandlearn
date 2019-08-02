@@ -35,6 +35,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 }
 
 -(void)awakeFromNib{
+    [super awakeFromNib];
     [self initialSetUp];
     [self addObserver:self forKeyPath:contentSizeKeyPath options:NSKeyValueObservingOptionOld context:nil];
 }
@@ -43,6 +44,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 #pragma mark Interface
 
 -(void)addToken:(Token *)token needsLayout:(BOOL)needsLayout{
+    NSLog(@"adding token");
     if (![self.tokens containsObject:token]){
         [self.tokens addObject:token];
         self.activeText = nil;
@@ -67,7 +69,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 -(void)addTokens:(NSArray *)tokens needsLayout:(BOOL)needsLayout{
     if (tokens)
     {
-        NSSortDescriptor *sortDisc = [NSSortDescriptor sortDescriptorWithKey:@"timeStamp" ascending:YES];
+        NSSortDescriptor *sortDisc = [NSSortDescriptor sortDescriptorWithKey:@"nameString" ascending:YES];
         self.tokens = [[tokens sortedArrayUsingDescriptors:@[sortDisc]] mutableCopy];
         
         if (needsLayout)
@@ -116,11 +118,11 @@ static NSString *contentSizeKeyPath = @"contentSize";
     self.tokens = [NSMutableArray array];
     self.delegate = self;
     [UIMenuController sharedMenuController].menuVisible = NO;
-    self.dataDetectorTypes = UIDataDetectorTypeNone;
-    self.delaysContentTouches = NO;
-    self.canCancelContentTouches = NO;
-    self.scrollEnabled = YES;
-    self.exclusiveTouch = NO;
+//    self.dataDetectorTypes = UIDataDetectorTypeNone;
+//    self.delaysContentTouches = NO;
+//    self.canCancelContentTouches = NO;
+//    self.scrollEnabled = YES;
+//    self.exclusiveTouch = NO;
 }
 
 - (NSString *)stringFromLocation:(NSInteger)location
@@ -180,6 +182,7 @@ static NSString *contentSizeKeyPath = @"contentSize";
 
 - (void)highlightToken:(Token *)token
 {
+    NSLog(@"Highlight");
     if (token && (![token.idString isEqualToString:self.selectedToken.idString]))
     {
         self.selectedToken = token;
@@ -363,13 +366,15 @@ static NSString *contentSizeKeyPath = @"contentSize";
 #pragma mark -
 #pragma mark Handle Tap
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    BOOL shouldBegin = YES;
-    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
-        shouldBegin = NO;
-    return shouldBegin;
-}
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+//{
+//    BOOL shouldBegin = YES;
+//    NSLog(@"tap");
+//    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]])
+//        NSLog(@"hello?");
+//        shouldBegin = NO;
+//    return shouldBegin;
+//}
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {
