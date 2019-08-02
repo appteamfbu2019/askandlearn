@@ -21,8 +21,6 @@ typedef void (^DidScrollBlock)(void);
 @property (nonatomic, copy) DidScrollBlock didScrollBlock;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-
-//+ (id)categoriesController;
 - (void)searchCategory: (NSString *) categoryName completion:(SelectedCategoryCompletionBlock)block;
 - (void)searchCategory: (NSString *) categoryName addedCategories: (NSArray *)addedCategories withSelected:(SelectedCategoryCompletionBlock)selectedCategoryBlock deselectedBlock:(DeselectedCategoryCompletionBlock)deselectedBlock;
 -(void)resetCategoryList;

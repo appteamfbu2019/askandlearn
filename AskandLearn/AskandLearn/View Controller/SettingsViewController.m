@@ -7,9 +7,14 @@
 //
 
 #import "SettingsViewController.h"
+#import "Parse.h"
+#import "addTags.h"
+#import "Tags.h"
 
-@interface SettingsViewController ()
-
+@interface SettingsViewController () <TagsDelegate>
+@property (nonatomic) addTags *tagController;
+@property (nonatomic, strong) NSArray *tagObjects;
+@property (nonatomic, strong) Tags *ownTag;
 @end
 
 @implementation SettingsViewController
@@ -17,16 +22,65 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tagController.delegate = self;
+    self.tagObjects = [[NSArray alloc] init];
+    [self retrieveTags];
+    self.numberOfTags = 0;
+    
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)retrieveTags{
+    PFQuery *query = [PFQuery queryWithClassName:@"Tags"];
+    [query includeKey:@"user"];
+    [query includeKey:@"tags"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *tagObjects, NSError *error) {
+        if (tagObjects != nil){
+            for (Tags *tagObj in tagObjects){
+                if ([tagObj.user.objectId isEqualToString:PFUser.currentUser.objectId]){
+                    self.ownTag = tagObj;
+                    self.numberOfTags += 1;
+                }
+            }
+        }
+        else{
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
 }
-*/
+
+-(void)assignTags:(NSArray *)tags{
+    
+    for (NSDictionary *tag in tags){
+        NSLog(@"tag %@", tag);
+        [Tags newTag:PFUser.currentUser setTag:tag];
+        self.numberOfTags += 1;
+        //self.ownTag = [Tags addTag:tags];
+        //[self.ownTag setUser:PFUser.currentUser];
+        NSLog(@"running");
+    }
+    NSLog(@"added tags to server %@", tags);
+    //NSLog(@"user's tags %@", self.ownTag.tags);
+
+    //[self.ownTag addTags:tags];
+    
+}
+
+- (IBAction)learnSkills:(id)sender {
+}
+
+- (IBAction)shareKnowledge:(id)sender {
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"addTagsSegue"]) {
+        addTags *childViewController = (addTags *)[segue destinationViewController];
+        self.tagController = childViewController;
+        self.tagController.delegate = self;
+        NSLog(@"yes");
+    }
+}
 
 @end

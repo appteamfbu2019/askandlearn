@@ -13,8 +13,6 @@
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
 		AB0449D422DE6662001F9606 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB35051622E8F4C600BC308D /* AccountViewController.m */; };
-		AB35051822E931CC00BC308D /* HomeViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
-		AB35051922E931CC00BC308D /* HomeViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
 		AB4E841F22F0E01700070FD7 /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4E841E22F0E01700070FD7 /* ProfileEditViewController.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E24D22DD0617006097DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24C22DD0617006097DB /* ViewController.m */; };
@@ -27,7 +25,6 @@
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B03D97DC22DFAFE900A8D9E5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DB22DFAFE900A8D9E5 /* ProfileViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
-		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
 		FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AE22E7BC3600A2A0D6 /* CardView.m */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
 		FE6B267822E2423E004F4D57 /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267722E2423E004F4D57 /* Action.m */; };
@@ -35,12 +32,38 @@
 		FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723722EFA49300519A67 /* CategoryTableViewCell.m */; };
 		FE7E723D22EFB80000519A67 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723C22EFB80000519A67 /* Token.m */; };
 		FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723F22EFB94200519A67 /* TokenInputView.m */; };
-		FEA740FE22F0D6A1009519B0 /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEA740FD22F0D6A1009519B0 /* CategoryList.plist */; };
 		FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6A22DE77E100FEF8DB /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
-		FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
-		FEBFBC2B22F3621200264C05 /* addTags.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC2A22F3621200264C05 /* addTags.m */; };
 		FEBFBC2F22F3623100264C05 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC2D22F3623100264C05 /* CategoriesViewController.m */; };
+		FEBFBC3622F4AC0900264C05 /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3522F4AC0900264C05 /* Tags.m */; };
+		FEBFBC3722F4B1A800264C05 /* Tags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3422F4AC0900264C05 /* Tags.h */; };
+		FEBFBC3922F4B1A800264C05 /* User.h in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6C22DE782700FEF8DB /* User.h */; };
+		FEBFBC3A22F4B1A800264C05 /* Match.h in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6922DE77E100FEF8DB /* Match.h */; };
+		FEBFBC3B22F4B1A800264C05 /* CategoryTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723622EFA49300519A67 /* CategoryTableViewCell.h */; };
+		FEBFBC3C22F4B1A800264C05 /* Token.h in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723B22EFB80000519A67 /* Token.h */; };
+		FEBFBC3D22F4B1A800264C05 /* TokenInputView.h in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723E22EFB94200519A67 /* TokenInputView.h */; };
+		FEBFBC3E22F4B1A800264C05 /* CategoryList.plist in Sources */ = {isa = PBXBuildFile; fileRef = FEA740FD22F0D6A1009519B0 /* CategoryList.plist */; };
+		FEBFBC4022F4B1A800264C05 /* LoginViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449DA22DF4CFE001F9606 /* LoginViewController.h */; };
+		FEBFBC4122F4B1A800264C05 /* ViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24B22DD0617006097DB /* ViewController.h */; };
+		FEBFBC4222F4B1A800264C05 /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
+		FEBFBC4322F4B1A800264C05 /* AccountViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB35051522E8F4C600BC308D /* AccountViewController.h */; };
+		FEBFBC4522F4B1A800264C05 /* ProfileViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B03D97DA22DFAFE900A8D9E5 /* ProfileViewController.h */; };
+		FEBFBC4622F4B1A800264C05 /* ChatViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = B01979C922E79A580038511A /* ChatViewController.h */; };
+		FEBFBC4722F4B1A800264C05 /* SettingsViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = FE7E722C22EBAFDC00519A67 /* SettingsViewController.h */; };
+		FEBFBC4822F4B1A800264C05 /* CategoriesViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC2C22F3623100264C05 /* CategoriesViewController.h */; };
+		FEBFBC4922F4B1A800264C05 /* ProfileEditViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB4E841D22F0E01700070FD7 /* ProfileEditViewController.h */; };
+		FEBFBC4A22F4B1D400264C05 /* CardBackgroundView.h in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */; };
+		FEBFBC4B22F4B1D400264C05 /* CardView.h in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AD22E7BC3600A2A0D6 /* CardView.h */; };
+		FEBFBC4C22F4B1D400264C05 /* ChatCell.h in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53522EA5B5B00CBEF93 /* ChatCell.h */; };
+		FEDADE9222F4B33B00771C3E /* addTags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC2922F3621200264C05 /* addTags.h */; };
+		FEDADE9322F4B33B00771C3E /* addTags.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC2A22F3621200264C05 /* addTags.m */; };
+		FEDADE9422F4B37300771C3E /* Action.h in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267622E2423E004F4D57 /* Action.h */; };
+		FEDADE9522F4B37300771C3E /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24822DD0617006097DB /* AppDelegate.h */; };
+		FEDADE9622F4B38D00771C3E /* HomeViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
+		FEDADE9722F4B39600771C3E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
+		FEDADE9822F4B3B500771C3E /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
+		FEDADE9B22F4D46600771C3E /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDADE9A22F4D46600771C3E /* TagsViewController.m */; };
+		FEDADE9E22F4D79D00771C3E /* TagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDADE9D22F4D79D00771C3E /* TagCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +149,12 @@
 		FEBFBC2A22F3621200264C05 /* addTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = addTags.m; path = "AskandLearn/Tag Classes/addTags.m"; sourceTree = SOURCE_ROOT; };
 		FEBFBC2C22F3623100264C05 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoriesViewController.h; path = "AskandLearn/Tag Classes/CategoriesViewController.h"; sourceTree = SOURCE_ROOT; };
 		FEBFBC2D22F3623100264C05 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoriesViewController.m; path = "AskandLearn/Tag Classes/CategoriesViewController.m"; sourceTree = SOURCE_ROOT; };
+		FEBFBC3422F4AC0900264C05 /* Tags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tags.h; sourceTree = "<group>"; };
+		FEBFBC3522F4AC0900264C05 /* Tags.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tags.m; sourceTree = "<group>"; };
+		FEDADE9922F4D46600771C3E /* TagsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
+		FEDADE9A22F4D46600771C3E /* TagsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
+		FEDADE9C22F4D79D00771C3E /* TagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCell.h; sourceTree = "<group>"; };
+		FEDADE9D22F4D79D00771C3E /* TagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +189,8 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
+				FEBFBC3422F4AC0900264C05 /* Tags.h */,
+				FEBFBC3522F4AC0900264C05 /* Tags.m */,
 				FE6B267622E2423E004F4D57 /* Action.h */,
 				FE6B267722E2423E004F4D57 /* Action.m */,
 				FEB50A6C22DE782700FEF8DB /* User.h */,
@@ -241,6 +272,10 @@
 				FEBFBC2D22F3623100264C05 /* CategoriesViewController.m */,
 				AB4E841D22F0E01700070FD7 /* ProfileEditViewController.h */,
 				AB4E841E22F0E01700070FD7 /* ProfileEditViewController.m */,
+				FEDADE9922F4D46600771C3E /* TagsViewController.h */,
+				FEDADE9A22F4D46600771C3E /* TagsViewController.m */,
+				FEDADE9C22F4D79D00771C3E /* TagCell.h */,
+				FEDADE9D22F4D79D00771C3E /* TagCell.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -431,11 +466,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB35051822E931CC00BC308D /* HomeViewController.h in Resources */,
-				AB35051922E931CC00BC308D /* HomeViewController.m in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
-				FEA740FE22F0D6A1009519B0 /* CategoryList.plist in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,10 +579,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDADE9E22F4D79D00771C3E /* TagCell.m in Sources */,
+				FEDADE9822F4B3B500771C3E /* CardBackgroundView.m in Sources */,
+				FEDADE9722F4B39600771C3E /* HomeViewController.m in Sources */,
+				FEDADE9622F4B38D00771C3E /* HomeViewController.h in Sources */,
+				FEDADE9422F4B37300771C3E /* Action.h in Sources */,
+				FEDADE9522F4B37300771C3E /* AppDelegate.h in Sources */,
+				FEDADE9222F4B33B00771C3E /* addTags.h in Sources */,
+				FEDADE9322F4B33B00771C3E /* addTags.m in Sources */,
+				FEBFBC4A22F4B1D400264C05 /* CardBackgroundView.h in Sources */,
+				FEBFBC4B22F4B1D400264C05 /* CardView.h in Sources */,
+				FEBFBC4C22F4B1D400264C05 /* ChatCell.h in Sources */,
+				FEDADE9B22F4D46600771C3E /* TagsViewController.m in Sources */,
+				FEBFBC3722F4B1A800264C05 /* Tags.h in Sources */,
+				FEBFBC3922F4B1A800264C05 /* User.h in Sources */,
+				FEBFBC3A22F4B1A800264C05 /* Match.h in Sources */,
+				FEBFBC3B22F4B1A800264C05 /* CategoryTableViewCell.h in Sources */,
+				FEBFBC3C22F4B1A800264C05 /* Token.h in Sources */,
+				FEBFBC3D22F4B1A800264C05 /* TokenInputView.h in Sources */,
+				FEBFBC3E22F4B1A800264C05 /* CategoryList.plist in Sources */,
+				FEBFBC4022F4B1A800264C05 /* LoginViewController.h in Sources */,
+				FEBFBC4122F4B1A800264C05 /* ViewController.h in Sources */,
+				FEBFBC4222F4B1A800264C05 /* SignUpViewController.h in Sources */,
+				FEBFBC4322F4B1A800264C05 /* AccountViewController.h in Sources */,
+				FEBFBC4522F4B1A800264C05 /* ProfileViewController.h in Sources */,
+				FEBFBC4622F4B1A800264C05 /* ChatViewController.h in Sources */,
+				FEBFBC4722F4B1A800264C05 /* SettingsViewController.h in Sources */,
+				FEBFBC4822F4B1A800264C05 /* CategoriesViewController.h in Sources */,
+				FEBFBC4922F4B1A800264C05 /* ProfileEditViewController.h in Sources */,
 				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
-				FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */,
 				AB50E24D22DD0617006097DB /* ViewController.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
@@ -565,10 +624,9 @@
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
 				FEB50A6B22DE77E100FEF8DB /* Match.m in Sources */,
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
-				FEBFBC2B22F3621200264C05 /* addTags.m in Sources */,
-				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
 				AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */,
 				FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */,
+				FEBFBC3622F4AC0900264C05 /* Tags.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,7 +799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 92SQN6NSYW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -762,7 +820,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Parse\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.esther3815.AskandLearn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccheng00AskandLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -774,7 +832,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 92SQN6NSYW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -795,7 +853,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Parse\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.esther3815.AskandLearn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ccheng00AskandLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

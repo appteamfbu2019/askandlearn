@@ -20,6 +20,7 @@ static CGFloat bottomPad = 10;
 static NSString *nameKey = @"Name";
 static NSString *idKey = @"Identifier";
 
+
 @interface addTags () <InputViewDelegate>
 
 @property (nonatomic) IBOutlet TokenInputView *tokenInputView;
@@ -33,6 +34,8 @@ static NSString *idKey = @"Identifier";
 @end
 
 @implementation addTags
+
+@synthesize delegate;
 
 - (void)viewDidLoad
 {
@@ -252,6 +255,13 @@ static NSString *idKey = @"Identifier";
     
     return correctedHeight;
 }
+
+- (IBAction)submittingTags:(id)sender {
+    [delegate assignTags:self.addedTags];
+    NSLog(@"HELLOOO");
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"settingsVC"] animated:YES completion:nil];
+}
+
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
