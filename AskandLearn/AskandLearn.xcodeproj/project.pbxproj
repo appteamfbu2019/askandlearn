@@ -30,6 +30,9 @@
 		ABD1543A22F372CF001D956B /* Action.h in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267622E2423E004F4D57 /* Action.h */; };
 		ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
 		ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
+		ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CD22F103100080EF78 /* MatchViewController.h */; };
+		ABD6CEFC22F3B6B4007D8E26 /* ProfileViewConttroller.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD6CEFB22F3B6B4007D8E26 /* ProfileViewConttroller.h */; };
+		ABD6CEFE22F3B6CD007D8E26 /* ProfileViewConttroller.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */; };
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
 		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
@@ -110,6 +113,8 @@
 		ABD1543122F26801001D956B /* PFQueryState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFQueryState.h; path = Pods/Parse/Parse/Parse/Internal/Query/State/PFQueryState.h; sourceTree = "<group>"; };
 		ABD1543322F2684E001D956B /* PFBaseState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFBaseState.h; sourceTree = "<group>"; };
 		ABD1543522F269CB001D956B /* PFImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PFImageView.m; path = Pods/ParseUI/ParseUI/Classes/Views/PFImageView.m; sourceTree = "<group>"; };
+		ABD6CEFB22F3B6B4007D8E26 /* ProfileViewConttroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewConttroller.h; sourceTree = "<group>"; };
+		ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewConttroller.m; sourceTree = "<group>"; };
 		B01979C922E79A580038511A /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B01979CA22E79A580038511A /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B04ED53522EA5B5B00CBEF93 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = "AskandLearn/View Controller/ChatCell.h"; sourceTree = SOURCE_ROOT; };
@@ -172,6 +177,8 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
+				ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */,
+				ABD6CEFB22F3B6B4007D8E26 /* ProfileViewConttroller.h */,
 				ABD1543522F269CB001D956B /* PFImageView.m */,
 				ABD1543322F2684E001D956B /* PFBaseState.h */,
 				ABD1543122F26801001D956B /* PFQueryState.h */,
@@ -560,6 +567,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD6CEFE22F3B6CD007D8E26 /* ProfileViewConttroller.m in Sources */,
+				ABD6CEFC22F3B6B4007D8E26 /* ProfileViewConttroller.h in Sources */,
+				ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */,
 				ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */,
 				ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */,
 				ABD1543A22F372CF001D956B /* Action.h in Sources */,
