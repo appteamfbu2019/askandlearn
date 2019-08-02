@@ -10,11 +10,13 @@
 #import "Parse.h"
 #import "addTags.h"
 #import "Tags.h"
+#import "TagsViewController.h"
 
 @interface SettingsViewController () <TagsDelegate>
 @property (nonatomic) addTags *tagController;
 @property (nonatomic, strong) NSArray *tagObjects;
 @property (nonatomic, strong) Tags *ownTag;
+@property (nonatomic, strong) TagsViewController *tvc;
 @end
 
 @implementation SettingsViewController
@@ -60,6 +62,7 @@
         NSLog(@"running");
     }
     NSLog(@"added tags to server %@", tags);
+    [self.tvc fetchTags];
     //NSLog(@"user's tags %@", self.ownTag.tags);
 
     //[self.ownTag addTags:tags];
@@ -80,6 +83,11 @@
         self.tagController = childViewController;
         self.tagController.delegate = self;
         NSLog(@"yes");
+    }
+    else if ([segue.identifier isEqualToString:@"tagsTableSegue"]){
+        TagsViewController *tvc = (TagsViewController *)[segue destinationViewController];
+        self.tvc = tvc;
+        
     }
 }
 

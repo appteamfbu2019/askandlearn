@@ -259,7 +259,7 @@ static NSString *idKey = @"Identifier";
 - (IBAction)submittingTags:(id)sender {
     [delegate assignTags:self.addedTags];
     NSLog(@"HELLOOO");
-    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"settingsVC"] animated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

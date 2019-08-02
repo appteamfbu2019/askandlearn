@@ -27,11 +27,11 @@
     self.noOfTags = 0;
     self.allTags = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
-    [self reloadData];
-    NSLog(@"allTags %@", self.allTags);
+    [self fetchTags];
+    
 }
 
--(void)reloadData{
+-(void)fetchTags{
     PFQuery *query = [PFQuery queryWithClassName:@"Tags"];
     [query includeKey:@"user"];
     [query includeKey:@"tag"];
@@ -43,6 +43,8 @@
                     [self.allTags addObject:tag];
                 }
             }
+            [self.tableView reloadData];
+            NSLog(@"allTags %@", self.allTags);
         }
         
     }];
@@ -61,7 +63,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TagCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TagCell"];
     Tags *tag = self.allTags[indexPath.row];
-    cell.cellText.text = tag[@"Name"];
+    cell.cellText.text = tag.tag[@"Name"];
     return cell;
 }
 
