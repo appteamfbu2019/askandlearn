@@ -34,6 +34,8 @@
 		ABD6CEFC22F3B6B4007D8E26 /* ProfileViewConttroller.h in Sources */ = {isa = PBXBuildFile; fileRef = ABD6CEFB22F3B6B4007D8E26 /* ProfileViewConttroller.h */; };
 		ABD6CEFE22F3B6CD007D8E26 /* ProfileViewConttroller.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */; };
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
+		B044FAA322F4AFE700AE5C2F /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B044FAA222F4AFE700AE5C2F /* ProfileEditViewController.m */; };
+		B044FAA622F4B1FF00AE5C2F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B044FAA522F4B1FF00AE5C2F /* ProfileViewController.m */; };
 		B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
 		FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
 		FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AE22E7BC3600A2A0D6 /* CardView.m */; };
@@ -117,6 +119,10 @@
 		ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewConttroller.m; sourceTree = "<group>"; };
 		B01979C922E79A580038511A /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B01979CA22E79A580038511A /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		B044FAA122F4AFE700AE5C2F /* ProfileEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		B044FAA222F4AFE700AE5C2F /* ProfileEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
+		B044FAA422F4B1FF00AE5C2F /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../Views/ProfileViewController.h; sourceTree = "<group>"; };
+		B044FAA522F4B1FF00AE5C2F /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../Views/ProfileViewController.m; sourceTree = "<group>"; };
 		B04ED53522EA5B5B00CBEF93 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = "AskandLearn/View Controller/ChatCell.h"; sourceTree = SOURCE_ROOT; };
 		B04ED53622EA5B5B00CBEF93 /* ChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChatCell.m; path = "AskandLearn/View Controller/ChatCell.m"; sourceTree = SOURCE_ROOT; };
 		D650055D94AAC9D8BB54A659 /* Pods-AskandLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +253,8 @@
 		AB63D38F22E104CE00AB8D3D /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B044FAA422F4B1FF00AE5C2F /* ProfileViewController.h */,
+				B044FAA522F4B1FF00AE5C2F /* ProfileViewController.m */,
 				FE564A1222DFECC500192A43 /* LoginViewController.m */,
 				AB0449DA22DF4CFE001F9606 /* LoginViewController.h */,
 				AB50E24B22DD0617006097DB /* ViewController.h */,
@@ -266,6 +274,8 @@
 				FE7E724222EFC00E00519A67 /* addTags.m */,
 				ABC441CD22F103100080EF78 /* MatchViewController.h */,
 				ABC441CE22F103100080EF78 /* MatchViewController.m */,
+				B044FAA122F4AFE700AE5C2F /* ProfileEditViewController.h */,
+				B044FAA222F4AFE700AE5C2F /* ProfileEditViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -571,8 +581,10 @@
 				ABD6CEFC22F3B6B4007D8E26 /* ProfileViewConttroller.h in Sources */,
 				ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */,
 				ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */,
+				B044FAA622F4B1FF00AE5C2F /* ProfileViewController.m in Sources */,
 				ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */,
 				ABD1543A22F372CF001D956B /* Action.h in Sources */,
+				B044FAA322F4AFE700AE5C2F /* ProfileEditViewController.m in Sources */,
 				ABD1543922F372C2001D956B /* Match.h in Sources */,
 				AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */,
 				AB5BE8AD22F263DE006B0D3D /* Match.m in Sources */,
@@ -767,7 +779,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GTKUYBCQTD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -800,7 +812,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GTKUYBCQTD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
