@@ -46,11 +46,10 @@
 #warning placeholder stuff, replace with card-specific information {
         information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
         information.text = @"no info given";
-        [information setFont:[UIFont fontWithName:@"Hiragino Sans W3 17.0" size:20]];
         [information setTextAlignment:NSTextAlignmentCenter];
         information.textColor = [UIColor whiteColor];
         
-        self.backgroundColor = [UIColor colorWithHue:0.85 saturation:0.4 brightness:1 alpha:1.0];
+        self.backgroundColor = [UIColor blueColor];
 #warning placeholder stuff, replace with card-specific information }
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
