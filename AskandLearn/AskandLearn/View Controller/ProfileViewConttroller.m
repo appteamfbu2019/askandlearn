@@ -6,9 +6,9 @@
 //  Copyright © 2019 estherb. All rights reserved.
 //
 #import "ProfileViewConttroller.h"
-#import "HomeFeed.h"
-#import "PostViewCell.h"
-#import "Post.h"
+//#import "HomeFeed.h"
+//#import "PostViewCell.h"
+//#import "Post.h"
 #import <Parse/Parse.h>
 
 @interface ProfileViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -35,44 +35,44 @@
     //    self.bioLabel.text = userBio;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-//    self.collectionView.dataSource = self;
-//    self.collectionView.delegate = self;
-    self.editButton.hidden = YES;
-    if(self.user == nil){
-        self.user = [PFUser currentUser];
-        self.editButton.hidden = NO;
-    }
-    self.username.text= self.user.username;
-    
-    
-    // [self fetchPosts];
-    self.editButton.layer.borderWidth = 1.0f;
-    self.editButton.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.editButton.layer.cornerRadius = 5.0f;
-    self.profileImageView.layer.cornerRadius = 50.0f;
-    
-}
+//- (void)viewDidLoad {
+//    [super viewDidLoad];
+////    self.collectionView.dataSource = self;
+////    self.collectionView.delegate = self;
+//    self.editButton.hidden = YES;
+//    if(self.user == nil){
+//        self.user = [PFUser currentUser];
+//        self.editButton.hidden = NO;
+//    }
+//    self.username.text= self.user.username;
+//
+//
+//    // [self fetchPosts];
+//    self.editButton.layer.borderWidth = 1.0f;
+//    self.editButton.layer.borderColor = [[UIColor grayColor] CGColor];
+//    self.editButton.layer.cornerRadius = 5.0f;
+//    self.profileImageView.layer.cornerRadius = 50.0f;
+//
+//}
 
-- (void)fetchPosts{
-    // construct query
-    PFQuery *postQuery = [Post query];
-    [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
-    [postQuery whereKey:@"author" equalTo:self.user];
-    postQuery.limit = 20;
-    
-    // fetch data asynchronously
-    [postQuery findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-        if (posts) {
-            self.postArray = posts;
-            [self.collectionView reloadData];
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-}
+//- (void)fetchPosts{
+//    // construct query
+//    PFQuery *postQuery = [Post query];
+//    [postQuery orderByDescending:@"createdAt"];
+//    [postQuery includeKey:@"author"];
+//    [postQuery whereKey:@"author" equalTo:self.user];
+//    postQuery.limit = 20;
+//
+//    // fetch data asynchronously
+//    [postQuery findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+//        if (posts) {
+//            self.postArray = posts;
+//            [self.collectionView reloadData];
+//        } else {
+//            NSLog(@"%@", error.localizedDescription);
+//        }
+//    }];
+//}
 
 
 //- (nonnull UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {

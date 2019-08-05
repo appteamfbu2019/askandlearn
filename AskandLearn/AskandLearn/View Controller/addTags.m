@@ -110,19 +110,14 @@ static NSString *idKey = @"Identifier";
 
 - (void)configureTagListViewController
 {
-    if (!self.categoriesListController)
-    {
-        self.categoriesListController = [CategoriesViewController categoriesListController];
-        [self addChildViewController:self.categoriesListController];
         self.categoriesListController.view.frame = self.categoriesListContainerView.bounds;
         [self.categoriesListContainerView addSubview:self.categoriesListController.view];
         [self.categoriesListController didMoveToParentViewController:self];
-    }
     
-    __weak addTags *weakSelf = self;
-    self.categoriesListController.didScrollBlock = ^{
-        [weakSelf.view endEditing:YES];
-    };
+//    __weak addTags *weakSelf = self;
+//    self.categoriesListController.didScrollBlock = ^{
+//        [weakSelf.view endEditing:YES];
+//    };
 }
 
 - (void)layoutViewsBasedOnComposerHeight

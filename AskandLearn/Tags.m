@@ -7,7 +7,6 @@
 //
 
 #import "Tags.h"
-#import "Parse.h"
 
 @implementation Tags
 

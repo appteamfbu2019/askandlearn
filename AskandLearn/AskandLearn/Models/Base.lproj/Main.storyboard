@@ -288,7 +288,6 @@
                     <connections>
                         <segue destination="1da-ld-FqW" kind="relationship" relationship="viewControllers" id="5n4-5g-zqN"/>
                         <segue destination="b8O-ZD-wAN" kind="relationship" relationship="viewControllers" id="gJJ-Ls-QKy"/>
-                        <segue destination="t74-Sk-RUO" kind="relationship" relationship="viewControllers" id="hnd-ve-Db7"/>
                         <segue destination="JbJ-b6-0zt" kind="relationship" relationship="viewControllers" id="WmS-Yq-OGC"/>
                     </connections>
                 </tabBarController>
@@ -418,11 +417,7 @@
         <!--Settings-->
         <scene sceneID="wTi-Nm-e5X">
             <objects>
-<<<<<<< HEAD
                 <viewController storyboardIdentifier="settingsVC" title="Settings" id="s2O-8j-BFH" customClass="SettingsViewController" sceneMemberID="viewController">
-=======
-                <viewController title="Settings" id="s2O-8j-BFH" customClass="Se" sceneMemberID="viewController">
->>>>>>> e42b94810e4c5407fda5703109789716df834b97
                     <view key="view" contentMode="scaleToFill" id="iFz-mO-tcC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,11 +469,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Tags"/>
                                 <connections>
-<<<<<<< HEAD
                                     <segue destination="PsS-BK-wfy" kind="show" identifier="addTagsSegue" id="6LP-DX-1Sj"/>
-=======
-                                    <segue destination="01B-DF-QBj" kind="presentation" id="Of2-TG-TLE"/>
->>>>>>> e42b94810e4c5407fda5703109789716df834b97
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SoZ-3y-ebA">
@@ -492,7 +483,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="b1E-Ga-dvm"/>
                     </view>
-<<<<<<< HEAD
                     <navigationItem key="navigationItem" title="Settings" id="m4M-ct-eXF">
                         <barButtonItem key="backBarButtonItem" title="Back" id="1tl-f6-V0W"/>
                     </navigationItem>
@@ -503,13 +493,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEV-mh-2A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2637.68115942029" y="1263.6160714285713"/>
-=======
-                    <navigationItem key="navigationItem" title="Settings" id="m4M-ct-eXF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dEV-mh-2A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2702.898550724638" y="1187.9464285714284"/>
->>>>>>> e42b94810e4c5407fda5703109789716df834b97
         </scene>
         <!--Add Tags-->
         <scene sceneID="Oe3-kq-nla">
@@ -519,22 +502,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-Pj-xfK" customClass="TokenInputView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
-=======
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsc-8h-E9u">
-                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </containerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XpX-8o-ww6">
-                                <rect key="frame" x="0.0" y="160" width="414" height="819"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4HI-Pj-xfK" customClass="TokenInputView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="72"/>
->>>>>>> e42b94810e4c5407fda5703109789716df834b97
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pVB-w9-fGA"/>
@@ -543,7 +512,6 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
-<<<<<<< HEAD
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqy-cl-lF4">
                                 <rect key="frame" x="0.0" y="178" width="414" height="718"/>
                                 <connections>
@@ -572,16 +540,11 @@
                             <constraint firstItem="Tqy-cl-lF4" firstAttribute="trailing" secondItem="aoY-XU-Ldi" secondAttribute="trailing" id="tqj-Ll-CVS"/>
                             <constraint firstItem="4HI-Pj-xfK" firstAttribute="leading" secondItem="aoY-XU-Ldi" secondAttribute="leading" id="xeC-Qs-Pmd"/>
                         </constraints>
-=======
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
->>>>>>> e42b94810e4c5407fda5703109789716df834b97
                         <viewLayoutGuide key="safeArea" id="aoY-XU-Ldi"/>
                     </view>
                     <navigationItem key="navigationItem" id="ac9-st-PLZ"/>
                     <connections>
                         <outlet property="addedTagViewHeight" destination="pVB-w9-fGA" id="R8N-zA-P7D"/>
-                        <outlet property="categoriesListContainerView" destination="Qsc-8h-E9u" id="J9N-8R-ZLO"/>
                         <outlet property="tokenInputView" destination="4HI-Pj-xfK" id="ih2-s1-S3y"/>
                     </connections>
                 </viewController>
@@ -707,7 +670,6 @@
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="-190.17857142857142"/>
         </scene>
-<<<<<<< HEAD
         <!--Messages-->
         <scene sceneID="1Mq-7f-8mW">
             <objects>
@@ -770,39 +732,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LSW-QG-IqT"/>
                     </view>
-=======
-        <!--Navigation Controller-->
-        <scene sceneID="AXd-mA-ZiC">
-            <objects>
-                <navigationController id="01B-DF-QBj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ytH-tn-hvb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="PsS-BK-wfy" kind="relationship" relationship="rootViewController" id="cit-oz-8Km"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="89l-tM-ihD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3926" y="466"/>
-        </scene>
-        <!--Messages-->
-        <scene sceneID="j6j-Gj-jJh">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t74-Sk-RUO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" id="5vV-zG-k3M"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6xx-oW-EDO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
->>>>>>> e42b94810e4c5407fda5703109789716df834b97
-                    <connections>
-                        <segue destination="uJ5-sM-wgf" kind="relationship" relationship="rootViewController" id="GqA-b7-vJK"/>
-                    </connections>
-                </navigationController>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdO-zy-EDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1722" y="2358"/>
