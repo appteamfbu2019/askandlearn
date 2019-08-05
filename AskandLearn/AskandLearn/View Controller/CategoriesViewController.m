@@ -13,9 +13,8 @@ static CGFloat const animationTime = 0.2f;
 static const NSString *nameKey = @"Name";
 static const NSString *idKey = @"Identifier";
 
-@interface CategoriesViewController ()
+@interface CategoriesViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *noResultView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *noResultsTopConstraint;
 
 @property (nonatomic, copy) SelectedCategoryCompletionBlock selectedBlock;

@@ -666,6 +666,7 @@
                     <navigationItem key="navigationItem" id="ac9-st-PLZ"/>
                     <connections>
                         <outlet property="addedTagViewHeight" destination="pVB-w9-fGA" id="R8N-zA-P7D"/>
+                        <outlet property="categoriesListContainerView" destination="Tqy-cl-lF4" id="N8E-zb-c16"/>
                         <outlet property="tokenInputView" destination="4HI-Pj-xfK" id="ih2-s1-S3y"/>
                     </connections>
                 </viewController>
@@ -791,22 +792,6 @@
             </objects>
             <point key="canvasLocation" x="1769.5652173913045" y="-190.17857142857142"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AXd-mA-ZiC">
-            <objects>
-                <navigationController id="01B-DF-QBj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ytH-tn-hvb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="PsS-BK-wfy" kind="relationship" relationship="rootViewController" id="cit-oz-8Km"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="89l-tM-ihD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3926" y="466"/>
-        </scene>
         <!--Messages-->
         <scene sceneID="j6j-Gj-jJh">
             <objects>
@@ -869,10 +854,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LSW-QG-IqT"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Zoa-Ot-ElB" id="DnZ-XN-yrf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdO-zy-EDB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="2358"/>
+            <point key="canvasLocation" x="3841" y="2152"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZeB-qB-kA7">
@@ -947,7 +935,6 @@
         <image name="heart_outline_24-4x" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6LP-DX-1Sj"/>
         <segue reference="Qm0-1o-5zo"/>
     </inferredMetricsTieBreakers>
 </document>

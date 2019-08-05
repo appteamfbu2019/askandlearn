@@ -23,7 +23,7 @@ static NSString *idKey = @"Identifier";
 
 @interface addTags () <InputViewDelegate>
 
-@property (weak, nonatomic) IBOutlet TokenInputView *tokenInputView;
+@property (nonatomic) IBOutlet TokenInputView *tokenInputView;
 @property (weak, nonatomic) IBOutlet UIView *categoriesListContainerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *addedTagViewHeight;
 
@@ -66,7 +66,7 @@ static NSString *idKey = @"Identifier";
     [self.tokenInputView setSelectedToken:token highlight:YES];
 }
 
-- (NSMutableArray *)addedMembers
+- (NSMutableArray *)addedTags
 {
     if (!_addedTags)
     {
@@ -110,14 +110,20 @@ static NSString *idKey = @"Identifier";
 
 - (void)configureTagListViewController
 {
+    if (!self.categoriesListController)
+    {
+        [self addChildViewController:self.categoriesListController];
         self.categoriesListController.view.frame = self.categoriesListContainerView.bounds;
         [self.categoriesListContainerView addSubview:self.categoriesListController.view];
         [self.categoriesListController didMoveToParentViewController:self];
+    }
     
-//    __weak addTags *weakSelf = self;
-//    self.categoriesListController.didScrollBlock = ^{
-//        [weakSelf.view endEditing:YES];
-//    };
+    __weak addTags *weakSelf = self;
+    self.categoriesListController.didScrollBlock = ^{
+        [weakSelf.view endEditing:YES];
+    };
+    
+    NSLog(@"hello %@", self.categoriesListController.tableView.delegate);
 }
 
 - (void)layoutViewsBasedOnComposerHeight
@@ -129,16 +135,18 @@ static NSString *idKey = @"Identifier";
 - (void)searchTagsForText:(NSString *)searchText
 {
     __weak addTags *weakSelf = self;
-    
+    NSLog(@"hellloooo");
     [self.categoriesListController searchCategory:searchText addedCategories:self.addedTags withSelected:^(BOOL success, NSDictionary *category, NSError *error) {
         if (success)
         {
+            NSLog(@"success");
             
             [weakSelf addTag:category updateTokenView:YES];
         }
     } deselectedBlock:^(BOOL success, NSDictionary *category, NSError *error) {
         if (success)
         {
+            NSLog(@"remove");
             [weakSelf removeTag:category];
         }
     }];
@@ -154,7 +162,6 @@ static NSString *idKey = @"Identifier";
         token.idString= tag[idKey];
         [self.tokensCache setValue:token forKey:token.idString];
     }
-    token.timeStamp = [NSDate date];
     
     [self.addedTags addObject:tag];
     [self.tokenInputView addToken:token needsLayout:update];
@@ -255,6 +262,16 @@ static NSString *idKey = @"Identifier";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"toChildController"]) {
+        CategoriesViewController * childViewController = (CategoriesViewController *) [segue destinationViewController];
+        self.categoriesListController = childViewController;
+    }
+}
 
 
 @end

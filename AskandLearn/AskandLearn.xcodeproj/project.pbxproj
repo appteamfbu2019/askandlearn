@@ -53,6 +53,7 @@
 		FEA7901D22F8E76B00FC70EF /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */; };
 		FEA7901F22F8E93400FC70EF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FFC22F8D58E00FC70EF /* ProfileViewController.m */; };
 		FEA7902022F8E9CB00FC70EF /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA7901222F8D65700FC70EF /* MatchViewController.m */; };
+		FEA7902222F8F10300FC70EF /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEA7902122F8F10300FC70EF /* CategoryList.plist */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEBFBC3622F4AC0900264C05 /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3522F4AC0900264C05 /* Tags.m */; };
 		FEBFBC3722F4B1A800264C05 /* Tags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3422F4AC0900264C05 /* Tags.h */; };
@@ -193,6 +194,7 @@
 		FEA7901922F8DDF800FC70EF /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Match.m; path = AskandLearn/Views/Match.m; sourceTree = SOURCE_ROOT; };
 		FEA7901B22F8E76B00FC70EF /* ProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
 		FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
+		FEA7902122F8F10300FC70EF /* CategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FEB50A6D22DE782700FEF8DB /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				FEA7901322F8D65700FC70EF /* Match.h */,
 				FEA7901122F8D65700FC70EF /* Match.m */,
 				FEA7901222F8D65700FC70EF /* MatchViewController.m */,
+				FEA7902122F8F10300FC70EF /* CategoryList.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			files = (
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
+				FEA7902222F8F10300FC70EF /* CategoryList.plist in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

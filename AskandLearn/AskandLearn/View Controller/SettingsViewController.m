@@ -57,6 +57,7 @@
         [Tags newTag:PFUser.currentUser setTag:tag];
         self.numberOfTags += 1;
     }
+    NSLog(@"added tags to server %@", tags);
     [self.tvc fetchTags];
 }
 
