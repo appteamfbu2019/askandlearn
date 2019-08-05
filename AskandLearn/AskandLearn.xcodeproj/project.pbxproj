@@ -47,10 +47,12 @@
 		FEA7900A22F8D58E00FC70EF /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF322F8D58D00FC70EF /* CategoriesViewController.m */; };
 		FEA7900B22F8D58E00FC70EF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF522F8D58D00FC70EF /* LoginViewController.m */; };
 		FEA7900C22F8D58E00FC70EF /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF622F8D58D00FC70EF /* AccountViewController.m */; };
-		FEA7900D22F8D58E00FC70EF /* ProfileViewConttroller.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF722F8D58E00FC70EF /* ProfileViewConttroller.m */; };
 		FEA7900E22F8D58E00FC70EF /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF922F8D58E00FC70EF /* CategoryTableViewCell.m */; };
 		FEA7901622F8D72100FC70EF /* addTags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FDE22F8D58B00FC70EF /* addTags.h */; };
 		FEA7901A22F8DDF900FC70EF /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA7901922F8DDF800FC70EF /* Match.m */; };
+		FEA7901D22F8E76B00FC70EF /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */; };
+		FEA7901F22F8E93400FC70EF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FFC22F8D58E00FC70EF /* ProfileViewController.m */; };
+		FEA7902022F8E9CB00FC70EF /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA7901222F8D65700FC70EF /* MatchViewController.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEBFBC3622F4AC0900264C05 /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3522F4AC0900264C05 /* Tags.m */; };
 		FEBFBC3722F4B1A800264C05 /* Tags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3422F4AC0900264C05 /* Tags.h */; };
@@ -135,7 +137,6 @@
 		ABD1543122F26801001D956B /* PFQueryState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PFQueryState.h; path = Pods/Parse/Parse/Parse/Internal/Query/State/PFQueryState.h; sourceTree = "<group>"; };
 		ABD1543322F2684E001D956B /* PFBaseState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFBaseState.h; sourceTree = "<group>"; };
 		ABD1543522F269CB001D956B /* PFImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PFImageView.m; path = Pods/ParseUI/ParseUI/Classes/Views/PFImageView.m; sourceTree = "<group>"; };
-		ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewConttroller.m; sourceTree = "<group>"; };
 		B01979C922E79A580038511A /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B01979CA22E79A580038511A /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B04ED53522EA5B5B00CBEF93 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatCell.h; path = "AskandLearn/View Controller/ChatCell.h"; sourceTree = SOURCE_ROOT; };
@@ -155,7 +156,6 @@
 		FE7E723C22EFB80000519A67 /* Token.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Token.m; path = "AskandLearn/View Controller/Token.m"; sourceTree = SOURCE_ROOT; };
 		FE7E723E22EFB94200519A67 /* TokenInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TokenInputView.h; path = "AskandLearn/View Controller/TokenInputView.h"; sourceTree = SOURCE_ROOT; };
 		FE7E723F22EFB94200519A67 /* TokenInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TokenInputView.m; path = "AskandLearn/View Controller/TokenInputView.m"; sourceTree = SOURCE_ROOT; };
-		FEA78FD422F8D58A00FC70EF /* ProfileViewConttroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewConttroller.h; sourceTree = "<group>"; };
 		FEA78FD522F8D58A00FC70EF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		FEA78FD622F8D58A00FC70EF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FEA78FD722F8D58A00FC70EF /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
@@ -183,7 +183,6 @@
 		FEA78FF322F8D58D00FC70EF /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		FEA78FF522F8D58D00FC70EF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FEA78FF622F8D58D00FC70EF /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
-		FEA78FF722F8D58E00FC70EF /* ProfileViewConttroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewConttroller.m; sourceTree = "<group>"; };
 		FEA78FF922F8D58E00FC70EF /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
 		FEA78FFA22F8D58E00FC70EF /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		FEA78FFC22F8D58E00FC70EF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
@@ -192,6 +191,8 @@
 		FEA7901322F8D65700FC70EF /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Match.h; path = AskandLearn/Views/Match.h; sourceTree = SOURCE_ROOT; };
 		FEA7901822F8DDF800FC70EF /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Match.h; path = AskandLearn/Views/Match.h; sourceTree = SOURCE_ROOT; };
 		FEA7901922F8DDF800FC70EF /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Match.m; path = AskandLearn/Views/Match.m; sourceTree = SOURCE_ROOT; };
+		FEA7901B22F8E76B00FC70EF /* ProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
+		FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FEB50A6D22DE782700FEF8DB /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -315,12 +316,13 @@
 				FEA78FFA22F8D58E00FC70EF /* CardView.h */,
 				FE1950AE22E7BC3600A2A0D6 /* CardView.m */,
 				FEA78FF922F8D58E00FC70EF /* CategoryTableViewCell.m */,
+				FEA7901B22F8E76B00FC70EF /* ProfileEditViewController.h */,
+				FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */,
 				FEA7901822F8DDF800FC70EF /* Match.h */,
 				FEA7901922F8DDF800FC70EF /* Match.m */,
 				B04ED53522EA5B5B00CBEF93 /* ChatCell.h */,
 				B04ED53622EA5B5B00CBEF93 /* ChatCell.m */,
 				FE564A1222DFECC500192A43 /* LoginViewController.m */,
-				ABD6CEFD22F3B6CD007D8E26 /* ProfileViewConttroller.m */,
 				FEA78FD722F8D58A00FC70EF /* CardView.m */,
 				FEA78FDF22F8D58B00FC70EF /* CategoriesViewController.h */,
 				FEA78FF322F8D58D00FC70EF /* CategoriesViewController.m */,
@@ -340,7 +342,6 @@
 				FEA78FF222F8D58D00FC70EF /* ViewController.h */,
 				AB50E24C22DD0617006097DB /* ViewController.m */,
 				AB0449D222DE6662001F9606 /* SignUpViewController.h */,
-				FEA78FF722F8D58E00FC70EF /* ProfileViewConttroller.m */,
 				FEA78FD622F8D58A00FC70EF /* SettingsViewController.h */,
 				FEA78FD822F8D58B00FC70EF /* SettingsViewController.m */,
 				FEA78FE222F8D58B00FC70EF /* SignUpViewController.h */,
@@ -354,7 +355,6 @@
 				FEDADE9C22F4D79D00771C3E /* TagCell.h */,
 				FEDADE9D22F4D79D00771C3E /* TagCell.m */,
 				ABC441CD22F103100080EF78 /* MatchViewController.h */,
-				FEA78FD422F8D58A00FC70EF /* ProfileViewConttroller.h */,
 				FEA78FD522F8D58A00FC70EF /* SignUpViewController.m */,
 				FEA78FD922F8D58B00FC70EF /* TagsViewController.m */,
 				FEA78FE422F8D58C00FC70EF /* Token.h */,
@@ -650,7 +650,9 @@
 				FEDADE9722F4B39600771C3E /* HomeViewController.m in Sources */,
 				FEA78FFF22F8D58E00FC70EF /* SettingsViewController.m in Sources */,
 				FEDADE9622F4B38D00771C3E /* HomeViewController.h in Sources */,
+				FEA7901D22F8E76B00FC70EF /* ProfileEditViewController.m in Sources */,
 				FEDADE9422F4B37300771C3E /* Action.h in Sources */,
+				FEA7902022F8E9CB00FC70EF /* MatchViewController.m in Sources */,
 				FEDADE9522F4B37300771C3E /* AppDelegate.h in Sources */,
 				FEBFBC4A22F4B1D400264C05 /* CardBackgroundView.h in Sources */,
 				FEBFBC4B22F4B1D400264C05 /* CardView.h in Sources */,
@@ -670,6 +672,7 @@
 				FEBFBC4222F4B1A800264C05 /* SignUpViewController.h in Sources */,
 				FEBFBC4622F4B1A800264C05 /* ChatViewController.h in Sources */,
 				FEBFBC4822F4B1A800264C05 /* CategoriesViewController.h in Sources */,
+				FEA7901F22F8E93400FC70EF /* ProfileViewController.m in Sources */,
 				ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */,
 				ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */,
 				ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */,
@@ -694,7 +697,6 @@
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				FEA7900C22F8D58E00FC70EF /* AccountViewController.m in Sources */,
 				FEA7901A22F8DDF900FC70EF /* Match.m in Sources */,
-				FEA7900D22F8D58E00FC70EF /* ProfileViewConttroller.m in Sources */,
 				FEA7900122F8D58E00FC70EF /* MatchCell.m in Sources */,
 				FEA7900A22F8D58E00FC70EF /* CategoriesViewController.m in Sources */,
 				FEA7900822F8D58E00FC70EF /* ChatCell.m in Sources */,
