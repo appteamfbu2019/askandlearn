@@ -61,7 +61,6 @@ static float CARD_WIDTH = 350; //%%% width of the draggable card
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         NSLog(@"fetching users");
-        
     }
     return self;
 }
@@ -120,9 +119,6 @@ static float CARD_WIDTH = 350; //%%% width of the draggable card
                 [loadedCards addObject:newCard];
             }
         }
-        
-        //%%% displays the small number of loaded cards dictated by MAX_BUFFER_SIZE so that not all the cards
-        // are showing at once and clogging a ton of data
         for (int i = 0; i<[loadedCards count]; i++) {
             if (i>0) {
                 [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i-1]];
@@ -163,10 +159,8 @@ static float CARD_WIDTH = 350; //%%% width of the draggable card
             }
             if ([self.cards count] == (NSUInteger)0){
                 NSLog(@"exhausted all options");
-                //self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
                 [delegate outOfCards];
             }
-            
             cardsLoadedIndex = 0;
             [self loadCards];
         } else {
@@ -183,9 +177,6 @@ static float CARD_WIDTH = 350; //%%% width of the draggable card
 // This should be customized with your own action
 -(void)cardSwipedLeft:(UIView *)card;
 {
-    //do whatever you want with the card that was swiped
-    //    DraggableView *c = (DraggableView *)card;
-    
     PFUser *currentCard = self.cards[0];
     [Action dislikeAction:PFUser.currentUser withUser:currentCard];
     
@@ -199,20 +190,12 @@ static float CARD_WIDTH = 350; //%%% width of the draggable card
     [self.cards removeObject:currentCard];
     if ([self.cards count] == (NSUInteger)0){
         NSLog(@"exhausted all options");
-        //self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
         [delegate outOfCards];
     }
-    //[self reloadData];
 }
 
-#warning include own action here!
-//%%% action called when the card goes to the right.
-// This should be customized with your own action
 -(void)cardSwipedRight:(UIView *)card
 {
-    //do whatever you want with the card that was swiped
-    //    DraggableView *c = (DraggableView *)card;
-    
     PFUser *currentCard = self.cards[0];
     [Action likeAction:PFUser.currentUser withUser:currentCard];
     
@@ -249,34 +232,16 @@ static float CARD_WIDTH = 350; //%%% width of the draggable card
     }
 }
 
-//%%% when you hit the right button, this is called and substitutes the swipe
 -(void)swipeRight
 {
     CardView *dragView = [loadedCards firstObject];
-//    dragView.overlayView.mode = GGOverlayViewModeRight;
-//    [UIView animateWithDuration:0.2 animations:^{
-//        dragView.overlayView.alpha = 1;
-//    }];
     [dragView rightClickAction];
 }
 
-//%%% when you hit the left button, this is called and substitutes the swipe
 -(void)swipeLeft
 {
     CardView *dragView = [loadedCards firstObject];
-//    dragView.overlayView.mode = GGOverlayViewModeLeft;
-//    [UIView animateWithDuration:0.2 animations:^{
-//        dragView.overlayView.alpha = 1;
-//    }];
     [dragView leftClickAction];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
