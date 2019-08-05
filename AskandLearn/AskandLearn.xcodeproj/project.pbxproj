@@ -65,6 +65,8 @@
 		FEDADE9B22F4D46600771C3E /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDADE9A22F4D46600771C3E /* TagsViewController.m */; };
 		FEDADE9E22F4D79D00771C3E /* TagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDADE9D22F4D79D00771C3E /* TagCell.m */; };
 		FEE0744B22F8B71E00759C01 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB50E25622DD0617006097DB /* Info.plist */; };
+		FEE0744C22F8BB2400759C01 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB50E26E22DD0617006097DB /* Info.plist */; };
+		FEE0744D22F8BB2800759C01 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB50E26322DD0617006097DB /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +110,7 @@
 		AB50E24F22DD0617006097DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB50E25122DD0617006097DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB50E25422DD0617006097DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AB50E25622DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AB50E25622DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB50E25722DD0617006097DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB50E25D22DD0617006097DB /* AskandLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskandLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E26122DD0617006097DB /* AskandLearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AskandLearnTests.m; sourceTree = "<group>"; };
@@ -453,7 +455,9 @@
 			files = (
 				FEE0744B22F8B71E00759C01 /* Info.plist in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
+				FEE0744D22F8BB2800759C01 /* Info.plist in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
+				FEE0744C22F8BB2400759C01 /* Info.plist in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
