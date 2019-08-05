@@ -11,9 +11,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class Token;
+
+@protocol TagsDelegate <NSObject>
+
+-(void)assignTags:(NSArray *)tags;
+
+@end
+
 typedef void (^AddTagsCompletionBlock)(BOOL success, NSArray *members, NSError *error);
 
 @interface addTags : UIViewController
+
+@property (weak) id <TagsDelegate> delegate;
+
+- (IBAction)submittingTags:(id)sender;
 
 @property (nonatomic, copy) AddTagsCompletionBlock addTagsBlock;
 @property (nonatomic) Token *selectedToken;

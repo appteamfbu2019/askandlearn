@@ -16,8 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UILabel *categoryText;
 
-+ (id)categoryTableViewCell;
-
 @end
 
 NS_ASSUME_NONNULL_END

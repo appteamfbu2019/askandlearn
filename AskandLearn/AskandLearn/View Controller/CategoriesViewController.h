@@ -20,7 +20,6 @@ typedef void (^DidScrollBlock)();
 
 @property (nonatomic, copy) DidScrollBlock didScrollBlock;
 
-+ (id)categoriesListController;
 - (void)searchCategory: (NSString *) categoryName completion:(SelectedCategoryCompletionBlock)block;
 - (void)searchCategory: (NSString *) categoryName addedCategories: (NSArray *)addedCategories withSelected:(SelectedCategoryCompletionBlock)selectedCategoryBlock deselectedBlock:(DeselectedCategoryCompletionBlock)deselectedBlock;
 -(void)resetCategoryList;
