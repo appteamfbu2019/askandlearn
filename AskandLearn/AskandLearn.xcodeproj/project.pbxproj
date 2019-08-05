@@ -108,7 +108,7 @@
 		AB50E24F22DD0617006097DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB50E25122DD0617006097DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB50E25422DD0617006097DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AB50E25622DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB50E25622DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AB50E25722DD0617006097DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB50E25D22DD0617006097DB /* AskandLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskandLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E26122DD0617006097DB /* AskandLearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AskandLearnTests.m; sourceTree = "<group>"; };
@@ -223,7 +223,6 @@
 			children = (
 				FE445C2D22F0B79F00F8C824 /* Tag Classes */,
 				AB63D39222E1051A00AB8D3D /* Models */,
-				AB63D39122E104FF00AB8D3D /* API */,
 				AB63D38F22E104CE00AB8D3D /* View Controller */,
 			);
 			path = AskandLearn;
@@ -280,13 +279,6 @@
 				FEDADE9D22F4D79D00771C3E /* TagCell.m */,
 			);
 			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		AB63D39122E104FF00AB8D3D /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		AB63D39222E1051A00AB8D3D /* Models */ = {
