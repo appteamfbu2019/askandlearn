@@ -11,6 +11,12 @@
 		42FA90645126DA3C6683029F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		55E6995028913B08BB41F7C7 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */; };
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
+		AB025C8122F8D87500319DD8 /* iContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8022F8D87500319DD8 /* iContentView.m */; };
+		AB025C8A22F8DD6800319DD8 /* userChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8922F8DD6800319DD8 /* userChatViewController.m */; };
+		AB025C8D22F8E41700319DD8 /* ChatCellSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8C22F8E41700319DD8 /* ChatCellSettings.m */; };
+		AB025C9022F8E58400319DD8 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8F22F8E58400319DD8 /* ChatTableViewCell.m */; };
+		AB025C9122F8E6A700319DD8 /* ChatTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8E22F8E58400319DD8 /* ChatTableViewCell.h */; };
+		AB025C9222F8E6F800319DD8 /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
 		AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB35051622E8F4C600BC308D /* AccountViewController.m */; };
 		AB35051822E931CC00BC308D /* HomeViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
 		AB35051922E931CC00BC308D /* HomeViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
@@ -28,7 +34,6 @@
 		ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CE22F103100080EF78 /* MatchViewController.m */; };
 		ABD1543922F372C2001D956B /* Match.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AB22F263DE006B0D3D /* Match.h */; };
 		ABD1543A22F372CF001D956B /* Action.h in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267622E2423E004F4D57 /* Action.h */; };
-		ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
 		ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D322DE6662001F9606 /* SignUpViewController.m */; };
 		ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CD22F103100080EF78 /* MatchViewController.h */; };
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
@@ -74,6 +79,14 @@
 		70D741DBF4305BA509EDBBC1 /* Pods-AskandLearnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C7F304513E61DC938B844F4 /* libPods-AskandLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAAB1CB3C7D986C91A96B37 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
+		AB025C7F22F8D87500319DD8 /* iContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iContentView.h; sourceTree = "<group>"; };
+		AB025C8022F8D87500319DD8 /* iContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iContentView.m; sourceTree = "<group>"; };
+		AB025C8822F8DD6800319DD8 /* userChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userChatViewController.h; sourceTree = "<group>"; };
+		AB025C8922F8DD6800319DD8 /* userChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userChatViewController.m; sourceTree = "<group>"; };
+		AB025C8B22F8E41700319DD8 /* ChatCellSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatCellSettings.h; sourceTree = "<group>"; };
+		AB025C8C22F8E41700319DD8 /* ChatCellSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatCellSettings.m; sourceTree = "<group>"; };
+		AB025C8E22F8E58400319DD8 /* ChatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
+		AB025C8F22F8E58400319DD8 /* ChatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AB0449DA22DF4CFE001F9606 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -261,6 +274,10 @@
 				FE7E724122EFC00E00519A67 /* addTags.h */,
 				FE7E724222EFC00E00519A67 /* addTags.m */,
 				ABC441CD22F103100080EF78 /* MatchViewController.h */,
+				AB025C7F22F8D87500319DD8 /* iContentView.h */,
+				AB025C8022F8D87500319DD8 /* iContentView.m */,
+				AB025C8822F8DD6800319DD8 /* userChatViewController.h */,
+				AB025C8922F8DD6800319DD8 /* userChatViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -286,6 +303,10 @@
 				FE7E723F22EFB94200519A67 /* TokenInputView.m */,
 				AB5BE8A222F261B9006B0D3D /* MatchCell.h */,
 				AB5BE8A322F261B9006B0D3D /* MatchCell.m */,
+				AB025C8B22F8E41700319DD8 /* ChatCellSettings.h */,
+				AB025C8C22F8E41700319DD8 /* ChatCellSettings.m */,
+				AB025C8E22F8E58400319DD8 /* ChatTableViewCell.h */,
+				AB025C8F22F8E58400319DD8 /* ChatTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -565,14 +586,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */,
+				AB025C9222F8E6F800319DD8 /* SignUpViewController.h in Sources */,
 				ABD6CEF922F38D4A007D8E26 /* SignUpViewController.m in Sources */,
-				ABD1543B22F372D4001D956B /* SignUpViewController.h in Sources */,
+				AB025C9122F8E6A700319DD8 /* ChatTableViewCell.h in Sources */,
+				ABD6CEFA22F3B696007D8E26 /* MatchViewController.h in Sources */,
 				ABD1543A22F372CF001D956B /* Action.h in Sources */,
 				ABD1543922F372C2001D956B /* Match.h in Sources */,
 				AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */,
 				AB5BE8AD22F263DE006B0D3D /* Match.m in Sources */,
 				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
+				AB025C8D22F8E41700319DD8 /* ChatCellSettings.m in Sources */,
 				B04ED53722EA5B5B00CBEF93 /* ChatCell.m in Sources */,
 				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
 				FE1950AC22E7BBFC00A2A0D6 /* CardBackgroundView.m in Sources */,
@@ -580,6 +603,8 @@
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				AB5BE8A422F261B9006B0D3D /* MatchCell.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
+				AB025C8122F8D87500319DD8 /* iContentView.m in Sources */,
+				AB025C9022F8E58400319DD8 /* ChatTableViewCell.m in Sources */,
 				FE7E723422EFA2FF00519A67 /* CategoriesViewController.m in Sources */,
 				FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
@@ -589,6 +614,7 @@
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */,
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
+				AB025C8A22F8DD6800319DD8 /* userChatViewController.m in Sources */,
 				AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */,
 				FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */,
 			);

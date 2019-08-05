@@ -357,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="2679.7101449275365" y="499.55357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--User Chat View Controller-->
         <scene sceneID="FFf-EK-irQ">
             <objects>
-                <viewController id="Tcw-k6-Ufy" sceneMemberID="viewController">
+                <viewController id="Tcw-k6-Ufy" customClass="userChatViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cNr-fc-ozs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +376,7 @@
                                     </items>
                                 </navigationBar>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-5X-tk5" customClass="ContentView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-5X-tk5" customClass="iContentView">
                                 <rect key="frame" x="0.0" y="755" width="414" height="58"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yX2-re-bTS">
@@ -388,6 +388,9 @@
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="h42-8c-FIw"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjS-Je-DJW">
                                         <rect key="frame" x="70" y="11" width="295" height="26"/>
@@ -415,6 +418,9 @@
                                 <state key="normal" title="Receive">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="receiveMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="yJY-pc-s8R"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -433,6 +439,11 @@
                         <viewLayoutGuide key="safeArea" id="yyb-jZ-A7U"/>
                     </view>
                     <navigationItem key="navigationItem" id="9eb-Zu-MCv"/>
+                    <connections>
+                        <outlet property="chatTable" destination="O0N-0B-VNo" id="9dr-x6-woh"/>
+                        <outlet property="chatTextView" destination="zjS-Je-DJW" id="ZN6-9h-GLR"/>
+                        <outlet property="icontentView" destination="UTO-5X-tk5" id="aGg-7B-JZe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZ7-uu-YBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
