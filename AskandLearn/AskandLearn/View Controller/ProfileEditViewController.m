@@ -25,6 +25,35 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)saveProfile{
+    NSString *name = self.nameTextField.text;
+    NSString *profession = self.professionTextField.text;
+    NSString *major = self.majorTextField.text;
+    if ([self.nameTextField.text isEqual:@""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"No name inserted" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *nameAlert = [UIAlertAction actionWithTitle:@"Ok"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          }];
+        [alert addAction:nameAlert];
+        [self presentViewController:alert animated:YES completion:^{
+        }];
+    } else {
+        PFObject *profile = [PFObject objectWithClassName:@"Profile"];
+        profile[@"name"] = name;
+        profile[@"profession"] = profession;
+        profile[@"major"] = major;
+        [profile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Information Saved!");
+            } else {
+                NSLog(@"Information did not save.");
+            }
+        }];
+    }
+}
+
 - (void)uploadProfilePic
 {
     _isUploadingProfilePic = YES;
@@ -78,6 +107,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 /*
  #pragma mark - Navigation
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -88,6 +118,7 @@
  */
 
 - (IBAction)didTapSaveProfile:(id)sender {
+    [self saveProfile];
     [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 
