@@ -7,7 +7,7 @@
 //
 
 #import "PFObject.h"
-#import "Parse.h"
+#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

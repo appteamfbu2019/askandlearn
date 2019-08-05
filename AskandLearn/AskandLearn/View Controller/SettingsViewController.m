@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-#import "Parse.h"
+#import "Parse/Parse.h"
 #import "addTags.h"
 #import "Tags.h"
 #import "TagsViewController.h"

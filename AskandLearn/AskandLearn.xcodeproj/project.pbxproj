@@ -49,8 +49,8 @@
 		FEA7900C22F8D58E00FC70EF /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF622F8D58D00FC70EF /* AccountViewController.m */; };
 		FEA7900D22F8D58E00FC70EF /* ProfileViewConttroller.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF722F8D58E00FC70EF /* ProfileViewConttroller.m */; };
 		FEA7900E22F8D58E00FC70EF /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FF922F8D58E00FC70EF /* CategoryTableViewCell.m */; };
-		FEA7901022F8D58E00FC70EF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FFC22F8D58E00FC70EF /* ProfileViewController.m */; };
 		FEA7901622F8D72100FC70EF /* addTags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FDE22F8D58B00FC70EF /* addTags.h */; };
+		FEA7901A22F8DDF900FC70EF /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA7901922F8DDF800FC70EF /* Match.m */; };
 		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEBFBC3622F4AC0900264C05 /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3522F4AC0900264C05 /* Tags.m */; };
 		FEBFBC3722F4B1A800264C05 /* Tags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3422F4AC0900264C05 /* Tags.h */; };
@@ -190,6 +190,8 @@
 		FEA7901122F8D65700FC70EF /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Match.m; path = AskandLearn/Views/Match.m; sourceTree = SOURCE_ROOT; };
 		FEA7901222F8D65700FC70EF /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchViewController.m; path = AskandLearn/Views/MatchViewController.m; sourceTree = SOURCE_ROOT; };
 		FEA7901322F8D65700FC70EF /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Match.h; path = AskandLearn/Views/Match.h; sourceTree = SOURCE_ROOT; };
+		FEA7901822F8DDF800FC70EF /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Match.h; path = AskandLearn/Views/Match.h; sourceTree = SOURCE_ROOT; };
+		FEA7901922F8DDF800FC70EF /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Match.m; path = AskandLearn/Views/Match.m; sourceTree = SOURCE_ROOT; };
 		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FEB50A6D22DE782700FEF8DB /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -313,6 +315,8 @@
 				FEA78FFA22F8D58E00FC70EF /* CardView.h */,
 				FE1950AE22E7BC3600A2A0D6 /* CardView.m */,
 				FEA78FF922F8D58E00FC70EF /* CategoryTableViewCell.m */,
+				FEA7901822F8DDF800FC70EF /* Match.h */,
+				FEA7901922F8DDF800FC70EF /* Match.m */,
 				B04ED53522EA5B5B00CBEF93 /* ChatCell.h */,
 				B04ED53622EA5B5B00CBEF93 /* ChatCell.m */,
 				FE564A1222DFECC500192A43 /* LoginViewController.m */,
@@ -689,8 +693,8 @@
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,
 				B01979CB22E79A580038511A /* ChatViewController.m in Sources */,
 				FEA7900C22F8D58E00FC70EF /* AccountViewController.m in Sources */,
+				FEA7901A22F8DDF900FC70EF /* Match.m in Sources */,
 				FEA7900D22F8D58E00FC70EF /* ProfileViewConttroller.m in Sources */,
-				FEA7901022F8D58E00FC70EF /* ProfileViewController.m in Sources */,
 				FEA7900122F8D58E00FC70EF /* MatchCell.m in Sources */,
 				FEA7900A22F8D58E00FC70EF /* CategoriesViewController.m in Sources */,
 				FEA7900822F8D58E00FC70EF /* ChatCell.m in Sources */,
