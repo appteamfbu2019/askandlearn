@@ -49,8 +49,6 @@
             for (Tags *tag in tags){
                 if ([tag.user.objectId isEqualToString:PFUser.currentUser.objectId] && ![tag.status isEqualToString:@"removing"]){
                     [adding addObject:tag];
-//                    [self.allTags addObject:tag];
-//                    NSLog(@"added object");
                 }
                 if ([tag.user.objectId isEqualToString:PFUser.currentUser.objectId] && [tag.status isEqualToString:@"removing"]){
                     [removal addObject:tag];
@@ -73,16 +71,6 @@
         
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TagCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TagCell"];

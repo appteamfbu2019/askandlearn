@@ -60,12 +60,9 @@ static const NSString *nameKey = @"Name";
 }
 
 - (void)searchCategory:(NSString *)categoryName addedCategories:(NSArray *)addedCategories withSelected:(SelectedCategoryCompletionBlock)selectedCategoryBlock deselectedBlock:(DeselectedCategoryCompletionBlock)deselectedBlock{
-    NSLog(@"searchCategory");
     self.selectedBlock = selectedCategoryBlock;
-    NSLog(@"%@", self.selectedBlock);
     self.deselectedBlock = deselectedBlock;
     self.addedCategories = addedCategories;
-    NSLog(@"%@", self.addedCategories);
     self.currentSearch = [categoryName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
     [self searchTagsForText:self.currentSearch];
 }
@@ -84,7 +81,6 @@ static const NSString *nameKey = @"Name";
 {
     NSInteger noOfRows = 0;
     noOfRows = [self.categoryList count];
-    NSLog(@"%lu", noOfRows);
     return noOfRows;
 }
 

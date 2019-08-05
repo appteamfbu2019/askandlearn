@@ -245,7 +245,6 @@ static float CARD_WIDTH = 350; //%%% width of the draggable card
     
     if ([self.cards count] == (NSUInteger)0){
         NSLog(@"exhausted all options");
-        //self.nameField.text = @"RAN OUT OF CARDS! come back later :)";
         [delegate outOfCards];
     }
 }

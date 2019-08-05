@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray *allTags;
 
 -(void)fetchTags;
+
 @end
 
 NS_ASSUME_NONNULL_END

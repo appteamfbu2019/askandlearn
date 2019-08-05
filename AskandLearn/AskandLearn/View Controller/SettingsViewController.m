@@ -54,19 +54,10 @@
 -(void)assignTags:(NSArray *)tags{
     
     for (NSDictionary *tag in tags){
-        NSLog(@"tag %@", tag);
         [Tags newTag:PFUser.currentUser setTag:tag];
         self.numberOfTags += 1;
-        //self.ownTag = [Tags addTag:tags];
-        //[self.ownTag setUser:PFUser.currentUser];
-        NSLog(@"running");
     }
-    NSLog(@"added tags to server %@", tags);
     [self.tvc fetchTags];
-    //NSLog(@"user's tags %@", self.ownTag.tags);
-
-    //[self.ownTag addTags:tags];
-    
 }
 
 - (IBAction)learnSkills:(id)sender {
@@ -82,7 +73,6 @@
         addTags *childViewController = (addTags *)[segue destinationViewController];
         self.tagController = childViewController;
         self.tagController.delegate = self;
-        NSLog(@"yes");
     }
     else if ([segue.identifier isEqualToString:@"tagsTableSegue"]){
         TagsViewController *tvc = (TagsViewController *)[segue destinationViewController];
