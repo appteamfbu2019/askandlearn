@@ -398,9 +398,6 @@
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sendMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="h42-8c-FIw"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9490197897" green="0.94901967050000002" blue="0.94901955130000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -421,9 +418,6 @@
                                 <state key="normal" title="Receive">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="receiveMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="yJY-pc-s8R"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -443,12 +437,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="9eb-Zu-MCv"/>
                     <connections>
-                        <outlet property="chatTable" destination="O0N-0B-VNo" id="9dr-x6-woh"/>
-                        <outlet property="chatTextView" destination="zjS-Je-DJW" id="ZN6-9h-GLR"/>
-                        <outlet property="chatTextViewHeightConstraint" destination="5jM-iX-ryc" id="vyn-hF-Vbc"/>
-                        <outlet property="contentViewBottomConstraint" destination="h2h-hd-sUg" id="f0M-Y2-F77"/>
-                        <outlet property="contentViewHeightConstraint" destination="a1w-se-LNh" id="1eH-ho-4Mu"/>
-                        <outlet property="icontentView" destination="UTO-5X-tk5" id="aGg-7B-JZe"/>
+                        <outlet property="chatTable" destination="O0N-0B-VNo" id="T77-sa-0Gw"/>
+                        <outlet property="chatTextView" destination="zjS-Je-DJW" id="E9z-LT-Hi9"/>
+                        <outlet property="chatTextViewHeightConstraint" destination="5jM-iX-ryc" id="H37-6c-aIU"/>
+                        <outlet property="contentView" destination="UTO-5X-tk5" id="ROc-NV-6se"/>
+                        <outlet property="contentViewBottomConstraint" destination="wIp-Ip-R02" id="hd4-ss-d6w"/>
+                        <outlet property="contentViewHeightConstraint" destination="a1w-se-LNh" id="iuT-Yd-Iyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZ7-uu-YBt" userLabel="First Responder" sceneMemberID="firstResponder"/>

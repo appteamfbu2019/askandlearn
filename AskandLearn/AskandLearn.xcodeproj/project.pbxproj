@@ -11,7 +11,6 @@
 		42FA90645126DA3C6683029F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		55E6995028913B08BB41F7C7 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */; };
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
-		AB025C8122F8D87500319DD8 /* iContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8022F8D87500319DD8 /* iContentView.m */; };
 		AB025C8A22F8DD6800319DD8 /* userChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8922F8DD6800319DD8 /* userChatViewController.m */; };
 		AB025C8D22F8E41700319DD8 /* ChatCellSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8C22F8E41700319DD8 /* ChatCellSettings.m */; };
 		AB025C9022F8E58400319DD8 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C8F22F8E58400319DD8 /* ChatTableViewCell.m */; };
@@ -34,6 +33,7 @@
 		AB5BE8A422F261B9006B0D3D /* MatchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8A322F261B9006B0D3D /* MatchCell.m */; };
 		AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8A222F261B9006B0D3D /* MatchCell.h */; };
 		AB5BE8AD22F263DE006B0D3D /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AC22F263DE006B0D3D /* Match.m */; };
+		AB660EE122FA08A50071FB00 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB660EE022FA08A50071FB00 /* ContentView.m */; };
 		ABC441CF22F103100080EF78 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC441CE22F103100080EF78 /* MatchViewController.m */; };
 		ABD1543922F372C2001D956B /* Match.h in Sources */ = {isa = PBXBuildFile; fileRef = AB5BE8AB22F263DE006B0D3D /* Match.h */; };
 		ABD1543A22F372CF001D956B /* Action.h in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267622E2423E004F4D57 /* Action.h */; };
@@ -82,8 +82,6 @@
 		70D741DBF4305BA509EDBBC1 /* Pods-AskandLearnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnUITests.debug.xcconfig"; path = "Target Support Files/Pods-AskandLearnUITests/Pods-AskandLearnUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C7F304513E61DC938B844F4 /* libPods-AskandLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskandLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AAAB1CB3C7D986C91A96B37 /* Pods-AskandLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskandLearnTests.release.xcconfig"; path = "Target Support Files/Pods-AskandLearnTests/Pods-AskandLearnTests.release.xcconfig"; sourceTree = "<group>"; };
-		AB025C7F22F8D87500319DD8 /* iContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iContentView.h; sourceTree = "<group>"; };
-		AB025C8022F8D87500319DD8 /* iContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iContentView.m; sourceTree = "<group>"; };
 		AB025C8822F8DD6800319DD8 /* userChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userChatViewController.h; sourceTree = "<group>"; };
 		AB025C8922F8DD6800319DD8 /* userChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userChatViewController.m; sourceTree = "<group>"; };
 		AB025C8B22F8E41700319DD8 /* ChatCellSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatCellSettings.h; sourceTree = "<group>"; };
@@ -122,6 +120,8 @@
 		AB5BE8AE22F2648C006B0D3D /* PFObjectPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFObjectPrivate.h; sourceTree = "<group>"; };
 		AB5BE8B022F264DE006B0D3D /* PFMulticastDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFMulticastDelegate.h; sourceTree = "<group>"; };
 		AB5BE8B222F2653B006B0D3D /* PFObjectControlling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFObjectControlling.h; sourceTree = "<group>"; };
+		AB660EDF22FA08A50071FB00 /* ContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		AB660EE022FA08A50071FB00 /* ContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
 		ABC441CD22F103100080EF78 /* MatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
 		ABC441CE22F103100080EF78 /* MatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
 		ABC441D522F25BE90080EF78 /* PFAssert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAssert.h; sourceTree = "<group>"; };
@@ -281,10 +281,10 @@
 				FE7E724122EFC00E00519A67 /* addTags.h */,
 				FE7E724222EFC00E00519A67 /* addTags.m */,
 				ABC441CD22F103100080EF78 /* MatchViewController.h */,
-				AB025C7F22F8D87500319DD8 /* iContentView.h */,
-				AB025C8022F8D87500319DD8 /* iContentView.m */,
 				AB025C8822F8DD6800319DD8 /* userChatViewController.h */,
 				AB025C8922F8DD6800319DD8 /* userChatViewController.m */,
+				AB660EDF22FA08A50071FB00 /* ContentView.h */,
+				AB660EE022FA08A50071FB00 /* ContentView.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -616,7 +616,6 @@
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				AB5BE8A422F261B9006B0D3D /* MatchCell.m in Sources */,
 				FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */,
-				AB025C8122F8D87500319DD8 /* iContentView.m in Sources */,
 				AB025C9022F8E58400319DD8 /* ChatTableViewCell.m in Sources */,
 				FE7E723422EFA2FF00519A67 /* CategoriesViewController.m in Sources */,
 				FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */,
@@ -630,6 +629,7 @@
 				FEB50A7122DE7E7900FEF8DB /* HomeViewController.m in Sources */,
 				AB025C8A22F8DD6800319DD8 /* userChatViewController.m in Sources */,
 				AB35051722E8F4C600BC308D /* AccountViewController.m in Sources */,
+				AB660EE122FA08A50071FB00 /* ContentView.m in Sources */,
 				FE7E724022EFB94200519A67 /* TokenInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
