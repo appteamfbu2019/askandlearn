@@ -42,15 +42,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
-        
-#warning placeholder stuff, replace with card-specific information {
         information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
         information.textColor = [UIColor whiteColor];
         
-        self.backgroundColor = [UIColor blueColor];
-#warning placeholder stuff, replace with card-specific information }
+        self.backgroundColor = [UIColor colorWithRed:.9294 green:.6039 blue:.8353 alpha:1];;
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
@@ -72,14 +69,6 @@
     self.layer.shadowOffset = CGSizeMake(1, 1);
 }
 
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
 
 //%%% called when you move your finger across the screen.
 // called many times a second
@@ -132,18 +121,6 @@
         case UIGestureRecognizerStateFailed:break;
     }
 }
-
-//%%% checks to see if you are moving right or left and applies the correct overlay image
-//-(void)updateOverlay:(CGFloat)distance
-//{
-//    if (distance > 0) {
-//        overlayView.mode = GGOverlayViewModeRight;
-//    } else {
-//        overlayView.mode = GGOverlayViewModeLeft;
-//    }
-//
-//    overlayView.alpha = MIN(fabsf(distance)/100, 0.4);
-//}
 
 //%%% called when the card is let go
 - (void)afterSwipeAction

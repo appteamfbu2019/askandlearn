@@ -1,14 +1,14 @@
 //
-//  iContentView.h
+//  ContentView.h
 //  AskandLearn
 //
-//  Created by estherb on 8/5/19.
+//  Created by estherb on 8/6/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface iContentView : UIView
+@interface ContentView : UIView
 
 @property (nonatomic, strong) UITextView *chatTextView;
 @property (nonatomic, strong) UIView *contentView;
@@ -20,6 +20,6 @@
 - (void)updateMinimumNumberOfLines:(NSInteger)minimumNumberOfLines
             andMaximumNumberOfLine:(NSInteger)maximumNumberOfLines;
 
-- (void)resizeTextViewWithAnimatiContentViewmated;
+- (void)resizeTextViewWithAnimation:(BOOL)animated;
 -(void)textViewDidChange:(UITextView *)textView;
 @end

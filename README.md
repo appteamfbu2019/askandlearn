@@ -41,7 +41,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 - [ ] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
 - [x] Tab to access the user's 'matches'
 - [x] Tab to access the user's 'messages'
-- [ ] Implement Basic messaging function using Parse Chat
+- [x] Implement Basic messaging function using Parse Chat
 - [ ] Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
   (profession, company, age, field of study, area of interests)
   
@@ -52,7 +52,6 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 - [ ] "Verified" status for users with good ratings
 - [ ] Rating system and points system
 - [x] Pop-up notification when a match has been formed
-- [ ] User can click on a profile to view more info in Detail View
 
 ### 2. Screen Archetypes
 

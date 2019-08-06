@@ -23,8 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic)CGPoint originalPoint;
-//@property (nonatomic,strong)OverlayView* overlayView;
-@property (nonatomic,strong)UILabel* information; //%%% a placeholder for any card-specific information
+@property (nonatomic,strong)UILabel* information;
 
 -(void)leftClickAction;
 -(void)rightClickAction;

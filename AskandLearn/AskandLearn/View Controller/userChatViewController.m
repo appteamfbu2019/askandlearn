@@ -7,17 +7,17 @@
 //
 
 #import "userChatViewController.h"
-#import "iContentView.h"
+#import "ContentView.h"
 #import "ChatTableViewCell.h"
+//#import "ChatTableViewCellXIB.h"
 #import "ChatCellSettings.h"
-#import "ChatTableViewCellXIB.h"
 
 @interface iMessage: NSObject
 
 -(id) initIMessageWithName:(NSString *)name
-message:(NSString *)message
-time:(NSString *)time
-type:(NSString *)type;
+                   message:(NSString *)message
+                      time:(NSString *)time
+                      type:(NSString *)type;
 
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *userMessage;
@@ -50,16 +50,18 @@ type:(NSString *)type;
 @interface userChatViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *chatTable;
-@property (weak, nonatomic) IBOutlet iContentView *icontentView;
+@property (weak, nonatomic) IBOutlet ContentView *contentView;
 @property (weak, nonatomic) IBOutlet UITextView *chatTextView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatTextViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewBottomConstraint;
 
+/*Uncomment second line and comment first to use XIB instead of code*/
 @property (strong,nonatomic) ChatTableViewCell *chatCell;
+//@property (strong,nonatomic) ChatTableViewCellXIB *chatCell;
 
 
-@property (strong,nonatomic) iContentView *handler;
+@property (strong,nonatomic) ContentView *handler;
 
 
 @end
@@ -112,7 +114,7 @@ type:(NSString *)type;
     [chatCellSettings senderBubbleTailRequired:YES];
     [chatCellSettings receiverBubbleTailRequired:YES];
     
- 
+    self.navigationItem.title = @"iMessageBubble Demo";
     
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
@@ -121,6 +123,8 @@ type:(NSString *)type;
     
     
     
+    /*Uncomment second para and comment first to use XIB instead of code*/
+    //Registering custom Chat table view cell for both sending and receiving
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatSend"];
     
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatReceive"];
@@ -140,7 +144,7 @@ type:(NSString *)type;
     
     
     //Instantiating custom view that adjusts itself to keyboard show/hide
-    self.handler = [[iContentView alloc] initWithTextView:self.chatTextView ChatTextViewHeightConstraint:self.chatTextViewHeightConstraint contentView:self.icontentView ContentViewHeightConstraint:self.contentViewHeightConstraint andContentViewBottomConstraint:self.contentViewBottomConstraint];
+    self.handler = [[ContentView alloc] initWithTextView:self.chatTextView ChatTextViewHeightConstraint:self.chatTextViewHeightConstraint contentView:self.contentView ContentViewHeightConstraint:self.contentViewHeightConstraint andContentViewBottomConstraint:self.contentViewBottomConstraint];
     
     //Setting the minimum and maximum number of lines for the textview vertical expansion
     [self.handler updateMinimumNumberOfLines:1 andMaximumNumberOfLine:3];
@@ -184,6 +188,7 @@ type:(NSString *)type;
         [self updateTableView:receiveMessage];
     }
 }
+
 -(void) updateTableView:(iMessage *)msg
 {
     [self.chatTextView setText:@""];
@@ -192,23 +197,19 @@ type:(NSString *)type;
     [self.chatTable beginUpdates];
     
     NSIndexPath *row1 = [NSIndexPath indexPathForRow:currentMessages.count inSection:0];
-    //NSLog(@"1");
-    //NSLog(@"current 2 %lu", currentMessages.count);
+    
     [currentMessages insertObject:msg atIndex:currentMessages.count];
-    //NSLog(@"2");
+    
     [self.chatTable insertRowsAtIndexPaths:[NSArray arrayWithObjects:row1, nil] withRowAnimation:UITableViewRowAnimationBottom];
-    //NSLog(@"3");
-    //NSLog(@"current %lu", currentMessages.count);
+    
     [self.chatTable endUpdates];
     
     //Always scroll the chat table when the user sends the message
-    //NSLog(@"HELLO");
     if([self.chatTable numberOfRowsInSection:0]!=0)
     {
         NSIndexPath* ip = [NSIndexPath indexPathForRow:[self.chatTable numberOfRowsInSection:0]-1 inSection:0];
         [self.chatTable scrollToRowAtIndexPath:ip atScrollPosition:UITableViewScrollPositionBottom animated:UITableViewRowAnimationLeft];
     }
-    NSLog(@"HHHHH");
 }
 
 
@@ -231,7 +232,7 @@ type:(NSString *)type;
     
     if([message.messageType isEqualToString:@"self"])
     {
-       
+        /*Uncomment second line and comment first to use XIB instead of code*/
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatSend"];
         //chatCell = (ChatTableViewCellXIB *)[tableView dequeueReusableCellWithIdentifier:@"chatSend"];
         
@@ -243,14 +244,14 @@ type:(NSString *)type;
         
         chatCell.chatUserImage.image = [UIImage imageNamed:@"defaultUser"];
         
-       
+        /*Comment this line is you are using XIB*/
         chatCell.authorType = iMessageBubbleTableViewCellAuthorTypeSender;
     }
     else
     {
-        
+        /*Uncomment second line and comment first to use XIB instead of code*/
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatReceive"];
-    
+        //chatCell = (ChatTableViewCellXIB *)[tableView dequeueReusableCellWithIdentifier:@"chatReceive"];
         
         chatCell.chatMessageLabel.text = message.userMessage;
         

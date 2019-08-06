@@ -332,7 +332,7 @@
                                         <connections>
                                             <outlet property="profileImage" destination="RbZ-iI-6Un" id="4og-dz-ShG"/>
                                             <outlet property="usernameLabel" destination="Ks5-n8-lpW" id="ueX-qT-3y8"/>
-                                            <segue destination="Tcw-k6-Ufy" kind="push" id="hhK-dS-o6v"/>
+                                            <segue destination="Tcw-k6-Ufy" kind="push" id="vEq-8D-i0X"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -368,6 +368,17 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O0N-0B-VNo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <navigationBar key="tableFooterView" contentMode="scaleToFill" id="wUl-gu-fVV">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <items>
+                                        <navigationItem title="Username" id="CR3-m6-c4A"/>
+                                    </items>
+                                </navigationBar>
+                                <connections>
+                                    <outlet property="dataSource" destination="cNr-fc-ozs" id="awY-gX-uce"/>
+                                    <outlet property="delegate" destination="cNr-fc-ozs" id="pfk-Nm-fs3"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-5X-tk5" customClass="iContentView">
                                 <rect key="frame" x="0.0" y="755" width="405" height="58"/>
@@ -392,7 +403,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="sendMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="h42-8c-FIw"/>
+                                            <action selector="sendMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="hsR-Ue-uhN"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -415,7 +426,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="receiveMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="yJY-pc-s8R"/>
+                                    <action selector="receiveMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="Y42-KK-CST"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -436,12 +447,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="9eb-Zu-MCv"/>
                     <connections>
-                        <outlet property="chatTable" destination="O0N-0B-VNo" id="9dr-x6-woh"/>
-                        <outlet property="chatTextView" destination="zjS-Je-DJW" id="ZN6-9h-GLR"/>
-                        <outlet property="chatTextViewHeightConstraint" destination="5jM-iX-ryc" id="vyn-hF-Vbc"/>
-                        <outlet property="contentViewBottomConstraint" destination="h2h-hd-sUg" id="f0M-Y2-F77"/>
-                        <outlet property="contentViewHeightConstraint" destination="a1w-se-LNh" id="1eH-ho-4Mu"/>
-                        <outlet property="icontentView" destination="UTO-5X-tk5" id="aGg-7B-JZe"/>
+                        <outlet property="chatTable" destination="O0N-0B-VNo" id="T77-sa-0Gw"/>
+                        <outlet property="chatTextView" destination="zjS-Je-DJW" id="E9z-LT-Hi9"/>
+                        <outlet property="chatTextViewHeightConstraint" destination="5jM-iX-ryc" id="H37-6c-aIU"/>
+                        <outlet property="contentView" destination="UTO-5X-tk5" id="ROc-NV-6se"/>
+                        <outlet property="contentViewBottomConstraint" destination="wIp-Ip-R02" id="hd4-ss-d6w"/>
+                        <outlet property="contentViewHeightConstraint" destination="a1w-se-LNh" id="iuT-Yd-Iyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZ7-uu-YBt" userLabel="First Responder" sceneMemberID="firstResponder"/>

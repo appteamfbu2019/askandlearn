@@ -1,18 +1,18 @@
 //
-//  iContentView.m
+//  ContentView.m
 //  AskandLearn
 //
-//  Created by estherb on 8/5/19.
+//  Created by estherb on 8/6/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
-#import "iContentView.h"
+#import "ContentView.h"
 
 static CGFloat kDefaultAnimationDuration = 0.5;
 static NSInteger kMinimumNumberOfLines = 1;
 static NSInteger kMaximumNumberOfLines = 3;
 
-@interface iContentView() <UITextViewDelegate>
+@interface ContentView() <UITextViewDelegate>
 
 @property (nonatomic, strong) NSLayoutConstraint *chatTextViewHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *contentViewHeightConstraint;
@@ -24,7 +24,7 @@ static NSInteger kMaximumNumberOfLines = 3;
 
 @end
 
-@implementation iContentView
+@implementation ContentView
 
 @synthesize chatTextView;
 
@@ -262,4 +262,3 @@ static NSInteger kMaximumNumberOfLines = 3;
     
 }
 @end
-
