@@ -77,6 +77,9 @@ type:(NSString *)type;
     currentMessages = [[NSMutableArray alloc] init];
     chatCellSettings = [ChatCellSettings getInstance];
     
+    self.chatTable.dataSource = self;
+    self.chatTable.delegate = self;
+    
     /**
      *  Set settings for Application. They are available in ChatCellSettings class.
      */
