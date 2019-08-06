@@ -10,6 +10,7 @@
 #import "iContentView.h"
 #import "ChatTableViewCell.h"
 #import "ChatCellSettings.h"
+#import "ChatTableViewCellXIB.h"
 
 @interface iMessage: NSObject
 
@@ -110,7 +111,7 @@ type:(NSString *)type;
     [chatCellSettings senderBubbleTailRequired:YES];
     [chatCellSettings receiverBubbleTailRequired:YES];
     
-    self.navigationItem.title = @"iMessageBubble Demo";
+    //self.navigationItem.title = @"iMessageBubble Demo";
     
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
