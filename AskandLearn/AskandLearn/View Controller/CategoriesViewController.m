@@ -13,9 +13,8 @@ static CGFloat const animationTime = 0.2f;
 static const NSString *nameKey = @"Name";
 static const NSString *idKey = @"Identifier";
 
-@interface CategoriesViewController ()
+@interface CategoriesViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *noResultView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *noResultsTopConstraint;
 
 @property (nonatomic, copy) SelectedCategoryCompletionBlock selectedBlock;
@@ -32,9 +31,10 @@ static const NSString *idKey = @"Identifier";
     [super viewDidLoad];
     [self showNoResultsView:NO];
     self.dummyCategories = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"CategoryList" ofType:@"plist"]];
-    // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.userInteractionEnabled = YES;
+    self.tableView.scrollEnabled = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,11 +51,6 @@ static const NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Interface
 
-+ (id)categoriesListController {
-    CategoriesViewController *cvc = [[CategoriesViewController alloc] initWithNibName:NSStringFromClass([CategoriesViewController class]) bundle:nil];
-    return cvc;
-}
-
 - (void)searchCategory:(NSString *)categoryName completion:(SelectedCategoryCompletionBlock)block {
     self.selectedBlock = block;
     self.currentSearch = [categoryName stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
@@ -64,7 +59,6 @@ static const NSString *idKey = @"Identifier";
 }
 
 - (void)searchCategory:(NSString *)categoryName addedCategories:(NSArray *)addedCategories withSelected:(SelectedCategoryCompletionBlock)selectedCategoryBlock deselectedBlock:(DeselectedCategoryCompletionBlock)deselectedBlock{
-    
     self.selectedBlock = selectedCategoryBlock;
     self.deselectedBlock = deselectedBlock;
     self.addedCategories = addedCategories;
@@ -89,14 +83,8 @@ static const NSString *idKey = @"Identifier";
     return noOfRows;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCellId"];
-    if (!cell)
-    {
-        cell = [CategoryTableViewCell categoryTableViewCell];
-    }
-    
     NSDictionary *category = self.categoryList[indexPath.row];
     [self configureCell:cell forCategory:category];
     
@@ -116,11 +104,9 @@ static const NSString *idKey = @"Identifier";
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.didScrollBlock)
-    {
+    if (self.didScrollBlock){
         self.didScrollBlock();
     }
 }
@@ -163,7 +149,6 @@ static const NSString *idKey = @"Identifier";
 - (void)configureCell:(CategoryTableViewCell *)cell forCategory:(NSDictionary *)category
 {
     cell.categoryText.text = category[nameKey];
-    
     cell.accessoryType = [self isCategoryAlreadySelected:category] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
 
@@ -179,21 +164,10 @@ static const NSString *idKey = @"Identifier";
 
 - (void)keyboardDidShow:(NSNotification *)notification
 {
-    CGSize keyBoardSize = [[[notification userInfo]
-                            objectForKey:UIKeyboardFrameBeginUserInfoKey]CGRectValue].size;
+    CGSize keyBoardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey]CGRectValue].size;
     
     CGFloat originX = (self.noResultView.bounds.size.height - keyBoardSize.height) / 2;
     self.noResultsTopConstraint.constant = originX;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

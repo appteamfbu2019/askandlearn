@@ -1,18 +1,14 @@
 //
-//  CategoryTableViewCell.m
+//  TagCell.m
 //  AskandLearn
 //
-//  Created by clairec on 7/29/19.
+//  Created by clairec on 8/2/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
-#import "CategoryTableViewCell.h"
+#import "TagCell.h"
 
-@interface CategoryTableViewCell ()
-
-@end
-
-@implementation CategoryTableViewCell
+@implementation TagCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

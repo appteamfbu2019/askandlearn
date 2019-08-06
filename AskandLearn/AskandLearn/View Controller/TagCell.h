@@ -1,8 +1,8 @@
 //
-//  LoginViewController.h
+//  TagCell.h
 //  AskandLearn
 //
-//  Created by estherb on 7/16/19.
+//  Created by clairec on 8/2/19.
 //  Copyright © 2019 estherb. All rights reserved.
 //
 
@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginViewController : UIViewController
+@interface TagCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *cellText;
 
 @end
 
