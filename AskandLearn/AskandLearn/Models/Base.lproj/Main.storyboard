@@ -208,29 +208,8 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoA-km-ASG">
-                                        <rect key="frame" x="71" y="181" width="272" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--% Match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-qL-NWW">
-                                        <rect key="frame" x="33" y="240" width="86" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profession" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRg-dK-0iW">
-                                        <rect key="frame" x="33" y="288" width="90" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-z6-8AQ">
-                                        <rect key="frame" x="33" y="330" width="43" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukf-qL-NWW">
+                                        <rect key="frame" x="33" y="240" width="99" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -243,16 +222,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.9387162757770815" green="0.98297499408812594" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0c-Vn-MTc">
-                                <rect key="frame" x="116" y="728" width="71" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dislike" image="cross_outline_24-3x"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCn-zx-P4M">
-                                <rect key="frame" x="232" y="734" width="68" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Like" image="heart_outline_24-4x"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4ax-BE-Ts1"/>
@@ -264,13 +233,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="nameField" destination="yoA-km-ASG" id="kWt-Mu-mjj"/>
-                        <outlet property="percentMatch" destination="ukf-qL-NWW" id="IY1-zr-oGs"/>
-                        <outlet property="profPicView" destination="p5n-Pv-NeI" id="Imx-qI-OR0"/>
-                        <outlet property="professionsField" destination="pRg-dK-0iW" id="qw0-Ca-8Y8"/>
-                        <outlet property="skillsField" destination="Fe8-z6-8AQ" id="OLi-rF-WtY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bva-IN-RYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,6 +479,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Edit Profile" id="ey5-vl-t4p">
                             <connections>
                                 <action selector="didTapEditProfile:" destination="6qI-aE-WOr" id="vnq-GR-gzQ"/>
+                                <segue destination="hkE-33-mBf" kind="show" identifier="EditSegue" id="71y-mS-2BJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="x82-6b-w9i">
@@ -609,6 +572,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerTags" destination="SoZ-3y-ebA" id="8Qu-Q0-xWn"/>
+                        <outlet property="learnSwitch" destination="9vl-Lw-IO6" id="RZA-mb-zrA"/>
+                        <outlet property="teachSwitch" destination="8ZJ-ay-azs" id="pa6-sn-KvB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEV-mh-2A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -931,8 +896,6 @@
     </scenes>
     <resources>
         <image name="Sign-in-Large---Hover" width="600" height="600"/>
-        <image name="cross_outline_24-3x" width="72" height="72"/>
-        <image name="heart_outline_24-4x" width="96" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Qm0-1o-5zo"/>
