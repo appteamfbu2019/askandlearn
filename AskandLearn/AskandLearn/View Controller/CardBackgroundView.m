@@ -49,10 +49,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         [self setupView];
         exampleCardLabels = [[NSMutableArray alloc] init];
         
-        PFQuery *query1 = [PFUser query];
-        [query1 whereKey:@"username" notEqualTo:PFUser.currentUser.username];
-        self.cards = (NSMutableArray *)[query1 findObjects];
-        [self reloadData];
+//        PFQuery *query1 = [PFUser query];
+//        [query1 whereKey:@"username" notEqualTo:PFUser.currentUser.username];
+//        self.cards = (NSMutableArray *)[query1 findObjects];
+        [self loadAllProfiles];
         
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
@@ -65,12 +65,32 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1];
 }
 
+-(void)loadAllProfiles {
+    PFQuery *query = [PFQuery queryWithClassName:@"Profile"];
+    [query includeKey:@"name"];
+    [query includeKey:@"major"];
+    [query includeKey:@"profession"];
+    [query includeKey:@"user"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *profiles, NSError *error) {
+        if (profiles != nil){
+            self.cards = (NSMutableArray *)profiles;
+            [self reloadData];
+        }
+        else{
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
+    
+}
+
 -(CardView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
     CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     
-    PFUser *temp = self.cards[index];
-    draggableView.information.text = temp.username;
+    PFObject *temp = self.cards[index];
+    draggableView.name.text = temp[@"name"];
+    draggableView.major.text = temp[@"major"];
+    draggableView.profession.text = temp[@"profession"];
     draggableView.delegate = self;
     return draggableView;
 }
@@ -123,8 +143,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             NSLog(@"discard %@", discard);
             for (PFUser *user in discard){
                 
-                for (PFUser *card in self.cards){
-                    if ([card.objectId isEqualToString:user.objectId]){
+                for (PFObject *card in self.cards){
+                    if ([card[@"user"][@"objectId"] isEqualToString:user.objectId]){
                         NSLog(@"removing %@", card);
                         [self.cards removeObject:card];
                         break;
