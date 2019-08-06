@@ -332,7 +332,7 @@
                                         <connections>
                                             <outlet property="profileImage" destination="RbZ-iI-6Un" id="4og-dz-ShG"/>
                                             <outlet property="usernameLabel" destination="Ks5-n8-lpW" id="ueX-qT-3y8"/>
-                                            <segue destination="Tcw-k6-Ufy" kind="push" id="hhK-dS-o6v"/>
+                                            <segue destination="Tcw-k6-Ufy" kind="show" id="qin-RY-nYj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -375,6 +375,10 @@
                                         <navigationItem title="Username" id="CR3-m6-c4A"/>
                                     </items>
                                 </navigationBar>
+                                <connections>
+                                    <outlet property="dataSource" destination="cNr-fc-ozs" id="awY-gX-uce"/>
+                                    <outlet property="delegate" destination="cNr-fc-ozs" id="pfk-Nm-fs3"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-5X-tk5" customClass="iContentView">
                                 <rect key="frame" x="0.0" y="755" width="405" height="58"/>
@@ -398,6 +402,9 @@
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="hsR-Ue-uhN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9490197897" green="0.94901967050000002" blue="0.94901955130000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -418,6 +425,9 @@
                                 <state key="normal" title="Receive">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="receiveMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="Y42-KK-CST"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

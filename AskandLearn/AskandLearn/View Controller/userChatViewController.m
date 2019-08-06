@@ -168,7 +168,7 @@
     {
         iMessage *sendMessage;
         
-        sendMessage = [[iMessage alloc] initIMessageWithName:@"Prateek Grover" message:self.chatTextView.text time:@"23:14" type:@"self"];
+        sendMessage = [[iMessage alloc] initIMessageWithName:@"Esther Brown" message:self.chatTextView.text time:@"23:14" type:@"self"];
         
         [self updateTableView:sendMessage];
     }
@@ -180,7 +180,7 @@
     {
         iMessage *receiveMessage;
         
-        receiveMessage = [[iMessage alloc] initIMessageWithName:@"Prateek Grover" message:self.chatTextView.text time:@"23:14" type:@"other"];
+        receiveMessage = [[iMessage alloc] initIMessageWithName:@"Esther Brown" message:self.chatTextView.text time:@"23:14" type:@"other"];
         
         [self updateTableView:receiveMessage];
     }
