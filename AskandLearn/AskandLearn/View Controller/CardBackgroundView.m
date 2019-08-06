@@ -74,6 +74,15 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     [query findObjectsInBackgroundWithBlock:^(NSArray *profiles, NSError *error) {
         if (profiles != nil){
             self.cards = (NSMutableArray *)profiles;
+            for (PFObject *card in self.cards){
+                NSLog(@"%@", card[@"user"]);
+                if ([[card[@"user"] objectId] isEqualToString:PFUser.currentUser.objectId]){
+                    NSLog(@"%@", card[@"user"][@"objectId"]);
+                    NSLog(@"removing: %@", card);
+                    [self.cards removeObject:card];
+                    break;
+                }
+            }
             [self reloadData];
         }
         else{
@@ -144,7 +153,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             for (PFUser *user in discard){
                 
                 for (PFObject *card in self.cards){
-                    if ([card[@"user"][@"objectId"] isEqualToString:user.objectId]){
+                    if ([[card[@"user"] objectId] isEqualToString:user.objectId]){
                         NSLog(@"removing %@", card);
                         [self.cards removeObject:card];
                         break;
@@ -167,8 +176,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 -(void)cardSwipedLeft:(UIView *)card;
 {
-    PFUser *currentCard = self.cards[0];
-    [Action dislikeAction:PFUser.currentUser withUser:currentCard];
+    PFObject *currentCard = self.cards[0];
+    [Action dislikeAction:PFUser.currentUser withUser:currentCard[@"user"]];
     
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
@@ -186,8 +195,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 -(void)cardSwipedRight:(UIView *)card
 {
-    PFUser *currentCard = self.cards[0];
-    [Action likeAction:PFUser.currentUser withUser:currentCard];
+    PFObject *currentCard = self.cards[0];
+    [Action likeAction:PFUser.currentUser withUser:currentCard[@"user"]];
     
     //run through the arrays and form 'matches'
     PFQuery *query = [PFQuery queryWithClassName:@"Action"];
