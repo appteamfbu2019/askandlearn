@@ -280,7 +280,6 @@
 				FE7E723322EFA2FF00519A67 /* CategoriesViewController.xib */,
 				FE7E724122EFC00E00519A67 /* addTags.h */,
 				FE7E724222EFC00E00519A67 /* addTags.m */,
-				ABC441CD22F103100080EF78 /* MatchViewController.h */,
 				AB025C8822F8DD6800319DD8 /* userChatViewController.h */,
 				AB025C8922F8DD6800319DD8 /* userChatViewController.m */,
 				AB660EDF22FA08A50071FB00 /* ContentView.h */,
@@ -294,6 +293,7 @@
 			children = (
 				AB5BE8AB22F263DE006B0D3D /* Match.h */,
 				AB5BE8AC22F263DE006B0D3D /* Match.m */,
+				ABC441CD22F103100080EF78 /* MatchViewController.h */,
 				ABC441CE22F103100080EF78 /* MatchViewController.m */,
 				FE1950AA22E7BBFC00A2A0D6 /* CardBackgroundView.h */,
 				FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */,
