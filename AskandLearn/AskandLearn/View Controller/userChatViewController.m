@@ -56,9 +56,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewBottomConstraint;
 
-/*Uncomment second line and comment first to use XIB instead of code*/
+
 @property (strong,nonatomic) ChatTableViewCell *chatCell;
-//@property (strong,nonatomic) ChatTableViewCellXIB *chatCell;
 
 
 @property (strong,nonatomic) ContentView *handler;
@@ -86,14 +85,7 @@
      *  Set settings for Application. They are available in ChatCellSettings class.
      */
     
-    //[chatCellSettings setSenderBubbleColor:[UIColor colorWithRed:0 green:(122.0f/255.0f) blue:1.0f alpha:1.0f]];
-    //[chatCellSettings setReceiverBubbleColor:[UIColor colorWithRed:(223.0f/255.0f) green:(222.0f/255.0f) blue:(229.0f/255.0f) alpha:1.0f]];
-    //[chatCellSettings setSenderBubbleNameTextColor:[UIColor colorWithRed:(255.0f/255.0f) green:(255.0f/255.0f) blue:(255.0f/255.0f) alpha:1.0f]];
-    //[chatCellSettings setReceiverBubbleNameTextColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f]];
-    //[chatCellSettings setSenderBubbleMessageTextColor:[UIColor colorWithRed:(255.0f/255.0f) green:(255.0f/255.0f) blue:(255.0f/255.0f) alpha:1.0f]];
-    //[chatCellSettings setReceiverBubbleMessageTextColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f]];
-    //[chatCellSettings setSenderBubbleTimeTextColor:[UIColor colorWithRed:(255.0f/255.0f) green:(255.0f/255.0f) blue:(255.0f/255.0f) alpha:1.0f]];
-    //[chatCellSettings setReceiverBubbleTimeTextColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1.0f]];
+
     
     [chatCellSettings setSenderBubbleColorHex:@"007AFF"];
     [chatCellSettings setReceiverBubbleColorHex:@"DFDEE5"];
@@ -119,27 +111,11 @@
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     
-    
-    
-    
-    
-    /*Uncomment second para and comment first to use XIB instead of code*/
-    //Registering custom Chat table view cell for both sending and receiving
+
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatSend"];
     
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatReceive"];
-    
-    
-    /*UINib *nib = [UINib nibWithNibName:@"ChatSendCell" bundle:nil];
-     
-     [[self chatTable] registerNib:nib forCellReuseIdentifier:@"chatSend"];
-     
-     nib = [UINib nibWithNibName:@"ChatReceiveCell" bundle:nil];
-     
-     [[self chatTable] registerNib:nib forCellReuseIdentifier:@"chatReceive"];*/
-    
-    
-    
+  
     
     
     
@@ -232,9 +208,9 @@
     
     if([message.messageType isEqualToString:@"self"])
     {
-        /*Uncomment second line and comment first to use XIB instead of code*/
+        
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatSend"];
-        //chatCell = (ChatTableViewCellXIB *)[tableView dequeueReusableCellWithIdentifier:@"chatSend"];
+        
         
         chatCell.chatMessageLabel.text = message.userMessage;
         
@@ -244,14 +220,14 @@
         
         chatCell.chatUserImage.image = [UIImage imageNamed:@"defaultUser"];
         
-        /*Comment this line is you are using XIB*/
+        
         chatCell.authorType = iMessageBubbleTableViewCellAuthorTypeSender;
     }
     else
     {
-        /*Uncomment second line and comment first to use XIB instead of code*/
+       
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatReceive"];
-        //chatCell = (ChatTableViewCellXIB *)[tableView dequeueReusableCellWithIdentifier:@"chatReceive"];
+        
         
         chatCell.chatMessageLabel.text = message.userMessage;
         
