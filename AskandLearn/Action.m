@@ -33,8 +33,6 @@
     newAction.receiver = user2;
     
     [newAction saveInBackgroundWithBlock: nil];
-    
-    //[newAction saveInBackgroundWithBlock: completion];
 }
 
 + (void) dislikeAction: (PFUser *)user1 withUser: (PFUser *)user2 {
