@@ -8,6 +8,7 @@
 #import "AccountViewController.h"
 #import "SignUpViewController.h"
 #import "Parse/Parse.h"
+#import "Switch.h"
 
 //Frameworks
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -123,6 +124,7 @@ didCompleteWithResult:(nullable FBSDKLoginManagerLoginResult *)result
                 NSLog(@"Error: %@", error.localizedDescription);
             } else {
                 NSLog(@"User registered successfully");
+                [Switch newSwitch:newUser];
                 [self performSegueWithIdentifier:@"signUpSegue" sender:nil];
             }
         }];

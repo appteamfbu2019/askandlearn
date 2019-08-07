@@ -23,7 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic)CGPoint originalPoint;
-@property (nonatomic,strong)UILabel* information;
+@property (nonatomic,strong)UILabel* name;
+@property (nonatomic, strong)UILabel* major;
+@property (nonatomic, strong)UILabel* profession;
 
 -(void)leftClickAction;
 -(void)rightClickAction;

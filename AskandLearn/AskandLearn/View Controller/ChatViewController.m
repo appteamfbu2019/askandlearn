@@ -26,6 +26,7 @@
     [super viewDidLoad];
     self.mytableView.dataSource = self;
     self.mytableView.rowHeight = UITableViewAutomaticDimension;
+    self.mytableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self Refresh];
 }
 
