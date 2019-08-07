@@ -28,6 +28,8 @@
     NSString *name = self.nameTextField.text;
     NSString *profession = self.professionTextField.text;
     NSString *major = self.majorTextField.text;
+    UIImage *profilePic = self.profileImageView.image;
+    UIImage *backgroundPic = self.backgroundImageView.image;
     if ([self.nameTextField.text isEqual:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No name inserted" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -40,10 +42,14 @@
         }];
     } else {
         PFObject *profile = [PFObject objectWithClassName:@"Profile"];
+        profile[@"user"] = PFUser.currentUser;
         profile[@"name"] = name;
         profile[@"profession"] = profession;
         profile[@"major"] = major;
-        profile[@"user"] = PFUser.currentUser;
+        if (profilePic != nil && backgroundPic != nil){
+            profile[@"profilePic"] = profilePic;
+            profile[@"backgroundPic"] = backgroundPic;
+        }
         [profile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Information Saved!");

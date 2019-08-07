@@ -10,7 +10,8 @@
 #import "ProfileEditViewController.h"
 #import "Parse/Parse.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UITextViewDelegate>
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -18,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self getProfile];
+    [self.refreshControl endRefreshing];
     // Do any additional setup after loading the view.
 }
 
@@ -28,12 +30,18 @@
 
 - (void)getProfile {
     PFQuery *query = [PFQuery queryWithClassName:@"profile"];
-    [query getObjectInBackgroundWithId:@"U1uBpDUq48" block:^(PFObject *profile, NSError *error) {
-        if (!error) {
-            profile[@"name"] = self.nameBox.text;
-        } else {
-        }
-    }];
+    [query getObjectInBackgroundWithId:@"objectId" block:^(PFObject *profile, NSError *error){
+    if (!error) {
+        profile[@"name"] = self.nameBox.text;
+        profile[@"profession"] = self.professionBox.text;
+        profile[@"major"] = self.majorBox.text;
+        profile[@"profilePic"] = self.profileImage.image;
+        profile[@"backgroundPic"] = self.backgroundImage.image;
+        [self.refreshControl endRefreshing];
+    } else {
+        NSLog(@"Information was not displayed");
+    }
+        }];
 }
 
 @end
