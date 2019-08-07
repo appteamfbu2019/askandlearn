@@ -11,6 +11,7 @@
 #import "ChatTableViewCell.h"
 //#import "ChatTableViewCellXIB.h"
 #import "ChatCellSettings.h"
+#import "Parse.h"
 
 @interface iMessage: NSObject
 
@@ -150,6 +151,19 @@
         sendMessage = [[iMessage alloc] initIMessageWithName:@"Esther Brown" message:self.chatTextView.text time:@"23:14" type:@"self"];
         
         [self updateTableView:sendMessage];
+        
+        PFObject *chatMessage = [PFObject objectWithClassName:@"Message2_Testing"];
+        chatMessage[@"text"] = sendMessage.userMessage;
+        chatMessage[@"sender"] = PFUser.currentUser;
+        chatMessage[@"receiver"] = PFUser.currentUser;
+        [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+            if (succeeded) {
+                NSLog(@"The message was saved!");
+            } else {
+                NSLog(@"Problem saving message: %@", error.localizedDescription);
+            }
+        }];
+        self.chatTextView.text = @"";
     }
 }
 
