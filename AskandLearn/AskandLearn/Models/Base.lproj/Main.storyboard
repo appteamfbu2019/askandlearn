@@ -469,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7A-xo-5up" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686.9565217391305" y="486.83035714285711"/>
+            <point key="canvasLocation" x="880" y="2026"/>
         </scene>
         <!--Profile-->
         <scene sceneID="5Um-pX-oz3">
@@ -527,8 +527,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImage" destination="Lf9-LD-1Zh" id="Pjk-ug-5S2"/>
+                        <outlet property="majorBox" destination="XWK-iy-peb" id="2pm-yJ-BGU"/>
                         <outlet property="nameBox" destination="bWv-2v-1k2" id="PaB-gg-Yw9"/>
+                        <outlet property="professionBox" destination="Myz-kI-QWv" id="67S-c2-yKJ"/>
                         <outlet property="profileImage" destination="YFh-tH-8fH" id="dF8-17-elj"/>
+                        <outlet property="view" destination="hvl-4d-gXR" id="ffG-6u-ltZ"/>
                         <segue destination="hkE-33-mBf" kind="push" identifier="EditSegue" id="jaY-jw-gxx"/>
                     </connections>
                 </viewController>
