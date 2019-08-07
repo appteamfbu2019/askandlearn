@@ -6,7 +6,7 @@
 #import "MatchCell.h"
 #import "Match.h"
 
-@interface MatchViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface MatchViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mytableView;
 @property (strong,nonnull) NSArray *matchArray;
 @property (strong,nonnull) PFUser* person1;

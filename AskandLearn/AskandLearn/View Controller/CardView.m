@@ -29,34 +29,42 @@
     CGFloat xFromCenter;
     CGFloat yFromCenter;
 }
-
-//delegate is instance of ViewController
 @synthesize delegate;
 
 @synthesize panGestureRecognizer;
-@synthesize information;
-//@synthesize overlayView;
+@synthesize name;
+@synthesize major;
+@synthesize profession;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
-        information = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
-        information.text = @"no info given";
-        [information setTextAlignment:NSTextAlignmentCenter];
-        information.textColor = [UIColor whiteColor];
+        name = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
+        name.text = @"no info given";
+        [name setTextAlignment:NSTextAlignmentCenter];
+        name.textColor = [UIColor whiteColor];
+        
+        major = [[UILabel alloc]initWithFrame:CGRectMake(0, 80, self.frame.size.width, 100)];
+        major.text = @"Major:";
+        [major setTextAlignment:NSTextAlignmentCenter];
+        major.textColor = [UIColor whiteColor];
+        
+        profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, self.frame.size.width, 100)];
+        profession.text = @"Profession:";
+        [profession setTextAlignment:NSTextAlignmentCenter];
+        profession.textColor = [UIColor whiteColor];
         
         self.backgroundColor = [UIColor colorWithRed:.9294 green:.6039 blue:.8353 alpha:1];;
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
         [self addGestureRecognizer:panGestureRecognizer];
-        [self addSubview:information];
+        [self addSubview:name];
+        [self addSubview:major];
+        [self addSubview:profession];
         
-//        overlayView = [[OverlayView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, 0, 100, 100)];
-//        overlayView.alpha = 0;
-//        [self addSubview:overlayView];
     }
     return self;
 }
