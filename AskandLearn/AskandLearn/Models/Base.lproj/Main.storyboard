@@ -467,7 +467,6 @@
                         <outlet property="backgroundImage" destination="Lf9-LD-1Zh" id="Pjk-ug-5S2"/>
                         <outlet property="nameBox" destination="bWv-2v-1k2" id="PaB-gg-Yw9"/>
                         <outlet property="profileImage" destination="YFh-tH-8fH" id="dF8-17-elj"/>
-                        <segue destination="hkE-33-mBf" kind="push" identifier="EditSegue" id="jaY-jw-gxx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hna-3J-f5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -895,7 +894,7 @@
         <image name="defaultUser" width="14" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cit-oz-8Km"/>
+        <segue reference="6LP-DX-1Sj"/>
         <segue reference="QHW-mZ-qR7"/>
     </inferredMetricsTieBreakers>
 </document>
