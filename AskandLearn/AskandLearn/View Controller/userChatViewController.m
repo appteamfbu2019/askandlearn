@@ -114,7 +114,7 @@
     [chatCellSettings senderBubbleTailRequired:YES];
     [chatCellSettings receiverBubbleTailRequired:YES];
     
-    self.navigationItem.title = @"iMessageBubble Demo";
+    self.navigationItem.title = @"AskandLearn Messages";
     
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
