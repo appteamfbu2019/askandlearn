@@ -20,6 +20,7 @@
 		AB4CE76B22FA4A06008A6EC9 /* MatchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB4CE76A22FA4A06008A6EC9 /* MatchViewController.h */; };
 		AB4CE76C22FA50B2008A6EC9 /* ChatTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = FE62247D22FA4E59003FF5C4 /* ChatTableViewCell.h */; };
 		AB4CE76D22FA514A008A6EC9 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53622EA5B5B00CBEF93 /* ChatCell.m */; };
+		AB4CE77322FA532F008A6EC9 /* Messages.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4CE77222FA532F008A6EC9 /* Messages.m */; };
 		AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24922DD0617006097DB /* AppDelegate.m */; };
 		AB50E25022DD0617006097DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB50E24E22DD0617006097DB /* Main.storyboard */; };
 		AB50E25222DD0617006097DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB50E25122DD0617006097DB /* Assets.xcassets */; };
@@ -119,6 +120,8 @@
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AB4CE76A22FA4A06008A6EC9 /* MatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MatchViewController.h; path = AskandLearn/Views/MatchViewController.h; sourceTree = "<group>"; };
+		AB4CE77122FA532F008A6EC9 /* Messages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
+		AB4CE77222FA532F008A6EC9 /* Messages.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Messages.m; sourceTree = "<group>"; };
 		AB50E24522DD0617006097DB /* AskandLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskandLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50E24822DD0617006097DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB50E24922DD0617006097DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 		AB50E23C22DD0617006097DB = {
 			isa = PBXGroup;
 			children = (
+				AB4CE77122FA532F008A6EC9 /* Messages.h */,
+				AB4CE77222FA532F008A6EC9 /* Messages.m */,
 				AB4CE76A22FA4A06008A6EC9 /* MatchViewController.h */,
 				AB660EE622FA48730071FB00 /* ChatTableViewCell.m */,
 				AB660EE322FA47BF0071FB00 /* ChatCellSettings.m */,
@@ -729,6 +734,7 @@
 				AB660EE122FA08A50071FB00 /* ContentView.m in Sources */,
 				FEA7900C22F8D58E00FC70EF /* AccountViewController.m in Sources */,
 				FEA7901A22F8DDF900FC70EF /* Match.m in Sources */,
+				AB4CE77322FA532F008A6EC9 /* Messages.m in Sources */,
 				FEA7900122F8D58E00FC70EF /* MatchCell.m in Sources */,
 				FE62248122FA4E59003FF5C4 /* ChatCellSettings.m in Sources */,
 				FE62248322FA4EC5003FF5C4 /* MatchViewController.m in Sources */,
