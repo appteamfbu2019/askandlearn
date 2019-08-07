@@ -35,22 +35,14 @@ static NSInteger kMaximumNumberOfLines = 3;
     if(self)
     {
         chatTextView = textView;
-        
         self.chatTextViewHeightConstraint = chatTextViewHeightConstraint;
-        
         self.contentView = contentView;
-        
         self.contentViewHeightConstraint = contentViewHeightConstraint;
-        
         self.contentViewBottomConstraint = contentViewBottomConstraint;
-        
         [self addKeyboardNotificationsObserver];
-        
         chatTextView.delegate = self;
-        
         [self updateMinimumNumberOfLines:kMinimumNumberOfLines andMaximumNumberOfLine:kMaximumNumberOfLines];
     }
-    
     return self;
 }
 
@@ -77,7 +69,6 @@ static NSInteger kMaximumNumberOfLines = 3;
     
     [self resizeTextViewWithAnimation:NO];
 }
-
 
 -(NSInteger)estimatedInitialHeight
 {
@@ -235,13 +226,11 @@ static NSInteger kMaximumNumberOfLines = 3;
     
 }
 
-
 - (void)handleKeyboardWillHide:(NSNotification *)paramNotification
 {
     NSDictionary* info = [paramNotification userInfo];
     
     //adjust constraints
-    
     self.contentViewBottomConstraint.constant = 0;
     
     [UIView beginAnimations:nil context:NULL];
@@ -253,7 +242,6 @@ static NSInteger kMaximumNumberOfLines = 3;
     [self.chatTextView.superview.superview layoutIfNeeded];
     
     [UIView commitAnimations];
-    
 }
 
 - (void)dealloc {
