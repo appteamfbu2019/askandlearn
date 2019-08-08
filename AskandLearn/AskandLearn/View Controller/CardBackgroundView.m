@@ -139,9 +139,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     
     PFObject *temp = self.cards[index];
-    draggableView.name.text = temp[@"name"];
-    draggableView.major.text = temp[@"major"];
-    draggableView.profession.text = temp[@"profession"];
+    draggableView.name.text = [NSString stringWithFormat:@"Name: %@", temp[@"name"]];
+    draggableView.major.text = [NSString stringWithFormat:@"Major: %@", temp[@"major"]];
+    draggableView.profession.text = [NSString stringWithFormat:@"Profession: %@", temp[@"profession"]];
     [self retrieveTags:temp[@"user"]];
     
     draggableView.delegate = self;
