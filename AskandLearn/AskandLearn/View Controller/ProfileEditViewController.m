@@ -8,6 +8,7 @@
 
 #import "ProfileEditViewController.h"
 #import "Parse/Parse.h"
+#import "ProfileViewController.h"
 
 
 @interface ProfileEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
