@@ -575,6 +575,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerTags" destination="SoZ-3y-ebA" id="8Qu-Q0-xWn"/>
+                        <outlet property="learnSwitch" destination="9vl-Lw-IO6" id="ACH-7F-9ea"/>
+                        <outlet property="teachSwitch" destination="8ZJ-ay-azs" id="Ihy-lK-H0l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEV-mh-2A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -632,6 +634,7 @@
                     <navigationItem key="navigationItem" id="ac9-st-PLZ"/>
                     <connections>
                         <outlet property="addedTagViewHeight" destination="pVB-w9-fGA" id="R8N-zA-P7D"/>
+                        <outlet property="categoriesListContainerView" destination="Tqy-cl-lF4" id="hai-3D-nLw"/>
                         <outlet property="tokenInputView" destination="4HI-Pj-xfK" id="ih2-s1-S3y"/>
                     </connections>
                 </viewController>

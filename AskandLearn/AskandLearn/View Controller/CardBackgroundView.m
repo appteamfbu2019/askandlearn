@@ -21,6 +21,8 @@
 #import "Action.h"
 #import "Match.h"
 #import "HomeViewController.h"
+#import "Tags.h"
+#import "Switch.h"
 
 @implementation CardBackgroundView{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
@@ -90,6 +92,46 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         }
     }];
     
+    //Making sure only learners are displayed to teachers, and vice versa
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Switch"];
+    [query2 includeKey:@"isLearner"];
+    [query2 includeKey:@"isTeacher"];
+    [query2 includeKey:@"user"];
+    __block BOOL userIsLearner = nil;
+    __block BOOL userIsTeacher = nil;
+    [query2 findObjectsInBackgroundWithBlock:^(NSArray *switchObjs, NSError *error) {
+        if (switchObjs != nil){
+            //retrieving the current user's preferences
+            for (Switch *s in switchObjs){
+                if ([s.user.objectId isEqualToString:PFUser.currentUser.objectId]){
+                    userIsLearner = s.isLearner;
+                    userIsTeacher = s.isTeacher;
+                }
+            }
+            for (Switch *s in switchObjs){
+                for (PFObject *c in self.cards){
+                    if ([[c[@"user"] objectId] isEqualToString:s.user.objectId]){
+                        if (userIsLearner && !userIsTeacher){
+                            if (s.isLearner && !s.isTeacher){
+                                [self.cards removeObject:c];
+                                break;
+                            }
+                        }
+                        else if (userIsTeacher && !userIsLearner){
+                            if (s.isTeacher && !s.isLearner){
+                                [self.cards removeObject:c];
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
+    
 }
 
 -(CardView *)createDraggableViewWithDataAtIndex:(NSInteger)index
@@ -100,9 +142,13 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     draggableView.name.text = temp[@"name"];
     draggableView.major.text = temp[@"major"];
     draggableView.profession.text = temp[@"profession"];
+    [self retrieveTags:temp[@"user"]];
+    
     draggableView.delegate = self;
     return draggableView;
 }
+
+
 
 -(void)loadCards
 {
@@ -129,6 +175,25 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     }
 }
 
+-(void)retrieveTags: (PFUser *)user{
+    PFQuery *query = [PFQuery queryWithClassName:@"Tags"];
+    [query includeKey:@"user"];
+    [query includeKey:@"tags"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *tagObjects, NSError *error) {
+        NSMutableArray *cardTags = [[NSMutableArray alloc]init];
+        if (tagObjects != nil){
+            for (Tags *tagObj in tagObjects){
+                if ([tagObj.user.objectId isEqualToString:user.objectId]){
+                    [cardTags addObject:tagObj];
+                }
+            }
+            self.tags = [NSArray arrayWithArray:cardTags];
+        }
+        else{
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
+}
 
 -(void)reloadData {
     

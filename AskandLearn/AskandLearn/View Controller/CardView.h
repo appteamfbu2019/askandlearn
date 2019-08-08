@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)UILabel* name;
 @property (nonatomic, strong)UILabel* major;
 @property (nonatomic, strong)UILabel* profession;
+@property (nonatomic, strong)UILabel* score;
 
 -(void)leftClickAction;
 -(void)rightClickAction;
