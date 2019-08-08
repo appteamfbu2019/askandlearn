@@ -5,6 +5,7 @@
 #import "Parse.h"
 #import "MatchCell.h"
 #import "Match.h"
+#import "userChatViewController.h"
 
 @interface MatchViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mytableView;
@@ -85,4 +86,16 @@
     return self.matchArray.count;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    if ([segue.identifier isEqualToString:@"segueToMessages"]) {
+        userChatViewController* chatController = [segue destinationViewController];
+        
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath =  [self.mytableView indexPathForCell:tappedCell];
+        Match *match = self.matchArray[indexPath.row];
+        chatController.matchObj = match;
+    }
+}
 @end

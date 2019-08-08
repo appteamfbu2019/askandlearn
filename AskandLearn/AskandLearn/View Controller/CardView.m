@@ -62,6 +62,18 @@
         [score setTextAlignment:NSTextAlignmentCenter];
         score.textColor = [UIColor whiteColor];
         
+        UIButton *mainButton = [UIButton new];
+        mainButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        mainButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        mainButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        [mainButton setTitle:@"Calculate Score" forState:UIControlStateNormal];
+        [mainButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [mainButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        [mainButton sizeToFit];
+        mainButton.backgroundColor = [UIColor whiteColor];
+        [mainButton addTarget:self action:@selector(calculateScoreTap:) forControlEvents:UIControlEventTouchUpInside];
+        
+
         self.backgroundColor = [UIColor colorWithRed:.9294 green:.6039 blue:.8353 alpha:1];;
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
@@ -71,6 +83,7 @@
         [self addSubview:major];
         [self addSubview:profession];
         [self addSubview:score];
+        [self addSubview:mainButton];
         
     }
     return self;
@@ -216,6 +229,11 @@
     [delegate cardSwipedLeft:self];
 
     NSLog(@"NO");
+}
+
+-(void)calculateScoreTap:(id)sender {
+    NSLog(@"calculating score");
+    [delegate retrieveTags:self.user];
 }
 
 

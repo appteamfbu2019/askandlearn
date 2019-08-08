@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)cardSwipedLeft:(UIView *)card;
 -(void)cardSwipedRight:(UIView *)card;
+-(void)retrieveTags: (PFUser *)user;
 
 @end
 
@@ -27,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)UILabel* major;
 @property (nonatomic, strong)UILabel* profession;
 @property (nonatomic, strong)UILabel* score;
+
+@property (nonatomic, strong) PFUser *user;
 
 -(void)leftClickAction;
 -(void)rightClickAction;

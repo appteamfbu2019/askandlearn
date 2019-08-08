@@ -20,13 +20,13 @@
     return @"Messages";
 }
 
-+ (void) sendMessage: (PFUser *)user1 withUser: (PFUser *)user2 {
++ (void) sendMessage: (PFUser *)user1 withUser: (PFUser *)user2 withText: (NSString *) messageText {
     
     Messages *newMessage = [Messages new];
     
     newMessage.sender = user1;
     newMessage.receiver = user2;
-    //newMessage.messageText = user1;
+    newMessage.messageText = messageText;
     
     [newMessage saveInBackgroundWithBlock: nil];
 }
@@ -37,7 +37,7 @@
     
     newMessage.sender = user1;
     newMessage.receiver = user2;
-    //newMessage.messageText = user1;
+    newMessage.messageText = user1;
     
     
     [newMessage saveInBackgroundWithBlock: nil];

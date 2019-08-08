@@ -136,14 +136,26 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 -(CardView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
+    CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake(self.frame.origin.x + 50, self.frame.origin.y + 100, self.frame.size.width-70, self.frame.size.height-200)];
     
     PFObject *temp = self.cards[index];
-    draggableView.name.text = temp[@"name"];
-    draggableView.major.text = temp[@"major"];
-    draggableView.profession.text = temp[@"profession"];
-    [self retrieveTags:temp[@"user"]];
-    
+    draggableView.name.text = [NSString stringWithFormat:@"Name: %@", temp[@"name"]];
+    draggableView.major.text = [NSString stringWithFormat:@"Major: %@", temp[@"major"]];
+    draggableView.profession.text = [NSString stringWithFormat:@"Profession: %@", temp[@"profession"]];
+    draggableView.user = temp[@"user"];
+//    self.tags = nil;
+//    [self retrieveTags:temp[@"user"]];
+////    while (self.tags == nil){
+////        NSLog(@"hello??");
+////        continue;
+////    }
+//    NSMutableString *resultTags = [[NSMutableString alloc] init];
+//    for (Tags *tg in self.tags){
+//        [resultTags appendString:tg.tag[@"Name"]];
+//        [resultTags appendString:@", "];
+//    }
+//    draggableView.tags.text = [NSString stringWithFormat:@"Tags: %@", resultTags];
+
     draggableView.delegate = self;
     return draggableView;
 }
@@ -176,23 +188,42 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 }
 
 -(void)retrieveTags: (PFUser *)user{
+    NSLog(@"user is: %@", user);
+    __block NSMutableArray *ownTags = [[NSMutableArray alloc]init];
+    __block NSMutableArray *otherTags = [[NSMutableArray alloc]init];
     PFQuery *query = [PFQuery queryWithClassName:@"Tags"];
     [query includeKey:@"user"];
     [query includeKey:@"tags"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *tagObjects, NSError *error) {
-        NSMutableArray *cardTags = [[NSMutableArray alloc]init];
         if (tagObjects != nil){
             for (Tags *tagObj in tagObjects){
                 if ([tagObj.user.objectId isEqualToString:user.objectId]){
-                    [cardTags addObject:tagObj];
+                    [otherTags addObject:tagObj];
+                }
+                else if ([tagObj.user.objectId isEqualToString:PFUser.currentUser.objectId]){
+                    [ownTags addObject:tagObj];
                 }
             }
-            self.tags = [NSArray arrayWithArray:cardTags];
+            [self calculateScore:ownTags withOther:otherTags];
         }
         else{
             NSLog(@"Error: %@", error.localizedDescription);
         }
     }];
+}
+
+-(void) calculateScore: (NSMutableArray *)ownTags withOther: (NSMutableArray *)otherTags {
+    double percent = 0.0;
+    int base_size = (int)otherTags.count;
+    
+    for (Tags *tg in otherTags){
+        for (Tags *tg2 in ownTags){
+            if ([tg.tag isEqualToDictionary:tg2.tag]){
+                percent += 1.0/base_size;
+            }
+        }
+    }
+    [delegate scoreAlert:percent];
 }
 
 -(void)reloadData {
