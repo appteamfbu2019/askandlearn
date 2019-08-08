@@ -122,8 +122,6 @@ static NSString *idKey = @"Identifier";
     self.categoriesListController.didScrollBlock = ^{
         [weakSelf.view endEditing:YES];
     };
-    
-    NSLog(@"hello %@", self.categoriesListController.tableView.delegate);
 }
 
 - (void)layoutViewsBasedOnComposerHeight
@@ -135,18 +133,12 @@ static NSString *idKey = @"Identifier";
 - (void)searchTagsForText:(NSString *)searchText
 {
     __weak addTags *weakSelf = self;
-    NSLog(@"hellloooo");
     [self.categoriesListController searchCategory:searchText addedCategories:self.addedTags withSelected:^(BOOL success, NSDictionary *category, NSError *error) {
-        if (success)
-        {
-            NSLog(@"success");
-            
+        if (success){
             [weakSelf addTag:category updateTokenView:YES];
         }
     } deselectedBlock:^(BOOL success, NSDictionary *category, NSError *error) {
-        if (success)
-        {
-            NSLog(@"remove");
+        if (success){
             [weakSelf removeTag:category];
         }
     }];

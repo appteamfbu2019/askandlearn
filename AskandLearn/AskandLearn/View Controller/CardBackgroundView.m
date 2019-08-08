@@ -36,8 +36,6 @@
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
-static const float CARD_HEIGHT = 700; //%%% height of the draggable card
-static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 @synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
@@ -136,25 +134,13 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 -(CardView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake(self.frame.origin.x + 50, self.frame.origin.y + 100, self.frame.size.width-70, self.frame.size.height-200)];
+    CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake(self.frame.origin.x + 35, self.frame.origin.y + 100, self.frame.size.width-70, self.frame.size.height-200)];
     
     PFObject *temp = self.cards[index];
     draggableView.name.text = [NSString stringWithFormat:@"Name: %@", temp[@"name"]];
     draggableView.major.text = [NSString stringWithFormat:@"Major: %@", temp[@"major"]];
     draggableView.profession.text = [NSString stringWithFormat:@"Profession: %@", temp[@"profession"]];
     draggableView.user = temp[@"user"];
-//    self.tags = nil;
-//    [self retrieveTags:temp[@"user"]];
-////    while (self.tags == nil){
-////        NSLog(@"hello??");
-////        continue;
-////    }
-//    NSMutableString *resultTags = [[NSMutableString alloc] init];
-//    for (Tags *tg in self.tags){
-//        [resultTags appendString:tg.tag[@"Name"]];
-//        [resultTags appendString:@", "];
-//    }
-//    draggableView.tags.text = [NSString stringWithFormat:@"Tags: %@", resultTags];
 
     draggableView.delegate = self;
     return draggableView;
