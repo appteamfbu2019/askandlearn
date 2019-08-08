@@ -152,7 +152,8 @@
     {
         iMessage *sendMessage;
         
-        sendMessage = [[iMessage alloc] initIMessageWithName:@"Esther Brown" message:self.chatTextView.text time:@"23:14" type:@"self"];
+        PFUser *currentUser = [PFUser currentUser];
+        sendMessage = [[iMessage alloc] initIMessageWithName:currentUser.username  message:self.chatTextView.text time:@"23:14" type:@"self"];
         
         [self updateTableView:sendMessage];
         
