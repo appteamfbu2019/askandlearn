@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Messages : PFObject <PFSubclassing>
 
-@property (nonatomic, strong) PFUser *user1;
-@property (nonatomic, strong) PFUser *user2;
-@property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) PFUser *sender;
+@property (nonatomic, strong) PFUser *receiver;
+@property (nonatomic, strong) NSString *messageText;
 
-+(Messages *)removeTag:(PFUser *)user remove:(NSDictionary *)tagObject;
-+(Messages *)newTag: (PFUser *)user setTag:(NSDictionary *)tagObject;
++(void) sendMessage: (PFUser *)user1 withUser: (PFUser *)user2 ;
++(void) receiveMessage: (PFUser *)user1 withUser: (PFUser *)user2 ;
 
 @end
 

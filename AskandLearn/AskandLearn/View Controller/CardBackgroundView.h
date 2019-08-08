@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, atomic) NSMutableArray *cards;
 @property (strong, nonatomic) NSArray *actions;
+@property (strong, nonatomic) NSArray *tags;
 
 @end
 

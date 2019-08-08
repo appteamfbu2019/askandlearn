@@ -31,6 +31,7 @@
                     sw[@"isTeacher"] = [NSNumber numberWithBool:teach];
                     [sw saveInBackgroundWithBlock:nil];
                     NSLog(@"islearner %d", sw.isLearner);
+                    NSLog(@"isTeacher %d", sw.isTeacher);
                     NSLog(@"updated");
                 }
             }

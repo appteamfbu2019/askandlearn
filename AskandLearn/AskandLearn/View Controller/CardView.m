@@ -35,6 +35,7 @@
 @synthesize name;
 @synthesize major;
 @synthesize profession;
+@synthesize score;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -56,6 +57,11 @@
         [profession setTextAlignment:NSTextAlignmentCenter];
         profession.textColor = [UIColor whiteColor];
         
+        score = [[UILabel alloc]initWithFrame:CGRectMake(0, 140, self.frame.size.width, 100)];
+        score.text = @"Match Score:";
+        [score setTextAlignment:NSTextAlignmentCenter];
+        score.textColor = [UIColor whiteColor];
+        
         self.backgroundColor = [UIColor colorWithRed:.9294 green:.6039 blue:.8353 alpha:1];;
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
@@ -64,6 +70,7 @@
         [self addSubview:name];
         [self addSubview:major];
         [self addSubview:profession];
+        [self addSubview:score];
         
     }
     return self;
