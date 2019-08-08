@@ -9,9 +9,11 @@
 #import "userChatViewController.h"
 #import "ContentView.h"
 #import "ChatTableViewCell.h"
-//#import "ChatTableViewCellXIB.h"
+#import "MatchViewController.h"
 #import "ChatCellSettings.h"
 #import "Parse.h"
+#import "Messages.h"
+#import "Match.h"
 
 @interface iMessage: NSObject
 
@@ -24,6 +26,8 @@
 @property (strong, nonatomic) NSString *userMessage;
 @property (strong, nonatomic) NSString *userTime;
 @property (strong, nonatomic) NSString *messageType;
+
+
 
 @end
 
@@ -155,14 +159,20 @@
         PFObject *chatMessage = [PFObject objectWithClassName:@"Message2_Testing"];
         chatMessage[@"text"] = sendMessage.userMessage;
         chatMessage[@"sender"] = PFUser.currentUser;
-        chatMessage[@"receiver"] = PFUser.currentUser;
-        [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
-            if (succeeded) {
-                NSLog(@"The message was saved!");
-            } else {
-                NSLog(@"Problem saving message: %@", error.localizedDescription);
-            }
-        }];
+        if ([[self.matchObj[@"person1"] objectId] isEqualToString:PFUser.currentUser.objectId]){
+            chatMessage[@"receiver"] = self.matchObj[@"person2"];
+        }
+        else {
+            chatMessage[@"receiver"] = self.matchObj[@"person1"];
+        }
+        [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"]];
+//        [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+//            if (succeeded) {
+//                NSLog(@"The message was saved!");
+//            } else {
+//                NSLog(@"Problem saving message: %@", error.localizedDescription);
+//            }
+//        }];
         self.chatTextView.text = @"";
     }
 }
@@ -306,4 +316,7 @@
     
     return size.height;
 }
+
+
+
 @end

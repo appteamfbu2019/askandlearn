@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
+#import "Match.h"
 
 @interface userChatViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
+@property (strong, nonatomic) Match *matchObj;
 
 @end

@@ -293,7 +293,7 @@
                                         <connections>
                                             <outlet property="profileImage" destination="RbZ-iI-6Un" id="4og-dz-ShG"/>
                                             <outlet property="usernameLabel" destination="Ks5-n8-lpW" id="ueX-qT-3y8"/>
-                                            <segue destination="Tcw-k6-Ufy" kind="push" id="vEq-8D-i0X"/>
+                                            <segue destination="Tcw-k6-Ufy" kind="push" identifier="segueToMessages" id="vEq-8D-i0X"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
