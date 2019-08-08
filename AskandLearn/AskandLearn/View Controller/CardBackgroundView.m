@@ -57,6 +57,15 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
         NSLog(@"fetching users");
+        
+        UITextView *warning = [[UITextView alloc]initWithFrame:CGRectMake(140, 140, self.frame.size.width/2, 150)];
+        warning.backgroundColor = [UIColor clearColor];
+        warning.text = @"Wow, you've swiped through all the cards! Come back later and check if new people have joined :)";
+        [warning setTextAlignment:NSTextAlignmentCenter];
+        warning.center = self.center;
+        warning.textColor = [UIColor blackColor];
+        warning.font = [UIFont fontWithName:@"Helvetica" size:17 ];
+        [self addSubview:warning];
     }
     return self;
 }
