@@ -7,33 +7,40 @@
 //
 
 #import "Messages.h"
+#import "Parse/Parse.h"
+#import "PFObject.h"
 
-//@implementation Messages
-//
-//@dynamic tag;
-//@dynamic status;
-//@dynamic user;
-//
-//+ (nonnull NSString *)parseClassName {
-//    return @"Tags";
-//}
-//
-//+(Messages *)newTag: (PFUser *)user setTag:(NSDictionary *)tagObject{
-//    Messages *newTag = [Messages new];
-//    newTag.user = user;
-//    newTag.tag = tagObject;
-//    newTag.status = @"adding";
-//    [newTag saveInBackgroundWithBlock:nil];
-//    return newTag;
-//}
-//
-//+(Messages *)removeTag:(PFUser *)user remove:(NSDictionary *)tagObject{
-//    Messages *newMessage = [Messages new];
-//    newMessage.user = user;
-//    newMessage.tag = tagObject;
-//    newMessage.status = @"removing";
-//    [newMessage saveInBackgroundWithBlock:nil];
-//    return newMessage;
-//}
-//
-//@end
+@implementation Messages
+
+@dynamic sender;
+@dynamic receiver;
+@dynamic messageText;
+
++ (nonnull NSString *)parseClassName {
+    return @"Messages";
+}
+
++ (void) sendMessage: (PFUser *)user1 withUser: (PFUser *)user2 {
+    
+    Messages *newMessage = [Messages new];
+    
+    newMessage.sender = user1;
+    newMessage.receiver = user2;
+    //newMessage.messageText = user1;
+    
+    [newMessage saveInBackgroundWithBlock: nil];
+}
+
++ (void) receiveMessage: (PFUser *)user1 withUser: (PFUser *)user2 {
+    
+    Messages *newMessage = [Messages new];
+    
+    newMessage.sender = user1;
+    newMessage.receiver = user2;
+    //newMessage.messageText = user1;
+    
+    
+    [newMessage saveInBackgroundWithBlock: nil];
+}
+
+@end

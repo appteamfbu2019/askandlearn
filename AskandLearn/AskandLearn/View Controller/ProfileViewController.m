@@ -19,7 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getProfile];
+    PFQuery *query = [PFQuery queryWithClassName:@"profile"];
+    [query getObjectInBackgroundWithId:@"objectId" block:^(PFObject *profile, NSError *error){
+        self.nameBox.text = profile[@"name"];
+        profile[@"profession"] = self.professionBox.text;
+        profile[@"major"] = self.majorBox.text;
+        profile[@"profilePic"] = self.profileImage.image;
+        profile[@"backgroundPic"] = self.backgroundImage.image;
+    }];
     [self.refreshControl endRefreshing];
     // Do any additional setup after loading the view.
 }
@@ -28,20 +35,21 @@
     [self performSegueWithIdentifier:@"EditSegue" sender:nil];
 }
 
-- (void)getProfile {
+/*- (void)getProfile {
     PFQuery *query = [PFQuery queryWithClassName:@"profile"];
     [query getObjectInBackgroundWithId:@"objectId" block:^(PFObject *profile, NSError *error){
+    profile[@"name"] = self.nameBox.text;
+    profile[@"profession"] = self.professionBox.text;
+    profile[@"major"] = self.majorBox.text;
+    profile[@"profilePic"] = self.profileImage.image;
+    profile[@"backgroundPic"] = self.backgroundImage.image;
     if (!error) {
-        profile[@"name"] = self.nameBox.text;
-        profile[@"profession"] = self.professionBox.text;
-        profile[@"major"] = self.majorBox.text;
-        profile[@"profilePic"] = self.profileImage.image;
-        profile[@"backgroundPic"] = self.backgroundImage.image;
+        
         [self.refreshControl endRefreshing];
     } else {
         NSLog(@"Information was not displayed");
     }
         }];
-}
+}*/
 
 @end
