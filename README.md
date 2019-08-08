@@ -40,6 +40,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 - [x] During sign up,user can connect through Facebook, and we will extract basic information through there 
 - [ ] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
 - [x] Tab to access the user's 'matches'
+- [x] Segue to access the user's messages from the 'matches' tab
 - [x] Tab to access the user's 'messages'
 - [x] Implement Basic messaging function using Parse Chat
 - [ ] Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
@@ -65,7 +66,8 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 * Detail
     * User can click on a profile to view more info
 * Messaging/Matches
-    * User can view matches and send messages
+    * User can view matches
+    * User can messages
 * Profile
     * User can view their matches, ratings, points, status
 * Settings

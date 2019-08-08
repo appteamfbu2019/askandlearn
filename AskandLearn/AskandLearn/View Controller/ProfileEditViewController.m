@@ -13,7 +13,6 @@
 @interface ProfileEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) UIImage *originalImage;
 @property (weak, nonatomic) UIImage *editedImage;
-
 @end
 
 @implementation ProfileEditViewController {
@@ -29,6 +28,8 @@
     NSString *name = self.nameTextField.text;
     NSString *profession = self.professionTextField.text;
     NSString *major = self.majorTextField.text;
+    UIImage *profilePic = self.profileImageView.image;
+    UIImage *backgroundPic = self.backgroundImageView.image;
     if ([self.nameTextField.text isEqual:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No name inserted" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -41,10 +42,15 @@
         }];
     } else {
         PFObject *profile = [PFObject objectWithClassName:@"Profile"];
+        profile[@"user"] = PFUser.currentUser;
         profile[@"name"] = name;
         profile[@"profession"] = profession;
         profile[@"major"] = major;
-        [profile saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (profilePic != nil && backgroundPic != nil){
+            profile[@"profilePic"] = profilePic;
+            profile[@"backgroundPic"] = backgroundPic;
+        }
+        [profile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Information Saved!");
             } else {
@@ -54,14 +60,12 @@
     }
 }
 
-- (void)uploadProfilePic
-{
+- (void)uploadProfilePic {
     _isUploadingProfilePic = YES;
     [self uploadImage];
 }
 
-- (void)uploadBackgroundPic
-{
+- (void)uploadBackgroundPic {
     _isUploadingProfilePic = NO;
     [self uploadImage];
 }
@@ -79,8 +83,6 @@
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
 }
-
-
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
@@ -107,19 +109,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-/*
  #pragma mark - Navigation
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
  }
- */
-
+ 
 - (IBAction)didTapSaveProfile:(id)sender {
     [self saveProfile];
-    [self dismissViewControllerAnimated:TRUE completion:nil];
+    //[self prepareForSegue:@"ProfileViewController" sender:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapProfileUpload:(id)sender {
