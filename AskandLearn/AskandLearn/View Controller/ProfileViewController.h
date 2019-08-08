@@ -11,9 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameBox;
+@property (weak, nonatomic) IBOutlet UILabel *professionBox;
+@property (weak, nonatomic) IBOutlet UILabel *majorBox;
 - (IBAction)didTapEditProfile:(id)sender;
 
 @end
