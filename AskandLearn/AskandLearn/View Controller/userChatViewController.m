@@ -173,7 +173,7 @@
     {
         iMessage *receiveMessage;
         
-        receiveMessage = [[iMessage alloc] initIMessageWithName:@"Esther Brown" message:self.chatTextView.text time:@"23:14" type:@"other"];
+        receiveMessage = [[iMessage alloc] initIMessageWithName:@"Mango" message:self.chatTextView.text time:@"23:15" type:@"other"];
         
         [self updateTableView:receiveMessage];
     }
