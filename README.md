@@ -66,6 +66,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 * Detail
     * User can click on a profile to view more info
 * Messaging/Matches
+    * User can view matches
     * User can view matches and send messages
 * Profile
     * User can view their matches, ratings, points, status
