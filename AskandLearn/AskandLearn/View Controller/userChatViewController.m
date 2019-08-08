@@ -14,6 +14,7 @@
 #import "Parse.h"
 #import "Messages.h"
 #import "Match.h"
+#import "MatchCell.h"
 
 @interface iMessage: NSObject
 
@@ -63,7 +64,7 @@
 
 
 @property (strong,nonatomic) ChatTableViewCell *chatCell;
-
+@property (strong,nonnull) NSArray *messageArray;
 
 @property (strong,nonatomic) ContentView *handler;
 
@@ -134,6 +135,7 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     [self.chatTable addGestureRecognizer:gestureRecognizer];
+    [self Refresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -152,11 +154,12 @@
     {
         iMessage *sendMessage;
         
+        
         sendMessage = [[iMessage alloc] initIMessageWithName:@"Esther Brown" message:self.chatTextView.text time:@"23:14" type:@"self"];
         
         [self updateTableView:sendMessage];
         
-        PFObject *chatMessage = [PFObject objectWithClassName:@"Message2_Testing"];
+        PFObject *chatMessage = [PFObject objectWithClassName:@"Messages"];
         chatMessage[@"text"] = sendMessage.userMessage;
         chatMessage[@"sender"] = PFUser.currentUser;
         if ([[self.matchObj[@"person1"] objectId] isEqualToString:PFUser.currentUser.objectId]){
@@ -183,7 +186,7 @@
     {
         iMessage *receiveMessage;
         
-        receiveMessage = [[iMessage alloc] initIMessageWithName:@"Mango" message:self.chatTextView.text time:@"23:15" type:@"other"];
+//        receiveMessage = [[iMessage alloc] initIMessageWithName:MatchCell.us message:self.chatTextView.text time:chatCell.chatTimeLabel.text type:@"other"];
         
         [self updateTableView:receiveMessage];
     }
@@ -212,7 +215,32 @@
     }
 }
 
-
+-(void)Refresh
+{
+    //[NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
+    // userInfo:nil repeats:true];
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    [query includeKey:@"sender"];
+    [query includeKey:@"receiver"];
+    [query includeKey:@"messageText"];
+    [query orderByDescending:@"createdAt"];
+    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+//        if (posts != nil) {
+//            ////make imessage objects from each Messages object in *posts
+//            ///load them into currentMessages
+//            //reloadData
+//            //for (Messages *msg in posts){
+//                //create new iMessage object from p
+//                //[currentMessages addObject:new]
+//            if (posts != nil) {
+//                self.currentMessage = posts;
+//                [self.mytableView reloadData];
+//            } else {
+//                NSLog(@"%@", error.localizedDescription);
+//            }
+//        }];
+}
 
 #pragma mark - UITableViewDatasource methods
 
@@ -229,6 +257,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     iMessage *message = [currentMessages objectAtIndex:indexPath.row];
+   MatchCell *matchCell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell" forIndexPath:indexPath];
     
     if([message.messageType isEqualToString:@"self"])
     {
@@ -238,7 +267,7 @@
         
         chatCell.chatMessageLabel.text = message.userMessage;
         
-        chatCell.chatNameLabel.text = message.userName;
+        matchCell.usernameLabel.text = message.userName;
         
         chatCell.chatTimeLabel.text = message.userTime;
         
@@ -254,6 +283,7 @@
         
         
         chatCell.chatMessageLabel.text = message.userMessage;
+        
         
         chatCell.chatNameLabel.text = message.userName;
         
