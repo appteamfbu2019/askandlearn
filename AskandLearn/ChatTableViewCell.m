@@ -401,7 +401,6 @@ static ChatCellSettings *chatCellSettings = nil;
             [UpCurve setHidden:NO];
         }
         
-        
         Main.backgroundColor = [chatCellSettings getSenderBubbleColor];
         
         DownCurve.backgroundColor = [chatCellSettings getSenderBubbleColor];

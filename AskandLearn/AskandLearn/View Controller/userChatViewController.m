@@ -4,7 +4,6 @@
 //
 //  Created by estherb on 8/5/19.
 //  Copyright © 2019 estherb. All rights reserved.
-//
 
 #import "userChatViewController.h"
 #import "ContentView.h"
@@ -16,23 +15,17 @@
 #import "Match.h"
 
 @interface iMessage: NSObject
-
 -(id) initIMessageWithName:(NSString *)name
                    message:(NSString *)message
                       time:(NSString *)time
                       type:(NSString *)type;
-
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *userMessage;
 @property (strong, nonatomic) NSString *userTime;
 @property (strong, nonatomic) NSString *messageType;
-
-
-
 @end
 
 @implementation iMessage
-
 -(id) initIMessageWithName:(NSString *)name
                    message:(NSString *)message
                       time:(NSString *)time
@@ -49,7 +42,6 @@
     
     return self;
 }
-
 @end
 
 @interface userChatViewController ()
@@ -60,14 +52,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatTextViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewBottomConstraint;
-
-
 @property (strong,nonatomic) ChatTableViewCell *chatCell;
-
-
 @property (strong,nonatomic) ContentView *handler;
-
-
 @end
 
 @implementation userChatViewController
@@ -85,12 +71,6 @@
     
     self.chatTable.dataSource = self;
     self.chatTable.delegate = self;
-    
-    /**
-     *  Set settings for Application. They are available in ChatCellSettings class.
-     */
-    
-
     
     [chatCellSettings setSenderBubbleColorHex:@"007AFF"];
     [chatCellSettings setReceiverBubbleColorHex:@"DFDEE5"];
@@ -114,20 +94,11 @@
     self.navigationItem.title = @"AskandLearn Messages";
     
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
-    
-
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatSend"];
-    
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatReceive"];
   
-    
-    
-    
-    //Instantiating custom view that adjusts itself to keyboard show/hide
     self.handler = [[ContentView alloc] initWithTextView:self.chatTextView ChatTextViewHeightConstraint:self.chatTextViewHeightConstraint contentView:self.contentView ContentViewHeightConstraint:self.contentViewHeightConstraint andContentViewBottomConstraint:self.contentViewBottomConstraint];
     
-    //Setting the minimum and maximum number of lines for the textview vertical expansion
     [self.handler updateMinimumNumberOfLines:1 andMaximumNumberOfLine:3];
     
     //Tap gesture on table view so that when someone taps on it, the keyboard is hidden
@@ -153,7 +124,13 @@
         iMessage *sendMessage;
         
         PFUser *currentUser = [PFUser currentUser];
-        sendMessage = [[iMessage alloc] initIMessageWithName:currentUser.username  message:self.chatTextView.text time:@"23:14" type:@"self"];
+        
+        NSDate * now = [NSDate date];
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *newDateString = [outputFormatter stringFromDate:now];
+        
+        sendMessage = [[iMessage alloc] initIMessageWithName:currentUser.username  message:self.chatTextView.text time:newDateString type:@"self"];
         
         [self updateTableView:sendMessage];
         
@@ -184,7 +161,12 @@
     {
         iMessage *receiveMessage;
         
-        receiveMessage = [[iMessage alloc] initIMessageWithName:@"Mango" message:self.chatTextView.text time:@"23:15" type:@"other"];
+        NSDate * now = [NSDate date];
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *newDateString = [outputFormatter stringFromDate:now];
+        
+        receiveMessage = [[iMessage alloc] initIMessageWithName:@"Mango" message:self.chatTextView.text time:newDateString type:@"other"];
         
         [self updateTableView:receiveMessage];
     }
