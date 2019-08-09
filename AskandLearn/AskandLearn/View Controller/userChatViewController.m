@@ -160,32 +160,19 @@
 {
     if([self.chatTextView.text length]!=0)
     {
-        iMessage *receiveMessage;
         
-        PFUser *currentUser = [PFUser currentUser];
+      //chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MatchCell"]
+//        iMessage *receiveMessage;
+        iMessage *receiveMessage;
         
         NSDate * now = [NSDate date];
         NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
         [outputFormatter setDateFormat:@"HH:mm"];
         NSString *newDateString = [outputFormatter stringFromDate:now];
         
-        receiveMessage = [[iMessage alloc] initIMessageWithName:currentUser.username  message:self.chatTextView.text time:newDateString type:@"self"];
+        receiveMessage = [[iMessage alloc] initIMessageWithName:self.person1 message:self.chatTextView.text time:newDateString type:@"other"];
         
         [self updateTableView:receiveMessage];
-        
-        PFObject *chatMessage = [PFObject objectWithClassName:@"Messages"];
-        chatMessage[@"text"] = receiveMessage.userMessage;
-        chatMessage[@"sender"] = PFUser.currentUser;
-        if ([[self.matchObj[@"person1"] objectId] isEqualToString:PFUser.currentUser.objectId]){
-            chatMessage[@"receiver"] = self.matchObj[@"person2"];
-        }
-        else {
-            chatMessage[@"receiver"] = self.matchObj[@"person1"];
-        }
-        [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"] withTime:newDateString];
-        
-        
-        self.chatTextView.text = @"";
     }
 }
 

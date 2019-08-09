@@ -93,9 +93,18 @@
         userChatViewController* chatController = [segue destinationViewController];
         
         UITableViewCell *tappedCell = sender;
+        NSLog(@"tapped");
         NSIndexPath *indexPath =  [self.mytableView indexPathForCell:tappedCell];
         Match *match = self.matchArray[indexPath.row];
         chatController.matchObj = match;
+        NSLog(@"match %@", match);
+        //PFUser query
+        //match the objectId of person1 to objectId in the query, extract username from query
+        //same for person2
+        chatController.person1 = match.person1[@"username"];
+        NSLog(@"hello?");
+        chatController.person2 = match.person2.username;
+        NSLog(@"hello?");
     }
 }
 @end
