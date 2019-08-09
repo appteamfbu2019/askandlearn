@@ -16,9 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) PFUser *sender;
 @property (nonatomic, strong) PFUser *receiver;
 @property (nonatomic, strong) NSString *messageText;
+@property (nonatomic, strong) NSString *timeNow;
 
-+(void) sendMessage: (PFUser *)user1 withUser: (PFUser *)user2 withText: (NSString *) messageText;
-+(void) receiveMessage: (PFUser *)user1 withUser: (PFUser *)user2 ;
++(void) sendMessage: (PFUser *)user1 withUser: (PFUser *)user2 withText: (NSString *) messageText withTime: (NSString *) timeNow;
++(void) receiveMessage: (PFUser *)user1 withUser: (PFUser *)user2 withText: (NSString *) messageText withTime: (NSString *) timeNow;
+
 
 @end
 
