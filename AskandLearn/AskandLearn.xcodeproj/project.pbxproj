@@ -38,6 +38,19 @@
 		B01979CB22E79A580038511A /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01979CA22E79A580038511A /* ChatViewController.m */; };
 		B0BC096422FCD2C40046E431 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BC096322FCD2C40046E431 /* Profile.m */; };
 		FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AE22E7BC3600A2A0D6 /* CardView.m */; };
+		FE27435422FCF64A00AD4D9C /* tokyo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434722FCF64900AD4D9C /* tokyo.jpg */; };
+		FE27435522FCF64A00AD4D9C /* hong kong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434822FCF64900AD4D9C /* hong kong.jpg */; };
+		FE27435622FCF64A00AD4D9C /* paris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434922FCF64900AD4D9C /* paris.jpg */; };
+		FE27435722FCF64A00AD4D9C /* singapore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434A22FCF64900AD4D9C /* singapore.jpg */; };
+		FE27435822FCF64A00AD4D9C /* seoul.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434B22FCF64A00AD4D9C /* seoul.jpg */; };
+		FE27435922FCF64A00AD4D9C /* boston.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434C22FCF64A00AD4D9C /* boston.jpg */; };
+		FE27435A22FCF64A00AD4D9C /* taipei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434D22FCF64A00AD4D9C /* taipei.jpg */; };
+		FE27435B22FCF64A00AD4D9C /* dubainight.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434E22FCF64A00AD4D9C /* dubainight.jpeg */; };
+		FE27435C22FCF64A00AD4D9C /* amsterdamnight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27434F22FCF64A00AD4D9C /* amsterdamnight.jpg */; };
+		FE27435D22FCF64A00AD4D9C /* seattle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27435022FCF64A00AD4D9C /* seattle.jpg */; };
+		FE27435E22FCF64A00AD4D9C /* shanghai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27435122FCF64A00AD4D9C /* shanghai.jpg */; };
+		FE27435F22FCF64A00AD4D9C /* nyc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27435222FCF64A00AD4D9C /* nyc.jpg */; };
+		FE27436022FCF64A00AD4D9C /* nyc2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27435322FCF64A00AD4D9C /* nyc2.jpg */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
 		FE62247822F9F9FF003FF5C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62247722F9F9FF003FF5C4 /* ViewController.m */; };
 		FE62247B22FA200A003FF5C4 /* Switch.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62247A22FA200A003FF5C4 /* Switch.m */; };
@@ -129,7 +142,7 @@
 		AB50E24B22DD0617006097DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AB50E24C22DD0617006097DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AB50E24F22DD0617006097DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB50E25122DD0617006097DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB50E25122DD0617006097DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/clairec/Documents/askandlearn/AskandLearn/AskandLearn/Models/Assets.xcassets; sourceTree = "<absolute>"; };
 		AB50E25422DD0617006097DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB50E25622DD0617006097DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB50E25722DD0617006097DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -168,6 +181,19 @@
 		FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardBackgroundView.m; path = "AskandLearn/View Controller/CardBackgroundView.m"; sourceTree = SOURCE_ROOT; };
 		FE1950AD22E7BC3600A2A0D6 /* CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = "AskandLearn/View Controller/CardView.h"; sourceTree = SOURCE_ROOT; };
 		FE1950AE22E7BC3600A2A0D6 /* CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = "AskandLearn/View Controller/CardView.m"; sourceTree = SOURCE_ROOT; };
+		FE27434722FCF64900AD4D9C /* tokyo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tokyo.jpg; path = ../../../../../../Downloads/backgroundimgs/tokyo.jpg; sourceTree = "<group>"; };
+		FE27434822FCF64900AD4D9C /* hong kong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hong kong.jpg"; path = "../../../../../../Downloads/backgroundimgs/hong kong.jpg"; sourceTree = "<group>"; };
+		FE27434922FCF64900AD4D9C /* paris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = paris.jpg; path = ../../../../../../Downloads/backgroundimgs/paris.jpg; sourceTree = "<group>"; };
+		FE27434A22FCF64900AD4D9C /* singapore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = singapore.jpg; path = ../../../../../../Downloads/backgroundimgs/singapore.jpg; sourceTree = "<group>"; };
+		FE27434B22FCF64A00AD4D9C /* seoul.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = seoul.jpg; path = ../../../../../../Downloads/backgroundimgs/seoul.jpg; sourceTree = "<group>"; };
+		FE27434C22FCF64A00AD4D9C /* boston.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = boston.jpg; path = ../../../../../../Downloads/backgroundimgs/boston.jpg; sourceTree = "<group>"; };
+		FE27434D22FCF64A00AD4D9C /* taipei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = taipei.jpg; path = ../../../../../../Downloads/backgroundimgs/taipei.jpg; sourceTree = "<group>"; };
+		FE27434E22FCF64A00AD4D9C /* dubainight.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dubainight.jpeg; path = ../../../../../../Downloads/backgroundimgs/dubainight.jpeg; sourceTree = "<group>"; };
+		FE27434F22FCF64A00AD4D9C /* amsterdamnight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = amsterdamnight.jpg; path = ../../../../../../Downloads/backgroundimgs/amsterdamnight.jpg; sourceTree = "<group>"; };
+		FE27435022FCF64A00AD4D9C /* seattle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = seattle.jpg; path = ../../../../../../Downloads/backgroundimgs/seattle.jpg; sourceTree = "<group>"; };
+		FE27435122FCF64A00AD4D9C /* shanghai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shanghai.jpg; path = ../../../../../../Downloads/backgroundimgs/shanghai.jpg; sourceTree = "<group>"; };
+		FE27435222FCF64A00AD4D9C /* nyc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nyc.jpg; path = ../../../../../../Downloads/backgroundimgs/nyc.jpg; sourceTree = "<group>"; };
+		FE27435322FCF64A00AD4D9C /* nyc2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nyc2.jpg; path = ../../../../../../Downloads/backgroundimgs/nyc2.jpg; sourceTree = "<group>"; };
 		FE564A1222DFECC500192A43 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FE62247722F9F9FF003FF5C4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FE62247922FA200A003FF5C4 /* Switch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Switch.h; sourceTree = "<group>"; };
@@ -395,6 +421,7 @@
 		AB63D39222E1051A00AB8D3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE27432C22FCF4D800AD4D9C /* backgroundimgs */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
 				AB025C9722F8F1A900319DD8 /* ChatTableViewCellXIB.m */,
@@ -459,6 +486,26 @@
 				8C7F304513E61DC938B844F4 /* libPods-AskandLearn.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE27432C22FCF4D800AD4D9C /* backgroundimgs */ = {
+			isa = PBXGroup;
+			children = (
+				FE27434F22FCF64A00AD4D9C /* amsterdamnight.jpg */,
+				FE27434C22FCF64A00AD4D9C /* boston.jpg */,
+				FE27434E22FCF64A00AD4D9C /* dubainight.jpeg */,
+				FE27434822FCF64900AD4D9C /* hong kong.jpg */,
+				FE27435222FCF64A00AD4D9C /* nyc.jpg */,
+				FE27435322FCF64A00AD4D9C /* nyc2.jpg */,
+				FE27434922FCF64900AD4D9C /* paris.jpg */,
+				FE27435022FCF64A00AD4D9C /* seattle.jpg */,
+				FE27434B22FCF64A00AD4D9C /* seoul.jpg */,
+				FE27435122FCF64A00AD4D9C /* shanghai.jpg */,
+				FE27434A22FCF64900AD4D9C /* singapore.jpg */,
+				FE27434D22FCF64A00AD4D9C /* taipei.jpg */,
+				FE27434722FCF64900AD4D9C /* tokyo.jpg */,
+			);
+			path = backgroundimgs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,14 +615,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE27435F22FCF64A00AD4D9C /* nyc.jpg in Resources */,
 				AB025C9622F8F18A00319DD8 /* ChatReceiveCell.xib in Resources */,
+				FE27435622FCF64A00AD4D9C /* paris.jpg in Resources */,
+				FE27435B22FCF64A00AD4D9C /* dubainight.jpeg in Resources */,
 				AB35051822E931CC00BC308D /* HomeViewController.h in Resources */,
 				AB35051922E931CC00BC308D /* HomeViewController.m in Resources */,
+				FE27435722FCF64A00AD4D9C /* singapore.jpg in Resources */,
+				FE27436022FCF64A00AD4D9C /* nyc2.jpg in Resources */,
 				AB025C9422F8F17400319DD8 /* ChatSendCell.xib in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
+				FE27435822FCF64A00AD4D9C /* seoul.jpg in Resources */,
+				FE27435A22FCF64A00AD4D9C /* taipei.jpg in Resources */,
 				FEA7902222F8F10300FC70EF /* CategoryList.plist in Resources */,
+				FE27435922FCF64A00AD4D9C /* boston.jpg in Resources */,
+				FE27435E22FCF64A00AD4D9C /* shanghai.jpg in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,
+				FE27435D22FCF64A00AD4D9C /* seattle.jpg in Resources */,
+				FE27435422FCF64A00AD4D9C /* tokyo.jpg in Resources */,
+				FE27435522FCF64A00AD4D9C /* hong kong.jpg in Resources */,
+				FE27435C22FCF64A00AD4D9C /* amsterdamnight.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

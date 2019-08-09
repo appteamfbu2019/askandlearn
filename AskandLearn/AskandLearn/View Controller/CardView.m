@@ -35,7 +35,6 @@
 @synthesize name;
 @synthesize major;
 @synthesize profession;
-@synthesize score;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -57,15 +56,10 @@
         [profession setTextAlignment:NSTextAlignmentCenter];
         profession.textColor = [UIColor whiteColor];
         
-        score = [[UILabel alloc]initWithFrame:CGRectMake(0, 140, self.frame.size.width, 100)];
-        score.text = @"Match Score:";
-        [score setTextAlignment:NSTextAlignmentCenter];
-        score.textColor = [UIColor whiteColor];
-        
+        //button for calculate score
         UIButton *mainButton = [UIButton new];
         mainButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        mainButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-        mainButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        mainButton.center = self.center;
         [mainButton setTitle:@"Calculate Score" forState:UIControlStateNormal];
         [mainButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [mainButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
@@ -73,8 +67,22 @@
         mainButton.backgroundColor = [UIColor whiteColor];
         [mainButton addTarget:self action:@selector(calculateScoreTap:) forControlEvents:UIControlEventTouchUpInside];
         
+        //loading background images
+        NSArray *photoArray = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:nil];
+        NSLog(@"length %lu", photoArray.count);
+        NSMutableArray *imgs = [[NSMutableArray alloc]initWithCapacity:photoArray.count];
+        for (NSString *path in photoArray){
+            [imgs addObject:[UIImage imageWithContentsOfFile:path]];
+        }
+        //randomly picking an image for card background
+        uint32_t rnd = arc4random_uniform((int)[imgs count]);
+        UIImage *randomImage = [imgs objectAtIndex:rnd];
 
-        self.backgroundColor = [UIColor colorWithRed:.9294 green:.6039 blue:.8353 alpha:1];;
+        UIGraphicsBeginImageContext(self.frame.size);
+        [randomImage drawInRect:self.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.backgroundColor = [UIColor colorWithPatternImage:image];//[UIColor colorWithRed:.9294 green:.6039 blue:.8353 alpha:1];;
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
@@ -82,7 +90,6 @@
         [self addSubview:name];
         [self addSubview:major];
         [self addSubview:profession];
-        [self addSubview:score];
         [self addSubview:mainButton];
         
     }
