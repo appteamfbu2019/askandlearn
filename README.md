@@ -38,21 +38,22 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 - [x] User can sign up to create a new account (using username, password)
 - [x] User can Login/Logout
 - [x] During sign up,user can connect through Facebook, and we will extract basic information through there 
-- [ ] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
+- [x] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
 - [x] Tab to access the user's 'matches'
 - [x] Segue to access the user's messages from the 'matches' tab
 - [x] Tab to access the user's 'messages'
 - [x] Implement Basic messaging function using Parse Chat
-- [ ] Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
-  (profession, company, age, field of study, area of interests)
   
 **Optional Nice-to-have Stories**
 
 - [x] Swiping animation instead of just button taps
+- [x] Match score so that the user can see how 'compatible' a profile is with them
 - [ ] The option to unmatch, report, block users
 - [ ] "Verified" status for users with good ratings
 - [ ] Rating system and points system
 - [x] Pop-up notification when a match has been formed
+- [ ] Filters that the user can instantiate to make it easier to find people they want to learn from (categories)
+  (profession, company, age, field of study, area of interests)
 
 ### 2. Screen Archetypes
 
