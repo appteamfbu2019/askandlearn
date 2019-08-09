@@ -43,11 +43,11 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 - [x] Segue to access the user's messages from the 'matches' tab
 - [x] Tab to access the user's 'messages'
 - [x] Implement Basic messaging function using Parse Chat
-- [x] Match score so that the user can see how 'compatible' a profile is with them
   
 **Optional Nice-to-have Stories**
 
 - [x] Swiping animation instead of just button taps
+- [x] Match score so that the user can see how 'compatible' a profile is with them
 - [ ] The option to unmatch, report, block users
 - [ ] "Verified" status for users with good ratings
 - [ ] Rating system and points system
