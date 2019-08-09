@@ -441,6 +441,13 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bio here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVB-K3-aGw">
+                                <rect key="frame" x="20" y="228" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YMs-4f-lW1"/>
@@ -449,6 +456,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="gfY-Ii-yB8" id="Ex6-7R-zqr"/>
                         <outlet property="backgroundPicText" destination="oUI-ut-9r8" id="Hd2-pb-RiL"/>
+                        <outlet property="bioTextField" destination="bVB-K3-aGw" id="rjy-ed-K3N"/>
                         <outlet property="majorText" destination="wPj-dc-Rf8" id="w5b-EP-Gb3"/>
                         <outlet property="majorTextField" destination="fDT-pg-Kce" id="Nqz-Rq-1ET"/>
                         <outlet property="nameText" destination="ekr-vN-0Sg" id="oka-bw-a1v"/>
@@ -462,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m7A-xo-5up" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880" y="2026"/>
+            <point key="canvasLocation" x="879.71014492753625" y="2025.6696428571427"/>
         </scene>
         <!--User Chat View Controller-->
         <scene sceneID="FFf-EK-irQ">

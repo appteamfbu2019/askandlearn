@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 - (IBAction)didTapImageUpload:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *backgroundPicText;
+@property (weak, nonatomic) IBOutlet UILabel *bioText;
+@property (weak, nonatomic) IBOutlet UITextField *bioTextField;
 
 @end
 

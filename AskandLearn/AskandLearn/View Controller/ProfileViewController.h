@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *professionBox;
 @property (weak, nonatomic) IBOutlet UILabel *majorBox;
 - (IBAction)didTapEditProfile:(id)sender;
+- (IBAction)didTapScreen:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *bioBox;
+
+- (void)getUIImageFromPic: (PFFileObject * _Nullable)profilePic;
+- (void)getUIImageFromImage: (PFFileObject * _Nullable)backgroundPic;
 
 @end
 

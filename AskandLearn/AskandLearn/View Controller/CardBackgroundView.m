@@ -76,6 +76,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     [query includeKey:@"major"];
     [query includeKey:@"profession"];
     [query includeKey:@"user"];
+    [query includeKey:@"profilePic"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *profiles, NSError *error) {
         if (profiles != nil){
             self.cards = (NSMutableArray *)profiles;
@@ -143,6 +144,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     draggableView.major.text = [NSString stringWithFormat:@"Major: %@", temp[@"major"]];
     draggableView.profession.text = [NSString stringWithFormat:@"Profession: %@", temp[@"profession"]];
     draggableView.user = temp[@"user"];
+    PFFileObject *file = temp[@"profilePic"];
+    NSData *imageData = [file getData];
+    UIImage *image = [UIImage imageWithData:imageData];
+    draggableView.profPic.image = image;
     draggableView.delegate = self;
     return draggableView;
 }

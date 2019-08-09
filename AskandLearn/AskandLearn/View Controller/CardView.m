@@ -32,6 +32,7 @@
 @synthesize delegate;
 
 @synthesize panGestureRecognizer;
+@synthesize profPic;
 @synthesize name;
 @synthesize major;
 @synthesize profession;
@@ -42,6 +43,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
+        
+        profPic = [[UIImageView alloc]initWithFrame:CGRectMake((self.frame.size.width)/2 - 25, 70, 60, 60)];
+        
         name = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, self.frame.size.width, 100)];
         name.text = @"no info given";
         [name setTextAlignment:NSTextAlignmentCenter];
@@ -104,6 +108,7 @@
         [self addSubview:profession];
         [self addSubview:mainButton];
         [self addSubview:bio];
+        [self addSubview:profPic];
         
     }
     return self;
