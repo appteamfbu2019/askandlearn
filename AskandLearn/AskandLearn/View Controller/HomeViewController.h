@@ -15,7 +15,6 @@
 
 - (void) alertPopUp: (PFUser *)user;
 - (void) outOfCards;
-- (void) scoreAlert: (double) score;
 
 @end
 

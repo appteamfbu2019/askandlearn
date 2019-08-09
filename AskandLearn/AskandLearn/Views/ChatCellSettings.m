@@ -14,7 +14,6 @@
 
 @end
 
-
 @implementation UIColor(HexString)
 
 + (UIColor *) colorWithHexString: (NSString *) hexString {

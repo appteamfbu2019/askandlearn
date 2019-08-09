@@ -36,6 +36,8 @@
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
+static const float CARD_HEIGHT = 700; //%%% height of the draggable card
+static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 @synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
 @synthesize allCards;//%%% all the cards
@@ -134,7 +136,7 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
 
 -(CardView *)createDraggableViewWithDataAtIndex:(NSInteger)index
 {
-    CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake(self.frame.origin.x + 35, self.frame.origin.y + 100, self.frame.size.width-70, self.frame.size.height-200)];
+    CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     
     PFObject *temp = self.cards[index];
     draggableView.name.text = [NSString stringWithFormat:@"Name: %@", temp[@"name"]];
@@ -177,35 +179,19 @@ static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any gi
     [query includeKey:@"user"];
     [query includeKey:@"tags"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *tagObjects, NSError *error) {
+        NSMutableArray *cardTags = [[NSMutableArray alloc]init];
         if (tagObjects != nil){
             for (Tags *tagObj in tagObjects){
                 if ([tagObj.user.objectId isEqualToString:user.objectId]){
-                    [otherTags addObject:tagObj];
-                }
-                else if ([tagObj.user.objectId isEqualToString:PFUser.currentUser.objectId]){
-                    [ownTags addObject:tagObj];
+                    [cardTags addObject:tagObj];
                 }
             }
-            [self calculateScore:ownTags withOther:otherTags];
+            self.tags = [NSArray arrayWithArray:cardTags];
         }
         else{
             NSLog(@"Error: %@", error.localizedDescription);
         }
     }];
-}
-
--(void) calculateScore: (NSMutableArray *)ownTags withOther: (NSMutableArray *)otherTags {
-    double percent = 0.0;
-    int base_size = (int)otherTags.count;
-    
-    for (Tags *tg in otherTags){
-        for (Tags *tg2 in ownTags){
-            if ([tg.tag isEqualToDictionary:tg2.tag]){
-                percent += 1.0/base_size;
-            }
-        }
-    }
-    [delegate scoreAlert:percent];
 }
 
 -(void)reloadData {

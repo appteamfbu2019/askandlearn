@@ -70,19 +70,4 @@
     }];
 }
 
-- (void) scoreAlert: (double) score {
-    
-    score = score * 100.0;
-    score = (int)floorf(score);
-    
-    UIAlertController *alert = [UIAlertController
-                                alertControllerWithTitle:@"Matchscore for this user is..." message: [NSString stringWithFormat:@"%lu%%", score] preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion: nil];
-}
-
 @end

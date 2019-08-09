@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)alertPopUp:(PFUser *)user;
 -(void)outOfCards;
-- (void) scoreAlert: (double) score;
 
 @end
 
@@ -27,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)cardSwipedLeft:(UIView *)card;
 -(void)cardSwipedRight:(UIView *)card;
--(void)retrieveTags: (PFUser *)user;
 
 
 @property (retain,nonatomic)NSArray* exampleCardLabels; //%%% the labels the cards
@@ -36,7 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, atomic) NSMutableArray *cards;
 @property (strong, nonatomic) NSArray *actions;
 @property (strong, nonatomic) NSArray *tags;
-
 
 @end
 

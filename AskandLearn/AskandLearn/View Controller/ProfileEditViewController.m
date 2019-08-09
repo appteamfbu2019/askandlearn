@@ -8,7 +8,6 @@
 
 #import "ProfileEditViewController.h"
 #import "Parse/Parse.h"
-#import "ProfileViewController.h"
 
 
 @interface ProfileEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -59,7 +58,6 @@
             }
         }];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)uploadProfilePic {
@@ -98,13 +96,16 @@
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
     if (_isUploadingProfilePic) {
         self.profileImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     } else {
-        //self.backgroundImageView.image = editedImage;
+        //        self.backgroundImageView.image = editedImage;
         self.backgroundImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     }
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -118,6 +119,7 @@
 - (IBAction)didTapSaveProfile:(id)sender {
     [self saveProfile];
     //[self prepareForSegue:@"ProfileViewController" sender:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapProfileUpload:(id)sender {
@@ -126,8 +128,5 @@
 
 - (IBAction)didTapImageUpload:(id)sender {
     [self uploadBackgroundPic];
-}
-- (IBAction)didTapCancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

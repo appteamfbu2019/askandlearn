@@ -251,11 +251,6 @@
     NSLog(@"NO");
 }
 
--(void)calculateScoreTap:(id)sender {
-    NSLog(@"calculating score");
-    [delegate retrieveTags:self.user];
-}
-
 
 
 @end

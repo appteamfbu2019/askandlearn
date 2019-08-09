@@ -4,7 +4,6 @@
 //
 //  Created by estherb on 8/5/19.
 //  Copyright © 2019 estherb. All rights reserved.
-//
 
 #import "userChatViewController.h"
 #import "ContentView.h"
@@ -14,26 +13,19 @@
 #import "Parse.h"
 #import "Messages.h"
 #import "Match.h"
-#import "MatchCell.h"
 
 @interface iMessage: NSObject
-
 -(id) initIMessageWithName:(NSString *)name
                    message:(NSString *)message
                       time:(NSString *)time
                       type:(NSString *)type;
-
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *userMessage;
 @property (strong, nonatomic) NSString *userTime;
 @property (strong, nonatomic) NSString *messageType;
-
-
-
 @end
 
 @implementation iMessage
-
 -(id) initIMessageWithName:(NSString *)name
                    message:(NSString *)message
                       time:(NSString *)time
@@ -50,7 +42,6 @@
     
     return self;
 }
-
 @end
 
 @interface userChatViewController ()
@@ -61,13 +52,10 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *chatTextViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewBottomConstraint;
-
-
 @property (strong,nonatomic) ChatTableViewCell *chatCell;
-@property (strong,nonnull) NSArray *messageArray;
-
 @property (strong,nonatomic) ContentView *handler;
-
+@property (strong, nonatomic) PFUser *receiver;
+@property (strong, nonatomic) NSString *receiverUsername;
 
 @end
 
@@ -78,7 +66,8 @@
 }
 @synthesize chatCell;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     currentMessages = [[NSMutableArray alloc] init];
@@ -86,12 +75,6 @@
     
     self.chatTable.dataSource = self;
     self.chatTable.delegate = self;
-    
-    /**
-     *  Set settings for Application. They are available in ChatCellSettings class.
-     */
-    
-
     
     [chatCellSettings setSenderBubbleColorHex:@"007AFF"];
     [chatCellSettings setReceiverBubbleColorHex:@"DFDEE5"];
@@ -115,32 +98,24 @@
     self.navigationItem.title = @"AskandLearn Messages";
     
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
-    
-
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatSend"];
-    
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatReceive"];
   
-    
-    
-    
-    //Instantiating custom view that adjusts itself to keyboard show/hide
     self.handler = [[ContentView alloc] initWithTextView:self.chatTextView ChatTextViewHeightConstraint:self.chatTextViewHeightConstraint contentView:self.contentView ContentViewHeightConstraint:self.contentViewHeightConstraint andContentViewBottomConstraint:self.contentViewBottomConstraint];
     
-    //Setting the minimum and maximum number of lines for the textview vertical expansion
     [self.handler updateMinimumNumberOfLines:1 andMaximumNumberOfLine:3];
     
-    //Tap gesture on table view so that when someone taps on it, the keyboard is hidden
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
+    //self.receiver = self;
+    //self.receiverUsername = self;
+    //
     [self.chatTable addGestureRecognizer:gestureRecognizer];
     [self Refresh];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) dismissKeyboard
@@ -154,8 +129,14 @@
     {
         iMessage *sendMessage;
         
+        PFUser *currentUser = [PFUser currentUser];
         
-        sendMessage = [[iMessage alloc] initIMessageWithName:@"Esther Brown" message:self.chatTextView.text time:@"23:14" type:@"self"];
+        NSDate * now = [NSDate date];
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setDateFormat:@"HH:mm"];
+        NSString *newDateString = [outputFormatter stringFromDate:now];
+        
+        sendMessage = [[iMessage alloc] initIMessageWithName:currentUser.username  message:self.chatTextView.text time:newDateString type:@"self"];
         
         [self updateTableView:sendMessage];
         
@@ -168,14 +149,9 @@
         else {
             chatMessage[@"receiver"] = self.matchObj[@"person1"];
         }
-        [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"]];
-//        [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
-//            if (succeeded) {
-//                NSLog(@"The message was saved!");
-//            } else {
-//                NSLog(@"Problem saving message: %@", error.localizedDescription);
-//            }
-//        }];
+        [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"] withTime:newDateString];
+        
+
         self.chatTextView.text = @"";
     }
 }
@@ -186,9 +162,30 @@
     {
         iMessage *receiveMessage;
         
-//        receiveMessage = [[iMessage alloc] initIMessageWithName:MatchCell.us message:self.chatTextView.text time:chatCell.chatTimeLabel.text type:@"other"];
+        PFUser *currentUser = [PFUser currentUser];
+        
+        NSDate * now = [NSDate date];
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setDateFormat:@"HH:mm"];
+        NSString *newDateString = [outputFormatter stringFromDate:now];
+        
+        receiveMessage = [[iMessage alloc] initIMessageWithName:currentUser.username  message:self.chatTextView.text time:newDateString type:@"self"];
         
         [self updateTableView:receiveMessage];
+        
+        PFObject *chatMessage = [PFObject objectWithClassName:@"Messages"];
+        chatMessage[@"text"] = receiveMessage.userMessage;
+        chatMessage[@"sender"] = PFUser.currentUser;
+        if ([[self.matchObj[@"person1"] objectId] isEqualToString:PFUser.currentUser.objectId]){
+            chatMessage[@"receiver"] = self.matchObj[@"person2"];
+        }
+        else {
+            chatMessage[@"receiver"] = self.matchObj[@"person1"];
+        }
+        [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"] withTime:newDateString];
+        
+        
+        self.chatTextView.text = @"";
     }
 }
 
@@ -215,32 +212,7 @@
     }
 }
 
--(void)Refresh
-{
-    //[NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
-    // userInfo:nil repeats:true];
-    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
-    [query includeKey:@"sender"];
-    [query includeKey:@"receiver"];
-    [query includeKey:@"messageText"];
-    [query orderByDescending:@"createdAt"];
-    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-//        if (posts != nil) {
-//            ////make imessage objects from each Messages object in *posts
-//            ///load them into currentMessages
-//            //reloadData
-//            //for (Messages *msg in posts){
-//                //create new iMessage object from p
-//                //[currentMessages addObject:new]
-//            if (posts != nil) {
-//                self.currentMessage = posts;
-//                [self.mytableView reloadData];
-//            } else {
-//                NSLog(@"%@", error.localizedDescription);
-//            }
-//        }];
-}
+
 
 #pragma mark - UITableViewDatasource methods
 
@@ -257,7 +229,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     iMessage *message = [currentMessages objectAtIndex:indexPath.row];
-   MatchCell *matchCell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell" forIndexPath:indexPath];
     
     if([message.messageType isEqualToString:@"self"])
     {
@@ -267,7 +238,7 @@
         
         chatCell.chatMessageLabel.text = message.userMessage;
         
-        matchCell.usernameLabel.text = message.userName;
+        chatCell.chatNameLabel.text = message.userName;
         
         chatCell.chatTimeLabel.text = message.userTime;
         
@@ -283,7 +254,6 @@
         
         
         chatCell.chatMessageLabel.text = message.userMessage;
-        
         
         chatCell.chatNameLabel.text = message.userName;
         
@@ -304,15 +274,12 @@
     iMessage *message = [currentMessages objectAtIndex:indexPath.row];
     
     CGSize size;
-    
     CGSize Namesize;
     CGSize Timesize;
     CGSize Messagesize;
     
     NSArray *fontArray = [[NSArray alloc] init];
     
-    //Get the chal cell font settings. This is to correctly find out the height of each of the cell according to the text written in those cells which change according to their fonts and sizes.
-    //If you want to keep the same font sizes for both sender and receiver cells then remove this code and manually enter the font name with size in Namesize, Messagesize and Timesize.
     if([message.messageType isEqualToString:@"self"])
     {
         fontArray = chatCellSettings.getSenderBubbleFontWithSize;
@@ -322,13 +289,10 @@
         fontArray = chatCellSettings.getReceiverBubbleFontWithSize;
     }
     
-    //Find the required cell height
     Namesize = [@"Name" boundingRectWithSize:CGSizeMake(220.0f, CGFLOAT_MAX)
                                      options:NSStringDrawingUsesLineFragmentOrigin
                                   attributes:@{NSFontAttributeName:fontArray[0]}
                                      context:nil].size;
-    
-    
     
     Messagesize = [message.userMessage boundingRectWithSize:CGSizeMake(220.0f, CGFLOAT_MAX)
                                                     options:NSStringDrawingUsesLineFragmentOrigin
@@ -347,6 +311,40 @@
     return size.height;
 }
 
+-(void)Refresh
+{
+    //[NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
+    // userInfo:nil repeats:true];
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    [query includeKey:@"sender"];
+    [query includeKey:@"receiver"];
+    [query includeKey:@"messageText"];
+    [query orderByDescending:@"createdAt"];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            for (Messages *msg in posts){
+                PFUser *currentUser = [PFUser currentUser];
+                if ([[msg[@"sender"] objectId] isEqualToString:PFUser.currentUser.objectId]){
+                    
+                iMessage *iMsg = [[iMessage alloc] initIMessageWithName:currentUser.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:@"self"];
+                    [self->currentMessages addObject:iMsg];
+                    [self.chatTable reloadData];
+                
+                }else if ([[msg[@"receiver"] objectId] isEqualToString:PFUser.currentUser.objectId]){
+                    
+                    iMessage *iMsg = [[iMessage alloc] initIMessageWithName:currentUser.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:@"self"];
+                    [self->currentMessages addObject:iMsg];
+                    [self.chatTable reloadData];
+                }
+                else {
+                    NSLog(@"%@", error.localizedDescription);
+                }
+            }
+        }
+    }];
+}
+    
 
 
 @end
