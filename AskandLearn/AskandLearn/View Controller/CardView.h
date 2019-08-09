@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)UILabel* profession;
 @property (nonatomic, strong)UITextView* bio;
 
-@property (nonatomic, strong) PFUser *user;
+@property (nonatomic, strong)PFUser *user;
 
 -(void)leftClickAction;
 -(void)rightClickAction;
