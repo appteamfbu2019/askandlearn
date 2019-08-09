@@ -333,6 +333,7 @@
                     [self->currentMessages addObject:iMsg];
                     [self.chatTable reloadData];
                 
+                    
                 }else if ([[msg[@"receiver"] objectId] isEqualToString:PFUser.currentUser.objectId] && [[msg[@"sender"] objectId] isEqualToString:self.person2.objectId]){
                     
                     iMessage *iMsg = [[iMessage alloc] initIMessageWithName:self.person2.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:nil];
