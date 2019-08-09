@@ -1,13 +1,6 @@
 ## AskandLearn
 
-Group Project - README Template
-===
-Esther Brown
-
-Claire Cheng
-
-Alexs Gonzalez
-
+Esther Brown, Claire Cheng, Alexs Gonzalez
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -24,10 +17,10 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Education
-- **Mobile:** Real-time, Convenient tap interface
+- **Mobile:** Real-time, Convenient and fun swipe interface
 - **Story:** Users can get advice on areas of interest. At the same time, users can learn from others/experts in their field.
 - **Market:** Anyone who wants to learn a new skill or wants to share his or her skill.
-- **Habit:** Like the case of many easy-to-use, low-commitment apps which implement a swiping interface, swiping becomes easily addictive. Mentors and learners who have good reviews will receive 'points' that can make them feel validated and influence others to respect their pages. The app will have a 'points system' where members will be classified into groups based on the classified ranges they fall into. High point receivers can be invited to private events as a sort of 'elite club.' These incentives promote frequent and honest usage.
+- **Habit:** Like the case of many easy-to-use, low-commitment apps which implement a swiping interface, swiping becomes easily addictive. Since there is no extra cost to learn from other users, this quality promote frequent and honest usage.
 - **Scope:** The backend does not seem too complicated to implement, although we would need to implement a lot of tabs and features such as instant messaging that may be more difficult to tackle. 
 
 ## Product Spec
@@ -59,21 +52,21 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 
 * Login
    * Username and password
-   * Connect LinkedIn account
+   * Connect Facebook account
 * Swipe Stream
-   * Profiles of people
-   * Tab to access matches + Messaging( tab bar will be at top of page)
-   * Filters that user can instantiate
+   * Profiles of people to swipe through
+   * Calculate "Match Score" to determine likelihood of shared interests
 * Detail
     * User can click on a profile to view more info
 * Messaging/Matches
     * User can view matches
-    * User can messages
+    * User can message matches
 * Profile
-    * User can view their matches, ratings, points, status
+    * User can customize their profile to display
 * Settings
-    * User can logout
-    * User can adjust/filter for the people they want to "discover"
+    * User can Log Out
+    * User can add Tags to show their areas of interest
+    * User can choose to be a Learner, Teacher, or both
 
 ### 3. Navigation
 
@@ -85,18 +78,13 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 
 **Flow Navigation** (Screen to Screen)
 
-* Login
-   * Swipe Stream
-* Swipe Stream
-   * Detail View
+* Login/Signup -> Swipe Stream
+* Matches -> Messages
+* Profile -> Settings -> Add Tags
+* Profile -> Edit Profile
   
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="https://github.com/appteamfbu2019/askandlearn/blob/master/wireframes.png" width=600>
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
 
 ## Schema Objects / Parse Classes
 **User**
