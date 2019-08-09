@@ -480,7 +480,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O0N-0B-VNo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O0N-0B-VNo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -527,16 +527,6 @@
                                     <constraint firstAttribute="bottom" secondItem="zjS-Je-DJW" secondAttribute="bottom" constant="21" id="wIp-Ip-R02"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQl-2U-kOh">
-                                <rect key="frame" x="12" y="764" width="52" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Receive">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="receiveMessage:" destination="Tcw-k6-Ufy" eventType="touchUpInside" id="Y42-KK-CST"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -544,11 +534,7 @@
                             <constraint firstItem="O0N-0B-VNo" firstAttribute="top" secondItem="cNr-fc-ozs" secondAttribute="top" id="8fn-yT-5hV"/>
                             <constraint firstAttribute="trailing" secondItem="O0N-0B-VNo" secondAttribute="trailing" id="S5z-oI-kzU"/>
                             <constraint firstItem="UTO-5X-tk5" firstAttribute="top" secondItem="yyb-jZ-A7U" secondAttribute="top" constant="667" id="T6V-jU-Kro"/>
-                            <constraint firstItem="yyb-jZ-A7U" firstAttribute="bottom" secondItem="cQl-2U-kOh" secondAttribute="bottom" constant="20" id="WIy-wY-cF3"/>
-                            <constraint firstItem="cQl-2U-kOh" firstAttribute="leading" secondItem="yyb-jZ-A7U" secondAttribute="leading" constant="12" id="d2z-Qg-edg"/>
-                            <constraint firstItem="cQl-2U-kOh" firstAttribute="top" secondItem="O0N-0B-VNo" secondAttribute="bottom" constant="8" symbolic="YES" id="gRA-4S-Iuz"/>
                             <constraint firstItem="UTO-5X-tk5" firstAttribute="bottom" secondItem="yyb-jZ-A7U" secondAttribute="bottom" id="h2h-hd-sUg"/>
-                            <constraint firstItem="yyb-jZ-A7U" firstAttribute="trailing" secondItem="cQl-2U-kOh" secondAttribute="trailing" constant="350" id="k4m-d8-3Ik"/>
                             <constraint firstItem="O0N-0B-VNo" firstAttribute="leading" secondItem="cNr-fc-ozs" secondAttribute="leading" id="wRT-AL-LbE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yyb-jZ-A7U"/>
@@ -1113,7 +1099,6 @@
         <image name="defaultUser" width="14" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jaY-jw-gxx"/>
         <segue reference="6LP-DX-1Sj"/>
         <segue reference="t3H-Qx-f4i"/>
         <segue reference="Qm0-1o-5zo"/>
