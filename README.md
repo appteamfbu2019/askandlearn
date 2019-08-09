@@ -98,32 +98,48 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 
 ### [BONUS] Interactive Prototype
 
-## Schema Objects
+## Schema Objects / Parse Classes
 **User**
-* email
-* Username
-* Password
-* Name
-* ProfileImage
-* Age
-* JobTitle
-* Bio
-* Facebook
+* email (NSString)
+* Username (NSString)
+* Password (NSString)
+
+**Action**
+* receivedLike (PFUser)
+* receivedDislike (PFUser)
+* sender (PFUser)
+* sentLike (PFUser)
+* sentDislike (PFUser)
+
+**Switch**
+* user (PFUser)
+* isLearner (BOOL)
+* isTeacher (BOOL)
+
+**Tags**
+* user (PFUser)
+* tags (NSDictionary) (Dictionary with name of tag and unique identifier of tag)
+* status (NSString) (adding or removing tag)
+
+**Profile**
+* name (NSString)
+* major (NSString)
+* profession (NSString)
+* user (NSString)
+* profilepic (UIImage)
+* backgroundpic (UIImage)
 
 **Message**
-* sender user
-* receiving user
-* message text
-* message timestamp
+* sender (PFUser)
+* receiver (PFUser)
+* messageText (NSString)
+* timeNow (NSString)
 
-**Matches**
-* user
+**Matches** 
+* person1 (PFUser)
+* person2 (PFUser)
 
-### Models
-[Add table of models]
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Using Facebook API for login
 
 
