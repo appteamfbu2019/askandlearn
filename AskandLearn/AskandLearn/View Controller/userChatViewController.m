@@ -108,6 +108,7 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     //self.receiver = self;
     //self.receiverUsername = self;
+    //
     [self.chatTable addGestureRecognizer:gestureRecognizer];
     [self Refresh];
 }
