@@ -100,7 +100,7 @@
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatSend"];
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatReceive"];
-  
+    
     self.handler = [[ContentView alloc] initWithTextView:self.chatTextView ChatTextViewHeightConstraint:self.chatTextViewHeightConstraint contentView:self.contentView ContentViewHeightConstraint:self.contentViewHeightConstraint andContentViewBottomConstraint:self.contentViewBottomConstraint];
     
     [self.handler updateMinimumNumberOfLines:1 andMaximumNumberOfLine:3];
@@ -144,10 +144,10 @@
         chatMessage[@"text"] = sendMessage.userMessage;
         chatMessage[@"sender"] = PFUser.currentUser;
         chatMessage[@"receiver"] = self.person2;
-
+        
         [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"] withTime:newDateString];
         
-
+        
         self.chatTextView.text = @"";
     }
 }
@@ -157,8 +157,8 @@
     if([self.chatTextView.text length]!=0)
     {
         
-      //chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MatchCell"]
-//        iMessage *receiveMessage;
+        //chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MatchCell"]
+        //        iMessage *receiveMessage;
         iMessage *receiveMessage;
         
         NSDate * now = [NSDate date];
@@ -216,6 +216,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"current MEssages %lu", currentMessages.count);
     return currentMessages.count;
 }
 
@@ -234,7 +235,7 @@
     
     if ([message.userName isEqualToString:PFUser.currentUser.username])//([message.messageType isEqualToString:@"self"])
     {
-        
+        NSLog(@"HIIIIII");
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatSend"];
         
         
@@ -315,24 +316,24 @@
 
 -(void)Refresh
 {
-    //[NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
-    // userInfo:nil repeats:true];
+//    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
+//     userInfo:nil repeats:true];
     PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
     [query includeKey:@"sender"];
     [query includeKey:@"receiver"];
     [query includeKey:@"messageText"];
     [query orderByAscending:@"createdAt"];
-
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             for (Messages *msg in posts){
                 PFUser *currentUser = [PFUser currentUser];
                 if ([[msg[@"sender"] objectId] isEqualToString:PFUser.currentUser.objectId] && [[msg[@"receiver"] objectId] isEqualToString:self.person2.objectId]){
                     
-                iMessage *iMsg = [[iMessage alloc] initIMessageWithName:currentUser.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:@"self"];
+                    iMessage *iMsg = [[iMessage alloc] initIMessageWithName:currentUser.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:@"self"];
                     [self->currentMessages addObject:iMsg];
                     [self.chatTable reloadData];
-                
+                    
                     
                 }else if ([[msg[@"receiver"] objectId] isEqualToString:PFUser.currentUser.objectId] && [[msg[@"sender"] objectId] isEqualToString:self.person2.objectId]){
                     
@@ -347,7 +348,6 @@
         }
     }];
 }
-    
 
 
 @end

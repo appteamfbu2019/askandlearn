@@ -480,12 +480,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O0N-0B-VNo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="O0N-0B-VNo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="cNr-fc-ozs" id="awY-gX-uce"/>
-                                    <outlet property="delegate" destination="cNr-fc-ozs" id="pfk-Nm-fs3"/>
+                                    <outlet property="dataSource" destination="Tcw-k6-Ufy" id="kl2-1N-YKu"/>
+                                    <outlet property="delegate" destination="Tcw-k6-Ufy" id="wvU-9N-XJs"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTO-5X-tk5" customClass="iContentView">
@@ -532,9 +532,11 @@
                         <constraints>
                             <constraint firstItem="O0N-0B-VNo" firstAttribute="leading" secondItem="UTO-5X-tk5" secondAttribute="leading" id="5UZ-kl-AFg"/>
                             <constraint firstItem="O0N-0B-VNo" firstAttribute="top" secondItem="cNr-fc-ozs" secondAttribute="top" id="8fn-yT-5hV"/>
+                            <constraint firstItem="O0N-0B-VNo" firstAttribute="top" secondItem="cNr-fc-ozs" secondAttribute="top" id="ACz-5l-l9C"/>
                             <constraint firstAttribute="trailing" secondItem="O0N-0B-VNo" secondAttribute="trailing" id="S5z-oI-kzU"/>
                             <constraint firstItem="UTO-5X-tk5" firstAttribute="top" secondItem="yyb-jZ-A7U" secondAttribute="top" constant="667" id="T6V-jU-Kro"/>
                             <constraint firstItem="UTO-5X-tk5" firstAttribute="bottom" secondItem="yyb-jZ-A7U" secondAttribute="bottom" id="h2h-hd-sUg"/>
+                            <constraint firstItem="yyb-jZ-A7U" firstAttribute="bottom" secondItem="O0N-0B-VNo" secondAttribute="bottom" constant="57" id="mze-tw-AzU"/>
                             <constraint firstItem="O0N-0B-VNo" firstAttribute="leading" secondItem="cNr-fc-ozs" secondAttribute="leading" id="wRT-AL-LbE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yyb-jZ-A7U"/>
