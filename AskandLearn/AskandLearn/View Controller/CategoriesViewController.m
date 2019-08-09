@@ -35,6 +35,9 @@ static const NSString *idKey = @"Identifier";
     self.tableView.dataSource = self;
     self.tableView.userInteractionEnabled = YES;
     self.tableView.scrollEnabled = YES;
+    self.tableView.alpha = 0.8;
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"london.jpg"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

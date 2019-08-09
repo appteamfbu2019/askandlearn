@@ -35,7 +35,7 @@
     [self getSwitchValues];
     [self retrieveTags];
     self.numberOfTags = 0;
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"brooklyn.jpg"]];
 }
 
 -(void)getSwitchValues{

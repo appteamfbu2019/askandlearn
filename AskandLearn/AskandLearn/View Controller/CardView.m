@@ -35,34 +35,66 @@
 @synthesize name;
 @synthesize major;
 @synthesize profession;
-@synthesize score;
+@synthesize bio;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
-        name = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, self.frame.size.width, 100)];
+        name = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, self.frame.size.width, 100)];
         name.text = @"no info given";
         [name setTextAlignment:NSTextAlignmentCenter];
+        name.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         name.textColor = [UIColor whiteColor];
         
-        major = [[UILabel alloc]initWithFrame:CGRectMake(0, 80, self.frame.size.width, 100)];
+        major = [[UILabel alloc]initWithFrame:CGRectMake(0, 140, self.frame.size.width, 100)];
         major.text = @"Major:";
         [major setTextAlignment:NSTextAlignmentCenter];
+        major.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         major.textColor = [UIColor whiteColor];
         
-        profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, self.frame.size.width, 100)];
+        profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 170, self.frame.size.width, 100)];
         profession.text = @"Profession:";
         [profession setTextAlignment:NSTextAlignmentCenter];
+        profession.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         profession.textColor = [UIColor whiteColor];
         
-        score = [[UILabel alloc]initWithFrame:CGRectMake(0, 140, self.frame.size.width, 100)];
-        score.text = @"Match Score:";
-        [score setTextAlignment:NSTextAlignmentCenter];
-        score.textColor = [UIColor whiteColor];
+        bio = [[UITextView alloc]initWithFrame:CGRectMake((self.frame.size.width-70)/2 - 65, self.frame.size.height/2 - 100, 200, 80)];
+        bio.text = @"Bio:";
+        [bio setTextAlignment:NSTextAlignmentCenter];
+        bio.backgroundColor = [UIColor clearColor];
+        bio.font = [UIFont fontWithName:@"Avenir-Light" size:16];
+        bio.textColor = [UIColor whiteColor];
         
-        self.backgroundColor = [UIColor colorWithRed:.9294 green:.6039 blue:.8353 alpha:1];;
+        //button for calculate score
+        UIButton *mainButton = [UIButton new];
+        mainButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        mainButton.center = CGPointMake((self.frame.size.width-70)/2 - 20, self.frame.size.height/2 + 30);
+        [mainButton setTitle:@"Calculate Score" forState:UIControlStateNormal];
+        [mainButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [mainButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
+        mainButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:15];
+        [mainButton sizeToFit];
+        mainButton.backgroundColor = [UIColor whiteColor];
+        [mainButton addTarget:self action:@selector(calculateScoreTap:) forControlEvents:UIControlEventTouchUpInside];
+        
+        //loading background images
+        NSArray *photoArray = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:nil];
+        NSMutableArray *imgs = [[NSMutableArray alloc]initWithCapacity:photoArray.count];
+        for (NSString *path in photoArray){
+            [imgs addObject:[UIImage imageWithContentsOfFile:path]];
+        }
+        //randomly picking an image for card background
+        uint32_t rnd = arc4random_uniform((int)[imgs count]);
+        UIImage *randomImage = [imgs objectAtIndex:rnd];
+
+        UIGraphicsBeginImageContext(self.frame.size);
+        [randomImage drawInRect:self.bounds blendMode:kCGBlendModeMultiply alpha:0.9];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.backgroundColor = [UIColor colorWithPatternImage:image];
+        
         
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
@@ -70,7 +102,8 @@
         [self addSubview:name];
         [self addSubview:major];
         [self addSubview:profession];
-        [self addSubview:score];
+        [self addSubview:mainButton];
+        [self addSubview:bio];
         
     }
     return self;

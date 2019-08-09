@@ -50,15 +50,18 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         [super layoutSubviews];
         [self setupView];
         exampleCardLabels = [[NSMutableArray alloc] init];
-        
-//        PFQuery *query1 = [PFUser query];
-//        [query1 whereKey:@"username" notEqualTo:PFUser.currentUser.username];
-//        self.cards = (NSMutableArray *)[query1 findObjects];
         [self loadAllProfiles];
-        
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
-        NSLog(@"fetching users");
+        
+        UITextView *warning = [[UITextView alloc]initWithFrame:CGRectMake(140, 140, self.frame.size.width/2, 150)];
+        warning.backgroundColor = [UIColor clearColor];
+        warning.text = @"Wow, you've swiped through all the cards! Come back later and check if new people have joined :)";
+        [warning setTextAlignment:NSTextAlignmentCenter];
+        warning.center = self.center;
+        warning.textColor = [UIColor blackColor];
+        warning.font = [UIFont fontWithName:@"Helvetica" size:17 ];
+        [self addSubview:warning];
     }
     return self;
 }
@@ -77,10 +80,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         if (profiles != nil){
             self.cards = (NSMutableArray *)profiles;
             for (PFObject *card in self.cards){
-                NSLog(@"%@", card[@"user"]);
                 if ([[card[@"user"] objectId] isEqualToString:PFUser.currentUser.objectId]){
-                    NSLog(@"%@", card[@"user"][@"objectId"]);
-                    NSLog(@"removing: %@", card);
                     [self.cards removeObject:card];
                     break;
                 }
@@ -139,11 +139,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     
     PFObject *temp = self.cards[index];
-    draggableView.name.text = temp[@"name"];
-    draggableView.major.text = temp[@"major"];
-    draggableView.profession.text = temp[@"profession"];
-    [self retrieveTags:temp[@"user"]];
-    
+    draggableView.name.text = [NSString stringWithFormat:@"Name: %@", temp[@"name"]];
+    draggableView.major.text = [NSString stringWithFormat:@"Major: %@", temp[@"major"]];
+    draggableView.profession.text = [NSString stringWithFormat:@"Profession: %@", temp[@"profession"]];
+    draggableView.user = temp[@"user"];
     draggableView.delegate = self;
     return draggableView;
 }
@@ -154,11 +153,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 {
     if([self.cards count] > 0) {
         NSInteger numLoadedCardsCap =(([self.cards count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[self.cards count]);
-        
         for (int i = 0; i<[self.cards count]; i++) {
             CardView* newCard = [self createDraggableViewWithDataAtIndex:i];
             [allCards addObject:newCard];
-            
             if (i<numLoadedCardsCap) {
                 //%%% adds a small number of cards to be loaded
                 [loadedCards addObject:newCard];
@@ -176,6 +173,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 }
 
 -(void)retrieveTags: (PFUser *)user{
+    __block NSMutableArray *ownTags = [[NSMutableArray alloc]init];
+    __block NSMutableArray *otherTags = [[NSMutableArray alloc]init];
     PFQuery *query = [PFQuery queryWithClassName:@"Tags"];
     [query includeKey:@"user"];
     [query includeKey:@"tags"];
@@ -196,7 +195,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 }
 
 -(void)reloadData {
-    
     PFQuery *query = [PFQuery queryWithClassName:@"Action"];
     [query includeKey:@"receiver"];
     [query includeKey:@"sender"];
@@ -204,7 +202,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     [query findObjectsInBackgroundWithBlock:^(NSArray *actions, NSError *error){
         if (actions != nil) {
             self.actions = actions;
-            NSLog(@"actions %@", actions);
             NSMutableArray *discard = [[NSMutableArray alloc]init];
             for (Action *act in self.actions){
                 if ([act.receivedDislike.objectId isEqualToString:PFUser.currentUser.objectId]){
@@ -214,19 +211,15 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
                     [discard addObject:act.receiver];
                 }
             }
-            NSLog(@"discard %@", discard);
             for (PFUser *user in discard){
-                
                 for (PFObject *card in self.cards){
                     if ([[card[@"user"] objectId] isEqualToString:user.objectId]){
-                        NSLog(@"removing %@", card);
                         [self.cards removeObject:card];
                         break;
                     }
                 }
             }
             if ([self.cards count] == (NSUInteger)0){
-                NSLog(@"exhausted all options");
                 [self->delegate outOfCards];
             }
             self->cardsLoadedIndex = 0;
@@ -239,11 +232,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     
 }
 
--(void)cardSwipedLeft:(UIView *)card;
-{
+-(void)cardSwipedLeft:(UIView *)card{
     PFObject *currentCard = self.cards[0];
     [Action dislikeAction:PFUser.currentUser withUser:currentCard[@"user"]];
-    
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
@@ -253,13 +244,11 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     }
     [self.cards removeObject:currentCard];
     if ([self.cards count] == (NSUInteger)0){
-        NSLog(@"exhausted all options");
         [delegate outOfCards];
     }
 }
 
--(void)cardSwipedRight:(UIView *)card
-{
+-(void)cardSwipedRight:(UIView *)card{
     PFObject *currentCard = self.cards[0];
     [Action likeAction:PFUser.currentUser withUser:currentCard[@"user"]];
     
@@ -272,16 +261,11 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     [query findObjectsInBackgroundWithBlock:^(NSArray *like, NSError *error) {
         if (like.count != 0 && like != nil){
             [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
-            NSLog(@"MATCH formed!!!");
             [self->delegate alertPopUp:like[0][@"sender"]];
-        }
-        else{
-            NSLog(@"no Match formed");
         }
     }];
     
     [self.cards removeObjectAtIndex:0];
-    
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
     
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
@@ -291,19 +275,16 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     }
     
     if ([self.cards count] == (NSUInteger)0){
-        NSLog(@"exhausted all options");
         [delegate outOfCards];
     }
 }
 
--(void)swipeRight
-{
+-(void)swipeRight {
     CardView *dragView = [loadedCards firstObject];
     [dragView rightClickAction];
 }
 
--(void)swipeLeft
-{
+-(void)swipeLeft{
     CardView *dragView = [loadedCards firstObject];
     [dragView leftClickAction];
 }
