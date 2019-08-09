@@ -13,5 +13,7 @@
 @interface userChatViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (strong, nonatomic) Match *matchObj;
+@property (strong, nonatomic) PFUser *person1;
+@property (strong, nonatomic) PFUser *person2;
 
 @end

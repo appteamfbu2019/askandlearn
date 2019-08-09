@@ -143,12 +143,8 @@
         PFObject *chatMessage = [PFObject objectWithClassName:@"Messages"];
         chatMessage[@"text"] = sendMessage.userMessage;
         chatMessage[@"sender"] = PFUser.currentUser;
-        if ([[self.matchObj[@"person1"] objectId] isEqualToString:PFUser.currentUser.objectId]){
-            chatMessage[@"receiver"] = self.matchObj[@"person2"];
-        }
-        else {
-            chatMessage[@"receiver"] = self.matchObj[@"person1"];
-        }
+        chatMessage[@"receiver"] = self.person2;
+
         [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"] withTime:newDateString];
         
 
@@ -160,28 +156,25 @@
 {
     if([self.chatTextView.text length]!=0)
     {
-        iMessage *receiveMessage;
         
-        PFUser *currentUser = [PFUser currentUser];
+      //chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MatchCell"]
+//        iMessage *receiveMessage;
+        iMessage *receiveMessage;
         
         NSDate * now = [NSDate date];
         NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
         [outputFormatter setDateFormat:@"HH:mm"];
         NSString *newDateString = [outputFormatter stringFromDate:now];
         
-        receiveMessage = [[iMessage alloc] initIMessageWithName:currentUser.username  message:self.chatTextView.text time:newDateString type:@"self"];
+        receiveMessage = [[iMessage alloc] initIMessageWithName:self.person2[@"username"] message:self.chatTextView.text time:newDateString type:@"other"];
         
         [self updateTableView:receiveMessage];
         
         PFObject *chatMessage = [PFObject objectWithClassName:@"Messages"];
         chatMessage[@"text"] = receiveMessage.userMessage;
-        chatMessage[@"sender"] = PFUser.currentUser;
-        if ([[self.matchObj[@"person1"] objectId] isEqualToString:PFUser.currentUser.objectId]){
-            chatMessage[@"receiver"] = self.matchObj[@"person2"];
-        }
-        else {
-            chatMessage[@"receiver"] = self.matchObj[@"person1"];
-        }
+        chatMessage[@"receiver"] = PFUser.currentUser;
+        chatMessage[@"sender"] = self.person2;
+        
         [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"] withTime:newDateString];
         
         
@@ -229,8 +222,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     iMessage *message = [currentMessages objectAtIndex:indexPath.row];
+    NSLog(@"message username %@", message.userName);
+    if ([message.userName isEqualToString:PFUser.currentUser.username]){
+        message.messageType = @"self";
+    }
+    else{
+        message.messageType = @"HELLO";
+    }
     
-    if([message.messageType isEqualToString:@"self"])
+    NSLog(@"messageTYpe %@", message.messageType);
+    
+    if ([message.userName isEqualToString:PFUser.currentUser.username])//([message.messageType isEqualToString:@"self"])
     {
         
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatSend"];
@@ -249,7 +251,7 @@
     }
     else
     {
-       
+        NSLog(@"HI");
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatReceive"];
         
         
@@ -319,21 +321,22 @@
     [query includeKey:@"sender"];
     [query includeKey:@"receiver"];
     [query includeKey:@"messageText"];
-    [query orderByDescending:@"createdAt"];
+    [query orderByAscending:@"createdAt"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             for (Messages *msg in posts){
                 PFUser *currentUser = [PFUser currentUser];
-                if ([[msg[@"sender"] objectId] isEqualToString:PFUser.currentUser.objectId]){
+                if ([[msg[@"sender"] objectId] isEqualToString:PFUser.currentUser.objectId] && [[msg[@"receiver"] objectId] isEqualToString:self.person2.objectId]){
                     
                 iMessage *iMsg = [[iMessage alloc] initIMessageWithName:currentUser.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:@"self"];
                     [self->currentMessages addObject:iMsg];
                     [self.chatTable reloadData];
                 
-                }else if ([[msg[@"receiver"] objectId] isEqualToString:PFUser.currentUser.objectId]){
                     
-                    iMessage *iMsg = [[iMessage alloc] initIMessageWithName:currentUser.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:@"self"];
+                }else if ([[msg[@"receiver"] objectId] isEqualToString:PFUser.currentUser.objectId] && [[msg[@"sender"] objectId] isEqualToString:self.person2.objectId]){
+                    
+                    iMessage *iMsg = [[iMessage alloc] initIMessageWithName:self.person2.username  message:msg[@"messageText"] time:msg[@"timeNow"] type:nil];
                     [self->currentMessages addObject:iMsg];
                     [self.chatTable reloadData];
                 }
