@@ -51,6 +51,13 @@
 		FE27435E22FCF64A00AD4D9C /* shanghai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27435122FCF64A00AD4D9C /* shanghai.jpg */; };
 		FE27435F22FCF64A00AD4D9C /* nyc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27435222FCF64A00AD4D9C /* nyc.jpg */; };
 		FE27436022FCF64A00AD4D9C /* nyc2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27435322FCF64A00AD4D9C /* nyc2.jpg */; };
+		FE27436222FDEA6600AD4D9C /* london.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27436122FDEA6600AD4D9C /* london.jpg */; };
+		FE27436422FDEA7D00AD4D9C /* london2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27436322FDEA7D00AD4D9C /* london2.jpg */; };
+		FE27436622FDEAB400AD4D9C /* paris2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27436522FDEAB400AD4D9C /* paris2.jpg */; };
+		FE27436822FDEADF00AD4D9C /* nyc3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27436722FDEADF00AD4D9C /* nyc3.jpg */; };
+		FE27436A22FDEB2900AD4D9C /* lasvegas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27436922FDEB2900AD4D9C /* lasvegas.jpg */; };
+		FE27436C22FDEB9200AD4D9C /* austin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27436B22FDEB9200AD4D9C /* austin.jpg */; };
+		FE27436E22FDEBB100AD4D9C /* brooklyn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE27436D22FDEBB100AD4D9C /* brooklyn.jpg */; };
 		FE564A1322DFECC500192A43 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE564A1222DFECC500192A43 /* LoginViewController.m */; };
 		FE62247822F9F9FF003FF5C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62247722F9F9FF003FF5C4 /* ViewController.m */; };
 		FE62247B22FA200A003FF5C4 /* Switch.m in Sources */ = {isa = PBXBuildFile; fileRef = FE62247A22FA200A003FF5C4 /* Switch.m */; };
@@ -194,6 +201,13 @@
 		FE27435122FCF64A00AD4D9C /* shanghai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shanghai.jpg; path = ../../../../../../Downloads/backgroundimgs/shanghai.jpg; sourceTree = "<group>"; };
 		FE27435222FCF64A00AD4D9C /* nyc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nyc.jpg; path = ../../../../../../Downloads/backgroundimgs/nyc.jpg; sourceTree = "<group>"; };
 		FE27435322FCF64A00AD4D9C /* nyc2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nyc2.jpg; path = ../../../../../../Downloads/backgroundimgs/nyc2.jpg; sourceTree = "<group>"; };
+		FE27436122FDEA6600AD4D9C /* london.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = london.jpg; path = ../../../../../../Downloads/london.jpg; sourceTree = "<group>"; };
+		FE27436322FDEA7D00AD4D9C /* london2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = london2.jpg; path = ../../../../../../Downloads/london2.jpg; sourceTree = "<group>"; };
+		FE27436522FDEAB400AD4D9C /* paris2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = paris2.jpg; path = ../../../../../../Downloads/paris2.jpg; sourceTree = "<group>"; };
+		FE27436722FDEADF00AD4D9C /* nyc3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = nyc3.jpg; path = ../../../../../../Downloads/nyc3.jpg; sourceTree = "<group>"; };
+		FE27436922FDEB2900AD4D9C /* lasvegas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lasvegas.jpg; path = ../../../../../../Downloads/lasvegas.jpg; sourceTree = "<group>"; };
+		FE27436B22FDEB9200AD4D9C /* austin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = austin.jpg; path = ../../../../../../Downloads/austin.jpg; sourceTree = "<group>"; };
+		FE27436D22FDEBB100AD4D9C /* brooklyn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = brooklyn.jpg; path = ../../../../../../Downloads/brooklyn.jpg; sourceTree = "<group>"; };
 		FE564A1222DFECC500192A43 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FE62247722F9F9FF003FF5C4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FE62247922FA200A003FF5C4 /* Switch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Switch.h; sourceTree = "<group>"; };
@@ -492,12 +506,19 @@
 			isa = PBXGroup;
 			children = (
 				FE27434F22FCF64A00AD4D9C /* amsterdamnight.jpg */,
+				FE27436B22FDEB9200AD4D9C /* austin.jpg */,
 				FE27434C22FCF64A00AD4D9C /* boston.jpg */,
 				FE27434E22FCF64A00AD4D9C /* dubainight.jpeg */,
+				FE27436122FDEA6600AD4D9C /* london.jpg */,
+				FE27436322FDEA7D00AD4D9C /* london2.jpg */,
 				FE27434822FCF64900AD4D9C /* hong kong.jpg */,
 				FE27435222FCF64A00AD4D9C /* nyc.jpg */,
 				FE27435322FCF64A00AD4D9C /* nyc2.jpg */,
+				FE27436722FDEADF00AD4D9C /* nyc3.jpg */,
+				FE27436D22FDEBB100AD4D9C /* brooklyn.jpg */,
+				FE27436922FDEB2900AD4D9C /* lasvegas.jpg */,
 				FE27434922FCF64900AD4D9C /* paris.jpg */,
+				FE27436522FDEAB400AD4D9C /* paris2.jpg */,
 				FE27435022FCF64A00AD4D9C /* seattle.jpg */,
 				FE27434B22FCF64A00AD4D9C /* seoul.jpg */,
 				FE27435122FCF64A00AD4D9C /* shanghai.jpg */,
@@ -624,14 +645,21 @@
 				FE27435722FCF64A00AD4D9C /* singapore.jpg in Resources */,
 				FE27436022FCF64A00AD4D9C /* nyc2.jpg in Resources */,
 				AB025C9422F8F17400319DD8 /* ChatSendCell.xib in Resources */,
+				FE27436222FDEA6600AD4D9C /* london.jpg in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
+				FE27436822FDEADF00AD4D9C /* nyc3.jpg in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
 				FE27435822FCF64A00AD4D9C /* seoul.jpg in Resources */,
 				FE27435A22FCF64A00AD4D9C /* taipei.jpg in Resources */,
 				FEA7902222F8F10300FC70EF /* CategoryList.plist in Resources */,
+				FE27436422FDEA7D00AD4D9C /* london2.jpg in Resources */,
 				FE27435922FCF64A00AD4D9C /* boston.jpg in Resources */,
 				FE27435E22FCF64A00AD4D9C /* shanghai.jpg in Resources */,
+				FE27436622FDEAB400AD4D9C /* paris2.jpg in Resources */,
+				FE27436C22FDEB9200AD4D9C /* austin.jpg in Resources */,
 				AB50E25022DD0617006097DB /* Main.storyboard in Resources */,
+				FE27436A22FDEB2900AD4D9C /* lasvegas.jpg in Resources */,
+				FE27436E22FDEBB100AD4D9C /* brooklyn.jpg in Resources */,
 				FE27435D22FCF64A00AD4D9C /* seattle.jpg in Resources */,
 				FE27435422FCF64A00AD4D9C /* tokyo.jpg in Resources */,
 				FE27435522FCF64A00AD4D9C /* hong kong.jpg in Resources */,
