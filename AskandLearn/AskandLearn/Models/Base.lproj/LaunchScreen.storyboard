@@ -18,19 +18,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sign-in-Large---Active" translatesAutoresizingMaskIntoConstraints="NO" id="yJF-AU-BKd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sign-in-Large---Active" translatesAutoresizingMaskIntoConstraints="NO" id="yJF-AU-BKd">
                                 <rect key="frame" x="69" y="199" width="277" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="267" id="YRT-Y9-Lya"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0Y-ab-6Pd">
-                                <rect key="frame" x="145" y="512" width="125" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0Y-ab-6Pd">
+                                <rect key="frame" x="69" y="512" width="277" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="dsD-wN-13v"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yJF-AU-BKd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4Tp-Wh-8VQ"/>
+                            <constraint firstItem="H0Y-ab-6Pd" firstAttribute="top" secondItem="yJF-AU-BKd" secondAttribute="bottom" constant="46" id="8ri-YH-kvD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H0Y-ab-6Pd" secondAttribute="trailing" constant="68" id="BDk-yQ-kA6"/>
+                            <constraint firstItem="H0Y-ab-6Pd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="Cqr-vH-Ygn"/>
+                            <constraint firstItem="yJF-AU-BKd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="NVb-sC-lej"/>
+                            <constraint firstItem="yJF-AU-BKd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="155" id="NtP-ln-yfQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yJF-AU-BKd" secondAttribute="trailing" constant="68" id="eAH-4Y-BR0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

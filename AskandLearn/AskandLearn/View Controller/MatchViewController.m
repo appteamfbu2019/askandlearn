@@ -22,6 +22,7 @@
     [super viewDidLoad];
     self.mytableView.dataSource = self;
     self.mytableView.rowHeight = UITableViewAutomaticDimension;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nyc3.jpg"]];
     [self Refresh];
 }
 
