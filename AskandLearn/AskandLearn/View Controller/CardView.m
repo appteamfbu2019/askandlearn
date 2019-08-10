@@ -43,6 +43,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupView];
+//        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:self
+//                                                                   attribute:NSLayoutAttributeLeading
+//                                                                   relatedBy:NSLayoutRelationEqual
+//                                                                      toItem:nil
+//                                                                   attribute:NSLayoutAttributeLeft
+//                                                                  multiplier:1.0
+//                                                                    constant:8.0];
         
         profPic = [[UIImageView alloc]initWithFrame:CGRectMake((self.frame.size.width)/2 - 25, 70, 60, 60)];
         

@@ -10,7 +10,7 @@
 #import "ProfileEditViewController.h"
 #import "Profile.h"
 
-@interface ProfileViewController () <UITextViewDelegate>
+@interface ProfileViewController () <UITextViewDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
@@ -25,7 +25,7 @@
     [self performSegueWithIdentifier:@"EditSegue" sender:nil];
 }
 
-- (IBAction)didTapScreen:(id)sender {
+- (IBAction)didTapRefresh:(id)sender {
     [self getProfile];
     [self.view setNeedsLayout];
 }
@@ -36,18 +36,25 @@
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"user"];
     query.limit = 1;
-    NSLog(@"%@", [[PFUser currentUser] objectId]);
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if(objects){
+        if([objects count] != 0){
             Profile *profile = objects[0];
-            NSLog(@"PROFILE %@", profile);
-            self.nameBox.text = profile[@"name"];
-            self.professionBox.text = profile[@"profession"];
-            self.majorBox.text = profile[@"major"];
-            self.bioBox.text = profile[@"bio"];
-            NSLog(@"%@", profile[@"profilePic"]);
+            self.nameBox.text = [NSString stringWithFormat:@"Name: %@", profile[@"name"]];
+            self.professionBox.text = [NSString stringWithFormat:@"Profession: %@", profile[@"profession"]];
+            self.majorBox.text = [NSString stringWithFormat: @"Major: %@", profile[@"major"]];
+            self.bioBox.text = [NSString stringWithFormat: @"Bio: %@", profile[@"bio"]];
             [self getUIImageFromPic:profile[@"profilePic"]];
             [self getUIImageFromImage:profile[@"backgroundPic"]];
+        }
+        else {
+            UIAlertController *alert = [UIAlertController
+                                        alertControllerWithTitle:@"You haven't set a profile yet." message: @"Set a profile using the button on the upper left!" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion: nil];
         }
     }];
 }
