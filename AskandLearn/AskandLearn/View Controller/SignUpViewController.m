@@ -26,7 +26,6 @@
 @end
 
 @implementation SignUpViewController
-@synthesize fbLoginButtonView;
 
 - (void)viewDidLoad
 {
@@ -34,7 +33,7 @@
     
     FBSDKLoginButton *loginButton= [[FBSDKLoginButton alloc] init];
     loginButton.delegate= self;
-    loginButton.center = fbLoginButtonView.center;
+    loginButton.center = CGPointMake(self.view.center.x, self.view.center.y + 180);
     loginButton.permissions = @[@"public_profile", @"email"];
     [self.view addSubview:loginButton];
 }

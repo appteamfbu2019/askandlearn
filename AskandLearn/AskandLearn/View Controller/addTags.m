@@ -41,7 +41,6 @@ static NSString *idKey = @"Identifier";
 {
     [super viewDidLoad];
     self.tokenInputView.inputViewDelegate = self;
-    self.title = @"Token Input View";
 }
 
 - (void)didReceiveMemoryWarning {

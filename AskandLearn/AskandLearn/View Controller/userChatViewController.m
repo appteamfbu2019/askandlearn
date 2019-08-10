@@ -95,7 +95,7 @@
     [chatCellSettings senderBubbleTailRequired:YES];
     [chatCellSettings receiverBubbleTailRequired:YES];
     
-    self.navigationItem.title = @"AskandLearn Messages";
+    //self.navigationItem.title = @"AskandLearn Messages";
     
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatSend"];
