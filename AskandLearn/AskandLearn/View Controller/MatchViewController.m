@@ -21,6 +21,7 @@
 {
     [super viewDidLoad];
     self.mytableView.dataSource = self;
+    self.mytableView.delegate = self;
     self.mytableView.rowHeight = UITableViewAutomaticDimension;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nyc3.jpg"]];
     [self Refresh];
@@ -97,6 +98,11 @@
     return self.matchArray.count;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"YUP");
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     
@@ -127,6 +133,8 @@
         NSArray *temp2 = [query2 findObjects];
         chatController.person2 = temp2[0];//temp2[0][@"username"];
         NSLog(@"hello?");
+        
+        
     }
 }
 @end

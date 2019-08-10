@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)cardSwipedLeft:(UIView *)card;
 -(void)cardSwipedRight:(UIView *)card;
+-(void)retrieveTags: (PFUser *)user;
 
 @end
 

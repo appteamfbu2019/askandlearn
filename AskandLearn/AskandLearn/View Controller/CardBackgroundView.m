@@ -180,25 +180,42 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 }
 
 -(void)retrieveTags: (PFUser *)user{
+    NSLog(@"user is: %@", user);
     __block NSMutableArray *ownTags = [[NSMutableArray alloc]init];
     __block NSMutableArray *otherTags = [[NSMutableArray alloc]init];
     PFQuery *query = [PFQuery queryWithClassName:@"Tags"];
     [query includeKey:@"user"];
     [query includeKey:@"tags"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *tagObjects, NSError *error) {
-        NSMutableArray *cardTags = [[NSMutableArray alloc]init];
         if (tagObjects != nil){
             for (Tags *tagObj in tagObjects){
                 if ([tagObj.user.objectId isEqualToString:user.objectId]){
-                    [cardTags addObject:tagObj];
+                    [otherTags addObject:tagObj];
+                }
+                else if ([tagObj.user.objectId isEqualToString:PFUser.currentUser.objectId]){
+                    [ownTags addObject:tagObj];
                 }
             }
-            self.tags = [NSArray arrayWithArray:cardTags];
+            [self calculateScore:ownTags withOther:otherTags];
         }
         else{
             NSLog(@"Error: %@", error.localizedDescription);
         }
     }];
+}
+
+-(void) calculateScore: (NSMutableArray *)ownTags withOther: (NSMutableArray *)otherTags {
+    double percent = 0.0;
+    int base_size = (int)otherTags.count;
+    
+    for (Tags *tg in otherTags){
+        for (Tags *tg2 in ownTags){
+            if ([tg.tag isEqualToDictionary:tg2.tag]){
+                percent += 1.0/base_size;
+            }
+        }
+    }
+    [delegate scoreAlert:percent];
 }
 
 -(void)reloadData {

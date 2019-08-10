@@ -83,11 +83,11 @@
         mainButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         mainButton.center = CGPointMake((self.frame.size.width-70)/2 - 20, self.frame.size.height/2 + 30);
         [mainButton setTitle:@"Calculate Score" forState:UIControlStateNormal];
-        [mainButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [mainButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
+        [mainButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [mainButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
         mainButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:15];
         [mainButton sizeToFit];
-        mainButton.backgroundColor = [UIColor whiteColor];
+        mainButton.backgroundColor = [UIColor clearColor];
         [mainButton addTarget:self action:@selector(calculateScoreTap:) forControlEvents:UIControlEventTouchUpInside];
         
         //loading background images
@@ -261,6 +261,11 @@
     [delegate cardSwipedLeft:self];
 
     NSLog(@"NO");
+}
+
+-(void)calculateScoreTap:(id)sender {
+    NSLog(@"calculating score");
+    [delegate retrieveTags:self.user];
 }
 
 
