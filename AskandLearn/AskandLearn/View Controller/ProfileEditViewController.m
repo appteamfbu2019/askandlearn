@@ -31,7 +31,7 @@
     NSString *major = self.majorTextField.text;
     UIImage *profilePic = self.profileImageView.image;
     UIImage *backgroundPic = self.backgroundImageView.image;
-    NSString *bio = self.bioTextField.text;
+    NSString *bio = self.bioTextView.text;
     if ([self.nameTextField.text isEqual:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"No name inserted" preferredStyle:(UIAlertControllerStyleAlert)];

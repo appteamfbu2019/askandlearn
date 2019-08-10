@@ -12,29 +12,8 @@
 		55E6995028913B08BB41F7C7 /* libPods-AskandLearnUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26AF7F74C2E951383B839 /* libPods-AskandLearnUITests.a */; };
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
 		AB025C9222F8E6F800319DD8 /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
-		AB025C9422F8F17400319DD8 /* ChatSendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB025C9322F8F17400319DD8 /* ChatSendCell.xib */; };
 		AB025C9622F8F18A00319DD8 /* ChatReceiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB025C9522F8F18A00319DD8 /* ChatReceiveCell.xib */; };
 		AB025C9822F8F1A900319DD8 /* ChatTableViewCellXIB.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C9722F8F1A900319DD8 /* ChatTableViewCellXIB.m */; };
-		AB0ECA6B22FE1A4700AC7509 /* singapore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5722FE1A4600AC7509 /* singapore.jpg */; };
-		AB0ECA6C22FE1A4700AC7509 /* lasvegas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5822FE1A4600AC7509 /* lasvegas.jpg */; };
-		AB0ECA6D22FE1A4700AC7509 /* hong kong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5922FE1A4600AC7509 /* hong kong.jpg */; };
-		AB0ECA6E22FE1A4700AC7509 /* nyc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5A22FE1A4600AC7509 /* nyc.jpg */; };
-		AB0ECA6F22FE1A4700AC7509 /* dubainight.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5B22FE1A4600AC7509 /* dubainight.jpeg */; };
-		AB0ECA7022FE1A4700AC7509 /* nyc3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5C22FE1A4600AC7509 /* nyc3.jpg */; };
-		AB0ECA7122FE1A4700AC7509 /* tokyo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5D22FE1A4600AC7509 /* tokyo.jpg */; };
-		AB0ECA7222FE1A4700AC7509 /* boston.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5E22FE1A4600AC7509 /* boston.jpg */; };
-		AB0ECA7322FE1A4700AC7509 /* paris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA5F22FE1A4600AC7509 /* paris.jpg */; };
-		AB0ECA7422FE1A4700AC7509 /* amsterdamnight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6022FE1A4700AC7509 /* amsterdamnight.jpg */; };
-		AB0ECA7522FE1A4700AC7509 /* brooklyn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6122FE1A4700AC7509 /* brooklyn.jpg */; };
-		AB0ECA7622FE1A4700AC7509 /* london2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6222FE1A4700AC7509 /* london2.jpg */; };
-		AB0ECA7722FE1A4700AC7509 /* austin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6322FE1A4700AC7509 /* austin.jpg */; };
-		AB0ECA7822FE1A4700AC7509 /* paris2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6422FE1A4700AC7509 /* paris2.jpg */; };
-		AB0ECA7922FE1A4700AC7509 /* nyc2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6522FE1A4700AC7509 /* nyc2.jpg */; };
-		AB0ECA7A22FE1A4700AC7509 /* seattle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6622FE1A4700AC7509 /* seattle.jpg */; };
-		AB0ECA7B22FE1A4700AC7509 /* shanghai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6722FE1A4700AC7509 /* shanghai.jpg */; };
-		AB0ECA7C22FE1A4700AC7509 /* seoul.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6822FE1A4700AC7509 /* seoul.jpg */; };
-		AB0ECA7D22FE1A4700AC7509 /* london.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6922FE1A4700AC7509 /* london.jpg */; };
-		AB0ECA7E22FE1A4700AC7509 /* taipei.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB0ECA6A22FE1A4700AC7509 /* taipei.jpg */; };
 		AB35051822E931CC00BC308D /* HomeViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
 		AB35051922E931CC00BC308D /* HomeViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
 		AB4CE76B22FA4A06008A6EC9 /* MatchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB4CE76A22FA4A06008A6EC9 /* MatchViewController.h */; };
@@ -160,26 +139,11 @@
 		AB025C9922F8F1B500319DD8 /* ChatTableViewCellXIB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCellXIB.h; sourceTree = "<group>"; };
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		AB0ECA5722FE1A4600AC7509 /* singapore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = singapore.jpg; sourceTree = "<group>"; };
-		AB0ECA5822FE1A4600AC7509 /* lasvegas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lasvegas.jpg; sourceTree = "<group>"; };
-		AB0ECA5922FE1A4600AC7509 /* hong kong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hong kong.jpg"; sourceTree = "<group>"; };
-		AB0ECA5A22FE1A4600AC7509 /* nyc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nyc.jpg; sourceTree = "<group>"; };
 		AB0ECA5B22FE1A4600AC7509 /* dubainight.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dubainight.jpeg; sourceTree = "<group>"; };
 		AB0ECA5C22FE1A4600AC7509 /* nyc3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nyc3.jpg; sourceTree = "<group>"; };
-		AB0ECA5D22FE1A4600AC7509 /* tokyo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tokyo.jpg; sourceTree = "<group>"; };
-		AB0ECA5E22FE1A4600AC7509 /* boston.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boston.jpg; sourceTree = "<group>"; };
 		AB0ECA5F22FE1A4600AC7509 /* paris.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paris.jpg; sourceTree = "<group>"; };
 		AB0ECA6022FE1A4700AC7509 /* amsterdamnight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = amsterdamnight.jpg; sourceTree = "<group>"; };
-		AB0ECA6122FE1A4700AC7509 /* brooklyn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooklyn.jpg; sourceTree = "<group>"; };
-		AB0ECA6222FE1A4700AC7509 /* london2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = london2.jpg; sourceTree = "<group>"; };
-		AB0ECA6322FE1A4700AC7509 /* austin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = austin.jpg; sourceTree = "<group>"; };
-		AB0ECA6422FE1A4700AC7509 /* paris2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paris2.jpg; sourceTree = "<group>"; };
-		AB0ECA6522FE1A4700AC7509 /* nyc2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nyc2.jpg; sourceTree = "<group>"; };
-		AB0ECA6622FE1A4700AC7509 /* seattle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seattle.jpg; sourceTree = "<group>"; };
-		AB0ECA6722FE1A4700AC7509 /* shanghai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shanghai.jpg; sourceTree = "<group>"; };
 		AB0ECA6822FE1A4700AC7509 /* seoul.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seoul.jpg; sourceTree = "<group>"; };
-		AB0ECA6922FE1A4700AC7509 /* london.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = london.jpg; sourceTree = "<group>"; };
-		AB0ECA6A22FE1A4700AC7509 /* taipei.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = taipei.jpg; sourceTree = "<group>"; };
 		AB4CE76A22FA4A06008A6EC9 /* MatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MatchViewController.h; path = AskandLearn/Views/MatchViewController.h; sourceTree = "<group>"; };
 		AB4CE77122FA532F008A6EC9 /* Messages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Messages.h; sourceTree = "<group>"; };
 		AB4CE77222FA532F008A6EC9 /* Messages.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Messages.m; sourceTree = "<group>"; };
@@ -515,6 +479,11 @@
 				AB0449D222DE6662001F9606 /* SignUpViewController.h */,
 				AB025C8E22F8E58400319DD8 /* ChatTableViewCell.h */,
 				AB025C8C22F8E41700319DD8 /* ChatCellSettings.m */,
+				AB0ECA5F22FE1A4600AC7509 /* paris.jpg */,
+				AB0ECA6022FE1A4700AC7509 /* amsterdamnight.jpg */,
+				AB0ECA5C22FE1A4600AC7509 /* nyc3.jpg */,
+				AB0ECA6822FE1A4700AC7509 /* seoul.jpg */,
+				AB0ECA5B22FE1A4600AC7509 /* dubainight.jpeg */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -679,7 +648,6 @@
 				FEBDD93B22FE140300CF6B4E /* lasvegas.jpg in Resources */,
 				FEBDD93D22FE140300CF6B4E /* austin.jpg in Resources */,
 				AB025C9622F8F18A00319DD8 /* ChatReceiveCell.xib in Resources */,
-				AB0ECA7322FE1A4700AC7509 /* paris.jpg in Resources */,
 				AB35051822E931CC00BC308D /* HomeViewController.h in Resources */,
 				FEBDD94422FE140300CF6B4E /* nyc3.jpg in Resources */,
 				FEBDD94922FE140300CF6B4E /* boston.jpg in Resources */,
@@ -690,11 +658,6 @@
 				FEBDD94222FE140300CF6B4E /* london2.jpg in Resources */,
 				FEBDD94B22FE140300CF6B4E /* paris2.jpg in Resources */,
 				AB35051922E931CC00BC308D /* HomeViewController.m in Resources */,
-				AB0ECA7422FE1A4700AC7509 /* amsterdamnight.jpg in Resources */,
-				AB0ECA7022FE1A4700AC7509 /* nyc3.jpg in Resources */,
-				AB0ECA7C22FE1A4700AC7509 /* seoul.jpg in Resources */,
-				AB0ECA6F22FE1A4700AC7509 /* dubainight.jpeg in Resources */,
-				AB025C9422F8F17400319DD8 /* ChatSendCell.xib in Resources */,
 				AB50E25522DD0617006097DB /* LaunchScreen.storyboard in Resources */,
 				FEBDD94722FE140300CF6B4E /* taipei.jpg in Resources */,
 				AB50E25222DD0617006097DB /* Assets.xcassets in Resources */,
@@ -1053,8 +1016,9 @@
 			baseConfigurationReference = 4D21CFF9DEA402E9D2565D05 /* Pods-AskandLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GTKUYBCQTD;
+				DEVELOPMENT_TEAM = 92SQN6NSYW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1077,6 +1041,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccheng00AskandLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1086,8 +1051,9 @@
 			baseConfigurationReference = 4D7A467BC9979E00EAF9BCE5 /* Pods-AskandLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GTKUYBCQTD;
+				DEVELOPMENT_TEAM = 92SQN6NSYW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1110,6 +1076,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccheng00AskandLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
