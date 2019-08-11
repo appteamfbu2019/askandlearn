@@ -25,6 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loadingAlert = [UIAlertController
+                                alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:self.loadingAlert animated:YES completion: nil];
     NSLog(@"loading home view controller");
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
     draggableBackground.delegate = self;
@@ -67,6 +70,10 @@
             LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
             appDelegate.window.rootViewController = loginVC;
         }
+        if (![self.presentedViewController isBeingDismissed])
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
     }];
 }
 
@@ -83,6 +90,10 @@
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion: nil];
+}
+
+-(void) removeLoading {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

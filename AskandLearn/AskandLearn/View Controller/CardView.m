@@ -71,7 +71,7 @@
         profession.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         profession.textColor = [UIColor whiteColor];
         
-        bio = [[UITextView alloc]initWithFrame:CGRectMake((self.frame.size.width-70)/2 - 65, self.frame.size.height/2 - 100, 200, 80)];
+        bio = [[UITextView alloc]initWithFrame:CGRectMake((self.frame.size.width-70)/2 - 65, self.frame.size.height/2 - 50, 200, 80)];
         bio.text = @"Bio:";
         [bio setTextAlignment:NSTextAlignmentCenter];
         bio.backgroundColor = [UIColor clearColor];
@@ -83,11 +83,11 @@
         mainButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         mainButton.center = CGPointMake((self.frame.size.width-70)/2 - 20, self.frame.size.height/2 + 30);
         [mainButton setTitle:@"Calculate Score" forState:UIControlStateNormal];
-        [mainButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [mainButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [mainButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
         mainButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:15];
         [mainButton sizeToFit];
-        mainButton.backgroundColor = [UIColor clearColor];
+        mainButton.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.7];
         [mainButton addTarget:self action:@selector(calculateScoreTap:) forControlEvents:UIControlEventTouchUpInside];
         
         //loading background images
@@ -101,7 +101,7 @@
         UIImage *randomImage = [imgs objectAtIndex:rnd];
 
         UIGraphicsBeginImageContext(self.frame.size);
-        [randomImage drawInRect:self.bounds blendMode:kCGBlendModeMultiply alpha:0.9];
+        [randomImage drawInRect:self.bounds blendMode:kCGBlendModeMultiply alpha:1];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         self.backgroundColor = [UIColor colorWithPatternImage:image];

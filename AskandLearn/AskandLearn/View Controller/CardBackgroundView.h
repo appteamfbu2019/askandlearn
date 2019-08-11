@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)alertPopUp:(PFUser *)user;
 -(void)outOfCards;
 - (void) scoreAlert: (double) score;
+-(void) removeLoading;
 
 @end
 

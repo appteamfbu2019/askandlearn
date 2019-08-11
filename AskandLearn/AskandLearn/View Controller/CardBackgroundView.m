@@ -36,7 +36,7 @@
 //this makes it so only two cards are loaded at a time to
 //avoid performance and memory costs
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
-static const float CARD_HEIGHT = 700; //%%% height of the draggable card
+static const float CARD_HEIGHT = 600; //%%% height of the draggable card
 static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 @synthesize exampleCardLabels; //%%% all the labels I'm using as example data at the moment
@@ -56,11 +56,11 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         
         UITextView *warning = [[UITextView alloc]initWithFrame:CGRectMake(140, 140, self.frame.size.width/2, 150)];
         warning.backgroundColor = [UIColor clearColor];
-        warning.text = @"Wow, you've swiped through all the cards! Come back later and check if new people have joined :)";
+        warning.text = @"Come back later for more cards:)";
         [warning setTextAlignment:NSTextAlignmentCenter];
-        warning.center = self.center;
+        warning.center = CGPointMake(self.center.x, self.center.y+25);
         warning.textColor = [UIColor blackColor];
-        warning.font = [UIFont fontWithName:@"Helvetica" size:17 ];
+        warning.font = [UIFont fontWithName:@"Helvetica" size:13 ];
         [self addSubview:warning];
     }
     return self;
@@ -177,6 +177,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             cardsLoadedIndex++; // we loaded a card into loaded cards, so we have to increment
         }
     }
+    //[self.loadingView removeFromSuperview];
+    [delegate removeLoading];
 }
 
 -(void)retrieveTags: (PFUser *)user{
@@ -244,6 +246,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
                 }
             }
             if ([self.cards count] == (NSUInteger)0){
+                [self->delegate removeLoading];
                 [self->delegate outOfCards];
             }
             self->cardsLoadedIndex = 0;
@@ -268,6 +271,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     }
     [self.cards removeObject:currentCard];
     if ([self.cards count] == (NSUInteger)0){
+        [delegate removeLoading];
         [delegate outOfCards];
     }
 }
@@ -299,6 +303,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     }
     
     if ([self.cards count] == (NSUInteger)0){
+        [delegate removeLoading];
         [delegate outOfCards];
     }
 }

@@ -24,6 +24,7 @@
     self.mytableView.delegate = self;
     self.mytableView.rowHeight = UITableViewAutomaticDimension;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nyc3.jpg"]];
+    self.mytableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"brooklyn.jpg"]];
     [self Refresh];
 }
 
