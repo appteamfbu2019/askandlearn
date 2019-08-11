@@ -24,10 +24,11 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     self.loadingAlert = [UIAlertController
-                                alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+                         alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
     [self presentViewController:self.loadingAlert animated:YES completion: nil];
+    [super viewDidLoad];
+    
     NSLog(@"loading home view controller");
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
     draggableBackground.delegate = self;

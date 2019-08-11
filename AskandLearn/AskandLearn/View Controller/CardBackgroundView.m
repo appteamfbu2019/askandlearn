@@ -83,6 +83,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             self.cards = (NSMutableArray *)profiles;
             for (PFObject *card in self.cards){
                 if ([[card[@"user"] objectId] isEqualToString:PFUser.currentUser.objectId]){
+                    NSLog(@"hello? sup");
                     [self.cards removeObject:card];
                     break;
                 }
@@ -246,7 +247,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
                 }
             }
             if ([self.cards count] == (NSUInteger)0){
-                [self->delegate removeLoading];
+                //[self->delegate removeLoading];
                 [self->delegate outOfCards];
             }
             self->cardsLoadedIndex = 0;
@@ -271,7 +272,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     }
     [self.cards removeObject:currentCard];
     if ([self.cards count] == (NSUInteger)0){
-        [delegate removeLoading];
         [delegate outOfCards];
     }
 }
@@ -284,12 +284,15 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     PFQuery *query = [PFQuery queryWithClassName:@"Action"];
     [query includeKey:@"receiver"];
     [query includeKey:@"sender"];
-    [query whereKey:@"sender" equalTo:currentCard];
+    [query whereKey:@"sender" equalTo:currentCard[@"user"]];
     [query whereKey:@"receiver" equalTo:PFUser.currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *like, NSError *error) {
         if (like.count != 0 && like != nil){
             [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
             [self->delegate alertPopUp:like[0][@"sender"]];
+        }
+        else {
+            NSLog(@"what");
         }
     }];
     
@@ -302,10 +305,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }
     
-    if ([self.cards count] == (NSUInteger)0){
-        [delegate removeLoading];
-        [delegate outOfCards];
-    }
+//    if ([self.cards count] == (NSUInteger)0){
+//        [delegate outOfCards];
+//    }
 }
 
 -(void)swipeRight {

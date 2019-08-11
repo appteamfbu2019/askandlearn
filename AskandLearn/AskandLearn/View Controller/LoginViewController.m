@@ -33,7 +33,7 @@
                                                                        message:@"No username inserted"
                                                                 preferredStyle:(UIAlertControllerStyleAlert)];
         
-        UIAlertAction *usernameAlert = [UIAlertAction actionWithTitle:@"Ok"
+        UIAlertAction *usernameAlert = [UIAlertAction actionWithTitle:@"OK"
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * _Nonnull action) {
                                                               }];
@@ -45,7 +45,7 @@
                                                                        message:@"No password inserted"
                                                                 preferredStyle:(UIAlertControllerStyleAlert)];
         
-        UIAlertAction *passwordAlert = [UIAlertAction actionWithTitle:@"Ok"
+        UIAlertAction *passwordAlert = [UIAlertAction actionWithTitle:@"OK"
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * _Nonnull action) {
                                                               }];

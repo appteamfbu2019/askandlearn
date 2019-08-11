@@ -790,7 +790,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoZ-3y-ebA">
-                                <rect key="frame" x="54" y="384" width="300" height="252"/>
+                                <rect key="frame" x="54" y="383.5" width="300" height="252"/>
                                 <color key="backgroundColor" red="0.95598032990000004" green="0.95598032990000004" blue="0.95598032990000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.95598032994923854" green="0.95598032994923854" blue="0.95598032994923854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
