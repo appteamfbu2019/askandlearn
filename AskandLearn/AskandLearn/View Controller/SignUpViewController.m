@@ -31,6 +31,8 @@
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"singapore.jpg"]];
+    
     FBSDKLoginButton *loginButton= [[FBSDKLoginButton alloc] init];
     loginButton.delegate= self;
     loginButton.center = CGPointMake(self.view.center.x, self.view.center.y + 180);

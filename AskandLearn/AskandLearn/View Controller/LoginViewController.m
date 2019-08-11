@@ -16,6 +16,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nyc3.jpg"]];
+    [self becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

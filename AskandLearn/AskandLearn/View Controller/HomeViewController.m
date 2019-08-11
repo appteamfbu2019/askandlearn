@@ -24,8 +24,10 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
+    
     self.loadingAlert = [UIAlertController
                          alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+    [self.loadingAlert becomeFirstResponder];
     [self presentViewController:self.loadingAlert animated:YES completion: nil];
     [super viewDidLoad];
     
@@ -71,8 +73,11 @@
             LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
             appDelegate.window.rootViewController = loginVC;
         }
-        if (![self.presentedViewController isBeingDismissed])
-        {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        if (![self.presentedViewController isBeingDismissed]){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        if (![self.presentedViewController isBeingDismissed]){
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
@@ -95,6 +100,9 @@
 
 -(void) removeLoading {
     [self dismissViewControllerAnimated:YES completion:nil];
+    if (![self.presentedViewController isBeingDismissed]){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end

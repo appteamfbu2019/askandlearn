@@ -304,10 +304,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count
         [self insertSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-1)] belowSubview:[loadedCards objectAtIndex:(MAX_BUFFER_SIZE-2)]];
     }
-    
-//    if ([self.cards count] == (NSUInteger)0){
-//        [delegate outOfCards];
-//    }
 }
 
 -(void)swipeRight {
