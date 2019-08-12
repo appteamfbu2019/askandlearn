@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+
 
 
 - (IBAction)didTapSignUp:(id)sender;
@@ -31,11 +33,11 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"singapore.jpg"]];
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nyc3.jpg"]];
+    self.signUpButton.layer.cornerRadius = 10;
     FBSDKLoginButton *loginButton= [[FBSDKLoginButton alloc] init];
     loginButton.delegate= self;
-    loginButton.center = CGPointMake(self.view.center.x, self.view.center.y + 180);
+    loginButton.center = CGPointMake(self.view.center.x, self.passwordTextField.center.y + 140);
     loginButton.permissions = @[@"public_profile", @"email"];
     [self.view addSubview:loginButton];
 }

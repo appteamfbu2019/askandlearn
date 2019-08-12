@@ -56,6 +56,9 @@
 @property (strong,nonatomic) ContentView *handler;
 @property (strong, nonatomic) PFUser *receiver;
 @property (strong, nonatomic) NSString *receiverUsername;
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+
+
 
 @end
 
@@ -69,6 +72,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.sendButton.layer.cornerRadius = 10;
     
     currentMessages = [[NSMutableArray alloc] init];
     chatCellSettings = [ChatCellSettings getInstance];

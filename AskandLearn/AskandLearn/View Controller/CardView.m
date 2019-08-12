@@ -51,43 +51,54 @@
 //                                                                  multiplier:1.0
 //                                                                    constant:8.0];
         
-        profPic = [[UIImageView alloc]initWithFrame:CGRectMake((self.frame.size.width)/2 - 25, 70, 60, 60)];
+        profPic = [[UIImageView alloc]initWithFrame:CGRectMake((self.frame.size.width)/2 - 35, 70, 80, 80)];
+        profPic.contentMode = UIViewContentModeScaleAspectFill;
+        profPic.layer.masksToBounds = YES;
+        profPic.layer.cornerRadius = 10;
         
-        name = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, self.frame.size.width, 100)];
+        name = [[UILabel alloc]initWithFrame:CGRectMake(0, 130, self.frame.size.width, 100)];
         name.text = @"no info given";
         [name setTextAlignment:NSTextAlignmentCenter];
         name.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         name.textColor = [UIColor whiteColor];
+//        name.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.5];
+//        name.layer.cornerRadius = 10;
         
-        major = [[UILabel alloc]initWithFrame:CGRectMake(0, 140, self.frame.size.width, 100)];
+        major = [[UILabel alloc]initWithFrame:CGRectMake(0, 160, self.frame.size.width, 100)];
         major.text = @"Major:";
         [major setTextAlignment:NSTextAlignmentCenter];
         major.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         major.textColor = [UIColor whiteColor];
+//        major.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.5];
+//        major.layer.cornerRadius = 10;
         
-        profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 170, self.frame.size.width, 100)];
+        profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 180, self.frame.size.width, 100)];
         profession.text = @"Profession:";
         [profession setTextAlignment:NSTextAlignmentCenter];
         profession.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         profession.textColor = [UIColor whiteColor];
+//        profession.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.5];
+//        profession.layer.cornerRadius = 10;
         
-        bio = [[UITextView alloc]initWithFrame:CGRectMake((self.frame.size.width-70)/2 - 65, self.frame.size.height/2 - 50, 200, 80)];
+        bio = [[UITextView alloc]initWithFrame:CGRectMake((self.frame.size.width-70)/2 - 65, self.frame.size.height/2 - 30, 200, 80)];
         bio.text = @"Bio:";
         [bio setTextAlignment:NSTextAlignmentCenter];
-        bio.backgroundColor = [UIColor clearColor];
         bio.font = [UIFont fontWithName:@"Avenir-Light" size:16];
         bio.textColor = [UIColor whiteColor];
+        bio.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.3];
+        bio.layer.cornerRadius = 10;
         
         //button for calculate score
         UIButton *mainButton = [UIButton new];
         mainButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        mainButton.center = CGPointMake((self.frame.size.width-70)/2 - 20, self.frame.size.height/2 + 30);
-        [mainButton setTitle:@"Calculate Score" forState:UIControlStateNormal];
+        mainButton.center = CGPointMake((self.frame.size.width-70)/2 - 10, bio.frame.origin.y + 100);
+        mainButton.layer.cornerRadius = 7;
+        [mainButton setTitle:@"  MatchScore  " forState:UIControlStateNormal];
         [mainButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [mainButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateSelected];
         mainButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:15];
-        [mainButton sizeToFit];
         mainButton.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.7];
+        [mainButton sizeToFit];
         [mainButton addTarget:self action:@selector(calculateScoreTap:) forControlEvents:UIControlEventTouchUpInside];
         
         //loading background images

@@ -72,6 +72,7 @@
                  cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     MatchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell" forIndexPath:indexPath];
+    cell.layer.cornerRadius = 10;
     Match *match = self.matchArray[indexPath.row];
     PFUser *user = nil;
     

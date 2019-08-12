@@ -8,6 +8,9 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
 @end
 
 @implementation LoginViewController
@@ -16,7 +19,8 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nyc3.jpg"]];
-    [self becomeFirstResponder];
+    self.signUpButton.layer.cornerRadius = 10;
+    self.loginButton.layer.cornerRadius = 10;
 }
 
 - (void)didReceiveMemoryWarning

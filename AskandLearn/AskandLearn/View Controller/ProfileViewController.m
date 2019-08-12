@@ -21,6 +21,7 @@
     [super viewDidLoad];
     [self getProfile];
     [self.view setNeedsLayout];
+    self.profileImage.layer.cornerRadius = 10;
 }
 
 - (IBAction)didTapEditProfile:(id)sender {
@@ -41,7 +42,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if([objects count] != 0){
             Profile *profile = objects[0];
-            self.nameBox.text = [NSString stringWithFormat:@"Name: %@", profile[@"name"]];
+            self.nameBox.text = profile[@"name"];
             self.professionBox.text = [NSString stringWithFormat:@"Profession: %@", profile[@"profession"]];
             self.majorBox.text = [NSString stringWithFormat: @"Major: %@", profile[@"major"]];
             self.bioBox.text = [NSString stringWithFormat: @"Bio: %@", profile[@"bio"]];
