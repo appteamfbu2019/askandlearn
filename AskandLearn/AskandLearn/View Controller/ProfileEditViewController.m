@@ -14,6 +14,7 @@
 @interface ProfileEditViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) UIImage *originalImage;
 @property (weak, nonatomic) UIImage *editedImage;
+
 @end
 
 @implementation ProfileEditViewController {
@@ -23,6 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 -(void)saveProfile{
@@ -77,6 +82,8 @@
     _isUploadingProfilePic = NO;
     [self uploadImage];
 }
+
+
 
 -(void)uploadImage{
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
@@ -136,4 +143,9 @@
 - (IBAction)didTapCancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void)dismissKeyboard {
+    [self.view endEditing:true];
+}
+
 @end

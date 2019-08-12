@@ -61,8 +61,9 @@
         FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
         [loginManager logOut];
         
-        //Take user back to LoginView
+        //Take user back to signUpView
         SignUpViewController *signUpViewController = [[SignUpViewController alloc] initWithNibName:@"SignUpVIewController" bundle:nil];
+        
         [self presentViewController:signUpViewController animated:YES completion:nil];
     }]];
     

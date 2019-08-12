@@ -24,17 +24,19 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
-    
+    [super viewDidLoad];
+    NSLog(@"loading home view controller");
+    NSLog(@"%@", self.view.window.rootViewController);
     self.loadingAlert = [UIAlertController
                          alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
-    [self.loadingAlert becomeFirstResponder];
-    [self presentViewController:self.loadingAlert animated:YES completion: nil];
-    [super viewDidLoad];
-    
-    NSLog(@"loading home view controller");
+    //    //[self.loadingAlert becomeFirstResponder];
+    //    self.view.window.rootViewController = self.loadingAlert;
+    //    [self presentViewController:self.loadingAlert animated:YES completion: nil];
+    [self.view.window.rootViewController presentViewController:self.loadingAlert animated:YES completion:nil];
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
     draggableBackground.delegate = self;
     [self.view addSubview:draggableBackground];
+    
 
     
 }
