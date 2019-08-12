@@ -38,9 +38,9 @@
 //                             alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
 //        [self presentViewController:self.loadingAlert animated:YES completion:nil];
 //    });
-    self.loadingAlert = [UIAlertController
-                         alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
-    [self presentViewController:self.loadingAlert animated:YES completion:nil];
+//    self.loadingAlert = [UIAlertController
+//                         alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+//    [self presentViewController:self.loadingAlert animated:YES completion:nil];
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
     draggableBackground.delegate = self;
     [self.view addSubview:draggableBackground];
