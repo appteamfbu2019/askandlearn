@@ -11,8 +11,8 @@
 #import "CardBackgroundView.h"
 #import "CardView.h"
 
-@interface HomeViewController : UIViewController <UIAlertViewDelegate>
 
+@interface HomeViewController : UIViewController <UIAlertViewDelegate>
 - (void) alertPopUp: (PFUser *)user;
 - (void) outOfCards;
 - (void) scoreAlert: (double) score;

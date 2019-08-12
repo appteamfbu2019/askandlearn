@@ -49,6 +49,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     if (self) {
         [super layoutSubviews];
         [self setupView];
+        
         exampleCardLabels = [[NSMutableArray alloc] init];
         [self loadAllProfiles];
         loadedCards = [[NSMutableArray alloc] init];
@@ -212,11 +213,13 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 -(void) calculateScore: (NSMutableArray *)ownTags withOther: (NSMutableArray *)otherTags {
     double percent = 0.0;
     int base_size = (int)otherTags.count;
+    NSLog(@"base size %i", base_size);
     
     for (Tags *tg in otherTags){
         for (Tags *tg2 in ownTags){
             if ([tg.tag isEqualToDictionary:tg2.tag]){
                 percent += 1.0/base_size;
+                NSLog(@"percent %f", percent);
             }
         }
     }
@@ -317,5 +320,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     CardView *dragView = [loadedCards firstObject];
     [dragView leftClickAction];
 }
+
 
 @end

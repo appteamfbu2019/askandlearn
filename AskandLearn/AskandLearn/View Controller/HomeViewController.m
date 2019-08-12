@@ -32,12 +32,15 @@
     //    //[self.loadingAlert becomeFirstResponder];
 //        self.view.window.rootViewController = self.loadingAlert;
     //    [self presentViewController:self.loadingAlert animated:YES completion: nil];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"alertcontroller?");
-        self.loadingAlert = [UIAlertController
-                             alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
-        [self presentViewController:self.loadingAlert animated:YES completion:nil];
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSLog(@"alertcontroller?");
+//        self.loadingAlert = [UIAlertController
+//                             alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+//        [self presentViewController:self.loadingAlert animated:YES completion:nil];
+//    });
+    self.loadingAlert = [UIAlertController
+                         alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:self.loadingAlert animated:YES completion:nil];
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
     draggableBackground.delegate = self;
     [self.view addSubview:draggableBackground];
@@ -91,12 +94,14 @@
 }
 
 - (void) scoreAlert: (double) score {
-    
+    NSLog(@"score: %f", score);
     score = score * 100.0;
-    score = (int)floorf(score);
+    int newScore = (int)floorf(score);
+    //score = (int)floorf(score);
+    NSLog(@"score after %f", score);
     
     UIAlertController *alert = [UIAlertController
-                                alertControllerWithTitle:@"Matchscore for this user is..." message: [NSString stringWithFormat:@"%lu%%", score] preferredStyle:UIAlertControllerStyleAlert];
+                                alertControllerWithTitle:@"Matchscore for this user is..." message: [NSString stringWithFormat:@"%d%%", newScore] preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {}];
@@ -111,5 +116,6 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
 
 @end

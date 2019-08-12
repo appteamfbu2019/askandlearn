@@ -58,6 +58,8 @@
 @property (strong, nonatomic) NSString *receiverUsername;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 
+@property (nonatomic) int textViewOriginY;
+
 
 
 @end
@@ -117,6 +119,29 @@
     [self Refresh];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(myNotificationMethod:)
+//                                                 name:UIKeyboardDidShowNotification
+//                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+//- (void)myNotificationMethod:(NSNotification*)notification
+//{
+//    NSDictionary* keyboardInfo = [notification userInfo];
+//    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+//    self.keyboardSize = [keyboardFrameBegin CGRectValue].size;
+//}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -125,6 +150,61 @@
 - (void) dismissKeyboard
 {
     [self.chatTextView resignFirstResponder];
+}
+
+//- (void)textViewDidBeginEditing:(UITextView *)textView
+//{
+//    NSLog(@"Hello?????");
+//    [self animateTextView: YES];
+//}
+//
+//- (void)textViewDidEndEditing:(UITextView *)textView
+//{
+//    [self animateTextView:NO];
+//}
+
+//- (void) animateTextView:(BOOL) up
+//{
+//    const int movementDistance = self.keyboardSize.height; // tweak as needed
+//    const float movementDuration = 0.3f; // tweak as needed
+//    int movement= movement = (up ? -movementDistance : movementDistance);
+//    NSLog(@"movement %d",movement);
+//
+//    [ContentView beginAnimations: @"anim" context: nil];
+//    [ContentView setAnimationBeginsFromCurrentState: YES];
+//    [ContentView setAnimationDuration: movementDuration];
+//    self.contentView.frame = CGRectOffset(self.view.frame, 0, movement);
+//    [ContentView commitAnimations];
+//}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+}
+//
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+//
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.contentView.frame;
+        self.textViewOriginY = f.origin.y;
+        f.origin.y = f.origin.y -keyboardSize.height;
+        self.contentView.frame = f;
+    }];
+}
+
+-(void)keyboardWillHide:(NSNotification *)notification
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.contentView.frame;
+        f.origin.y = self.textViewOriginY;
+        self.contentView.frame = f;
+    }];
 }
 
 - (IBAction)sendMessage:(id)sender
