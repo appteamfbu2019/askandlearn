@@ -31,7 +31,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 - [x] User can sign up to create a new account (using username, password)
 - [x] User can Login/Logout
 - [x] During sign up,user can connect through Facebook, and we will extract basic information through there 
-- [ ] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
+- [X] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
 - [x] Tab to access the user's 'matches'
 - [x] Segue to access the user's messages from the 'matches' tab
 - [x] Tab to access the user's 'messages'
