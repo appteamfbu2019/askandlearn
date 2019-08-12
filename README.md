@@ -10,7 +10,7 @@ Esther Brown, Claire Cheng, Alexs Gonzalez
 
 ## Overview
 ### Description
-"AskAndLearn" is an app focused on connecting 'mentors' with certain skillsets and experiences to 'learners' with certain topics and areas and areas of interests. Mentors and learners will be required to connect a LinkedIn profile for increased reliability and trustworthiness.
+"AskAndLearn" is an app focused on connecting 'mentors' with certain skillsets and experiences to 'learners' with certain topics and areas of interests. Mentors and learners will be required to connect a Facebook profile for increased reliability and trustworthiness.
 
 The "connections" will be formed in a similar way to the workings of the app Tinder, as both the mentors and the learners will have to 'match' with each other before communication can be established. This will help to minimize the proliferation of bots or spam/unwanted messages and will create more meaningful connections in which both learners and mentors can benefit in different ways.
 
@@ -31,7 +31,7 @@ The "connections" will be formed in a similar way to the workings of the app Tin
 - [x] User can sign up to create a new account (using username, password)
 - [x] User can Login/Logout
 - [x] During sign up,user can connect through Facebook, and we will extract basic information through there 
-- [ ] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
+- [X] Profiles of people with basic information (age, areas of expertise, educational levels) that user can tap through 
 - [x] Tab to access the user's 'matches'
 - [x] Segue to access the user's messages from the 'matches' tab
 - [x] Tab to access the user's 'messages'
