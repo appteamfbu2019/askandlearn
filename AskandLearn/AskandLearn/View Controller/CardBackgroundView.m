@@ -133,6 +133,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         else {
             NSLog(@"Error: %@", error.localizedDescription);
         }
+        
+        [self->delegate removeLoading];
     }];
     
 }
@@ -179,7 +181,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         }
     }
     //[self.loadingView removeFromSuperview];
-    [delegate removeLoading];
+    //[delegate removeLoading];
 }
 
 -(void)retrieveTags: (PFUser *)user{
@@ -247,8 +249,8 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
                 }
             }
             if ([self.cards count] == (NSUInteger)0){
-                //[self->delegate removeLoading];
-                [self->delegate outOfCards];
+                [self->delegate removeLoading];
+                //[self->delegate outOfCards];
             }
             self->cardsLoadedIndex = 0;
             [self loadCards];

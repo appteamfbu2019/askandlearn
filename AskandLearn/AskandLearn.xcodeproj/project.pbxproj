@@ -95,7 +95,6 @@
 		FEBFBC4B22F4B1D400264C05 /* CardView.h in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AD22E7BC3600A2A0D6 /* CardView.h */; };
 		FEBFBC4C22F4B1D400264C05 /* ChatCell.h in Sources */ = {isa = PBXBuildFile; fileRef = B04ED53522EA5B5B00CBEF93 /* ChatCell.h */; };
 		FEDADE9422F4B37300771C3E /* Action.h in Sources */ = {isa = PBXBuildFile; fileRef = FE6B267622E2423E004F4D57 /* Action.h */; };
-		FEDADE9522F4B37300771C3E /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = AB50E24822DD0617006097DB /* AppDelegate.h */; };
 		FEDADE9622F4B38D00771C3E /* HomeViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
 		FEDADE9722F4B39600771C3E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
 		FEDADE9822F4B3B500771C3E /* CardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1950AB22E7BBFC00A2A0D6 /* CardBackgroundView.m */; };
@@ -796,7 +795,6 @@
 				FEA7901D22F8E76B00FC70EF /* ProfileEditViewController.m in Sources */,
 				FEDADE9422F4B37300771C3E /* Action.h in Sources */,
 				FE62247B22FA200A003FF5C4 /* Switch.m in Sources */,
-				FEDADE9522F4B37300771C3E /* AppDelegate.h in Sources */,
 				FEBFBC4A22F4B1D400264C05 /* CardBackgroundView.h in Sources */,
 				FEBFBC4B22F4B1D400264C05 /* CardView.h in Sources */,
 				FEBFBC4C22F4B1D400264C05 /* ChatCell.h in Sources */,

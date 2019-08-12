@@ -26,13 +26,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"loading home view controller");
-    NSLog(@"%@", self.view.window.rootViewController);
-    self.loadingAlert = [UIAlertController
-                         alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+//    self.view.window.rootViewController = self;
+//    NSLog(@"%@", self.view.window.rootViewController);
+    
     //    //[self.loadingAlert becomeFirstResponder];
-    //    self.view.window.rootViewController = self.loadingAlert;
+//        self.view.window.rootViewController = self.loadingAlert;
     //    [self presentViewController:self.loadingAlert animated:YES completion: nil];
-    [self.view.window.rootViewController presentViewController:self.loadingAlert animated:YES completion:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"alertcontroller?");
+        self.loadingAlert = [UIAlertController
+                             alertControllerWithTitle:@"Loading..." message: @"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:self.loadingAlert animated:YES completion:nil];
+    });
     CardBackgroundView *draggableBackground = [[CardBackgroundView alloc]initWithFrame:self.view.frame];
     draggableBackground.delegate = self;
     [self.view addSubview:draggableBackground];
@@ -70,18 +75,18 @@
         if (error) {
             NSLog(@"%@", error.localizedDescription);
         } else {
+            NSLog(@"trying to log out");
+            [self dismissViewControllerAnimated:YES completion:^{NSLog(@"logged out dismiss");}];
             AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
             UIStoryboard *storyboard =  [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
             appDelegate.window.rootViewController = loginVC;
+            
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
-        if (![self.presentedViewController isBeingDismissed]){
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-        if (![self.presentedViewController isBeingDismissed]){
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
+//        if (![self.loadingAlert isBeingDismissed]){
+//            [self dismissViewControllerAnimated:YES completion:nil];
+//        }
+        
     }];
 }
 
@@ -101,7 +106,7 @@
 }
 
 -(void) removeLoading {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissViewControllerAnimated:YES completion:nil];
     if (![self.presentedViewController isBeingDismissed]){
         [self dismissViewControllerAnimated:YES completion:nil];
     }

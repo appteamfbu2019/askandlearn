@@ -30,8 +30,9 @@
     [Parse initializeWithConfiguration:config];
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
+        NSLog(@"suppo");
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+        NSLog(@"instantiated tabbar");
     }
     
     [[FBSDKApplicationDelegate sharedInstance] application:application

@@ -16,7 +16,7 @@
 - (void) alertPopUp: (PFUser *)user;
 - (void) outOfCards;
 - (void) scoreAlert: (double) score;
--(void) removeLoading;
+- (void) removeLoading;
 
 @property (strong, nonatomic) UIAlertController *loadingAlert;
 
