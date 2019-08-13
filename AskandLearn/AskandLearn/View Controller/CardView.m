@@ -87,6 +87,7 @@
         bio.textColor = [UIColor whiteColor];
         bio.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.3];
         bio.layer.cornerRadius = 10;
+        bio.userInteractionEnabled = NO;
         
         //button for calculate score
         UIButton *mainButton = [UIButton new];
