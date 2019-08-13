@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)didTapEditProfile:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *didTapRefresh;
 @property (weak, nonatomic) IBOutlet UILabel *bioBox;
+@property (weak, nonatomic) IBOutlet UIImageView *containerBoxView;
+
 
 - (void)getUIImageFromPic: (PFFileObject * _Nullable)profilePic;
 - (void)getUIImageFromImage: (PFFileObject * _Nullable)backgroundPic;

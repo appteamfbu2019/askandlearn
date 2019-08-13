@@ -72,7 +72,7 @@
 //        major.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.5];
 //        major.layer.cornerRadius = 10;
         
-        profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 180, self.frame.size.width, 100)];
+        profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 190, self.frame.size.width, 100)];
         profession.text = @"Profession:";
         [profession setTextAlignment:NSTextAlignmentCenter];
         profession.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
@@ -84,8 +84,8 @@
         bio.text = @"Bio:";
         [bio setTextAlignment:NSTextAlignmentCenter];
         bio.font = [UIFont fontWithName:@"Avenir-Light" size:16];
-        bio.textColor = [UIColor whiteColor];
-        bio.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.3];
+        bio.textColor = [UIColor darkGrayColor];
+        bio.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.7];
         bio.layer.cornerRadius = 10;
         bio.userInteractionEnabled = NO;
         

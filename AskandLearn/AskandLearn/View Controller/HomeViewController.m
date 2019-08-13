@@ -98,6 +98,9 @@
     score = score * 100.0;
     int newScore = (int)floorf(score);
     //score = (int)floorf(score);
+    if (newScore >= 100){
+        newScore = 99;
+    }
     NSLog(@"score after %f", score);
     
     UIAlertController *alert = [UIAlertController

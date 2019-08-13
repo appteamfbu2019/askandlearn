@@ -22,6 +22,7 @@
     [self getProfile];
     [self.view setNeedsLayout];
     self.profileImage.layer.cornerRadius = 10;
+    self.containerBoxView.layer.cornerRadius = 10;
 }
 
 - (IBAction)didTapEditProfile:(id)sender {

@@ -23,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UISwitch *learnSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *teachSwitch;
 
+@property (weak, nonatomic) IBOutlet UIButton *addTagsButton;
+
+
 @end
 
 @implementation SettingsViewController
@@ -36,6 +39,8 @@
     [self retrieveTags];
     self.numberOfTags = 0;
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"brooklyn.jpg"]];
+    
+    self.addTagsButton.layer.cornerRadius = 10;
 }
 
 -(void)getSwitchValues{
