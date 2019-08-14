@@ -27,7 +27,6 @@
 @implementation CardBackgroundView{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
     NSMutableArray *loadedCards; //%%% the array of card loaded (change max_buffer_size to increase or decrease the number of cards this holds)
-    
     UIButton* menuButton;
     UIButton* messageButton;
     UIButton* checkButton;
@@ -49,12 +48,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
     if (self) {
         [super layoutSubviews];
         [self setupView];
-        
         exampleCardLabels = [[NSMutableArray alloc] init];
         [self loadAllProfiles];
         loadedCards = [[NSMutableArray alloc] init];
         allCards = [[NSMutableArray alloc] init];
-        
         UITextView *warning = [[UITextView alloc]initWithFrame:CGRectMake(140, 140, self.frame.size.width/2, 150)];
         warning.backgroundColor = [UIColor clearColor];
         warning.text = @"Come back later for more cards:)";
@@ -84,7 +81,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             self.cards = (NSMutableArray *)profiles;
             for (PFObject *card in self.cards){
                 if ([[card[@"user"] objectId] isEqualToString:PFUser.currentUser.objectId]){
-                    NSLog(@"hello? sup");
                     [self.cards removeObject:card];
                     break;
                 }
@@ -134,14 +130,11 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
         else {
             NSLog(@"Error: %@", error.localizedDescription);
         }
-        
-        //[self->delegate removeLoading];
     }];
     
 }
 
--(CardView *)createDraggableViewWithDataAtIndex:(NSInteger)index
-{
+-(CardView *)createDraggableViewWithDataAtIndex:(NSInteger)index{
     CardView *draggableView = [[CardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     
     PFObject *temp = self.cards[index];
@@ -160,8 +153,7 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 
 
 
--(void)loadCards
-{
+-(void)loadCards{
     if([self.cards count] > 0) {
         NSInteger numLoadedCardsCap =(([self.cards count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[self.cards count]);
         for (int i = 0; i<[self.cards count]; i++) {
@@ -181,12 +173,9 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             cardsLoadedIndex++; // we loaded a card into loaded cards, so we have to increment
         }
     }
-    //[self.loadingView removeFromSuperview];
-    //[delegate removeLoading];
 }
 
 -(void)retrieveTags: (PFUser *)user{
-    NSLog(@"user is: %@", user);
     __block NSMutableArray *ownTags = [[NSMutableArray alloc]init];
     __block NSMutableArray *otherTags = [[NSMutableArray alloc]init];
     PFQuery *query = [PFQuery queryWithClassName:@"Tags"];
@@ -213,13 +202,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 -(void) calculateScore: (NSMutableArray *)ownTags withOther: (NSMutableArray *)otherTags {
     double percent = 0.0;
     int base_size = (int)otherTags.count;
-    NSLog(@"base size %i", base_size);
-    
     for (Tags *tg in otherTags){
         for (Tags *tg2 in ownTags){
             if ([tg.tag isEqualToDictionary:tg2.tag]){
                 percent += 1.0/base_size;
-                NSLog(@"percent %f", percent);
             }
         }
     }
@@ -252,7 +238,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
                 }
             }
             if ([self.cards count] == (NSUInteger)0){
-                //[self->delegate removeLoading];
                 [self->delegate outOfCards];
             }
             self->cardsLoadedIndex = 0;
@@ -261,8 +246,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    
-    
 }
 
 -(void)cardSwipedLeft:(UIView *)card{
@@ -284,7 +267,6 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
 -(void)cardSwipedRight:(UIView *)card{
     PFObject *currentCard = self.cards[0];
     [Action likeAction:PFUser.currentUser withUser:currentCard[@"user"]];
-    
     //run through the arrays and form 'matches'
     PFQuery *query = [PFQuery queryWithClassName:@"Action"];
     [query includeKey:@"receiver"];
@@ -296,14 +278,10 @@ static const float CARD_WIDTH = 350; //%%% width of the draggable card
             [Match matchFormed:PFUser.currentUser withUser:like[0][@"sender"]];
             [self->delegate alertPopUp:like[0][@"sender"]];
         }
-        else {
-            NSLog(@"what");
-        }
     }];
     
     [self.cards removeObjectAtIndex:0];
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
-    
     if (cardsLoadedIndex < [allCards count]) { //%%% if we haven't reached the end of all cards, put another into the loaded cards
         [loadedCards addObject:[allCards objectAtIndex:cardsLoadedIndex]];
         cardsLoadedIndex++;//%%% loaded a card, so have to increment count

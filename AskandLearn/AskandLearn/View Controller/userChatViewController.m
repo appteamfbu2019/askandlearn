@@ -29,11 +29,9 @@
 -(id) initIMessageWithName:(NSString *)name
                    message:(NSString *)message
                       time:(NSString *)time
-                      type:(NSString *)type
-{
+                      type:(NSString *)type {
     self = [super init];
-    if(self)
-    {
+    if(self){
         self.userName = name;
         self.userMessage = message;
         self.userTime = time;
@@ -57,22 +55,17 @@
 @property (strong, nonatomic) PFUser *receiver;
 @property (strong, nonatomic) NSString *receiverUsername;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
-
 @property (nonatomic) int textViewOriginY;
-
-
 
 @end
 
-@implementation userChatViewController
-{
+@implementation userChatViewController{
     NSMutableArray *currentMessages;
     ChatCellSettings *chatCellSettings;
 }
 @synthesize chatCell;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.sendButton.layer.cornerRadius = 10;
     
@@ -101,8 +94,6 @@
     [chatCellSettings senderBubbleTailRequired:YES];
     [chatCellSettings receiverBubbleTailRequired:YES];
     
-    //self.navigationItem.title = @"AskandLearn Messages";
-    
     [[self chatTable] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatSend"];
     [[self chatTable] registerClass:[ChatTableViewCell class] forCellReuseIdentifier:@"chatReceive"];
@@ -112,9 +103,6 @@
     [self.handler updateMinimumNumberOfLines:1 andMaximumNumberOfLine:3];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    //self.receiver = self;
-    //self.receiverUsername = self;
-    //
     [self.chatTable addGestureRecognizer:gestureRecognizer];
     [self Refresh];
 }
@@ -123,10 +111,6 @@
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(myNotificationMethod:)
-//                                                 name:UIKeyboardDidShowNotification
-//                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -135,59 +119,23 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
-//- (void)myNotificationMethod:(NSNotification*)notification
-//{
-//    NSDictionary* keyboardInfo = [notification userInfo];
-//    NSValue* keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
-//    self.keyboardSize = [keyboardFrameBegin CGRectValue].size;
-//}
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
 
-- (void) dismissKeyboard
-{
+- (void) dismissKeyboard{
     [self.chatTextView resignFirstResponder];
 }
-
-//- (void)textViewDidBeginEditing:(UITextView *)textView
-//{
-//    NSLog(@"Hello?????");
-//    [self animateTextView: YES];
-//}
-//
-//- (void)textViewDidEndEditing:(UITextView *)textView
-//{
-//    [self animateTextView:NO];
-//}
-
-//- (void) animateTextView:(BOOL) up
-//{
-//    const int movementDistance = self.keyboardSize.height; // tweak as needed
-//    const float movementDuration = 0.3f; // tweak as needed
-//    int movement= movement = (up ? -movementDistance : movementDistance);
-//    NSLog(@"movement %d",movement);
-//
-//    [ContentView beginAnimations: @"anim" context: nil];
-//    [ContentView setAnimationBeginsFromCurrentState: YES];
-//    [ContentView setAnimationDuration: movementDuration];
-//    self.contentView.frame = CGRectOffset(self.view.frame, 0, movement);
-//    [ContentView commitAnimations];
-//}
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 }
-//
-- (void)textViewDidEndEditing:(UITextView *)textView
-{
+
+- (void)textViewDidEndEditing:(UITextView *)textView{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
-//
-- (void)keyboardWillShow:(NSNotification *)notification
-{
+
+- (void)keyboardWillShow:(NSNotification *)notification{
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
 
     [UIView animateWithDuration:0.3 animations:^{
@@ -198,8 +146,7 @@
     }];
 }
 
--(void)keyboardWillHide:(NSNotification *)notification
-{
+-(void)keyboardWillHide:(NSNotification *)notification{
     [UIView animateWithDuration:0.3 animations:^{
         CGRect f = self.contentView.frame;
         f.origin.y = self.textViewOriginY;
@@ -207,8 +154,7 @@
     }];
 }
 
-- (IBAction)sendMessage:(id)sender
-{
+- (IBAction)sendMessage:(id)sender{
     if([self.chatTextView.text length]!=0)
     {
         iMessage *sendMessage;
@@ -236,13 +182,8 @@
     }
 }
 
-- (IBAction)receiveMessage:(id)sender
-{
-    if([self.chatTextView.text length]!=0)
-    {
-        
-        //chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MatchCell"]
-        //        iMessage *receiveMessage;
+- (IBAction)receiveMessage:(id)sender{
+    if([self.chatTextView.text length]!=0){
         iMessage *receiveMessage;
         
         NSDate * now = [NSDate date];
@@ -261,13 +202,11 @@
         
         [Messages sendMessage:chatMessage[@"sender"] withUser:chatMessage[@"receiver"] withText:chatMessage[@"text"] withTime:newDateString];
         
-        
         self.chatTextView.text = @"";
     }
 }
 
--(void) updateTableView:(iMessage *)msg
-{
+-(void) updateTableView:(iMessage *)msg{
     [self.chatTextView setText:@""];
     [self.handler textViewDidChange:self.chatTextView];
     
@@ -280,8 +219,7 @@
     [self.chatTable insertRowsAtIndexPaths:[NSArray arrayWithObjects:row1, nil] withRowAnimation:UITableViewRowAnimationBottom];
     
     [self.chatTable endUpdates];
-    
-    //Always scroll the chat table when the user sends the message
+
     if([self.chatTable numberOfRowsInSection:0]!=0)
     {
         NSIndexPath* ip = [NSIndexPath indexPathForRow:[self.chatTable numberOfRowsInSection:0]-1 inSection:0];
@@ -289,39 +227,27 @@
     }
 }
 
-
-
 #pragma mark - UITableViewDatasource methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    NSLog(@"current MEssages %lu", currentMessages.count);
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return currentMessages.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     iMessage *message = [currentMessages objectAtIndex:indexPath.row];
-    NSLog(@"message username %@", message.userName);
     if ([message.userName isEqualToString:PFUser.currentUser.username]){
         message.messageType = @"self";
     }
     else{
-        message.messageType = @"HELLO";
+        message.messageType = nil;
     }
-    
-    NSLog(@"messageTYpe %@", message.messageType);
-    
-    if ([message.userName isEqualToString:PFUser.currentUser.username])//([message.messageType isEqualToString:@"self"])
-    {
-        NSLog(@"HIIIIII");
+
+    if ([message.userName isEqualToString:PFUser.currentUser.username]){
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatSend"];
-        
         
         chatCell.chatMessageLabel.text = message.userMessage;
         
@@ -331,12 +257,9 @@
         
         chatCell.chatUserImage.image = [UIImage imageNamed:@"defaultUser"];
         
-        
         chatCell.authorType = iMessageBubbleTableViewCellAuthorTypeSender;
     }
-    else
-    {
-        NSLog(@"HI");
+    else{
         chatCell = (ChatTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"chatReceive"];
         
         
@@ -347,8 +270,7 @@
         chatCell.chatTimeLabel.text = message.userTime;
         
         chatCell.chatUserImage.image = [UIImage imageNamed:@"defaultUser"];
-        
-        /*Comment this line is you are using XIB*/
+
         chatCell.authorType = iMessageBubbleTableViewCellAuthorTypeReceiver;
     }
     
@@ -356,8 +278,7 @@
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     iMessage *message = [currentMessages objectAtIndex:indexPath.row];
     
     CGSize size;
@@ -398,10 +319,7 @@
     return size.height;
 }
 
--(void)Refresh
-{
-//    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
-//     userInfo:nil repeats:true];
+-(void)Refresh{
     PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
     [query includeKey:@"sender"];
     [query includeKey:@"receiver"];

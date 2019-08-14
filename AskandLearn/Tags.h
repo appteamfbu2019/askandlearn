@@ -20,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 +(Tags *)removeTag:(PFUser *)user remove:(NSDictionary *)tagObject;
 +(Tags *)newTag: (PFUser *)user setTag:(NSDictionary *)tagObject;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

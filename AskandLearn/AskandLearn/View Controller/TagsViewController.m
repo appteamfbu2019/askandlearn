@@ -22,17 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchTags) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
     self.noOfTags = 0;
     self.allTags = [[NSMutableArray alloc] init];
-    // Do any additional setup after loading the view.
     [self fetchTags];
     
 }
@@ -49,8 +45,6 @@
             for (Tags *tag in tags){
                 if ([tag.user.objectId isEqualToString:PFUser.currentUser.objectId] && ![tag.status isEqualToString:@"removing"]){
                     [adding addObject:tag];
-                    //                    [self.allTags addObject:tag];
-                    //                    NSLog(@"added object");
                 }
                 if ([tag.user.objectId isEqualToString:PFUser.currentUser.objectId] && [tag.status isEqualToString:@"removing"]){
                     [removal addObject:tag];
@@ -68,20 +62,10 @@
             self.noOfTags = self.allTags.count;
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
-            NSLog(@"allTags %@", self.allTags);
         }
         
     }];
 }
-
-/*
- #pragma mark - Navigation
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TagCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TagCell"];
@@ -94,16 +78,13 @@
     return self.noOfTags;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"selected");
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Tags *tag = self.allTags[indexPath.row];
     [self alertPopUp:tag];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void) alertPopUp: (Tags *)tag{
-    
     UIAlertController *alert = [UIAlertController
                                 alertControllerWithTitle:@"Delete Tag" message: [NSString stringWithFormat:@"Confirm deleting tag: %@?", tag.tag[@"Name"]] preferredStyle:UIAlertControllerStyleAlert];
     

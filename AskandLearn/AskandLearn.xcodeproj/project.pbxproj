@@ -13,7 +13,6 @@
 		7B26BAF21C03CFEF728EAD18 /* libPods-AskandLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C3B23B2A027F012CAEECD /* libPods-AskandLearnTests.a */; };
 		AB025C9222F8E6F800319DD8 /* SignUpViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB0449D222DE6662001F9606 /* SignUpViewController.h */; };
 		AB025C9622F8F18A00319DD8 /* ChatReceiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB025C9522F8F18A00319DD8 /* ChatReceiveCell.xib */; };
-		AB025C9822F8F1A900319DD8 /* ChatTableViewCellXIB.m in Sources */ = {isa = PBXBuildFile; fileRef = AB025C9722F8F1A900319DD8 /* ChatTableViewCellXIB.m */; };
 		AB35051822E931CC00BC308D /* HomeViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */; };
 		AB35051922E931CC00BC308D /* HomeViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */; };
 		AB4CE76B22FA4A06008A6EC9 /* MatchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = AB4CE76A22FA4A06008A6EC9 /* MatchViewController.h */; };
@@ -60,7 +59,6 @@
 		FEA7901D22F8E76B00FC70EF /* ProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */; };
 		FEA7901F22F8E93400FC70EF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA78FFC22F8D58E00FC70EF /* ProfileViewController.m */; };
 		FEA7902222F8F10300FC70EF /* CategoryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEA7902122F8F10300FC70EF /* CategoryList.plist */; };
-		FEB50A6E22DE782700FEF8DB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6D22DE782700FEF8DB /* User.m */; };
 		FEBDD93B22FE140300CF6B4E /* lasvegas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEBDD92722FE140100CF6B4E /* lasvegas.jpg */; };
 		FEBDD93C22FE140300CF6B4E /* brooklyn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEBDD92822FE140100CF6B4E /* brooklyn.jpg */; };
 		FEBDD93D22FE140300CF6B4E /* austin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEBDD92922FE140100CF6B4E /* austin.jpg */; };
@@ -84,7 +82,6 @@
 		FEBDD95122FE331F00CF6B4E /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBDD95022FE331F00CF6B4E /* Profile.m */; };
 		FEBFBC3622F4AC0900264C05 /* Tags.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3522F4AC0900264C05 /* Tags.m */; };
 		FEBFBC3722F4B1A800264C05 /* Tags.h in Sources */ = {isa = PBXBuildFile; fileRef = FEBFBC3422F4AC0900264C05 /* Tags.h */; };
-		FEBFBC3922F4B1A800264C05 /* User.h in Sources */ = {isa = PBXBuildFile; fileRef = FEB50A6C22DE782700FEF8DB /* User.h */; };
 		FEBFBC3B22F4B1A800264C05 /* CategoryTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723622EFA49300519A67 /* CategoryTableViewCell.h */; };
 		FEBFBC3C22F4B1A800264C05 /* Token.h in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723B22EFB80000519A67 /* Token.h */; };
 		FEBFBC3D22F4B1A800264C05 /* TokenInputView.h in Sources */ = {isa = PBXBuildFile; fileRef = FE7E723E22EFB94200519A67 /* TokenInputView.h */; };
@@ -134,8 +131,6 @@
 		AB025C8E22F8E58400319DD8 /* ChatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
 		AB025C9322F8F17400319DD8 /* ChatSendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatSendCell.xib; sourceTree = "<group>"; };
 		AB025C9522F8F18A00319DD8 /* ChatReceiveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatReceiveCell.xib; sourceTree = "<group>"; };
-		AB025C9722F8F1A900319DD8 /* ChatTableViewCellXIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCellXIB.m; sourceTree = "<group>"; };
-		AB025C9922F8F1B500319DD8 /* ChatTableViewCellXIB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCellXIB.h; sourceTree = "<group>"; };
 		AB0449D222DE6662001F9606 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		AB0449D322DE6662001F9606 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		AB0ECA5B22FE1A4600AC7509 /* dubainight.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dubainight.jpeg; sourceTree = "<group>"; };
@@ -236,8 +231,6 @@
 		FEA7901B22F8E76B00FC70EF /* ProfileEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileEditViewController.h; sourceTree = "<group>"; };
 		FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileEditViewController.m; sourceTree = "<group>"; };
 		FEA7902122F8F10300FC70EF /* CategoryList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CategoryList.plist; sourceTree = "<group>"; };
-		FEB50A6C22DE782700FEF8DB /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FEB50A6D22DE782700FEF8DB /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FEB50A6F22DE7E7900FEF8DB /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FEB50A7022DE7E7900FEF8DB /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FEBDD92722FE140100CF6B4E /* lasvegas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lasvegas.jpg; path = ../../../../../../Downloads/images/lasvegas.jpg; sourceTree = "<group>"; };
@@ -327,8 +320,6 @@
 				ABC441D522F25BE90080EF78 /* PFAssert.h */,
 				FE6B267622E2423E004F4D57 /* Action.h */,
 				FE6B267722E2423E004F4D57 /* Action.m */,
-				FEB50A6C22DE782700FEF8DB /* User.h */,
-				FEB50A6D22DE782700FEF8DB /* User.m */,
 				AB50E24722DD0617006097DB /* AskandLearn */,
 				AB50E26022DD0617006097DB /* AskandLearnTests */,
 				AB50E26B22DD0617006097DB /* AskandLearnUITests */,
@@ -389,8 +380,8 @@
 				FE1950AE22E7BC3600A2A0D6 /* CardView.m */,
 				FEA78FDF22F8D58B00FC70EF /* CategoriesViewController.h */,
 				FEA78FF322F8D58D00FC70EF /* CategoriesViewController.m */,
-				FEA78FF922F8D58E00FC70EF /* CategoryTableViewCell.m */,
 				FEA78FDC22F8D58B00FC70EF /* CategoryTableViewCell.h */,
+				FEA78FF922F8D58E00FC70EF /* CategoryTableViewCell.m */,
 				FEA7901B22F8E76B00FC70EF /* ProfileEditViewController.h */,
 				FEA7901C22F8E76B00FC70EF /* ProfileEditViewController.m */,
 				FEA7901822F8DDF800FC70EF /* Match.h */,
@@ -441,8 +432,6 @@
 				FEBDD8FE22FE0FCD00CF6B4E /*  backgroundimgs */,
 				AB50E24822DD0617006097DB /* AppDelegate.h */,
 				AB50E24922DD0617006097DB /* AppDelegate.m */,
-				AB025C9722F8F1A900319DD8 /* ChatTableViewCellXIB.m */,
-				AB025C9922F8F1B500319DD8 /* ChatTableViewCellXIB.h */,
 				AB025C9322F8F17400319DD8 /* ChatSendCell.xib */,
 				AB025C9522F8F18A00319DD8 /* ChatReceiveCell.xib */,
 				AB50E24E22DD0617006097DB /* Main.storyboard */,
@@ -800,7 +789,6 @@
 				FEBFBC4C22F4B1D400264C05 /* ChatCell.h in Sources */,
 				FEDADE9B22F4D46600771C3E /* TagsViewController.m in Sources */,
 				FEBFBC3722F4B1A800264C05 /* Tags.h in Sources */,
-				FEBFBC3922F4B1A800264C05 /* User.h in Sources */,
 				FEBFBC3B22F4B1A800264C05 /* CategoryTableViewCell.h in Sources */,
 				FEA7900622F8D58E00FC70EF /* addTags.m in Sources */,
 				FEBFBC3C22F4B1A800264C05 /* Token.h in Sources */,
@@ -817,7 +805,6 @@
 				AB5BE8A522F2620A006B0D3D /* MatchCell.h in Sources */,
 				FE7E723D22EFB80000519A67 /* Token.m in Sources */,
 				FEA7900E22F8D58E00FC70EF /* CategoryTableViewCell.m in Sources */,
-				FEB50A6E22DE782700FEF8DB /* User.m in Sources */,
 				AB50E25822DD0617006097DB /* main.m in Sources */,
 				AB4CE76D22FA514A008A6EC9 /* ChatCell.m in Sources */,
 				AB5BE8A422F261B9006B0D3D /* MatchCell.m in Sources */,
@@ -825,7 +812,6 @@
 				FE7E723922EFA49300519A67 /* CategoryTableViewCell.m in Sources */,
 				AB50E24A22DD0617006097DB /* AppDelegate.m in Sources */,
 				FE62247C22FA4DD3003FF5C4 /* userChatViewController.m in Sources */,
-				AB025C9822F8F1A900319DD8 /* ChatTableViewCellXIB.m in Sources */,
 				FE6B267822E2423E004F4D57 /* Action.m in Sources */,
 				FEA7900522F8D58E00FC70EF /* Token.m in Sources */,
 				FE1950AF22E7BC3600A2A0D6 /* CardView.m in Sources */,

@@ -83,19 +83,11 @@
     [self uploadImage];
 }
 
-
-
 -(void)uploadImage{
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    //    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    //    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-    //        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    //    }
-    //    else {
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    //    }
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
@@ -115,18 +107,12 @@
     if (_isUploadingProfilePic) {
         self.profileImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     } else {
-        //self.backgroundImageView.image = editedImage;
         self.backgroundImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 
 - (IBAction)didTapSaveProfile:(id)sender {
     [self saveProfile];

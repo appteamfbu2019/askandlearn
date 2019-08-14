@@ -17,8 +17,7 @@
 @implementation MatchViewController
 @synthesize person1 = currentUser;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.mytableView.dataSource = self;
     self.mytableView.delegate = self;
@@ -28,26 +27,17 @@
     [self Refresh];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
 
--(void)Refresh
-{
+-(void)Refresh{
     __block NSMutableArray *temp = [[NSMutableArray alloc]init];
     [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(Refresh)
                                                             userInfo:nil repeats:true];
     PFUser *user = PFUser.currentUser;
     
     PFQuery *query1 = [PFQuery queryWithClassName:@"Match"];
-    //[query1 whereKey:@"person1" equalTo:user];
-    
-    //PFQuery *query2 = [PFQuery queryWithClassName:@"Match"];
-    //[query2 whereKey:@"person2" equalTo:user];
-    
-    //PFQuery *query = [PFQuery orQueryWithSubqueries:@[query1,query2]];
-    
     [query1 findObjectsInBackgroundWithBlock:^(NSArray *matches, NSError *error){
         if ([matches count] > 0) {
             for (Match *m in matches){
@@ -59,9 +49,7 @@
                 }
             }
             self.matchArray = (NSArray *)temp;
-            NSLog(@"matcharray %@", self.matchArray);
             [self.mytableView reloadData];
-            NSLog(@"%@", matches);
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -69,8 +57,7 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
-                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
-{
+                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     MatchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MatchCell" forIndexPath:indexPath];
     cell.layer.cornerRadius = 10;
     Match *match = self.matchArray[indexPath.row];
@@ -95,36 +82,26 @@
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.matchArray.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"YUP");
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    
     if ([segue.identifier isEqualToString:@"segueToMessages"]) {
         userChatViewController* chatController = [segue destinationViewController];
         
         UITableViewCell *tappedCell = sender;
-        NSLog(@"tapped");
         NSIndexPath *indexPath =  [self.mytableView indexPathForCell:tappedCell];
         Match *match = self.matchArray[indexPath.row];
         chatController.matchObj = match;
-        NSLog(@"match %@", match);
-        //PFUser query
-        //match the objectId of person1 to objectId in the query, extract username from query
-        //same for person2
         PFQuery *query1 = [PFUser query];
         [query1 whereKey:@"username" equalTo:PFUser.currentUser.username];
         NSArray *temp = [query1 findObjects];
         chatController.person1 = temp[0];
-        //chatController.person1 = temp[0][@"username"];
 
         NSString *otherUser = @"person1";
         if ([[match[otherUser] objectId] isEqualToString:PFUser.currentUser.objectId]){
@@ -133,10 +110,7 @@
         PFQuery *query2 = [PFUser query];
         [query2 whereKey:@"objectId" equalTo:[match[otherUser] objectId]];
         NSArray *temp2 = [query2 findObjects];
-        chatController.person2 = temp2[0];//temp2[0][@"username"];
-        NSLog(@"hello?");
-        
-        
+        chatController.person2 = temp2[0];
     }
 }
 @end

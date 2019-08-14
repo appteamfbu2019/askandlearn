@@ -36,14 +36,12 @@ static const NSString *idKey = @"Identifier";
     self.tableView.userInteractionEnabled = YES;
     self.tableView.scrollEnabled = YES;
     self.tableView.alpha = 0.8;
-    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"london.jpg"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-    
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -79,8 +77,7 @@ static const NSString *idKey = @"Identifier";
 #pragma mark UITableViewDatasource
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSInteger noOfRows = 0;
     noOfRows = [self.categoryList count];
     return noOfRows;
@@ -90,25 +87,21 @@ static const NSString *idKey = @"Identifier";
     CategoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCellId"];
     NSDictionary *category = self.categoryList[indexPath.row];
     [self configureCell:cell forCategory:category];
-    
     return cell;
 }
 
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *category = self.categoryList[indexPath.row];
-    if (self.selectedBlock)
-    {
+    if (self.selectedBlock){
         self.selectedBlock(YES, category, nil);
     }
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (self.didScrollBlock){
         self.didScrollBlock();
     }
@@ -117,8 +110,7 @@ static const NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Private
 
-- (void)searchCategoriesForText:(NSString *)searchText
-{
+- (void)searchCategoriesForText:(NSString *)searchText{
     NSString *predicateString = [NSString stringWithFormat:@"Name contains[c] '%@'", searchText];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString];
     NSArray *categories =[self.dummyCategories filteredArrayUsingPredicate:predicate];
@@ -127,8 +119,7 @@ static const NSString *idKey = @"Identifier";
     [self reloadAllSections];
 }
 
-- (void)reloadAllSections
-{
+- (void)reloadAllSections{
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self showNoResultsView:NO];
 }
@@ -149,14 +140,12 @@ static const NSString *idKey = @"Identifier";
     }
 }
 
-- (void)configureCell:(CategoryTableViewCell *)cell forCategory:(NSDictionary *)category
-{
+- (void)configureCell:(CategoryTableViewCell *)cell forCategory:(NSDictionary *)category{
     cell.categoryText.text = category[nameKey];
     cell.accessoryType = [self isCategoryAlreadySelected:category] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
 
-- (BOOL)isCategoryAlreadySelected:(NSDictionary *)category
-{
+- (BOOL)isCategoryAlreadySelected:(NSDictionary *)category{
     BOOL isSelected = NO;
     isSelected = [self.addedCategories containsObject:category];
     return isSelected;
@@ -165,8 +154,7 @@ static const NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Keyboard Notifications
 
-- (void)keyboardDidShow:(NSNotification *)notification
-{
+- (void)keyboardDidShow:(NSNotification *)notification{
     CGSize keyBoardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey]CGRectValue].size;
     
     CGFloat originX = (self.noResultView.bounds.size.height - keyBoardSize.height) / 2;

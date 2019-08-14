@@ -26,7 +26,6 @@ static NSString *idKey = @"Identifier";
 @property (nonatomic) IBOutlet TokenInputView *tokenInputView;
 @property (weak, nonatomic) IBOutlet UIView *categoriesListContainerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *addedTagViewHeight;
-
 @property (nonatomic) CategoriesViewController *categoriesListController;
 @property (nonatomic) NSMutableArray *addedTags;
 @property (nonatomic) NSMutableDictionary *tokensCache;
@@ -37,26 +36,22 @@ static NSString *idKey = @"Identifier";
 
 @synthesize delegate;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.tokenInputView.inputViewDelegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self configureTagListViewController];
     [self checkAndUpdateDoneButton];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self layoutViewsBasedOnComposerHeight];
     [self.tokenInputView becomeFirstResponder];
@@ -65,19 +60,15 @@ static NSString *idKey = @"Identifier";
     [self.tokenInputView setSelectedToken:token highlight:YES];
 }
 
-- (NSMutableArray *)addedTags
-{
-    if (!_addedTags)
-    {
+- (NSMutableArray *)addedTags{
+    if (!_addedTags){
         _addedTags = [NSMutableArray array];
     }
     return _addedTags;
 }
 
-- (NSDictionary *)tokensCache
-{
-    if (!_tokensCache)
-    {
+- (NSDictionary *)tokensCache{
+    if (!_tokensCache){
         _tokensCache = [NSMutableDictionary dictionary];
     }
     return _tokensCache;
@@ -86,18 +77,15 @@ static NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Interface
 
-- (void)configureAddTagsView:(NSArray *) tags
-{
+- (void)configureAddTagsView:(NSArray *) tags{
     [self addingTags:tags];
 }
 
 #pragma mark -
 #pragma mark Actions
 
-- (void)doneButtonPressed:(id)sender
-{
-    if (self.addTagsBlock)
-    {
+- (void)doneButtonPressed:(id)sender{
+    if (self.addTagsBlock){
         self.addTagsBlock(YES, self.addedTags, nil);
     }
     [self.navigationController popViewControllerAnimated:YES];
@@ -107,10 +95,8 @@ static NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark Private
 
-- (void)configureTagListViewController
-{
-    if (!self.categoriesListController)
-    {
+- (void)configureTagListViewController{
+    if (!self.categoriesListController){
         [self addChildViewController:self.categoriesListController];
         self.categoriesListController.view.frame = self.categoriesListContainerView.bounds;
         [self.categoriesListContainerView addSubview:self.categoriesListController.view];
@@ -121,41 +107,29 @@ static NSString *idKey = @"Identifier";
     self.categoriesListController.didScrollBlock = ^{
         [weakSelf.view endEditing:YES];
     };
-    
-    NSLog(@"hello %@", self.categoriesListController.tableView.delegate);
 }
 
-- (void)layoutViewsBasedOnComposerHeight
-{
+- (void)layoutViewsBasedOnComposerHeight{
     self.addedTagViewHeight.constant = minInputHeight;
     self.tokenInputView.textContainerInset = UIEdgeInsetsMake(topPad, leftPad, bottomPad, rightPad);
 }
 
-- (void)searchTagsForText:(NSString *)searchText
-{
+- (void)searchTagsForText:(NSString *)searchText{
     __weak addTags *weakSelf = self;
-    NSLog(@"hellloooo");
     [self.categoriesListController searchCategory:searchText addedCategories:self.addedTags withSelected:^(BOOL success, NSDictionary *category, NSError *error) {
-        if (success)
-        {
-            NSLog(@"success");
-            
+        if (success){
             [weakSelf addTag:category updateTokenView:YES];
         }
     } deselectedBlock:^(BOOL success, NSDictionary *category, NSError *error) {
-        if (success)
-        {
-            NSLog(@"remove");
+        if (success){
             [weakSelf removeTag:category];
         }
     }];
 }
 
-- (void)addTag:(NSDictionary *)tag updateTokenView:(BOOL)update
-{
+- (void)addTag:(NSDictionary *)tag updateTokenView:(BOOL)update{
     Token *token = self.tokensCache[tag[idKey]];
-    if (!token)
-    {
+    if (!token){
         token = [[Token alloc] init];
         token.nameString = tag[nameKey];
         token.idString= tag[idKey];
@@ -166,24 +140,19 @@ static NSString *idKey = @"Identifier";
     [self.tokenInputView addToken:token needsLayout:update];
 }
 
-- (void)removeTag:(NSDictionary *)tag
-{
+- (void)removeTag:(NSDictionary *)tag{
     Token *token = self.tokensCache[tag[idKey]];
-    if (token)
-    {
+    if (token){
         [self.addedTags removeObject:tag];
         [self.tokensCache removeObjectForKey:token.idString];
         [self.tokenInputView removeToken:token needsLayout:YES];
     }
 }
 
-- (NSDictionary *)tagForToken:(Token *)token
-{
+- (NSDictionary *)tagForToken:(Token *)token{
     NSDictionary *tagForToken = nil;
-    for (NSDictionary *tag in self.addedTags)
-    {
-        if ([tag[idKey] isEqualToString:token.idString])
-        {
+    for (NSDictionary *tag in self.addedTags){
+        if ([tag[idKey] isEqualToString:token.idString]){
             tagForToken = tag;
             break;
         }
@@ -191,16 +160,13 @@ static NSString *idKey = @"Identifier";
     return tagForToken;
 }
 
-- (void)checkAndUpdateDoneButton
-{
+- (void)checkAndUpdateDoneButton{
     BOOL enable = [self.addedTags count] ? YES : NO;
     [[[self navigationItem] rightBarButtonItem] setEnabled:enable];
 }
 
-- (void )addingTags:(NSArray *)tags
-{
-    for (NSDictionary *tag in tags)
-    {
+- (void )addingTags:(NSArray *)tags{
+    for (NSDictionary *tag in tags){
         [self addTag:tag updateTokenView:NO];
     }
 }
@@ -208,33 +174,26 @@ static NSString *idKey = @"Identifier";
 #pragma mark -
 #pragma mark InputViewDelegate
 
-- (void)textDidChange:(NSString *)text
-{
-    NSLog(@"text changing %@", text);
+- (void)textDidChange:(NSString *)text{
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    if ([text length])
-    {
+    if ([text length]){
         [self performSelector:@selector(searchTagsForText:) withObject:text afterDelay:0.3];
     }
-    else
-    {
+    else{
         [self.categoriesListController resetCategoryList];
     }
 }
 
-- (void)didRemoveToken:(Token *)token
-{
+- (void)didRemoveToken:(Token *)token{
     NSDictionary *tag = [self tagForToken:token];
-    if (tag)
-    {
+    if (tag){
         [self removeTag:tag];
         [self.categoriesListController resetCategoryList];
     }
 }
 
 
-- (void)didUpdateSize:(CGSize)size
-{
+- (void)didUpdateSize:(CGSize)size{
     CGFloat height = [self correctedHeight:size.height];
     [UIView animateWithDuration:0.2 animations:^{
         self.addedTagViewHeight.constant = height;
@@ -242,8 +201,7 @@ static NSString *idKey = @"Identifier";
     }];
 }
 
-- (CGFloat)correctedHeight:(CGFloat)height
-{
+- (CGFloat)correctedHeight:(CGFloat)height{
     CGFloat correctedHeight = 0;
     if (height < minInputHeight)
         correctedHeight = minInputHeight;
@@ -257,14 +215,12 @@ static NSString *idKey = @"Identifier";
 
 - (IBAction)submittingTags:(id)sender {
     [delegate assignTags:self.addedTags];
-    NSLog(@"HELLOOO");
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSString * segueName = segue.identifier;
     if ([segueName isEqualToString: @"toChildController"]) {
         CategoriesViewController * childViewController = (CategoriesViewController *) [segue destinationViewController];

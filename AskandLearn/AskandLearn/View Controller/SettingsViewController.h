@@ -11,11 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SettingsViewController : UIViewController
-
--(void)assignTags:(NSArray *)tags;
-
 @property (weak, nonatomic) IBOutlet UIView *containerTags;
 @property (nonatomic) NSInteger numberOfTags;
+
+-(void)assignTags:(NSArray *)tags;
 
 @end
 

@@ -21,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 +(void) sendMessage: (PFUser *)user1 withUser: (PFUser *)user2 withText: (NSString *) messageText withTime: (NSString *) timeNow;
 +(void) receiveMessage: (PFUser *)user1 withUser: (PFUser *)user2 withText: (NSString *) messageText withTime: (NSString *) timeNow;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

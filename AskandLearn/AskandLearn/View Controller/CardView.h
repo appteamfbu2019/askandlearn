@@ -20,9 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface CardView : UIView
-
 @property (weak) id <DraggableViewDelegate> delegate;
-
 @property (nonatomic, strong)UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic)CGPoint originalPoint;
 @property (nonatomic, strong)UIImageView* profPic;
@@ -30,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)UILabel* major;
 @property (nonatomic, strong)UILabel* profession;
 @property (nonatomic, strong)UITextView* bio;
-
 @property (nonatomic, strong)PFUser *user;
 
 -(void)leftClickAction;

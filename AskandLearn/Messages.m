@@ -42,8 +42,6 @@
     newMessage.messageText = messageText;
     newMessage.timeNow = timeNow;
     
-    
-    
     [newMessage saveInBackgroundWithBlock: nil];
 }
 

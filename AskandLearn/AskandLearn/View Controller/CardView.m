@@ -22,7 +22,6 @@
 #define ROTATION_STRENGTH 320 //%%% strength of rotation. Higher = weaker rotation
 #define ROTATION_ANGLE M_PI/8 //%%% Higher = stronger rotation angle
 
-
 #import "CardView.h"
 
 @implementation CardView {
@@ -30,7 +29,6 @@
     CGFloat yFromCenter;
 }
 @synthesize delegate;
-
 @synthesize panGestureRecognizer;
 @synthesize profPic;
 @synthesize name;
@@ -38,19 +36,11 @@
 @synthesize profession;
 @synthesize bio;
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self){
         [self setupView];
-//        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:self
-//                                                                   attribute:NSLayoutAttributeLeading
-//                                                                   relatedBy:NSLayoutRelationEqual
-//                                                                      toItem:nil
-//                                                                   attribute:NSLayoutAttributeLeft
-//                                                                  multiplier:1.0
-//                                                                    constant:8.0];
-        
+
         profPic = [[UIImageView alloc]initWithFrame:CGRectMake((self.frame.size.width)/2 - 35, 70, 80, 80)];
         profPic.contentMode = UIViewContentModeScaleAspectFill;
         profPic.layer.masksToBounds = YES;
@@ -61,24 +51,18 @@
         [name setTextAlignment:NSTextAlignmentCenter];
         name.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         name.textColor = [UIColor whiteColor];
-//        name.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.5];
-//        name.layer.cornerRadius = 10;
         
         major = [[UILabel alloc]initWithFrame:CGRectMake(0, 160, self.frame.size.width, 100)];
         major.text = @"Major:";
         [major setTextAlignment:NSTextAlignmentCenter];
         major.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         major.textColor = [UIColor whiteColor];
-//        major.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.5];
-//        major.layer.cornerRadius = 10;
         
         profession = [[UILabel alloc]initWithFrame:CGRectMake(0, 190, self.frame.size.width, 100)];
         profession.text = @"Profession:";
         [profession setTextAlignment:NSTextAlignmentCenter];
         profession.font = [UIFont fontWithName:@"Avenir-Medium" size:20];
         profession.textColor = [UIColor whiteColor];
-//        profession.backgroundColor = [UIColor colorWithHue:0.16 saturation:0 brightness:1 alpha:0.5];
-//        profession.layer.cornerRadius = 10;
         
         bio = [[UITextView alloc]initWithFrame:CGRectMake((self.frame.size.width-70)/2 - 65, self.frame.size.height/2 - 30, 200, 80)];
         bio.text = @"Bio:";
@@ -118,7 +102,6 @@
         UIGraphicsEndImageContext();
         self.backgroundColor = [UIColor colorWithPatternImage:image];
         
-        
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
         
         [self addGestureRecognizer:panGestureRecognizer];
@@ -128,13 +111,11 @@
         [self addSubview:mainButton];
         [self addSubview:bio];
         [self addSubview:profPic];
-        
     }
     return self;
 }
 
--(void)setupView
-{
+-(void)setupView{
     self.layer.cornerRadius = 4;
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.2;
@@ -146,12 +127,12 @@
 // called many times a second
 -(void)beingDragged:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    //%%% this extracts the coordinate data from your swipe movement. (i.e. How much did you move?)
-    xFromCenter = [gestureRecognizer translationInView:self].x; //%%% positive for right swipe, negative for left
-    yFromCenter = [gestureRecognizer translationInView:self].y; //%%% positive for up, negative for down
+    //this extracts the coordinate data from your swipe movement. (i.e. How much did you move?)
+    xFromCenter = [gestureRecognizer translationInView:self].x; //positive for right swipe, negative for left
+    yFromCenter = [gestureRecognizer translationInView:self].y; //positive for up, negative for down
     
-    //%%% checks what state the gesture is in. (are you just starting, letting go, or in the middle of a swipe?)
-    switch (gestureRecognizer.state) {
+    //checks what state the gesture is in. (are you just starting, letting go, or in the middle of a swipe?)
+    switch (gestureRecognizer.state){
             //%%% just started swiping
         case UIGestureRecognizerStateBegan:{
             self.originalPoint = self.center;
@@ -161,26 +142,19 @@
         case UIGestureRecognizerStateChanged:{
             //%%% dictates rotation (see ROTATION_MAX and ROTATION_STRENGTH for details)
             CGFloat rotationStrength = MIN(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX);
-            
             //%%% degree change in radians
             CGFloat rotationAngel = (CGFloat) (ROTATION_ANGLE * rotationStrength);
-            
             //%%% amount the height changes when you move the card up to a certain point
             CGFloat scale = MAX(1 - fabsf(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
-            
             //%%% move the object's center by center + gesture coordinate
             self.center = CGPointMake(self.originalPoint.x + xFromCenter, self.originalPoint.y + yFromCenter);
-            
             //%%% rotate by certain amount
             CGAffineTransform transform = CGAffineTransformMakeRotation(rotationAngel);
-            
             //%%% scale by certain amount
             CGAffineTransform scaleTransform = CGAffineTransformScale(transform, scale, scale);
-            
             //%%% apply transformations
             self.transform = scaleTransform;
             //[self updateOverlay:xFromCenter];
-            
             break;
         };
             //%%% let go of the card
@@ -195,8 +169,7 @@
 }
 
 //%%% called when the card is let go
-- (void)afterSwipeAction
-{
+- (void)afterSwipeAction{
     if (xFromCenter > ACTION_MARGIN) {
         [self rightAction];
     } else if (xFromCenter < -ACTION_MARGIN) {
@@ -212,8 +185,7 @@
 }
 
 //%%% called when a swipe exceeds the ACTION_MARGIN to the right
--(void)rightAction
-{
+-(void)rightAction{
     CGPoint finishPoint = CGPointMake(500, 2*yFromCenter +self.originalPoint.y);
     [UIView animateWithDuration:0.3
                      animations:^{
@@ -223,13 +195,10 @@
                      }];
     
     [delegate cardSwipedRight:self];
-    
-    NSLog(@"YES");
 }
 
 //%%% called when a swip exceeds the ACTION_MARGIN to the left
--(void)leftAction
-{
+-(void)leftAction{
     CGPoint finishPoint = CGPointMake(-500, 2*yFromCenter +self.originalPoint.y);
     [UIView animateWithDuration:0.3
                      animations:^{
@@ -239,12 +208,9 @@
                      }];
     
     [delegate cardSwipedLeft:self];
-    
-    NSLog(@"NO");
 }
 
--(void)rightClickAction
-{
+-(void)rightClickAction{
     CGPoint finishPoint = CGPointMake(600, self.center.y);
     [UIView animateWithDuration:0.3
                      animations:^{
@@ -255,12 +221,9 @@
                      }];
 
     [delegate cardSwipedRight:self];
-
-    NSLog(@"YES");
 }
 
--(void)leftClickAction
-{
+-(void)leftClickAction{
     CGPoint finishPoint = CGPointMake(-600, self.center.y);
     [UIView animateWithDuration:0.3
                      animations:^{
@@ -271,12 +234,9 @@
                      }];
 
     [delegate cardSwipedLeft:self];
-
-    NSLog(@"NO");
 }
 
 -(void)calculateScoreTap:(id)sender {
-    NSLog(@"calculating score");
     [delegate retrieveTags:self.user];
 }
 
